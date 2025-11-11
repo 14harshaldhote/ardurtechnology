@@ -1,0 +1,60 @@
+{
+  "team_members": [
+    {
+      "id": "satish-sable",
+      "name": "Satish Sable",
+      "title": "Founder & CEO",
+      "image": "/static/images/team/satish-sable.jpg",
+      "bio": "A versatile experienced professional and entrepreneur in Information Technology, Business Enablement Services and Business Analysis. The key to my success has been the 15 enriching years of experience and learning, inculcated within the IT and ITES space. Have crafted a profitable business by concentrating on a basic yet persuasive objective: supporting our clients' success, that comprises of distinct international client base, from small – medium businesses to large companies.",
+      "bio_extended": "I have been able to accomplish this by means of careful, strategic investments in technology, processes, and—most significantly—people.",
+      "specialties": [
+        "Information Technology Leadership",
+        "Business Process Management",
+        "Strategic Business Analysis",
+        "Client Relationship Management",
+        "Technology Innovation"
+      ],
+      "linkedin": "#",
+      "email": "satish@ardurtechnology.com"
+    },
+    {
+      "id": "ken-jourdan",
+      "name": "Ken Jourdan",
+      "title": "Managing Partner - USA",
+      "image": "/static/images/team/ken-jourdan.jpg",
+      "bio": "Ken has been in information management, sales and operation for twenty years. Ken has been involved in three major service bureaus in his career, providing outsourcing services to clients such as Iron Mountain (the world's largest records storage company), Citibank, Siemens, Chase Manhattan Bank, United Healthcare, Globe Life Insurance, and many others.",
+      "bio_extended": "Ken has been involved in finding outsourcing solutions to customers with Real Estate Title Search services, Forms processing, Data Capture requirements in the US, Mexico, China and India. Ken Jourdan is based out of our office at Las Vegas – Nevada and manages our Sales and Local Operations.",
+      "specialties": [
+        "Information Management",
+        "Sales & Operations",
+        "Outsourcing Solutions",
+        "Real Estate Title Search",
+        "Data Capture & Processing"
+      ],
+      "linkedin": "#",
+      "email": "ken@ardurtechnology.com"
+    }
+  ],
+  "company_values": [
+    {
+      "icon": "fas fa-users",
+      "title": "Client-Centric",
+      "description": "Our success is measured by our clients' success. We build lasting partnerships."
+    },
+    {
+      "icon": "fas fa-lightbulb",
+      "title": "Innovation",
+      "description": "Strategic investments in technology and processes drive continuous improvement."
+    },
+    {
+      "icon": "fas fa-handshake",
+      "title": "Integrity",
+      "description": "Deep-rooted industry knowledge combined with ethical business practices."
+    },
+    {
+      "icon": "fas fa-rocket",
+      "title": "Excellence",
+      "description": "Passion for quality and dedication to delivering exceptional results."
+    }
+  ]
+}

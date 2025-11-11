@@ -1,0 +1,428 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Services Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1 class="hero-title">Our Comprehensive Services</h1>
+        <p class="hero-subtitle">
+            From business process management to digital transformation, we deliver innovative solutions
+            that streamline operations, reduce costs, and drive sustainable growth across multiple industries.
+        </p>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Complete Business Process Solutions</h2>
+        </div>
+        <div class="section-subtitle">
+            Our multi-domain expertise enables us to provide end-to-end solutions tailored to your specific
+            industry requirements and business objectives.
+        </div>
+
+        <div class="service-grid">
+            {% for service_key, service_data in services_data.items() %}
+            <div class="service-card">
+                <div class="card-icon">
+                    <i class="{{ service_data.icon }}"></i>
+                </div>
+                <h3 class="card-title">{{ service_data.title }}</h3>
+                <p class="card-text">{{ service_data.description }}</p>
+
+                <ul class="service-list">
+                    {% for service in service_data.services[:4] %}
+                    <li>{{ service }}</li>
+                    {% endfor %}
+                    {% if service_data.services|length > 4 %}
+                    <li style="color: var(--primary-blue); font-weight: 500;">
+                        +{{ service_data.services|length - 4 }} more services
+                    </li>
+                    {% endif %}
+                </ul>
+
+                <a href="{{ url_for('service_detail', service_category=service_key) }}" class="btn">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Service Benefits -->
+<section class="section" style="background: var(--light-grey);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Why Choose Our Services?</h2>
+        </div>
+        <div class="section-subtitle">
+            We combine industry expertise with innovative technology to deliver measurable results for your organization.
+        </div>
+
+        <div class="row">
+            <div class="col col-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="card-title">Increased Efficiency</h4>
+                    <p class="card-text">
+                        Streamlined processes and automation reduce manual effort and improve operational efficiency by up to 60%.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h4 class="card-title">Cost Reduction</h4>
+                    <p class="card-text">
+                        Our optimized solutions help reduce operational costs by 30-50% while maintaining or improving quality.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4 class="card-title">Faster Turnaround</h4>
+                    <p class="card-text">
+                        Accelerated processing times and quick implementation ensure faster time-to-market for your initiatives.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="card-title">Risk Mitigation</h4>
+                    <p class="card-text">
+                        Robust security measures and compliance frameworks minimize operational and regulatory risks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Approach -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Service Approach</h2>
+        </div>
+        <div class="section-subtitle">
+            We follow a structured, proven methodology to ensure successful delivery and sustainable results.
+        </div>
+
+        <div class="row">
+            <div class="col col-6">
+                <div class="row">
+                    <div class="col col-6">
+                        <div class="card text-center">
+                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                <span style="font-weight: 700; font-size: 1.5rem;">1</span>
+                            </div>
+                            <h4 class="card-title">Analysis</h4>
+                            <p class="card-text">
+                                Comprehensive assessment of current processes and identification of improvement opportunities.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col col-6">
+                        <div class="card text-center">
+                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                <span style="font-weight: 700; font-size: 1.5rem;">2</span>
+                            </div>
+                            <h4 class="card-title">Design</h4>
+                            <p class="card-text">
+                                Custom solution design tailored to your specific requirements and business objectives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-6">
+                        <div class="card text-center">
+                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                <span style="font-weight: 700; font-size: 1.5rem;">3</span>
+                            </div>
+                            <h4 class="card-title">Implementation</h4>
+                            <p class="card-text">
+                                Systematic deployment with minimal disruption to your existing operations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col col-6">
+                        <div class="card text-center">
+                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                <span style="font-weight: 700; font-size: 1.5rem;">4</span>
+                            </div>
+                            <h4 class="card-title">Optimization</h4>
+                            <p class="card-text">
+                                Continuous monitoring and improvement to ensure optimal performance and results.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-6">
+                <div class="card">
+                    <h3 class="card-title">Service Features</h3>
+                    <ul class="service-list">
+                        <li>Dedicated project management and support teams</li>
+                        <li>Real-time reporting and performance dashboards</li>
+                        <li>Scalable solutions that grow with your business</li>
+                        <li>24/7 monitoring and support capabilities</li>
+                        <li>Industry-specific expertise and best practices</li>
+                        <li>Compliance with regulatory standards</li>
+                        <li>Seamless integration with existing systems</li>
+                        <li>Regular review and optimization cycles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Stack -->
+<section class="section" style="background: var(--light-grey);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Technology & Tools</h2>
+        </div>
+        <div class="section-subtitle">
+            We leverage cutting-edge technologies and industry-leading tools to deliver superior results.
+        </div>
+
+        <div class="row">
+            <div class="col col-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4 class="card-title">Cloud Platforms</h4>
+                    <p class="card-text">
+                        AWS, Microsoft Azure, Google Cloud Platform for scalable and secure infrastructure solutions.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4 class="card-title">Automation Tools</h4>
+                    <p class="card-text">
+                        RPA platforms, workflow automation, and AI-powered process optimization solutions.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4 class="card-title">Data Analytics</h4>
+                    <p class="card-text">
+                        Advanced analytics, machine learning, and business intelligence for data-driven insights.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="card-title">Security Solutions</h4>
+                    <p class="card-text">
+                        Enterprise-grade security, encryption, and compliance management systems.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4 class="card-title">Mobile & Web</h4>
+                    <p class="card-text">
+                        Responsive web applications and mobile solutions for enhanced accessibility.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h4 class="card-title">Monitoring Tools</h4>
+                    <p class="card-text">
+                        Real-time monitoring, performance tracking, and comprehensive reporting dashboards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Stats -->
+<section class="stats">
+    <div class="container">
+        <div class="row">
+            <div class="col col-4">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="6">6</span>
+                    <div class="stat-label">Service Categories</div>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">50+</span>
+                    <div class="stat-label">Individual Services</div>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99">99.5%</span>
+                    <div class="stat-label">Service Uptime</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%); color: var(--white);">
+    <div class="container text-center">
+        <h2 style="color: var(--white); margin-bottom: 1rem;">Ready to Get Started?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Let's discuss how our comprehensive service portfolio can address your specific business challenges
+            and help you achieve your strategic objectives.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <a href="{{ url_for('contact') }}" class="btn" style="background: var(--white); color: var(--primary-navy);">
+                <i class="fas fa-envelope"></i>
+                Request Consultation
+            </a>
+            <a href="tel:{{ company_phone }}" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">
+                <i class="fas fa-phone"></i>
+                Call {{ company_phone }}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="section-subtitle">
+            Common questions about our services and how we can help your organization.
+        </div>
+
+        <div class="row">
+            <div class="col col-6">
+                <div class="card">
+                    <h4 class="card-title">How do you ensure quality and accuracy?</h4>
+                    <p class="card-text">
+                        We implement multi-tier quality control processes, regular audits, and continuous training
+                        programs to maintain the highest standards of accuracy and service delivery.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">What industries do you specialize in?</h4>
+                    <p class="card-text">
+                        We serve multiple industries including healthcare, financial services, real estate,
+                        mortgage, and aviation, with specialized expertise in each sector.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">How quickly can you implement services?</h4>
+                    <p class="card-text">
+                        Implementation timelines vary by service complexity, but we typically begin initial
+                        services within 2-4 weeks and full implementation within 6-12 weeks.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-6">
+                <div class="card">
+                    <h4 class="card-title">Do you provide 24/7 support?</h4>
+                    <p class="card-text">
+                        Yes, we offer round-the-clock monitoring and support for critical services, ensuring
+                        your business operations continue smoothly without interruption.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">How do you handle data security?</h4>
+                    <p class="card-text">
+                        We maintain enterprise-grade security protocols, including encryption, access controls,
+                        regular security audits, and compliance with industry standards like HIPAA and SOX.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">Can services be customized for our needs?</h4>
+                    <p class="card-text">
+                        Absolutely. We work closely with each client to understand their unique requirements
+                        and customize our services to align with their specific business objectives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add stagger animation to service cards
+        const serviceCards = document.querySelectorAll('.service-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        serviceCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Animate approach steps
+        const steps = document.querySelectorAll('.card-icon[style*="border-radius: 50%"]');
+        steps.forEach((step, index) => {
+            step.style.animation = `pulse 2s ease-in-out ${index * 0.2}s infinite`;
+        });
+
+        // Add pulse animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    });
+</script>
+{% endblock %}

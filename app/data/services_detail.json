@@ -1,0 +1,743 @@
+{
+  "title-insurance": {
+    "slug": "title-insurance",
+    "title": "Title Insurance",
+    "subtitle": "Comprehensive Title Search and Insurance Services",
+    "icon": "fas fa-shield-alt",
+    "color": "primary",
+    "sections": [
+      {
+        "title": "Title Search Services",
+        "content": "We have a combination of experienced Abstractors and Title Analysts with an in-depth understanding of U.S. title Industry, spanning across various States and counties. Each Abstractor possesses at least 8 years of experience in Title search and Typists are well versed with typing out the reports in client software's such as Gators, Ramp Quest, Web-based and MS Word Document."
+      },
+      {
+        "title": "FROM CURRENT OWNER SEARCH OR TWO OWNER SEARCH TO FULL SEARCH",
+        "content": "We have an experienced network of abstractors and attorneys delivering across all counties of the USA, exemplary accurate searches, within the TAT(Turn Around Time). Some of our title search services include",
+        "bullets": [
+          "Title/ Property Search",
+          "Current Owner Search",
+          "Two Owner Search",
+          "Legal & Vesting Search",
+          "Full Search",
+          "Doc Retrieval Search",
+          "Update Search",
+          "Mortgage Search"
+        ]
+      },
+      {
+        "title": "Document Preparation",
+        "bullets": [
+          "Legal & Vesting Reports",
+          "Abstract Reports",
+          "Commitment Reports",
+          "Property Reports",
+          "Short Form Policies",
+          "Long Form Policies",
+          "HUD Preparation"
+        ]
+      },
+      {
+        "title": "Process",
+        "type": "steps",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Order Entry",
+            "details": [
+              "Verify property information and place order for search docs (In-House or Outside Abstractor)"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Examination",
+            "details": [
+              "Examination of documents found during search that affect the title of the property",
+              "Review of Legal Ownership, Property Taxes, Judgements/ Liens"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Curative",
+            "details": [
+              "Review Chain of Title",
+              "Verifying Vesting",
+              "Curing Open Mortgages",
+              "Clear Title and issue CTC to the Lender"
+            ]
+          },
+          {
+            "step": 4,
+            "title": "Scheduling",
+            "details": [
+              "Calling Borrowers to confirm on Closing Date, Time, and Location",
+              "Fixing Notary to the Closing",
+              "Confirm Closing Status"
+            ]
+          },
+          {
+            "step": 5,
+            "title": "Closing Disclosure",
+            "details": [
+              "Key all relevant Fees",
+              "Calculate prior mortgage Payoff",
+              "Confirming Hazard Insurance Status",
+              "Confirming Property Taxes",
+              "Prepare CD to deliver to the Borrowers",
+              "Ensure accuracy of the delivered CD"
+            ]
+          },
+          {
+            "step": 6,
+            "title": "Doc Prep",
+            "details": [
+              "Assigning Closing Package to Notary/ Attorney to perform Closing"
+            ]
+          },
+          {
+            "step": 7,
+            "title": "Post Closing",
+            "details": [
+              "Review the signed package",
+              "Prepare Funding Documents",
+              "Send to lender requesting for Disbursal of Funds"
+            ]
+          },
+          {
+            "step": 8,
+            "title": "Funding",
+            "details": [
+              "Assigning Closing Package to Notary/ Attorney to perform Closing"
+            ]
+          },
+          {
+            "step": 9,
+            "title": "Recording",
+            "details": [
+              "Upload all Documents and assign to all non Online Vendors"
+            ]
+          },
+          {
+            "step": 10,
+            "title": "Policy Production",
+            "details": [
+              "Keying all the pertinent details in the system and generating the Policies"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Services",
+        "bullets": [
+          "DATA ENTRY AND TITLE DOCUMENT INDEXING",
+          "DOCUMENT CONVERSION SERVICES",
+          "LOAN MODIFICATION"
+        ]
+      },
+      {
+        "title": "DATA ENTRY AND TITLE DOCUMENT INDEXING",
+        "content": "At Ardur we undertake text indexing services where data is readily available and quickly responds to users. Our data management experts handle text indexing using unique words and phrases which can search in the local database or other digital databases."
+      }
+    ]
+  },
+  "title-plant-development": {
+    "slug": "title-plant-development",
+    "title": "Title Plant Development",
+    "subtitle": "Professional Title Plant Indexing Services",
+    "icon": "fas fa-database",
+    "color": "secondary",
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "We provide Title Plant Indexing services to the Real Estate industry across the U.S.A. We capture information from property related documents such as Deed, Deed of Trust, Lien documents, Marriage Certificates, Right of way, Easement and other documents."
+      },
+      {
+        "title": "OUR DATA CAPTURE COMPRISES OF",
+        "bullets": [
+          "Parties related information (Grantor, Grantee, Document Type, Amount and Dates).",
+          "Legal details (Subdivision, Block, lot, Acreage, volume, page and prior references)."
+        ]
+      },
+      {
+        "title": "Quality & Turnaround",
+        "content": "We have expertise to key the back plant documents as well as Go Forward documents with excellent quality and turnaround time. We process double key and triple compare of each and every document to maintain 99.995% accuracy."
+      },
+      {
+        "title": "Projection",
+        "content": "We provide Projection for Back Plant Indexing and for Go Forward."
+      }
+    ]
+  },
+  "tax-services": {
+    "slug": "tax-services",
+    "title": "Tax Services",
+    "subtitle": "Comprehensive Property Tax and Municipal Lien Reports",
+    "icon": "fas fa-file-invoice-dollar",
+    "color": "accent",
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "We deliver comprehensive property tax, Municipal lien and code violation reports to the title and banking industry. Our services include residential and commercial pre closing certificates, code and assessment violation reports, escrow and non escrow reporting and tax line setup."
+      },
+      {
+        "title": "Reliable, Accurate and Timely Tax Reporting",
+        "content": "Our Tax Amount Report provides details such as due dates, tax amounts, and required methods of payment. Lenders and servicers can rely on Ardur for reliable procurement of tax information, accurate payment specifications of tax authorities, and timely payments."
+      }
+    ]
+  },
+  "appraisal-management-services": {
+    "slug": "appraisal-management-services",
+    "title": "Appraisal Management Services",
+    "subtitle": "Professional Appraisal Review and Management",
+    "icon": "fas fa-home",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Appraisal Review",
+        "content": "Enriched with over 10 years of experience in handling appraisal services, working with all types of appraisers, loan types, and lenders. Our Appraisal Quality Control teams understand the different type of forms, lender requirements, checklists to perform quality control appraisal review, for our customers."
+      },
+      {
+        "title": "Review Tasks",
+        "bullets": [
+          "Review Appraisal Reports for Accuracy",
+          "Re-Review Appraisal Reports upon receipt of revised Appraisal Reports",
+          "Handle Post Completion Revision Requests from the Clients"
+        ]
+      },
+      {
+        "title": "Forms We Deal With",
+        "bullets": [
+          "1004 - Uniform Residential Appraisal Report",
+          "1004C - Manufactured Home Appraisal Report",
+          "1004D - Appraisal Update and/or Completion Report",
+          "1073 - Individual Condominium Unit Appraisal Report",
+          "1025 - Small Residential Income Property Appraisal Report",
+          "1075 - Exterior-Only Individual Condominium Unit Appraisal Report",
+          "2000 - One-Unit Residential Appraisal Field Review Report",
+          "2000A - Two- to four-Unit Residential Appraisal Field Review Report",
+          "2075 - Desktop Underwriter Property Inspection Report",
+          "2055 - Exterior-Only Inspection Residential Appraisal Report",
+          "2090 - Individual Cooperative Interest Appraisal Report",
+          "2095 - Exterior-Only Inspection Individual Cooperative Interest Appraisal Report",
+          "1007 - Single Family Comparable Rent Schedule",
+          "216 - Operating Income Statement"
+        ]
+      },
+      {
+        "title": "Order Management",
+        "bullets": [
+          "Order Entry - Currently doing order entry on the portal of our clients",
+          "Payment Processing",
+          "Order Assignment - Manually Assigning of orders to Appraisers/Brokers"
+        ]
+      }
+    ]
+  },
+  "broker-price-opinion": {
+    "slug": "broker-price-opinion",
+    "title": "Broker Price Opinion (BPO)",
+    "subtitle": "Professional Property Valuation Services",
+    "icon": "fas fa-chart-line",
+    "color": "warning",
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "In order to provide a broker price opinion, we look at comparable homes that have sold recently, typically within the past three months in the same neighbourhood, and make pricing adjustments based on a variety of factors such as the size, condition and location of the home."
+      }
+    ]
+  },
+  "appraisal-vendor-management": {
+    "slug": "appraisal-vendor-management",
+    "title": "Appraisal Vendor Management & Customer Service",
+    "subtitle": "Complete Vendor and Order Management Solutions",
+    "icon": "fas fa-users-cog",
+    "color": "primary",
+    "sections": [
+      {
+        "title": "1. Appointment Tracking and Follow up",
+        "content": "We act as a communication channel between the appraiser and the client to ensure the appointment date is set by the appraiser as soon as possible and if they are facing any issue we take the right action to handle the situation and keep the client updated."
+      },
+      {
+        "title": "2. Qualifying New Appraisers",
+        "content": "Ardur generates as possible appraisers to your appraiser database after verifying their various documents such as W9, License, E&O, etc., or any other document required. Placement - We own the responsibility to find quotes for a particular order from the appraisers and then updating all the quotes received and selecting the appraiser whose quote suits the client the most."
+      },
+      {
+        "title": "3. Updation of Vendor Details",
+        "content": "We update the details of the vendor with the latest information or any new changes made and ensure that their insurance and license are up to date."
+      },
+      {
+        "title": "4. Reports Updation",
+        "content": "We monitor and ensure that the appraiser submits the report one or two days before the due date. If the request for extension of the due date, we take the appropriate action as well as if they face any other issue we work on it to solve it as soon as possible."
+      },
+      {
+        "title": "5. Delivery of Reports",
+        "content": "We upload the report manually or any other method available in the Appraisal Software."
+      },
+      {
+        "title": "6. Quote Requests",
+        "content": "Our Team provides a detailed quote request which will detail the client, product(s), property address, loan type, and transaction type. Ardur will determine which appraisers are eligible for the potential assignment and email those appraisers for quotes. The Ardur Team shall review the options to quote their client."
+      },
+      {
+        "title": "7. Appraisal - Vendor and Order Management",
+        "content": "We keep the profile of a Vendor updated matching the details in the ASC site and keep the client updated about the same. We act as a communication bridge between the clients and the appraisers."
+      },
+      {
+        "title": "8. Status Management",
+        "bullets": [
+          "Follow up on Assigned orders",
+          "Check or Confirm Inspection schedule and Submission of report",
+          "Follow-up with Appraisers to obtain revised Appraisal Reports",
+          "Procurement of PA and FHA case numbers",
+          "Review of Docs, i.e., PA, Bids, and Prior/Original Reports"
+        ]
+      }
+    ]
+  },
+  "mortgage-pre-processing": {
+    "slug": "mortgage-pre-processing",
+    "title": "Mortgage Pre-Processing Support Services",
+    "subtitle": "Comprehensive pre-processing support for faster loan approvals",
+    "icon": "fas fa-file-contract",
+    "color": "secondary",
+    "sections": [
+      {
+        "title": "Rate Lock Management",
+        "content": "We take charge of the entire process, ensuring that loan seekers get a response from you in the shortest possible time. We achieve such diligent turnaround times by coordinating with the customer to get a commitment on the loan within the stipulated time period of the lock-in time period."
+      },
+      {
+        "title": "CAIVARS Verification",
+        "content": "We scrutinize borrower details to ensure there are no past records of delinquent federal non-tax debt. We verify their profile on the CAIVARS system, as per the guidelines of the Debt Collection Improvement Act."
+      },
+      {
+        "title": "1003 Review",
+        "content": "We meticulously scrutinize the application to make sure that all of the personal information furnished by the applicant such as name, work history, signatures, property details, loan details, employment information and income information are all accurate."
+      },
+      {
+        "title": "MERS Check",
+        "content": "Our team of mortgage experts compile detailed customer reports and update them on the MERS (Mortgage Electronic Registration system) to ensure that you can track the progress of your entire mortgage loan approval process."
+      },
+      {
+        "title": "Loan Estimation Review",
+        "content": "We compile and dispatch the estimate of a loan structure to the customers, after including basic information like issue date, loan term, loan type, rate lock information and so on. We verify other details of a loan estimate form like closing costs, Annual Percentage Rate and projected payment plan."
+      },
+      {
+        "title": "Generation of Disclosures",
+        "content": "We generate all mandatory mortgage loan disclosures as dictated by the terms of the federal law, to the borrower based on the loan estimation process. We then review and send these disclosures to the borrower to complete a crucial step of the mortgage pre-processing procedure."
+      }
+    ]
+  },
+  "mortgage-ancillary": {
+    "slug": "mortgage-ancillary",
+    "title": "Mortgage Ancillary Services",
+    "subtitle": "Document management and third-party verification services",
+    "icon": "fas fa-folder-open",
+    "color": "accent",
+    "sections": [
+      {
+        "title": "Indexing and Stacking",
+        "content": "We assist lenders in collecting supporting documents such as bank statements, mortgage statements, pension statements, escrow documents, divorce decrees and child support documents, etc. We also order homeowner's insurance and the flood certificate for the property. After collecting all the documents, we file them in an orderly way for easy access and archival."
+      },
+      {
+        "title": "Third Part Document Verification",
+        "content": "We review third party documents like Appraisal, Title, HOI, 4506T (Tax Transcripts) etc. as loan application references and details of the property to authorized appraisers. We also check payment receipts for appropriate appraisal fees and check property titles. We provide you a detailed report to be complaint with regulations with a clear focus on contradictory information, incompatible findings and data that cannot be validated."
+      },
+      {
+        "title": "Data Capture in LOS",
+        "content": "We review 1003 form and all other documents such as W2s, pay stubs, GFE, TIL, Form 1008, borrower's authorization etc., to ensure that all the information necessary for processing the application is provided."
+      }
+    ]
+  },
+  "mortgage-appraisal": {
+    "slug": "mortgage-appraisal",
+    "title": "Mortgage Appraisal Services",
+    "subtitle": "Professional property appraisal and valuation services",
+    "icon": "fas fa-home-lg-alt",
+    "color": "primary",
+    "sections": [
+      {
+        "title": "Broker Price Opinion",
+        "content": "Provide Broker price opinions for property value less than 250K."
+      },
+      {
+        "title": "Appraiser Panel Review",
+        "content": "Mortgage policies and guidelines can vary by area, so keeping current with the policies is a challenge. Our team will review the appraisal to make sure it is consistent with best practices, adheres to the Uniform Appraisal Dataset (UAD) and the Uniform Standards of Professional Appraisal Practice (USPAP)."
+      },
+      {
+        "title": "Compliance",
+        "content": "We thoroughly examine the appraiser's report for anomalies. We review the basis for the valuation, verify if the appraisal report is compliant with mortgage rules and regulations, and check if the appraisal is carried out according to the federal, state, and GSE guidelines."
+      },
+      {
+        "title": "Comparative Market Analysis",
+        "content": "Using the average cost of properties sold with similar attributes, we'll gather data like listed price, time on the market, price of sale, and more. This expedites securing financing and assures that the price you pay is fair."
+      },
+      {
+        "title": "Title Assessment",
+        "content": "Lenders like to avoid unnecessary risk, so can review tax, judgment, and transfer records. This makes the lender and the borrower more comfortable with the deal."
+      }
+    ]
+  },
+  "mortgage-underwriting": {
+    "slug": "mortgage-underwriting",
+    "title": "Mortgage Underwriting Services",
+    "subtitle": "Complete underwriting support and risk assessment",
+    "icon": "fas fa-clipboard-check",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Pre-Underwriting (Loan Submission)",
+        "content": "We submit your application to an underwriter for crosschecking your eligibility and validating the documents submitted. If the underwriter feels there are conditions to clear such as explanation of late payments or employment gaps, we help you speed up the condition clearing process."
+      },
+      {
+        "title": "Credit Report",
+        "content": "Order credit report and review it. We conduct a complete credit check of prospective borrowers to ascertain their credit worthiness. This includes pre-screening of credentials, obtaining and checking credit reports, credit history, FHA authorizations, Social Security status and more. We also check for existing loans with MERS, payment defaults, tax returns and transcripts, etc."
+      },
+      {
+        "title": "Income and Asset Review",
+        "content": "We conduct verification checks against all information provided by the prospective borrowers. This includes verification of disclosures for accuracy, VoE (Verification of Employment), VoD (Verification of Deposit), VoM (Verification of Mortgage), verification of property sale history, location maps, the appraiser's signature and license, registration, etc. We verify all borrower's information like pay stubs, W2 forms, asset information, employment history etc. by using Verification of Deposit and Verification of Mortgage forms."
+      },
+      {
+        "title": "Borrower File Review",
+        "content": "We verify all information that is supplied by the customer in vital loan documents like form 1003 and other personal information. We meticulously review customer credit records like FICO scores and tax return documents to ensure the customer has the required financial stability to make monthly payments for the loan. We evaluate the entire credit profile of the borrower as per the guidelines laid down by Fannie Mae and Freddie Mac. As an experienced mortgage pre-underwriting support company, we follow a checklist-based system to ensure that all the critical aspects pertaining to underwriting are covered in our file review services."
+      },
+      {
+        "title": "Data Validation",
+        "content": "Certain customer details like credit scores and employment history can be verified online using the Desktop Underwriter (DU), the official tool created by Fannie Mae and Freddie Mac. This tool helps us validate customer attributes like credit scores which are vital for the loan approval process. Our pre-underwriting support services include recording and digitizing our findings in the data validation process. By digitizing these vital information sets about the customer, we are able to establish the accuracy and speed needed to expedite the underwriting process."
+      },
+      {
+        "title": "Fraud Review",
+        "content": "Documenting and double checking income and debt statements and verifying all other submitted docs. Our team of mortgage experts have the experience and acumen to spot missing or mala fide information. This obviates the need for the underwriter to send customer files back for completed information and thereby enables you speed up the underwriting process. Our fraud analysis encompasses all aspects of the customer file review process including running third-party reports. This ensures the underwriter has to focus only on decision-making."
+      },
+      {
+        "title": "Condition to Close",
+        "content": "List out the observations and conditions to close."
+      },
+      {
+        "title": "Final Approval",
+        "content": "Approval to go for closing."
+      }
+    ]
+  },
+  "mortgage-title": {
+    "slug": "mortgage-title",
+    "title": "Mortgage Title Services",
+    "subtitle": "Complete title ordering, examination and insurance services",
+    "icon": "fas fa-certificate",
+    "color": "secondary",
+    "sections": [
+      {
+        "title": "Title Ordering",
+        "content": "Obtain and verify details about mortgage title or settlement company. Order and follow up to obtain initial and Final Title report."
+      },
+      {
+        "title": "Title Examination",
+        "content": "Review title reports and examine the chain of title to ensure no illegal deeds exist. Analyze records, such as mortgages, liens, judgments, easements, vital statistics, and plat and map books, to determine ownership and legal restrictions. Verify legal description of property and completeness of records."
+      },
+      {
+        "title": "Title Commitment",
+        "content": "Provide a comprehensive title search and review. Assist lenders in reading the title commitment report easily. Uncover defects early on to help close transactions quickly. Capture essential data for commitment easement, tax status, and restrictions."
+      },
+      {
+        "title": "Final Policy Production",
+        "content": "Generate long form, short form, and owner policies. Final review of records to determine the true owner of the property before policy issuance. Forward the new title insurance policies to the new owner and lender."
+      },
+      {
+        "title": "Title Insurance",
+        "content": "Assist lenders in ordering insurance for the property. Review the insurance document for building conditions, lien, deductibles, policy period, etc. Flag inconsistencies in the title insurance document and coordinate with carriers and underwriters to get them corrected."
+      },
+      {
+        "title": "Settlement and Closing Services",
+        "content": "Structure the signing and exchange of all documents in an orderly manner. Assist in the preparation of a HUD 1 statement. Assist in completing documents needed for recording services."
+      }
+    ]
+  },
+  "mortgage-closing": {
+    "slug": "mortgage-closing",
+    "title": "Mortgage Closing Services",
+    "subtitle": "End-to-end closing document preparation and coordination",
+    "icon": "fas fa-handshake",
+    "color": "accent",
+    "sections": [
+      {
+        "title": "Collect Mandatory Mortgage Docs",
+        "content": "Collect all important documents required for successful mortgage closing (inspection reports, appraisals, title documents, CD forms, Loan Estimates, title search documents, etc.). Collect documents related to the property's location (water and sewer certification, flood certificates, etc.)."
+      },
+      {
+        "title": "Review Property Title",
+        "content": "Arrange the required files in the right order to facilitate easy processing - Final evaluation of recorded legal rights. Review of the Title insurance policy with its listed exclusions. Review of the plat, which indicates the legal property boundaries and any records of encroachments or easements."
+      },
+      {
+        "title": "Preparing Closing Instruction Statement",
+        "content": "Final review of the loan application for errors, which includes appraisal reports, flood certificates, inspection reports, homeowner's insurance, etc. Deliver the closing instructions statement to the funding department, along with bank notes, wiring instructions, and E&O insurance."
+      },
+      {
+        "title": "Working with Settlement Companies",
+        "content": "Reach out to settlement companies for fee sheets. Obtain the escrow agreement. Evaluate taxes and fees. Send lender instructions to the settlement agent. Determine how funds will be distributed at closing."
+      },
+      {
+        "title": "Preparing and Dispatching Closing Docs",
+        "content": "Prepare and send the initial CD and other closing documents (Loan estimates, closing disclosures, etc.). Ensure 100% compliance with federal regulations. Follow up with settlement companies in closing the mortgage loan."
+      },
+      {
+        "title": "Closing Serving Steps",
+        "content": "Examine Title. Tax, insurance & reserve audits. Preparation of statutory statements and deed. Prepare the document order form and fee sheet. Prepare the Prelim HUDs (settlement statements) and Final HUDs based on the Closing Instructions/Fee Sheets/Invoices. Obtain closing protection letters and wiring instructions."
+      }
+    ]
+  },
+  "mortgage-post-closing": {
+    "slug": "mortgage-post-closing",
+    "title": "Mortgage Post-Closing Services",
+    "subtitle": "Quality control and compliance audit services",
+    "icon": "fas fa-tasks",
+    "color": "primary",
+    "sections": [
+      {
+        "title": "Trailing Document Retrieval",
+        "content": "We follow up with third-parties via phone and email to retrieve trailing documents such as mortgage or trust deeds, assignments, tax records, modifications, assumption agreements, mechanic's liens, UCC records, judgments, and more. Assignment, lien release, and final title policy issuance are all done only after completion of this process."
+      },
+      {
+        "title": "Assembling the Post closing Loan Package",
+        "content": "Work with title companies and brokers to review and assemble the final post-closing package. Review post-closing loan packages for accuracy and completeness. Evaluate whether the file meets your requirements so that the loan can be insured, sold, and protected against fraud. Prepare a shipping package per investor preferences."
+      },
+      {
+        "title": "Post Closing Data Integrity Audit",
+        "content": "We conduct a post-closing mortgage audit to address deficiencies that may have crept in. This is a critical step for mortgage post-closing and includes tasks such as verifying occupancy, addressing issues flagged by the underwriters, etc."
+      },
+      {
+        "title": "MERS Registration",
+        "content": "We register all approved loans with MERS (Mortgage Electronic Registration System) as part of our post-closing process. It is designed to track rights and ownership of mortgage loans."
+      },
+      {
+        "title": "Post Closing Quality Control Review",
+        "content": "Ensure complete compliance with underwriting requirements as mandated by Freddie Mac. Meticulously monitor the overall quality of mortgage production such as income and assets; re-verification of employment, comparison of signatures, initials and dates; review of automated underwriting approval; appraisal review; audit reports etc."
+      },
+      {
+        "title": "Tax, Insurance & Reserve Audits",
+        "content": "Review of all insurance, tax, and reserve requirements. Check that standards are upheld for reserves."
+      }
+    ]
+  },
+  "document-management": {
+    "slug": "document-management",
+    "title": "Document Management Services",
+    "subtitle": "Professional OEM manual and technical publication management",
+    "icon": "fas fa-file-alt",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Document Management Services",
+        "content": "ARDUR Technology LLC supports the client's Document Management Software by being an extension arm of client and can help in managing the production and editing of all OEM manuals, Technical Publications, Regulatory enforced documents according to IATA standards."
+      },
+      {
+        "title": "Data Processing",
+        "content": "Ardur assists and enables the Data Capture from the various formats of OEM manuals, regulatory enforcements, external inputs such as NAA advice or internal inputs such as safety changes and transform that into a consistent format by accessing the clients Document Management Application remotely."
+      },
+      {
+        "title": "Editing",
+        "content": "Ardur assists in normalising and maintaining a uniform editing approach for the various distinct formats of updates from Aircraft and Engine manufacturers. We ease the challenge that is experienced by the In-House teams to work on these manually intensive tasks and erase the lack of editing capability."
+      }
+    ]
+  },
+  "electronic-asset-management": {
+    "slug": "electronic-asset-management",
+    "title": "Electronic Asset and Record Management",
+    "subtitle": "Digital records management for aircraft lifecycle",
+    "icon": "fas fa-database",
+    "color": "secondary",
+    "sections": [
+      {
+        "title": "Asset Management Services",
+        "content": "Your records hold the value of your assets and we have developed multiple support services to assist clients in managing the high volume of data generated through an asset's life. To carry this out effectively requires a blend of digital tools and human intelligence. Ardur has the necessary winning combination of aircraft engineers with extensive digital knowledge to power your needs to manage and maintain the data and record management of your assets, and help you to build the future of the commercial aviation asset lifecycle. We can help reduce the effort of spending hundreds of manual hours performing trace review and to increase the records quality, while helping to support with your digital transformation goals."
+      },
+      {
+        "title": "Electronic Asset and Record Management",
+        "content": "With our Digitised Records Cleaning /Editing service, you can ensure to store accurate and up-to-date records that are safe and accessible anytime, from anywhere in the world. We specialise in making the clean data available at the earliest as per the critical nature of the asset. Blending our Human skillset with the latest digital technology and an experienced team, we provide one of the most cost-effective services for records management."
+      },
+      {
+        "title": "Our Records Management Services Include",
+        "bullets": [
+          "Data and Records Management - Enterprise Data Warehouse",
+          "Aircraft Records indexing",
+          "Digital Migration",
+          "Check Pack Audit",
+          "Auditing of Daily and Heavy Maintenance checks",
+          "Data entry at source (DEAS)",
+          "Part transaction details audit",
+          "Back to Birth Traceability",
+          "Technical Review",
+          "Records life cycle management",
+          "Delivery Bible review"
+        ]
+      }
+    ]
+  },
+  "programs-reliability": {
+    "slug": "programs-reliability",
+    "title": "Programs & Reliability Services",
+    "subtitle": "Work scope building and airworthiness compliance",
+    "icon": "fas fa-check-double",
+    "color": "accent",
+    "sections": [
+      {
+        "title": "Our Services",
+        "bullets": [
+          "Build Work scopes and Bridging checks according to MPD",
+          "Airworthiness Directives status Review",
+          "Modification's documentation status review (Current status of Operators Mods, STCs - Major modification)",
+          "Structural Repair documentation review (Dent and buckle file review, Repair trawl)",
+          "Components Documentation review (OCCM - On condition and Condition monitoring current status, HT - Hard Time components current status)",
+          "Back to Birth traceability of LLPs (Compliance documentation review for LLPs, MTS - Movement Traceability Sheet preparation)",
+          "Structural inspection and CPCP",
+          "LDND status review"
+        ]
+      }
+    ]
+  },
+  "assemblies-services": {
+    "slug": "assemblies-services",
+    "title": "Assemblies Services",
+    "subtitle": "Complete lifecycle management for engines, APU, and landing gear",
+    "icon": "fas fa-cogs",
+    "color": "primary",
+    "sections": [
+      {
+        "title": "Assemblies Services",
+        "bullets": [
+          "Engine/APU/LDG full cycle records management",
+          "Plotting Engine/APU/Landing Gear removals for Overhaul and shop Visits",
+          "Build and Audit of Engine/APU/Landing Gear Current Status from birth",
+          "Back-to-birth traceability of LLPs of Engine/APU/Landing Gear",
+          "Establish Overhaul requirements for components"
+        ]
+      }
+    ]
+  },
+  "service-expertise": {
+    "slug": "service-expertise",
+    "title": "Service Expertise",
+    "subtitle": "Specialized aviation maintenance and compliance expertise",
+    "icon": "fas fa-user-cog",
+    "color": "warning",
+    "sections": [
+      {
+        "title": "Our Expertise",
+        "bullets": [
+          "MPD \u2013 Maintenance Planning Document",
+          "AMP \u2013 Aircraft Maintenance Programme/Approved maintenance Programme",
+          "LDND \u2013 Last Done Next Due",
+          "OCCM \u2013 On Condition and Condition Monitoring of components",
+          "HT \u2013 Hard Time components",
+          "Service Bulletins, Operator Mods (Airframe/Engine/APU/Landing Gear)",
+          "Repair trawl, Dent and Buckle chart Audit",
+          "LLP \u2013 BTB traceability of LLPs",
+          "QEC & LRU \u2013 Quick Engine Change and Line Replaceable Units",
+          "Auditing of Daily and Heavy Maintenance Checks",
+          "Digital Migration"
+        ]
+      },
+      {
+        "title": "Features",
+        "content": "Ardur can assist your digitally transformed data into meaningful industry-standard formats to reduce time, cost and stress of maintaining and managing aircraft technical records to maximise utilization of asset. Maintenance History \u2013 Manage your Digital Inventory according to 'spec 2500' of your technical records accessible 24/7 from anywhere. Delivery Bible \u2013 Maintain a digital portfolio of an aircraft covering all maintenance and statuses."
+      }
+    ]
+  },
+  "technical-documents": {
+    "slug": "technical-documents",
+    "title": "Technical and Planning Documents",
+    "subtitle": "Complete technical documentation management",
+    "icon": "fas fa-book",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Technical Documents",
+        "bullets": [
+          "AMM \u2013 Aircraft Maintenance Manual",
+          "CMM \u2013 Component Maintenance Manual",
+          "EO \u2013 Engineering Orders",
+          "ED \u2013 Engineering Disposition",
+          "EA \u2013 Engineering Authorization",
+          "RADS \u2013 Repair Design Approval Sheet",
+          "EMM \u2013 Engine Maintenance Manual",
+          "SRM \u2013 Structural Repair Manual",
+          "RDAF \u2013 Repair Design Approval Form",
+          "TA \u2013 Technical Adaptation"
+        ]
+      },
+      {
+        "title": "Planning Documents",
+        "bullets": [
+          "MPD \u2013 Maintenance Planning Document",
+          "AMP \u2013 Approved Maintenance Programme",
+          "ALS \u2013 Airworthiness Limitations"
+        ]
+      }
+    ]
+  },
+  "engine-maintenance-analytics": {
+    "slug": "engine-maintenance-analytics",
+    "title": "Predictive Engine Maintenance Analytics",
+    "subtitle": "Machine learning powered engine performance optimization",
+    "icon": "fas fa-chart-line",
+    "color": "secondary",
+    "sections": [
+      {
+        "title": "Engine Water Wash",
+        "content": "Inadequate engine water wash can significantly reduce aerodynamic efficiency, resulting in deteriorating performance. Additionally, proper engine water washes can help improve the lifespan of components and reduce corrosion.",
+        "subsection": {
+          "title": "Solution",
+          "content": "We developed a machine-learning algorithm that accurately predicted the effectiveness of an engine water wash and hence helped a partner aircraft maintenance company to avoid extra costs arising due to unplanned maintenance. The major steps involved within this use case were the identification of various sensors that correlated well with the effectiveness of engine water wash and subsequently training a Random Forest algorithm on the identified feature set. The model triggered an alarm to highlight cases with low effectiveness probability immediately after an engine water wash. The solution was implemented for 3-4 families of engines and resulted in savings worth $70M."
+        }
+      },
+      {
+        "title": "Anomaly Detection for Aircraft Engines",
+        "content": "Every minute spent by an airplane on the ground is lost aviation revenue. Predicting component failure in advance can help minimize unplanned shop visits and have a significant impact on costs and revenues.",
+        "subsection": {
+          "title": "Solution",
+          "content": "For this use case, we built an anomaly detection algorithm to identify abnormalities in engine performance. Sensor data collected from various engine components were used as input to train a Gaussian Mixture Model. The trained model was able to detect abnormalities by combining multiple features (sensor readings). The model raised an alarm for high severity cases to direct preventative action. The solution resulted in overall cost savings from unplanned shop visits of $27M."
+        }
+      },
+      {
+        "title": "Why Choose Ardur for Aircraft Services",
+        "type": "benefits",
+        "benefits": [
+          {
+            "title": "Cost Arbitrage",
+            "description": "INDIA has one of the largest pools of qualified and experienced Aviation Professionals (AMEs, Aeronautical Engineers and Aerospace Engineers) that delivers a quality service along with a cost advantage of 60% savings against your local cost."
+          },
+          {
+            "title": "Customised Services",
+            "description": "We focus on partnering and understanding our client's requirement by leveraging off our extensive skills and experience, that meet the complexity of the project."
+          },
+          {
+            "title": "Seamless Coordination",
+            "description": "We work as an extension of our client's workforce by monitoring the day-to-day activities of a project and update all concerned stakeholders about progress."
+          },
+          {
+            "title": "High Quality Service",
+            "description": "We fulfil our motto of being a 'Partner of Choice' by contributing to Process Improvements, whereby it leading to increasing the efficiency and improving the Quality of the Clients data."
+          },
+          {
+            "title": "Passion",
+            "description": "The passion of our team towards the aviation world is the core of our business."
+          },
+          {
+            "title": "Commitment",
+            "description": "We value the client's expectations and strive to remain committed to fulfil them."
+          },
+          {
+            "title": "Accountability & Dependability",
+            "description": "The approach of the team is to sail through the intricate world of aviation and increase the accountability. We possess the forward-thinking solutions, to increase our dependability."
+          }
+        ]
+      },
+      {
+        "title": "Our Strengths",
+        "bullets": [
+          "SUBJECT MATTER EXPERTS (SMEs)",
+          "EXCELLENT COMMUNICATION SKILLS",
+          "PROMPT RESOLUTION",
+          "BESPOKE SERVICE",
+          "SEAMLESS COORDINATION"
+        ]
+      }
+    ]
+  }
+}

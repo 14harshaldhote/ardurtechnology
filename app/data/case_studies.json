@@ -1,0 +1,135 @@
+{
+  "engine-water-wash-prediction": {
+    "slug": "engine-water-wash-prediction",
+    "title": "Engine Water Wash Prediction",
+    "subtitle": "Predictive Maintenance for Aircraft Engine Performance",
+    "category": "Aircraft Maintenance",
+    "client": "Major International Airline",
+    "duration": "6 months",
+    "featured_image": "/static/images/case-studies/engine-wash.jpg",
+    "challenge": "Aircraft engines accumulate deposits from environmental contaminants during operation, leading to reduced efficiency and increased fuel consumption. The airline needed a predictive system to determine optimal timing for engine water washes, balancing maintenance costs with performance improvements.",
+    "solution": [
+      {
+        "title": "Data Collection & Integration",
+        "description": "Integrated multiple data sources including engine performance parameters (EGT, N1, N2, fuel flow), flight operations data (altitude, ambient temperature, humidity), and historical maintenance records. Collected over 2 years of operational data from 150+ aircraft."
+      },
+      {
+        "title": "Machine Learning Model Development",
+        "description": "Developed a hybrid predictive model combining LSTM (Long Short-Term Memory) neural networks for time-series analysis with Random Forest algorithms for feature importance ranking. The model predicts Engine Performance Retention (EPR) degradation patterns."
+      },
+      {
+        "title": "Predictive Analytics Platform",
+        "description": "Built a real-time monitoring dashboard that analyzes engine performance metrics and provides wash recommendations. The system uses degradation curves to predict when performance drops below optimal thresholds (typically 98% EPR)."
+      },
+      {
+        "title": "Implementation & Optimization",
+        "description": "Deployed the system across the fleet with automated alert generation. Integrated with existing maintenance planning systems (SAP PM) to schedule washes during routine maintenance windows."
+      }
+    ],
+    "results": [
+      {
+        "metric": "15%",
+        "description": "Reduction in unscheduled engine maintenance"
+      },
+      {
+        "metric": "2.3%",
+        "description": "Improvement in average fuel efficiency"
+      },
+      {
+        "metric": "$4.2M",
+        "description": "Annual cost savings in fuel and maintenance"
+      },
+      {
+        "metric": "98.5%",
+        "description": "Prediction accuracy for optimal wash timing"
+      }
+    ],
+    "technologies": [
+      "Python (TensorFlow, Scikit-learn)",
+      "Apache Kafka for streaming data",
+      "AWS SageMaker for ML deployment",
+      "PostgreSQL & Time-Series DB",
+      "Power BI for visualization",
+      "RESTful APIs"
+    ],
+    "methodology": "Applied CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology with iterative model refinement. Used cross-validation with temporal splits to prevent data leakage and ensure model generalization across different seasons and flight routes.",
+    "key_learnings": [
+      "Environmental factors (humidity, salt content in coastal regions) significantly impact deposit accumulation rates",
+      "Optimal wash frequency varies by 30-40% depending on flight routes (coastal vs. inland)",
+      "Predictive maintenance reduces emergency maintenance events by catching degradation early",
+      "Integration with existing maintenance systems crucial for adoption and ROI"
+    ]
+  },
+  "anomaly-detection-aircraft-sensors": {
+    "slug": "anomaly-detection-aircraft-sensors",
+    "title": "Anomaly Detection for Aircraft Engine Sensors",
+    "subtitle": "Advanced Monitoring System for Early Fault Detection",
+    "category": "Predictive Analytics",
+    "client": "Aviation MRO Service Provider",
+    "duration": "8 months",
+    "featured_image": "/static/images/case-studies/sensor-anomaly.jpg",
+    "challenge": "Modern aircraft engines contain hundreds of sensors monitoring critical parameters. False positives in sensor readings lead to unnecessary maintenance actions, while missed anomalies can result in costly failures. The client needed an intelligent system to distinguish between sensor malfunctions and actual engine issues.",
+    "solution": [
+      {
+        "title": "Multi-Sensor Data Analysis",
+        "description": "Analyzed data from 400+ sensors per engine including temperature probes (EGT, ITT), pressure sensors, vibration monitors, and oil quality sensors. Established baseline normal operating patterns for each sensor across different flight phases (takeoff, cruise, landing)."
+      },
+      {
+        "title": "Anomaly Detection Algorithms",
+        "description": "Implemented ensemble approach combining multiple techniques: Isolation Forest for outlier detection, Autoencoders for pattern recognition, Statistical Process Control for threshold violations, and LSTM networks for temporal anomaly detection in sensor sequences."
+      },
+      {
+        "title": "Sensor Health Monitoring",
+        "description": "Developed sensor degradation models to predict sensor failures before they occur. Used correlation analysis between redundant sensors to identify drift and validate anomalies. Implemented confidence scoring system for anomaly severity."
+      },
+      {
+        "title": "Real-Time Alert System",
+        "description": "Created tiered alerting system: Level 1 (Monitor - minor deviations), Level 2 (Investigate - potential issues), Level 3 (Action Required - confirmed anomalies). Integrated with airline maintenance systems and mobile alert apps for engineers."
+      }
+    ],
+    "results": [
+      {
+        "metric": "73%",
+        "description": "Reduction in false positive maintenance alerts"
+      },
+      {
+        "metric": "89%",
+        "description": "Early detection rate for actual engine issues"
+      },
+      {
+        "metric": "$3.8M",
+        "description": "Annual savings from prevented unscheduled maintenance"
+      },
+      {
+        "metric": "45min",
+        "description": "Average time saved per investigation"
+      }
+    ],
+    "technologies": [
+      "Python (PyOD, TensorFlow, Keras)",
+      "Apache Spark for big data processing",
+      "Azure ML for model deployment",
+      "InfluxDB for time-series storage",
+      "Grafana for monitoring dashboards",
+      "Docker & Kubernetes"
+    ],
+    "methodology": "Utilized unsupervised learning techniques due to limited labeled failure data. Applied domain expertise from aviation engineers to validate model outputs. Used active learning to continuously improve model accuracy based on engineer feedback on predictions.",
+    "key_learnings": [
+      "Sensor anomalies often precede mechanical failures by 24-72 hours, providing critical intervention window",
+      "Correlation analysis between sensors more reliable than single-sensor thresholds",
+      "Flight phase context essential - same reading can be normal during takeoff but anomalous during cruise",
+      "Human-in-the-loop validation crucial for system trust and continuous improvement",
+      "Seasonal variations and aircraft age significantly affect baseline patterns"
+    ],
+    "technical_details": {
+      "data_volume": "2.5TB daily sensor data from 200+ aircraft",
+      "processing_latency": "< 5 seconds for real-time alerts",
+      "model_update_frequency": "Weekly retraining with new data",
+      "accuracy_metrics": {
+        "precision": "91%",
+        "recall": "89%",
+        "f1_score": "90%"
+      }
+    }
+  }
+}

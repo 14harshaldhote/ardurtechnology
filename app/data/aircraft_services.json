@@ -1,0 +1,227 @@
+{
+  "document-management": {
+    "slug": "document-management",
+    "title": "Document Management Services",
+    "subtitle": "Professional OEM manual and technical publication management",
+    "icon": "fas fa-file-alt",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Document Management Services",
+        "content": "ARDUR Technology LLC supports the client's Document Management Software by being an extension arm of client and can help in managing the production and editing of all OEM manuals, Technical Publications, Regulatory enforced documents according to IATA standards."
+      },
+      {
+        "title": "Data Processing",
+        "content": "Ardur assists and enables the Data Capture from the various formats of OEM manuals, regulatory enforcements, external inputs such as NAA advice or internal inputs such as safety changes and transform that into a consistent format by accessing the clients Document Management Application remotely."
+      },
+      {
+        "title": "Editing",
+        "content": "Ardur assists in normalising and maintaining a uniform editing approach for the various distinct formats of updates from Aircraft and Engine manufacturers. We ease the challenge that is experienced by the In-House teams to work on these manually intensive tasks and erase the lack of editing capability."
+      }
+    ]
+  },
+  "electronic-asset-management": {
+    "slug": "electronic-asset-management",
+    "title": "Electronic Asset and Record Management",
+    "subtitle": "Digital records management for aircraft lifecycle",
+    "icon": "fas fa-database",
+    "color": "secondary",
+    "sections": [
+      {
+        "title": "Asset Management Services",
+        "content": "Your records hold the value of your assets and we have developed multiple support services to assist clients in managing the high volume of data generated through an asset's life. To carry this out effectively requires a blend of digital tools and human intelligence. Ardur has the necessary winning combination of aircraft engineers with extensive digital knowledge to power your needs to manage and maintain the data and record management of your assets, and help you to build the future of the commercial aviation asset lifecycle. We can help reduce the effort of spending hundreds of manual hours performing trace review and to increase the records quality, while helping to support with your digital transformation goals."
+      },
+      {
+        "title": "Electronic Asset and Record Management",
+        "content": "With our Digitised Records Cleaning /Editing service, you can ensure to store accurate and up-to-date records that are safe and accessible anytime, from anywhere in the world. We specialise in making the clean data available at the earliest as per the critical nature of the asset. Blending our Human skillset with the latest digital technology and an experienced team, we provide one of the most cost-effective services for records management."
+      },
+      {
+        "title": "Our Records Management Services Include",
+        "bullets": [
+          "Data and Records Management - Enterprise Data Warehouse",
+          "Aircraft Records indexing",
+          "Digital Migration",
+          "Check Pack Audit",
+          "Auditing of Daily and Heavy Maintenance checks",
+          "Data entry at source (DEAS)",
+          "Part transaction details audit",
+          "Back to Birth Traceability",
+          "Technical Review",
+          "Records life cycle management",
+          "Delivery Bible review"
+        ]
+      }
+    ]
+  },
+  "programs-reliability": {
+    "slug": "programs-reliability",
+    "title": "Programs & Reliability Services",
+    "subtitle": "Work scope building and airworthiness compliance",
+    "icon": "fas fa-check-double",
+    "color": "accent",
+    "sections": [
+      {
+        "title": "Our Services",
+        "bullets": [
+          "Build Work scopes and Bridging checks according to MPD",
+          "Airworthiness Directives status Review",
+          "Modification's documentation status review (Current status of Operators Mods, STCs - Major modification)",
+          "Structural Repair documentation review (Dent and buckle file review, Repair trawl)",
+          "Components Documentation review (OCCM - On condition and Condition monitoring current status, HT - Hard Time components current status)",
+          "Back to Birth traceability of LLPs (Compliance documentation review for LLPs, MTS - Movement Traceability Sheet preparation)",
+          "Structural inspection and CPCP",
+          "LDND status review"
+        ]
+      }
+    ]
+  },
+  "assemblies-services": {
+    "slug": "assemblies-services",
+    "title": "Assemblies Services",
+    "subtitle": "Complete lifecycle management for engines, APU, and landing gear",
+    "icon": "fas fa-cogs",
+    "color": "primary",
+    "sections": [
+      {
+        "title": "Assemblies Services",
+        "bullets": [
+          "Engine/APU/LDG full cycle records management",
+          "Plotting Engine/APU/Landing Gear removals for Overhaul and shop Visits",
+          "Build and Audit of Engine/APU/Landing Gear Current Status from birth",
+          "Back-to-birth traceability of LLPs of Engine/APU/Landing Gear",
+          "Establish Overhaul requirements for components"
+        ]
+      }
+    ]
+  },
+  "service-expertise": {
+    "slug": "service-expertise",
+    "title": "Service Expertise",
+    "subtitle": "Specialized aviation maintenance and compliance expertise",
+    "icon": "fas fa-user-cog",
+    "color": "warning",
+    "sections": [
+      {
+        "title": "Our Expertise",
+        "bullets": [
+          "MPD – Maintenance Planning Document",
+          "AMP – Aircraft Maintenance Programme/Approved maintenance Programme",
+          "LDND – Last Done Next Due",
+          "OCCM – On Condition and Condition Monitoring of components",
+          "HT – Hard Time components",
+          "Service Bulletins, Operator Mods (Airframe/Engine/APU/Landing Gear)",
+          "Repair trawl, Dent and Buckle chart Audit",
+          "LLP – BTB traceability of LLPs",
+          "QEC & LRU – Quick Engine Change and Line Replaceable Units",
+          "Auditing of Daily and Heavy Maintenance Checks",
+          "Digital Migration"
+        ]
+      },
+      {
+        "title": "Features",
+        "content": "Ardur can assist your digitally transformed data into meaningful industry-standard formats to reduce time, cost and stress of maintaining and managing aircraft technical records to maximise utilization of asset. Maintenance History – Manage your Digital Inventory according to 'spec 2500' of your technical records accessible 24/7 from anywhere. Delivery Bible – Maintain a digital portfolio of an aircraft covering all maintenance and statuses."
+      }
+    ]
+  },
+  "technical-documents": {
+    "slug": "technical-documents",
+    "title": "Technical and Planning Documents",
+    "subtitle": "Complete technical documentation management",
+    "icon": "fas fa-book",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Technical Documents",
+        "bullets": [
+          "AMM – Aircraft Maintenance Manual",
+          "CMM – Component Maintenance Manual",
+          "EO – Engineering Orders",
+          "ED – Engineering Disposition",
+          "EA – Engineering Authorization",
+          "RADS – Repair Design Approval Sheet",
+          "EMM – Engine Maintenance Manual",
+          "SRM – Structural Repair Manual",
+          "RDAF – Repair Design Approval Form",
+          "TA – Technical Adaptation"
+        ]
+      },
+      {
+        "title": "Planning Documents",
+        "bullets": [
+          "MPD – Maintenance Planning Document",
+          "AMP – Approved Maintenance Programme",
+          "ALS – Airworthiness Limitations"
+        ]
+      }
+    ]
+  },
+  "engine-maintenance-analytics": {
+    "slug": "engine-maintenance-analytics",
+    "title": "Predictive Engine Maintenance Analytics",
+    "subtitle": "Machine learning powered engine performance optimization",
+    "icon": "fas fa-chart-line",
+    "color": "secondary",
+    "sections": [
+      {
+        "title": "Engine Water Wash",
+        "content": "Inadequate engine water wash can significantly reduce aerodynamic efficiency, resulting in deteriorating performance. Additionally, proper engine water washes can help improve the lifespan of components and reduce corrosion.",
+        "subsection": {
+          "title": "Solution",
+          "content": "We developed a machine-learning algorithm that accurately predicted the effectiveness of an engine water wash and hence helped a partner aircraft maintenance company to avoid extra costs arising due to unplanned maintenance. The major steps involved within this use case were the identification of various sensors that correlated well with the effectiveness of engine water wash and subsequently training a Random Forest algorithm on the identified feature set. The model triggered an alarm to highlight cases with low effectiveness probability immediately after an engine water wash. The solution was implemented for 3-4 families of engines and resulted in savings worth $70M."
+        }
+      },
+      {
+        "title": "Anomaly Detection for Aircraft Engines",
+        "content": "Every minute spent by an airplane on the ground is lost aviation revenue. Predicting component failure in advance can help minimize unplanned shop visits and have a significant impact on costs and revenues.",
+        "subsection": {
+          "title": "Solution",
+          "content": "For this use case, we built an anomaly detection algorithm to identify abnormalities in engine performance. Sensor data collected from various engine components were used as input to train a Gaussian Mixture Model. The trained model was able to detect abnormalities by combining multiple features (sensor readings). The model raised an alarm for high severity cases to direct preventative action. The solution resulted in overall cost savings from unplanned shop visits of $27M."
+        }
+      },
+      {
+        "title": "Why Choose Ardur for Aircraft Services",
+        "type": "benefits",
+        "benefits": [
+          {
+            "title": "Cost Arbitrage",
+            "description": "INDIA has one of the largest pools of qualified and experienced Aviation Professionals (AMEs, Aeronautical Engineers and Aerospace Engineers) that delivers a quality service along with a cost advantage of 60% savings against your local cost."
+          },
+          {
+            "title": "Customised Services",
+            "description": "We focus on partnering and understanding our client's requirement by leveraging off our extensive skills and experience, that meet the complexity of the project."
+          },
+          {
+            "title": "Seamless Coordination",
+            "description": "We work as an extension of our client's workforce by monitoring the day-to-day activities of a project and update all concerned stakeholders about progress."
+          },
+          {
+            "title": "High Quality Service",
+            "description": "We fulfil our motto of being a 'Partner of Choice' by contributing to Process Improvements, whereby it leading to increasing the efficiency and improving the Quality of the Clients data."
+          },
+          {
+            "title": "Passion",
+            "description": "The passion of our team towards the aviation world is the core of our business."
+          },
+          {
+            "title": "Commitment",
+            "description": "We value the client's expectations and strive to remain committed to fulfil them."
+          },
+          {
+            "title": "Accountability & Dependability",
+            "description": "The approach of the team is to sail through the intricate world of aviation and increase the accountability. We possess the forward-thinking solutions, to increase our dependability."
+          }
+        ]
+      },
+      {
+        "title": "Our Strengths",
+        "bullets": [
+          "SUBJECT MATTER EXPERTS (SMEs)",
+          "EXCELLENT COMMUNICATION SKILLS",
+          "PROMPT RESOLUTION",
+          "BESPOKE SERVICE",
+          "SEAMLESS COORDINATION"
+        ]
+      }
+    ]
+  }
+}

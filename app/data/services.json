@@ -1,0 +1,77 @@
+{
+  "business_process_management": {
+    "title": "Business Process Management (BPM)",
+    "description": "Comprehensive business process outsourcing solutions designed to streamline operations and improve efficiency.",
+    "icon": "fas fa-cogs",
+    "services": [
+      "Title & Appraisal Services",
+      "Tax Services",
+      "Vendor Management",
+      "Document Indexing",
+      "Title Curative",
+      "Order Entry, QC, and Data Entry"
+    ]
+  },
+  "mortgage_real_estate": {
+    "title": "Mortgage & Real Estate Services",
+    "description": "End-to-end mortgage processing and real estate support services for financial institutions and lenders.",
+    "icon": "fas fa-home",
+    "services": [
+      "Pre-processing, Processing & Underwriting",
+      "Title Search & Closing Support",
+      "Post-closing Audit",
+      "Property & Lien Search",
+      "Loan Boarding",
+      "Appraisal Review"
+    ]
+  },
+  "finance_accounting": {
+    "title": "Finance & Accounting",
+    "description": "Professional accounting and financial management services to maintain accurate financial records and compliance.",
+    "icon": "fas fa-calculator",
+    "services": [
+      "General Accounting & Bookkeeping",
+      "Accounts Payable / Receivable",
+      "Bank Reconciliation",
+      "Payroll Management",
+      "Financial Statement Preparation"
+    ]
+  },
+  "healthcare_services": {
+    "title": "Healthcare Services",
+    "description": "Specialized healthcare administrative services focused on revenue cycle management and patient care support.",
+    "icon": "fas fa-heartbeat",
+    "services": [
+      "Medical Billing & Coding",
+      "Denial Management",
+      "AR Follow-up",
+      "Patient Eligibility Verification",
+      "Healthcare Data Processing"
+    ]
+  },
+  "aircraft_asset_management": {
+    "title": "Aircraft Asset Management",
+    "description": "Advanced aviation services supporting aircraft maintenance, compliance, and operational efficiency.",
+    "icon": "fas fa-plane",
+    "services": [
+      "Predictive Maintenance",
+      "Technical Record Management",
+      "Aircraft Reliability",
+      "Planning & Engineering Support",
+      "Data Analytics for Fleet Performance"
+    ]
+  },
+  "digital_it_services": {
+    "title": "Digital & IT Services",
+    "description": "Cutting-edge digital transformation and IT solutions to modernize business operations and drive innovation.",
+    "icon": "fas fa-laptop-code",
+    "services": [
+      "Web & App Development",
+      "Cloud Solutions",
+      "Data Analytics & AI",
+      "IoT Implementation",
+      "Software Testing",
+      "Robotic Process Automation (RPA)"
+    ]
+  }
+}

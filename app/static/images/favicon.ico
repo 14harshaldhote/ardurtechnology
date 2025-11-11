@@ -1,0 +1,13 @@
+<!-- Note: favicon.ico is a binary file format that cannot be created as plain text -->
+<!-- This placeholder file indicates where the favicon should be placed -->
+<!-- To create a proper favicon.ico file, you can: -->
+
+<!-- Option 1: Convert the existing logo.svg to favicon.ico using online tools -->
+<!-- Option 2: Use the SVG logo directly by updating the HTML -->
+<!-- Option 3: Create a favicon using tools like favicon.io or realfavicongenerator.net -->
+
+<!-- For now, you can update the base.html template to use the SVG logo: -->
+<!-- <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/logo.svg') }}"> -->
+
+<!-- Temporary text placeholder - replace with actual favicon.ico file -->
+FAVICON_PLACEHOLDER - Replace with actual favicon.ico binary file

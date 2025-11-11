@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- 500 Error Page -->
+<section class="py-20 lg:py-32 bg-gradient-to-b from-red-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-9xl font-bold text-red-600 mb-4">500</div>
+        <h1 class="text-4xl font-display font-bold text-gray-900 mb-6">Internal Server Error</h1>
+        <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+            We're experiencing some technical difficulties on our end. Our team has been notified and is working to resolve the issue.
+            Please try again in a few minutes or contact us if the problem persists.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+                <div class="w-14 h-14 bg-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="refresh-cw" class="w-7 h-7 text-white"></i>
+                </div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-3">Try Again</h4>
+                <p class="text-gray-600 mb-4">
+                        The issue might be temporary. Click below to refresh the page and try again.
+                    </p>
+                    <button onclick="window.location.reload()" class="inline-flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-200">
+                        <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                        Refresh Page
+                    </button>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+                <div class="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="home" class="w-7 h-7 text-white"></i>
+                </div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-3">Go Home</h4>
+                <p class="text-gray-600 mb-4">
+                        Return to our homepage where everything should be working normally.
+                    </p>
+                    <a href="{{ url_for('home') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        Homepage
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+                <div class="w-14 h-14 bg-accent-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
+                </div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-3">Get Help</h4>
+                <p class="text-gray-600 mb-4">
+                        Contact our support team to report this issue and get immediate assistance.
+                    </p>
+                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-accent-600 text-white font-semibold rounded-lg hover:bg-accent-700 transition-all duration-200">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <div class="max-w-2xl mx-auto bg-yellow-50 border-l-4 border-yellow-500 rounded-xl p-6">
+                <h4 class="flex items-center gap-2 text-lg font-semibold text-yellow-800 mb-4">
+                    <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                    What happened?
+                </h4>
+                <p class="text-yellow-800 mb-4">
+                    Our server encountered an unexpected error while processing your request. This could be due to:
+                </p>
+                <ul class="text-yellow-800 text-left space-y-1">
+                    <li>Temporary server overload</li>
+                    <li>Database connectivity issues</li>
+                    <li>Maintenance activities</li>
+                    <li>Configuration problems</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <h3 class="text-2xl font-display font-bold text-gray-900 mb-6">Need Immediate Assistance?</h3>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="tel:{{ company_phone }}" class="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-all duration-200 shadow-lg">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Call {{ company_phone }}
+                </a>
+                <a href="mailto:{{ company_email }}" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-primary-600 hover:text-primary-600 transition-all duration-200">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Email {{ company_email }}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Status Information -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">System Status</h3>
+        <p class="text-gray-600 mb-12">
+            We monitor our systems 24/7 to ensure optimal performance and quick issue resolution.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+                <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="server" class="w-6 h-6 text-white"></i>
+                </div>
+                <h5 class="font-semibold text-gray-900 mb-3">Server Monitoring</h5>
+                    <p class="card-text">
+                        24/7 automated monitoring and alerting system to detect and resolve issues quickly.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="card text-center">
+                    <div class="card-icon" style="color: #007bff;">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h5 class="card-title">Technical Support</h5>
+                    <p class="card-text">
+                        Expert technical team available to diagnose and fix server-related issues.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="card text-center">
+                    <div class="card-icon" style="color: #ffc107;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5 class="card-title">Backup Systems</h5>
+                    <p class="card-text">
+                        Redundant infrastructure and backup systems to minimize service disruptions.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="card text-center">
+                    <div class="card-icon" style="color: #6f42c1;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h5 class="card-title">Quick Recovery</h5>
+                    <p class="card-text">
+                        Most issues are resolved within minutes thanks to our proactive monitoring.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <h4 class="card-title">Error Reference</h4>
+                <p class="card-text">
+                    <strong>Error Code:</strong> 500 - Internal Server Error<br>
+                    <strong>Time:</strong> <span id="error-time"></span><br>
+                    <strong>Reference ID:</strong> <span id="error-ref">{{ request.headers.get('X-Request-ID', 'N/A') }}</span>
+                </p>
+                <p class="card-text" style="font-size: 0.9rem; color: var(--text-light);">
+                    Please include this information when contacting support for faster assistance.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Display current time for error reference
+        const errorTimeElement = document.getElementById('error-time');
+        if (errorTimeElement) {
+            const now = new Date();
+            errorTimeElement.textContent = now.toLocaleString();
+        }
+
+        // Track 500 errors (you can integrate with analytics or error tracking)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'exception', {
+                description: '500 Internal Server Error',
+                fatal: true
+            });
+        }
+
+        // Auto-refresh option
+        let refreshTimeout;
+        const showRefreshOption = () => {
+            const refreshBtn = document.createElement('div');
+            refreshBtn.className = 'alert alert-info';
+            refreshBtn.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                z-index: 1000;
+                max-width: 300px;
+                cursor: pointer;
+            `;
+            refreshBtn.innerHTML = `
+                <i class="fas fa-info-circle"></i>
+                The issue might be resolved now. Click to refresh.
+                <button onclick="window.location.reload()" class="btn btn-small" style="margin-left: 1rem;">
+                    Refresh
+                </button>
+            `;
+            document.body.appendChild(refreshBtn);
+
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                if (refreshBtn.parentNode) {
+                    refreshBtn.parentNode.removeChild(refreshBtn);
+                }
+            }, 10000);
+        };
+
+        // Show refresh option after 30 seconds
+        refreshTimeout = setTimeout(showRefreshOption, 30000);
+
+        // Animate error elements
+        const errorCode = document.querySelector('.error-code');
+        const errorMessage = document.querySelector('.error-message');
+
+        if (errorCode) {
+            errorCode.style.opacity = '0';
+            errorCode.style.transform = 'scale(0.5)';
+            errorCode.style.transition = 'all 0.6s ease';
+
+            setTimeout(() => {
+                errorCode.style.opacity = '1';
+                errorCode.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        if (errorMessage) {
+            errorMessage.style.opacity = '0';
+            errorMessage.style.transform = 'translateY(20px)';
+            errorMessage.style.transition = 'all 0.6s ease';
+
+            setTimeout(() => {
+                errorMessage.style.opacity = '1';
+                errorMessage.style.transform = 'translateY(0)';
+            }, 400);
+        }
+
+        // Animate cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${(index + 1) * 0.1}s`;
+
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 600 + (index * 100));
+        });
+
+        // Clean up timeout if user navigates away
+        window.addEventListener('beforeunload', () => {
+            if (refreshTimeout) {
+                clearTimeout(refreshTimeout);
+            }
+        });
+    });
+</script>
+{% endblock %}
