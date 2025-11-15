@@ -9,19 +9,19 @@
         <!-- Service Badge -->
         <div style="margin-bottom: 1.5rem;" data-aos="fade-up">
             <span class="badge" style="background: var(--primary-600); color: white;">
-                <i class="fas fa-cog" style="margin-right: 0.5rem;"></i>
-                {{ service.get('category', 'Business Solutions') }}
+                <i class="{{ service.icon }}" style="margin-right: 0.5rem;"></i>
+                Professional Services
             </span>
         </div>
 
         <!-- Title -->
         <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">
-            {{ service.get('name', 'Our Service') }}
+            {{ service.title }}
         </h1>
 
         <!-- Subtitle -->
         <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
-            {{ service.get('description', 'Professional business solutions tailored to your specific needs and requirements.') }}
+            {{ service.subtitle }}
         </p>
 
         <!-- Quick Stats -->
@@ -56,45 +56,35 @@
                     Service Overview
                 </div>
                 <h2 class="font-display" style="font-size: 2.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
-                    {{ service.get('name', 'Our Service') }} Solutions
+                    {{ service.title }} Solutions
                 </h2>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    {{ service.get('description', 'We provide comprehensive business solutions designed to optimize your operations, reduce costs, and drive sustainable growth through innovative technology and strategic process management.') }}
+                    {{ service.subtitle }}
                 </p>
-                <div class="modern-list">
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <span>Expert consultation and analysis</span>
-                        </div>
+                
+                <!-- Service Sections -->
+                {% for section in service.sections %}
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">{{ section.title }}</h3>
+                        {% if section.content %}
+                            <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">{{ section.content }}</p>
+                        {% endif %}
+                        {% if section.bullets %}
+                            <div class="modern-list">
+                                {% for bullet in section.bullets %}
+                                <div class="modern-list-item">
+                                    <div class="modern-list-icon">
+                                        <i data-lucide="check-circle"></i>
+                                    </div>
+                                    <div class="modern-list-content">
+                                        <span>{{ bullet }}</span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <span>Custom solution development</span>
-                        </div>
-                    </div>
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <span>Implementation and training</span>
-                        </div>
-                    </div>
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <span>Ongoing support and optimization</span>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div data-aos="fade-left">
                 <div style="background: var(--gradient-primary); padding: 3rem; border-radius: var(--radius-lg); color: white;">
@@ -289,7 +279,7 @@
             Ready to Get Started?
         </h2>
         <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
-            Let's discuss how our {{ service.get('name', 'service') }} can help transform your business operations and drive measurable results.
+            Let's discuss how our {{ service.title }} can help transform your business operations and drive measurable results.
         </p>
         <div class="hero-buttons">
             <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
