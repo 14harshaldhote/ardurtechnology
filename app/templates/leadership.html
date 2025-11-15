@@ -1,162 +1,336 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white py-20 overflow-hidden">
-    <div class="absolute inset-0 bg-black opacity-10"></div>
-    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"none\" fill-rule=\"evenodd\"><g fill=\"%23ffffff\" fill-opacity=\"0.05\"><path d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/></g></g></svg>'); opacity: 0.1;"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center" data-aos="fade-up">
-            <div class="inline-flex items-center px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm font-medium mb-4">
-                <i data-lucide="users" class="w-4 h-4 mr-2"></i>
-                <span>Leadership Team</span>
+<!-- Leadership Hero Section -->
+<section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+        <div class="badge badge-white mb-6">
+            <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+            Meet Our Team
+        </div>
+        
+        <h1 class="hero-title">
+            Our <span class="text-primary">Leadership</span> Team
+        </h1>
+        <p class="hero-subtitle">
+            Meet the experienced professionals who guide Ardur Technology's vision, 
+            strategy, and commitment to delivering exceptional business solutions.
+        </p>
+    </div>
+</section>
+
+<!-- Leadership Team -->
+<section class="section bg-white">
+    <div class="container">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="badge bg-primary-50 text-primary mb-4">
+                <i data-lucide="star" class="w-4 h-4 mr-2"></i>
+                Executive Team
             </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4 leading-tight">
-                Meet Our Team
-            </h1>
-            <p class="text-xl md:text-2xl text-white text-opacity-90 mb-8 max-w-3xl mx-auto">
-                Our TEAM of Professionals has the DNA and ZEAL incorporated towards a passion for client satisfaction, technological innovation, deep-rooted industry and business process knowledge
+            <h2 class="section-title">Leadership Excellence</h2>
+            <p class="section-subtitle">
+                Our leadership team brings decades of combined experience in business process management, 
+                technology, and industry expertise to drive innovation and client success.
             </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- CEO -->
+            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">JD</span>
+                </div>
+                <h3 class="text-xl font-display font-bold text-gray-900 mb-2">John Davis</h3>
+                <div class="text-primary font-medium mb-4">Chief Executive Officer</div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    With over 15 years of experience in business process management and technology consulting, 
+                    John leads Ardur Technology's strategic vision and growth initiatives.
+                </p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                        <i class="fab fa-twitter text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CTO -->
+            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">SM</span>
+                </div>
+                <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Sarah Miller</h3>
+                <div class="text-secondary font-medium mb-4">Chief Technology Officer</div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Sarah drives technology innovation and oversees our technical teams. Her expertise in 
+                    enterprise solutions and digital transformation guides our technology roadmap.
+                </p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                        <i class="fab fa-github text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- COO -->
+            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">RJ</span>
+                </div>
+                <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Robert Johnson</h3>
+                <div class="text-primary font-medium mb-4">Chief Operating Officer</div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Robert ensures operational excellence across all our service delivery teams. His focus on 
+                    quality and process optimization drives our commitment to client satisfaction.
+                </p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- VP of Sales -->
+            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">LW</span>
+                </div>
+                <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Lisa Wilson</h3>
+                <div class="text-secondary font-medium mb-4">VP of Sales & Marketing</div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Lisa leads our sales and marketing efforts, building strategic partnerships and ensuring 
+                    our solutions meet evolving market needs and client expectations.
+                </p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                        <i class="fab fa-twitter text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- VP of Operations -->
+            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="500">
+                <div class="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">MT</span>
+                </div>
+                <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Michael Thompson</h3>
+                <div class="text-primary font-medium mb-4">VP of Operations</div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Michael oversees day-to-day operations and service delivery, ensuring our teams consistently 
+                    deliver high-quality solutions that exceed client expectations.
+                </p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- HR Director -->
+            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="600">
+                <div class="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">AD</span>
+                </div>
+                <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Amanda Davis</h3>
+                <div class="text-secondary font-medium mb-4">Director of Human Resources</div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Amanda leads our people strategy, fostering a culture of innovation and excellence while 
+                    ensuring our team has the resources and support needed to succeed.
+                </p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Team Members -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="space-y-24">
-            {% for member in team_members %}
-            <div class="{% if loop.index is even %}bg-gray-50{% endif %} rounded-3xl p-8 md:p-12" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Image Column -->
-                    <div class="{% if loop.index is even %}order-last lg:order-last{% endif %}">
-                        <div class="relative">
-                            <!-- Profile Image Placeholder -->
-                            <div class="aspect-square rounded-2xl bg-gradient-to-br from-{{ ['primary', 'secondary'][loop.index0 % 2] }}-400 to-{{ ['primary', 'secondary'][loop.index0 % 2] }}-600 overflow-hidden shadow-2xl">
-                                <div class="w-full h-full flex items-center justify-center">
-                                    <i data-lucide="user" class="w-36 h-36 text-white opacity-30"></i>
-                                </div>
-                            </div>
-                            <!-- Decorative Elements -->
-                            <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-{{ ['accent', 'warning'][loop.index0 % 2] }}-500 rounded-full opacity-20 blur-2xl"></div>
-                            <div class="absolute -top-6 -left-6 w-32 h-32 bg-{{ ['primary', 'secondary'][loop.index0 % 2] }}-500 rounded-full opacity-20 blur-2xl"></div>
-                        </div>
-                    </div>
-
-                    <!-- Content Column -->
-                    <div class="{% if loop.index is even %}order-first lg:order-first{% endif %}">
-                        <!-- Title Badge -->
-                        <div class="inline-flex items-center px-4 py-2 bg-{{ ['primary', 'secondary'][loop.index0 % 2] }}-100 text-{{ ['primary', 'secondary'][loop.index0 % 2] }}-700 rounded-full text-sm font-semibold mb-4">
-                            <i data-lucide="star" class="w-4 h-4 mr-2"></i>
-                            {{ member.title }}
-                        </div>
-
-                        <!-- Name -->
-                        <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-                            {{ member.name }}
-                        </h2>
-
-                        <!-- Bio -->
-                        <div class="prose prose-lg max-w-none mb-6">
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                {{ member.bio }}
-                            </p>
-                            <p class="text-gray-700 leading-relaxed">
-                                {{ member.bio_extended }}
-                            </p>
-                        </div>
-
-                        <!-- Specialties -->
-                        <div class="mb-6">
-                            <h3 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                                <i data-lucide="award" class="w-5 h-5 text-{{ ['primary', 'secondary'][loop.index0 % 2] }}-500 mr-2"></i>
-                                Areas of Expertise
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                {% for specialty in member.specialties %}
-                                <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-lg">
-                                    {{ specialty }}
-                                </span>
-                                {% endfor %}
-                            </div>
-                        </div>
-
-                        <!-- Contact -->
-                        <div class="flex items-center gap-4">
-                            <a href="mailto:{{ member.email }}" class="inline-flex items-center px-6 py-3 bg-{{ ['primary', 'secondary'][loop.index0 % 2] }}-600 text-white rounded-lg font-semibold hover:bg-{{ ['primary', 'secondary'][loop.index0 % 2] }}-700 transition-all duration-200 shadow-lg">
-                                <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
-                                Get in Touch
-                            </a>
-                            <a href="{{ member.linkedin }}" class="w-12 h-12 bg-gray-200 hover:bg-blue-600 text-gray-700 hover:text-white rounded-full flex items-center justify-center transition-all duration-200">
-                                <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            </a>
-                        </div>
-                    </div>
+<!-- Leadership Philosophy -->
+<section class="section bg-gray-50">
+    <div class="container">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="badge bg-white text-primary mb-4">
+                    <i data-lucide="compass" class="w-4 h-4 mr-2"></i>
+                    Our Philosophy
                 </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Company Values -->
-<section class="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\" fill=\"%23ffffff\" fill-opacity=\"1\" fill-rule=\"evenodd\"/></svg>');"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-                Our Core Values
-            </h2>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                The principles that guide everything we do
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {% for value in company_values %}
-            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mb-6 transform hover:scale-110 transition-transform duration-300">
-                    <i class="{{ value.icon }} text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">
-                    {{ value.title }}
-                </h3>
-                <p class="text-gray-300">
-                    {{ value.description }}
+                <h2 class="section-title">Leadership Philosophy</h2>
+                <p class="section-subtitle">
+                    Our leadership approach is built on core principles that drive everything we do.
                 </p>
             </div>
-            {% endfor %}
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card card-content" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Vision-Driven</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        We lead with a clear vision of the future, making strategic decisions that position 
+                        our company and clients for long-term success in an evolving business landscape.
+                    </p>
+                </div>
+
+                <div class="card card-content" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">People-First</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our people are our greatest asset. We invest in their growth, create an inclusive 
+                        environment, and empower them to deliver exceptional results for our clients.
+                    </p>
+                </div>
+
+                <div class="card card-content" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Innovation-Focused</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        We embrace innovation and encourage creative problem-solving, constantly seeking 
+                        new ways to improve our services and deliver greater value to our clients.
+                    </p>
+                </div>
+
+                <div class="card card-content" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="shield" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Integrity-Based</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        We conduct business with the highest ethical standards, building trust through 
+                        transparency, accountability, and consistent delivery on our commitments.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
-        <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-12">
-            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-handshake text-white text-3xl"></i>
+<!-- Company Culture -->
+<section class="section bg-white">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <div class="badge bg-primary-50 text-primary mb-6">
+                    <i data-lucide="heart" class="w-4 h-4 mr-2"></i>
+                    Company Culture
+                </div>
+                <h2 class="text-3xl font-display font-bold text-gray-900 mb-6">
+                    Building a Culture of Excellence
+                </h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Our leadership team is committed to fostering a workplace culture that values collaboration, 
+                    innovation, and continuous learning. We believe that when our team thrives, our clients succeed.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-1">Open Communication</h4>
+                            <p class="text-gray-600 text-sm">Transparent dialogue at all levels of the organization.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-1">Continuous Learning</h4>
+                            <p class="text-gray-600 text-sm">Investment in professional development and skill enhancement.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-1">Work-Life Balance</h4>
+                            <p class="text-gray-600 text-sm">Flexible arrangements that support personal and professional well-being.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-                Join Our Team
-            </h2>
-            <p class="text-xl text-gray-600 mb-8">
-                We're always looking for talented professionals who share our passion for excellence
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ url_for('careers') }}" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
-                    <i class="fas fa-briefcase mr-2"></i>
-                    View Open Positions
-                </a>
-                <a href="{{ url_for('contact') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-primary-500 text-primary-600 rounded-lg font-semibold hover:bg-primary-50 transition-all duration-200">
-                    <i class="fas fa-paper-plane mr-2"></i>
-                    Contact Us
-                </a>
+            <div data-aos="fade-left">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="award" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-primary mb-2">95%</div>
+                        <div class="text-sm text-gray-600">Employee Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="trending-up" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-secondary mb-2">3.2</div>
+                        <div class="text-sm text-gray-600">Avg. Tenure (Years)</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-primary mb-2">40+</div>
+                        <div class="text-sm text-gray-600">Team Members</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="star" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-secondary mb-2">4.8</div>
+                        <div class="text-sm text-gray-600">Glassdoor Rating</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Join Our Team CTA -->
+<section class="cta-section section">
+    <div class="container" data-aos="fade-up">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-white">
+            Join Our Growing Team
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Be part of a leadership-driven organization that values innovation, excellence, and professional growth.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ url_for('careers') }}" class="btn btn-primary btn-lg">
+                <i data-lucide="briefcase" class="w-5 h-5 mr-2"></i>
+                View Open Positions
+            </a>
+            <a href="{{ url_for('contact') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
+                <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                Contact Leadership
+            </a>
+        </div>
+    </div>
+</section>
 {% endblock %}

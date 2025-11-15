@@ -1,76 +1,46 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
 <!-- Hero Section -->
-<section
-    class="relative bg-gradient-to-b from-blue-50 to-white py-20 lg:py-32 overflow-hidden"
->
-    <!-- Background Elements -->
-    <div
-        class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"
-    ></div>
-    <div
-        class="absolute top-20 right-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse-slow"
-    ></div>
-    <div
-        class="absolute -bottom-20 left-10 w-96 h-96 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse-slow"
-    ></div>
+<section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title">
+            Business Process Solutions for
+            <span class="text-primary">Modern Enterprises</span>
+        </h1>
+        <p class="hero-subtitle">
+            We help organizations streamline operations, reduce costs, and
+            accelerate growth through innovative technology solutions and
+            strategic process optimization.
+        </p>
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+                Get Started Today
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+            </a>
+            <a href="{{ url_for('services') }}" class="btn btn-outline btn-lg">
+                Explore Services
+                <i data-lucide="chevron-right" class="w-5 h-5 ml-2"></i>
+            </a>
+        </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center" data-aos="fade-up">
-            <h1
-                class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6"
-            >
-                Business Process Solutions for
-                <span
-                    class="text-primary-600"
-                >
-                    Modern Enterprises
-                </span>
-            </h1>
-            <p
-                class="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed"
-            >
-                We help organizations streamline operations, reduce costs, and
-                accelerate growth through innovative technology solutions and
-                strategic process optimization.
+        <!-- Trust Indicators -->
+        <div class="mt-8" data-aos="fade-up" data-aos-delay="400">
+            <p class="text-sm font-medium text-gray-500 mb-6 text-center">
+                Trusted by companies worldwide
             </p>
-            <div
-                class="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                data-aos="fade-up"
-                data-aos-delay="200"
-            >
-                <a
-                    href="{{ url_for('contact') }}"
-                    class="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-all duration-200 shadow-lg"
-                >
-                    Get Started Today
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a
-                    href="{{ url_for('services') }}"
-                    class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-primary-600 hover:text-primary-600 transition-all duration-200"
-                >
-                    Explore Services
-                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                </a>
-            </div>
-
-            <!-- Trust Indicators -->
-            <div class="mt-16" data-aos="fade-up" data-aos-delay="400">
-                <p
-                    class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6"
-                >
-                    Trusted by companies worldwide
-                </p>
-                <div
-                    class="flex justify-center items-center space-x-8 opacity-60"
-                >
-                    <div class="text-2xl font-bold text-gray-400">500+</div>
-                    <div class="w-px h-8 bg-gray-300"></div>
-                    <div class="text-2xl font-bold text-gray-400">Projects</div>
-                    <div class="w-px h-8 bg-gray-300"></div>
-                    <div class="text-2xl font-bold text-gray-400">10+</div>
-                    <div class="w-px h-8 bg-gray-300"></div>
-                    <div class="text-2xl font-bold text-gray-400">Years</div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Clients</div>
                 </div>
             </div>
         </div>
@@ -78,213 +48,128 @@
 </section>
 
 <!-- Services Overview -->
-<section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2
-                class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4"
-            >
+<section class="modern-section bg-white">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <div class="modern-badge">
+                <i data-lucide="briefcase" class="w-4 h-4 mr-2"></i>
+                Our Solutions
+            </div>
+            <h2 class="modern-title">
                 Comprehensive Business Solutions
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="modern-subtitle">
                 From process optimization to digital transformation, we deliver
                 end-to-end solutions designed to drive efficiency and growth.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-grid">
             <!-- Business Process Management -->
-            <div
-                class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary-200 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-delay="100"
-            >
-                <div
-                    class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200"
-                >
-                    <i data-lucide="settings" class="w-8 h-8 text-white"></i>
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <i data-lucide="settings"></i>
                 </div>
-                <h3
-                    class="text-xl font-display font-semibold text-gray-900 mb-4"
-                >
+                <h3 class="service-title">
                     Business Process Management
                 </h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
+                <p class="service-description">
                     Streamline workflows and automate processes to boost
-                    efficiency, reduce costs, and eliminate bottlenecks across
-                    your organization.
+                    efficiency and reduce costs across your organization.
                 </p>
-                <a
-                    href="{{ url_for('service_detail', service_category='business_process_management') }}"
-                    class="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-colors duration-200 group"
-                >
+                <a href="{{ url_for('services') }}" class="service-link">
                     Learn More
-                    <i
-                        data-lucide="arrow-right"
-                        class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                    ></i>
+                    <i data-lucide="arrow-right"></i>
                 </a>
             </div>
 
             <!-- IT Consulting & Support -->
-            <div
-                class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-accent-200 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-delay="200"
-            >
-                <div
-                    class="w-16 h-16 bg-accent-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200"
-                >
-                    <i data-lucide="laptop" class="w-8 h-8 text-white"></i>
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon secondary">
+                    <i data-lucide="laptop"></i>
                 </div>
-                <h3
-                    class="text-xl font-display font-semibold text-gray-900 mb-4"
-                >
+                <h3 class="service-title">
                     IT Consulting & Support
                 </h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
+                <p class="service-description">
                     Strategic technology consulting and 24/7 support services to
-                    keep your systems running optimally and securely.
+                    keep your systems running optimally.
                 </p>
-                <a
-                    href="{{ url_for('service_detail', service_category='digital_it_services') }}"
-                    class="inline-flex items-center text-accent-600 font-medium hover:text-accent-700 transition-colors duration-200 group"
-                >
+                <a href="{{ url_for('services') }}" class="service-link secondary">
                     Learn More
-                    <i
-                        data-lucide="arrow-right"
-                        class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                    ></i>
+                    <i data-lucide="arrow-right"></i>
                 </a>
             </div>
 
             <!-- Mortgage Services -->
-            <div
-                class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-secondary-200 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-delay="300"
-            >
-                <div
-                    class="w-16 h-16 bg-secondary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200"
-                >
-                    <i data-lucide="home" class="w-8 h-8 text-white"></i>
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon">
+                    <i data-lucide="home"></i>
                 </div>
-                <h3
-                    class="text-xl font-display font-semibold text-gray-900 mb-4"
-                >
+                <h3 class="service-title">
                     Mortgage Services
                 </h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
+                <p class="service-description">
                     End-to-end mortgage processing and title services with
-                    industry-leading accuracy, speed, and compliance standards.
+                    industry-leading accuracy and compliance.
                 </p>
-                <a
-                    href="{{ url_for('service_detail', service_category='mortgage_real_estate') }}"
-                    class="inline-flex items-center text-secondary-600 font-medium hover:text-secondary-700 transition-colors duration-200 group"
-                >
+                <a href="{{ url_for('services') }}" class="service-link">
                     Learn More
-                    <i
-                        data-lucide="arrow-right"
-                        class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                    ></i>
+                    <i data-lucide="arrow-right"></i>
                 </a>
             </div>
 
             <!-- Healthcare Services -->
-            <div
-                class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-purple-200 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-delay="400"
-            >
-                <div
-                    class="w-16 h-16 bg-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200"
-                >
-                    <i data-lucide="heart-pulse" class="w-8 h-8 text-white"></i>
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon secondary">
+                    <i data-lucide="heart-pulse"></i>
                 </div>
-                <h3
-                    class="text-xl font-display font-semibold text-gray-900 mb-4"
-                >
+                <h3 class="service-title">
                     Healthcare Solutions
                 </h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
+                <p class="service-description">
                     Specialized healthcare administration and compliance
-                    solutions designed for medical organizations and healthcare
-                    providers.
+                    solutions for medical organizations.
                 </p>
-                <a
-                    href="{{ url_for('service_detail', service_category='healthcare_services') }}"
-                    class="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 transition-colors duration-200 group"
-                >
+                <a href="{{ url_for('services') }}" class="service-link secondary">
                     Learn More
-                    <i
-                        data-lucide="arrow-right"
-                        class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                    ></i>
+                    <i data-lucide="arrow-right"></i>
                 </a>
             </div>
 
             <!-- Aviation Solutions -->
-            <div
-                class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-warning-200 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-delay="500"
-            >
-                <div
-                    class="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200"
-                >
-                    <i data-lucide="plane" class="w-8 h-8 text-white"></i>
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon">
+                    <i data-lucide="plane"></i>
                 </div>
-                <h3
-                    class="text-xl font-display font-semibold text-gray-900 mb-4"
-                >
+                <h3 class="service-title">
                     Aviation Solutions
                 </h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
+                <p class="service-description">
                     Advanced aircraft asset management and predictive
-                    maintenance solutions powered by IoT and analytics
-                    technology.
+                    maintenance solutions powered by analytics.
                 </p>
-                <a
-                    href="{{ url_for('service_detail', service_category='business_process_management') }}"
-                    class="inline-flex items-center text-warning-600 font-medium hover:text-warning-700 transition-colors duration-200 group"
-                >
+                <a href="{{ url_for('services') }}" class="service-link">
                     Learn More
-                    <i
-                        data-lucide="arrow-right"
-                        class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                    ></i>
+                    <i data-lucide="arrow-right"></i>
                 </a>
             </div>
 
             <!-- Customer Support -->
-            <div
-                class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary-200 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-delay="600"
-            >
-                <div
-                    class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200"
-                >
-                    <i data-lucide="headphones" class="w-8 h-8 text-white"></i>
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon secondary">
+                    <i data-lucide="headphones"></i>
                 </div>
-                <h3
-                    class="text-xl font-display font-semibold text-gray-900 mb-4"
-                >
+                <h3 class="service-title">
                     Customer Support
                 </h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
+                <p class="service-description">
                     Multi-channel customer support solutions designed to enhance
-                    client satisfaction, retention, and overall experience.
+                    client satisfaction and retention.
                 </p>
-                <a
-                    href="{{ url_for('service_detail', service_category='business_process_management') }}"
-                    class="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-colors duration-200 group"
-                >
+                <a href="{{ url_for('services') }}" class="service-link secondary">
                     Learn More
-                    <i
-                        data-lucide="arrow-right"
-                        class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                    ></i>
+                    <i data-lucide="arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -292,425 +177,117 @@
 </section>
 
 <!-- Why Choose Us -->
-<section class="py-20 lg:py-28 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2
-                class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4"
-            >
-                Why Choose Ardur Technology?
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Over a decade of experience delivering exceptional results and
-                building lasting partnerships
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div
-                class="text-center group"
-                data-aos="zoom-in"
-                data-aos-delay="100"
-            >
-                <div
-                    class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-                >
-                    <i data-lucide="award" class="w-10 h-10 text-primary-600"></i>
+<section class="modern-section bg-gray-50 floating-elements">
+    <div class="container">
+        <div class="content-with-visual">
+            <!-- Left Content -->
+            <div data-aos="fade-right">
+                <div class="modern-badge">
+                    <i data-lucide="star" class="w-4 h-4 mr-2"></i>
+                    Why Choose Us
                 </div>
-                <h3 class="text-2xl font-display font-bold text-gray-900 mb-2">
-                    10+ Years
-                </h3>
-                <p class="text-gray-600">Industry Experience</p>
+                <h2 class="modern-title">
+                    Why Choose Ardur Technology?
+                </h2>
+                <p class="modern-subtitle">
+                    We combine deep industry expertise with cutting-edge technology to
+                    deliver measurable results that drive your business forward.
+                </p>
+                
+                <!-- Key Benefits -->
+                <div class="modern-list">
+                    <div class="modern-list-item">
+                        <div class="modern-list-icon">
+                            <i data-lucide="check"></i>
+                        </div>
+                        <div class="modern-list-content">
+                            <h4>Proven Track Record</h4>
+                            <p>500+ successful projects with measurable ROI for our clients</p>
+                        </div>
+                    </div>
+                    <div class="modern-list-item">
+                        <div class="modern-list-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="modern-list-content">
+                            <h4>Expert Team</h4>
+                            <p>Industry-leading professionals with deep domain expertise</p>
+                        </div>
+                    </div>
+                    <div class="modern-list-item">
+                        <div class="modern-list-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div class="modern-list-content">
+                            <h4>24/7 Support</h4>
+                            <p>Round-the-clock dedicated support and monitoring</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div
-                class="text-center group"
-                data-aos="zoom-in"
-                data-aos-delay="200"
-            >
-                <div
-                    class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-                >
-                    <i data-lucide="users" class="w-10 h-10 text-accent-600"></i>
-                </div>
-                <h3 class="text-2xl font-display font-bold text-gray-900 mb-2">
-                    500+
-                </h3>
-                <p class="text-gray-600">Successful Projects</p>
-            </div>
+            <!-- Right Stats -->
+            <div data-aos="fade-left">
+                <div class="visual-grid four-col">
+                    <div class="modern-card compact">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="stat-number primary">500+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
 
-            <div
-                class="text-center group"
-                data-aos="zoom-in"
-                data-aos-delay="300"
-            >
-                <div
-                    class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-                >
-                    <i data-lucide="clock" class="w-10 h-10 text-primary-600"></i>
-                </div>
-                <h3 class="text-2xl font-display font-bold text-gray-900 mb-2">
-                    24/7
-                </h3>
-                <p class="text-gray-600">Support Coverage</p>
-            </div>
+                    <div class="modern-card compact">
+                        <div class="stat-icon secondary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number secondary">50+</div>
+                        <div class="stat-label">Clients</div>
+                    </div>
 
-            <div
-                class="text-center group"
-                data-aos="zoom-in"
-                data-aos-delay="400"
-            >
-                <div
-                    class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-                >
-                    <i data-lucide="shield-check" class="w-10 h-10 text-accent-600"></i>
-                </div>
-                <h3 class="text-2xl font-display font-bold text-gray-900 mb-2">
-                    ISO
-                </h3>
-                <p class="text-gray-600">Certified Processes</p>
-            </div>
-        </div>
+                    <div class="modern-card compact">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-number primary">10+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
 
-        <!-- Process Steps -->
-        <div class="mt-20" data-aos="fade-up">
-            <h3
-                class="text-2xl font-display font-bold text-gray-900 text-center mb-12"
-            >
-                How We Work
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center relative">
-                    <div
-                        class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
-                    >
-                        1
+                    <div class="modern-card compact">
+                        <div class="stat-icon secondary">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="stat-number secondary">24/7</div>
+                        <div class="stat-label">Support</div>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Discovery</h4>
-                    <p class="text-gray-600 text-sm">
-                        Understand your needs and challenges
-                    </p>
-                    <div
-                        class="hidden md:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-primary-200 to-secondary-200"
-                    ></div>
-                </div>
-                <div class="text-center relative">
-                    <div
-                        class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
-                    >
-                        2
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Strategy</h4>
-                    <p class="text-gray-600 text-sm">
-                        Design tailored solutions
-                    </p>
-                    <div
-                        class="hidden md:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-secondary-200 to-accent-200"
-                    ></div>
-                </div>
-                <div class="text-center relative">
-                    <div
-                        class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
-                    >
-                        3
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Execute</h4>
-                    <p class="text-gray-600 text-sm">
-                        Implement with precision
-                    </p>
-                    <div
-                        class="hidden md:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-accent-200 to-warning-200"
-                    ></div>
-                </div>
-                <div class="text-center">
-                    <div
-                        class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
-                    >
-                        4
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Support</h4>
-                    <p class="text-gray-600 text-sm">Ongoing optimization</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Industries We Serve -->
-<section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2
-                class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4"
-            >
-                Industries We Serve
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Specialized expertise across multiple sectors with deep domain
-                knowledge
-            </p>
+<!-- CTA Section -->
+<section class="cta-section section">
+    <div class="container" data-aos="fade-up">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-rocket text-white text-2xl"></i>
         </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
-            <div
-                class="group text-center"
-                data-aos="fade-up"
-                data-aos-delay="100"
-            >
-                <div
-                    class="w-20 h-20 bg-purple-50 group-hover:bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-200"
-                >
-                    <i data-lucide="hospital" class="w-10 h-10 text-red-600"></i>
-                </div>
-                <h4
-                    class="font-medium text-gray-900 group-hover:text-purple-600 transition-colors duration-200"
-                >
-                    Healthcare
-                </h4>
-            </div>
-
-            <div
-                class="group text-center"
-                data-aos="fade-up"
-                data-aos-delay="200"
-            >
-                <div
-                    class="w-20 h-20 bg-accent-50 group-hover:bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-200"
-                >
-                    <i data-lucide="landmark" class="w-10 h-10 text-primary-600"></i>
-                </div>
-                <h4
-                    class="font-medium text-gray-900 group-hover:text-accent-600 transition-colors duration-200"
-                >
-                    Financial
-                </h4>
-            </div>
-
-            <div
-                class="group text-center"
-                data-aos="fade-up"
-                data-aos-delay="300"
-            >
-                <div
-                    class="w-20 h-20 bg-secondary-50 group-hover:bg-secondary-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-200"
-                >
-                    <i data-lucide="building" class="w-10 h-10 text-secondary-600"></i>
-                </div>
-                <h4
-                    class="font-medium text-gray-900 group-hover:text-secondary-600 transition-colors duration-200"
-                >
-                    Real Estate
-                </h4>
-            </div>
-
-            <div
-                class="group text-center"
-                data-aos="fade-up"
-                data-aos-delay="400"
-            >
-                <div
-                    class="w-20 h-20 bg-warning-50 group-hover:bg-warning-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-200"
-                >
-                    <i data-lucide="plane" class="w-10 h-10 text-blue-600"></i>
-                </div>
-                <h4
-                    class="font-medium text-gray-900 group-hover:text-warning-600 transition-colors duration-200"
-                >
-                    Aviation
-                </h4>
-            </div>
-
-            <div
-                class="group text-center"
-                data-aos="fade-up"
-                data-aos-delay="500"
-            >
-                <div
-                    class="w-20 h-20 bg-primary-50 group-hover:bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-200"
-                >
-                    <i
-                        data-lucide="shopping-cart"
-                        class="w-10 h-10 text-primary-600"
-                    ></i>
-                </div>
-                <h4
-                    class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors duration-200"
-                >
-                    Retail
-                </h4>
-            </div>
-
-            <div
-                class="group text-center"
-                data-aos="fade-up"
-                data-aos-delay="600"
-            >
-                <div
-                    class="w-20 h-20 bg-gray-50 group-hover:bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-200"
-                >
-                    <i data-lucide="factory" class="w-10 h-10 text-gray-600"></i>
-                </div>
-                <h4
-                    class="font-medium text-gray-900 group-hover:text-gray-600 transition-colors duration-200"
-                >
-                    Manufacturing
-                </h4>
-            </div>
-        </div>
-
-        <div class="text-center mt-12" data-aos="fade-up">
-            <a
-                href="{{ url_for('industries') }}"
-                class="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200"
-            >
-                View All Industries
-                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-white">
+            Ready to Transform Your Business?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Let's discuss how we can help you streamline operations and drive growth
+        </p>
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+                <i data-lucide="rocket" class="hero-icon"></i>
+                Start Your Project
+            </a>
+            <a href="{{ url_for('services') }}" class="btn btn-outline btn-lg">
+                <i data-lucide="eye" class="hero-icon"></i>
+                Explore Services
             </a>
         </div>
     </div>
 </section>
-
-<!-- Call to Action -->
-<section
-    class="py-20 lg:py-32 bg-secondary-900 text-white relative overflow-hidden"
->
-    <!-- Background Pattern -->
-    <div
-        class="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.4))]"
-    ></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div data-aos="fade-up">
-            <h2 class="text-4xl lg:text-5xl font-display font-bold mb-6">
-                Ready to Transform Your Business?
-            </h2>
-            <p
-                class="text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto mb-10 leading-relaxed"
-            >
-                Join hundreds of companies that trust us to optimize their
-                processes, reduce costs, and accelerate growth through
-                innovative solutions.
-            </p>
-            <div
-                class="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            >
-                <a
-                    href="{{ url_for('contact') }}"
-                    class="inline-flex items-center gap-2 px-10 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-lg"
-                >
-                    Start Your Project
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a
-                    href="{{ url_for('about') }}"
-                    class="inline-flex items-center gap-2 px-10 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:border-white hover:bg-white/10 transition-all duration-200"
-                >
-                    Learn About Us
-                    <i data-lucide="info" class="w-5 h-5"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Trust Badges -->
-        <div
-            class="mt-16 pt-16 border-t border-white/20"
-            data-aos="fade-up"
-            data-aos-delay="200"
-        >
-            <div
-                class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center"
-            >
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary-400 mb-2">
-                        99.9%
-                    </div>
-                    <div class="text-gray-300 text-sm">Uptime</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-secondary-400 mb-2">
-                        24h
-                    </div>
-                    <div class="text-gray-300 text-sm">Response</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-accent-400 mb-2">
-                        ISO
-                    </div>
-                    <div class="text-gray-300 text-sm">Certified</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-warning-400 mb-2">
-                        10+
-                    </div>
-                    <div class="text-gray-300 text-sm">Years</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %} {% block extra_scripts %}
-<script>
-    // Enhanced card animations with intersection observer
-    document.addEventListener("DOMContentLoaded", function () {
-        // Add hover effects to service cards
-        const serviceCards = document.querySelectorAll(".group");
-        serviceCards.forEach((card) => {
-            card.addEventListener("mouseenter", function () {
-                this.style.transform = "translateY(-4px)";
-            });
-
-            card.addEventListener("mouseleave", function () {
-                this.style.transform = "translateY(0)";
-            });
-        });
-
-        // Parallax effect for hero background elements
-        window.addEventListener("scroll", () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector(".absolute.top-20");
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.2}px)`;
-            }
-        });
-
-        // Counter animation for stats
-        const observeCounters = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const finalValue = parseInt(
-                            target.textContent.replace(/\D/g, ""),
-                        );
-                        animateCounter(target, finalValue);
-                    }
-                });
-            },
-            { threshold: 0.5 },
-        );
-
-        document.querySelectorAll(".text-3xl.font-bold").forEach((counter) => {
-            observeCounters.observe(counter);
-        });
-
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent =
-                    Math.floor(current) +
-                    (element.textContent.includes("%")
-                        ? "%"
-                        : element.textContent.includes("+")
-                          ? "+"
-                          : "");
-            }, 40);
-        }
-    });
-</script>
 {% endblock %}

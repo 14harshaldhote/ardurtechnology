@@ -2,774 +2,427 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-b from-blue-50 to-white py-20 lg:py-32 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center" data-aos="fade-up">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
-                Get in Touch with <span class="text-primary-600">Our Expert Team</span>
-            </h1>
-            <p class="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-10 leading-relaxed">
-                Ready to transform your business processes? Let's discuss how
-                our solutions can help you achieve your goals and drive
-                sustainable growth.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-                <a href="tel:+1-555-123-4567" class="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-all duration-200 shadow-lg">
-                    <i data-lucide="phone" class="w-5 h-5"></i>
-                    Call Now
-                </a>
-                <a href="mailto:info@ardurtechnology.com" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-primary-600 hover:text-primary-600 transition-all duration-200">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    Email Us
-                </a>
-            </div>
+<section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+        <div class="badge badge-white mb-6">
+            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+            Get In Touch
+        </div>
+        
+        <h1 class="hero-title">
+            Contact <span class="text-primary">Ardur Technology</span>
+        </h1>
+        <p class="hero-subtitle">
+            Ready to transform your business operations? Let's discuss how we can help 
+            you achieve your goals with our expert solutions and services.
+        </p>
+        
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+            <a href="#contact-form" class="btn btn-primary btn-lg">
+                <i data-lucide="send" class="hero-icon"></i>
+                Send Message
+            </a>
+            <a href="tel:+1-555-123-4567" class="btn btn-outline btn-lg">
+                <i data-lucide="phone" class="hero-icon"></i>
+                Call Now
+            </a>
         </div>
     </div>
 </section>
 
-<!-- Contact Information & Form Section -->
-<section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- Contact Information -->
-            <div data-aos="fade-right">
-                <h2 class="text-3xl font-display font-bold text-gray-900 mb-6">
-                    Let's Start a Conversation
-                </h2>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    We're here to help you streamline your operations and
-                    achieve your business objectives. Reach out to us through
-                    any of the channels below.
-                </p>
+<!-- Contact Information -->
+<section class="modern-section bg-white">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <div class="modern-badge">
+                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                Contact Information
+            </div>
+            <h2 class="modern-title">
+                Multiple Ways to Reach Us
+            </h2>
+            <p class="modern-subtitle">
+                Choose the most convenient way to get in touch with our team.
+            </p>
+        </div>
 
-                <div class="space-y-6">
-                    <!-- Phone -->
-                    <div class="flex items-start space-x-4 group">
-                        <div class="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
-                            <i data-lucide="phone" class="w-7 h-7"></i>
-                        </div>
-                        <div>
-                            <h4
-                                class="text-lg font-semibold text-gray-900 mb-1"
-                            >
-                                Phone
-                            </h4>
-                            <a
-                                href="tel:+1-555-123-4567"
-                                class="text-gray-600 hover:text-primary-600 transition-colors duration-200"
-                            >
-                                +1 (555) 123-4567
-                            </a>
-                            <p class="text-sm text-gray-500 mt-1">
-                                Mon - Fri, 8:00 AM - 6:00 PM EST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="flex items-start space-x-4 group">
-                        <div class="w-14 h-14 bg-accent-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
-                            <i data-lucide="mail" class="w-7 h-7"></i>
-                        </div>
-                        <div>
-                            <h4
-                                class="text-lg font-semibold text-gray-900 mb-1"
-                            >
-                                Email
-                            </h4>
-                            <a
-                                href="mailto:info@ardurtechnology.com"
-                                class="text-gray-600 hover:text-secondary-600 transition-colors duration-200"
-                            >
-                                info@ardurtechnology.com
-                            </a>
-                            <p class="text-sm text-gray-500 mt-1">
-                                We'll respond within 24 hours
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Office -->
-                    <div class="flex items-start space-x-4 group">
-                        <div class="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
-                            <i data-lucide="map-pin" class="w-7 h-7"></i>
-                        </div>
-                        <div>
-                            <h4
-                                class="text-lg font-semibold text-gray-900 mb-1"
-                            >
-                                Office
-                            </h4>
-                            <div class="text-gray-600">
-                                <p>123 Business Avenue</p>
-                                <p>Suite 100</p>
-                                <p>New York, NY 10001</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="modern-grid tight">
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-icon primary">
+                    <i data-lucide="phone"></i>
                 </div>
-
-                <!-- Business Hours -->
-                <div class="mt-10 p-6 bg-gray-50 rounded-2xl" data-aos="fade-up">
-                    <h4 class="text-lg font-semibold text-gray-900 mb-4">
-                        Business Hours
-                    </h4>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Monday - Friday:</span>
-                            <span class="font-medium text-gray-900"
-                                >8:00 AM - 6:00 PM EST</span
-                            >
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Saturday:</span>
-                            <span class="font-medium text-gray-900"
-                                >9:00 AM - 2:00 PM EST</span
-                            >
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Sunday:</span>
-                            <span class="font-medium text-gray-900"
-                                >Closed</span
-                            >
-                        </div>
-                        <div class="pt-2 border-t border-gray-200">
-                            <p class="text-xs text-gray-500 flex items-center">
-                                <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
-                                Emergency support available 24/7 for existing
-                                clients
-                            </p>
-                        </div>
+                <h3 class="contact-title">Phone</h3>
+                <div class="contact-info">
+                    <div>
+                        <a href="tel:+1-555-123-4567" class="contact-link">
+                            +1 (555) 123-4567
+                        </a>
+                        <div class="contact-label">Main Office</div>
+                    </div>
+                    <div>
+                        <a href="tel:+1-555-123-4568" class="contact-link">
+                            +1 (555) 123-4568
+                        </a>
+                        <div class="contact-label">Support</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div data-aos="fade-left">
-                <div
-                    class="bg-white rounded-2xl border border-gray-100 shadow-lg p-8"
-                >
-                    <h3
-                        class="text-2xl font-display font-bold text-gray-900 mb-6"
-                    >
-                        Send us a Message
-                    </h3>
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-icon secondary">
+                    <i data-lucide="mail"></i>
+                </div>
+                <h3 class="contact-title">Email</h3>
+                <div class="contact-info">
+                    <div>
+                        <a href="mailto:info@ardurtechnology.com" class="contact-link">
+                            info@ardurtechnology.com
+                        </a>
+                        <div class="contact-label">General Inquiries</div>
+                    </div>
+                    <div>
+                        <a href="mailto:sales@ardurtechnology.com" class="contact-link">
+                            sales@ardurtechnology.com
+                        </a>
+                        <div class="contact-label">Sales Team</div>
+                    </div>
+                </div>
+            </div>
 
-                    <form
-                        action="{{ url_for('contact') }}"
-                        method="POST"
-                        class="space-y-6"
-                        id="contact-form"
-                    >
-                        {{ csrf_token() }}
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-icon primary">
+                    <i data-lucide="map-pin"></i>
+                </div>
+                <h3 class="contact-title">Address</h3>
+                <div class="contact-info">
+                    <div class="font-medium text-gray-900 mb-1">Main Office</div>
+                    <div class="contact-label">123 Business Avenue</div>
+                    <div class="contact-label">Suite 100</div>
+                    <div class="contact-label">City, State 12345</div>
+                </div>
+            </div>
 
-                        <!-- Name Fields -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">
-                                    First Name *
-                                </label>
-                                <input
-                                    type="text"
-                                    id="first_name"
-                                    name="first_name"
-                                    required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                                    placeholder="John"
-                                />
-                            </div>
-                            <div>
-                                <label for="last_name" class="form-label">
-                                    Last Name *
-                                </label>
-                                <input
-                                    type="text"
-                                    id="last_name"
-                                    name="last_name"
-                                    required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                                    placeholder="Doe"
-                                />
-                            </div>
-                        </div>
-
-                        <!-- Email and Phone -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="email" class="form-label">
-                                    Email Address *
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                                    placeholder="john@company.com"
-                                />
-                            </div>
-                            <div>
-                                <label for="phone" class="form-label">
-                                    Phone Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                                    placeholder="+1 (555) 123-4567"
-                                />
-                            </div>
-                        </div>
-
-                        <!-- Company -->
-                        <div>
-                            <label for="company" class="form-label">
-                                Company Name
-                            </label>
-                            <input
-                                type="text"
-                                id="company"
-                                name="company"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                                placeholder="Your Company"
-                            />
-                        </div>
-
-                        <!-- Service Interest -->
-                        <div>
-                            <label for="service_interest" class="form-label">
-                                Service of Interest
-                            </label>
-                            <select
-                                id="service_interest"
-                                name="service_interest"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                            >
-                                <option value="">Select a service...</option>
-                                <option value="business_process_management">
-                                    Business Process Management
-                                </option>
-                                <option value="digital_it_services">
-                                    IT Consulting & Support
-                                </option>
-                                <option value="mortgage_real_estate">
-                                    Mortgage Services
-                                </option>
-                                <option value="healthcare_services">
-                                    Healthcare Solutions
-                                </option>
-                                <option value="aviation_solutions">
-                                    Aviation Solutions
-                                </option>
-                                <option value="customer_support">
-                                    Customer Support
-                                </option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <!-- Message -->
-                        <div>
-                            <label for="message" class="form-label">
-                                Message *
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="5"
-                                required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                                placeholder="Tell us about your project or requirements..."
-                            ></textarea>
-                        </div>
-
-                        <!-- Budget Range -->
-                        <div>
-                            <label for="budget_range" class="form-label">
-                                Project Budget Range
-                            </label>
-                            <select
-                                id="budget_range"
-                                name="budget_range"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                            >
-                                <option value="">Select budget range...</option>
-                                <option value="under_10k">Under $10,000</option>
-                                <option value="10k_50k">
-                                    $10,000 - $50,000
-                                </option>
-                                <option value="50k_100k">
-                                    $50,000 - $100,000
-                                </option>
-                                <option value="100k_500k">
-                                    $100,000 - $500,000
-                                </option>
-                                <option value="over_500k">Over $500,000</option>
-                                <option value="discuss">
-                                    Prefer to discuss
-                                </option>
-                            </select>
-                        </div>
-
-                        <!-- Timeline -->
-                        <div>
-                            <label for="timeline" class="form-label">
-                                Project Timeline
-                            </label>
-                            <select
-                                id="timeline"
-                                name="timeline"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                            >
-                                <option value="">Select timeline...</option>
-                                <option value="asap">ASAP</option>
-                                <option value="1_month">Within 1 month</option>
-                                <option value="3_months">1-3 months</option>
-                                <option value="6_months">3-6 months</option>
-                                <option value="planning">Still planning</option>
-                            </select>
-                        </div>
-
-                        <!-- Newsletter Signup -->
-                        <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                                <input
-                                    type="checkbox"
-                                    id="newsletter"
-                                    name="newsletter"
-                                    value="yes"
-                                    class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500 focus:ring-2"
-                                />
-                            </div>
-                            <div class="ml-3 text-sm">
-                                <label for="newsletter" class="text-gray-600">
-                                    Subscribe to our newsletter for industry
-                                    insights and updates
-                                    <span class="text-gray-400"
-                                        >(optional)</span
-                                    >
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="pt-4">
-                            <button type="submit" class="inline-flex items-center justify-center gap-2 w-full px-8 py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-all duration-200 shadow-lg">
-                                <i data-lucide="send" class="w-5 h-5"></i>
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="contact-icon secondary">
+                    <i data-lucide="clock"></i>
+                </div>
+                <h3 class="contact-title">Hours</h3>
+                <div class="contact-info">
+                    <div class="flex justify-between">
+                        <span class="contact-label">Mon - Fri:</span>
+                        <span class="font-medium">9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="contact-label">Saturday:</span>
+                        <span class="font-medium">10:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="contact-label">Sunday:</span>
+                        <span class="font-medium">Closed</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Support Channels Section -->
-<section class="py-20 lg:py-28 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Multiple Ways to Connect</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose the communication method that works best for you
+<!-- Contact Form -->
+<section id="contact-form" class="section bg-gray-50">
+    <div class="container">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Form -->
+                <div class="lg:col-span-2">
+                    <div class="card card-content" data-aos="fade-up">
+                        <h2 class="text-2xl font-display font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                        <form action="{{ url_for('contact') }}" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="first_name" class="block text-sm font-medium text-gray-900 mb-2">
+                                        First Name *
+                                    </label>
+                                    <input type="text" id="first_name" name="first_name" required 
+                                           class="form-input w-full" placeholder="John">
+                                </div>
+                                <div>
+                                    <label for="last_name" class="block text-sm font-medium text-gray-900 mb-2">
+                                        Last Name *
+                                    </label>
+                                    <input type="text" id="last_name" name="last_name" required 
+                                           class="form-input w-full" placeholder="Doe">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-900 mb-2">
+                                        Email Address *
+                                    </label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="form-input w-full" placeholder="john@company.com">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-900 mb-2">
+                                        Phone Number
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" 
+                                           class="form-input w-full" placeholder="+1 (555) 123-4567">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-900 mb-2">
+                                    Company Name
+                                </label>
+                                <input type="text" id="company" name="company" 
+                                       class="form-input w-full" placeholder="Your Company">
+                            </div>
+
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-gray-900 mb-2">
+                                    Service Interest
+                                </label>
+                                <select id="service" name="service" class="form-input w-full">
+                                    <option value="">Select a service</option>
+                                    <option value="business-process-management">Business Process Management</option>
+                                    <option value="it-consulting">IT Consulting & Support</option>
+                                    <option value="mortgage-services">Mortgage Services</option>
+                                    <option value="healthcare-solutions">Healthcare Solutions</option>
+                                    <option value="aviation-solutions">Aviation Solutions</option>
+                                    <option value="customer-support">Customer Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="budget" class="block text-sm font-medium text-gray-900 mb-2">
+                                    Project Budget
+                                </label>
+                                <select id="budget" name="budget" class="form-input w-full">
+                                    <option value="">Select budget range</option>
+                                    <option value="under-10k">Under $10,000</option>
+                                    <option value="10k-25k">$10,000 - $25,000</option>
+                                    <option value="25k-50k">$25,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="over-100k">Over $100,000</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-900 mb-2">
+                                    Message *
+                                </label>
+                                <textarea id="message" name="message" rows="6" required 
+                                          class="form-input w-full" 
+                                          placeholder="Tell us about your project requirements, challenges, or questions..."></textarea>
+                            </div>
+
+                            <div class="flex items-start">
+                                <input type="checkbox" id="privacy" name="privacy" required 
+                                       class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary mt-1">
+                                <label for="privacy" class="ml-3 text-sm text-gray-600">
+                                    I agree to the <a href="#" class="text-primary hover:text-primary">Privacy Policy</a> 
+                                    and <a href="#" class="text-primary hover:text-primary">Terms of Service</a> *
+                                </label>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg w-full">
+                                    <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="space-y-6">
+                        <!-- Quick Contact -->
+                        <div class="card card-content" data-aos="fade-up">
+                            <h3 class="contact-title">Quick Contact</h3>
+                            <div class="space-y-4">
+                                <a href="tel:+1-555-123-4567" class="quick-contact-item primary">
+                                    <div class="quick-contact-icon primary">
+                                        <i data-lucide="phone"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-gray-900">Call Us</div>
+                                        <div class="contact-label">+1 (555) 123-4567</div>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:info@ardurtechnology.com" class="quick-contact-item secondary">
+                                    <div class="quick-contact-icon secondary">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-gray-900">Email Us</div>
+                                        <div class="contact-label">info@ardurtechnology.com</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Response Time -->
+                        <div class="card card-content bg-primary-50" data-aos="fade-up">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Response Time</h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center">
+                                    <i data-lucide="clock" class="w-4 h-4 text-primary mr-3"></i>
+                                    <span>Email: Within 2 hours</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-lucide="phone" class="w-4 h-4 text-primary mr-3"></i>
+                                    <span>Phone: Immediate</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-lucide="calendar" class="w-4 h-4 text-primary mr-3"></i>
+                                    <span>Consultation: Same day</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="card card-content" data-aos="fade-up">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+                            <div class="flex space-x-3">
+                                <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="section bg-white">
+    <div class="container">
+        <div class="text-center mb-8" data-aos="fade-up">
+            <h2 class="section-title">Visit Our Office</h2>
+            <p class="section-subtitle">
+                Located in the heart of the business district with easy access and parking.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Live Chat -->
-            <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="100">
-                <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Map -->
+            <div class="lg:col-span-2" data-aos="fade-up">
+                <div class="h-96 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="map-pin" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+                        <p class="text-gray-600">Interactive map would be embedded here</p>
+                        <p class="text-sm text-gray-500 mt-2">123 Business Avenue, Suite 100, City, State 12345</p>
+                    </div>
                 </div>
-                <h4
-                    class="text-xl font-display font-semibold text-gray-900 mb-3"
-                >
-                    Live Chat Support
-                </h4>
-                <p class="text-gray-600 mb-6">
-                    Get instant answers to your questions through our live chat
-                    system.
-                </p>
-                <button class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-all duration-200" onclick="openChat()">
-                    <i data-lucide="message-square" class="w-5 h-5"></i>
-                    Start Chat
-                </button>
             </div>
 
-            <!-- Video Call -->
-            <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="200">
-                <div class="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="video" class="w-8 h-8 text-white"></i>
+            <!-- Directions -->
+            <div class="lg:col-span-1" data-aos="fade-up">
+                <div class="card card-content">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Directions</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">By Car</h4>
+                            <p class="text-gray-600">Free parking available in the building garage. Enter from Main Street.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">By Public Transit</h4>
+                            <p class="text-gray-600">Metro Station is 2 blocks away. Bus stops directly in front of building.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Nearby Landmarks</h4>
+                            <p class="text-gray-600">Next to City Bank and across from Central Park.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#" class="btn btn-outline w-full">
+                            <i data-lucide="navigation" class="w-4 h-4 mr-2"></i>
+                            Get Directions
+                        </a>
+                    </div>
                 </div>
-                <h4
-                    class="text-xl font-display font-semibold text-gray-900 mb-3"
-                >
-                    Schedule a Call
-                </h4>
-                <p class="text-gray-600 mb-6">
-                    Book a free consultation to discuss your specific
-                    requirements.
-                </p>
-                <a href="#" class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-all duration-200">
-                    <i data-lucide="calendar" class="w-5 h-5"></i>
-                    Book Meeting
-                </a>
-            </div>
-
-            <!-- Support Portal -->
-            <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="300">
-                <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="life-buoy" class="w-8 h-8 text-white"></i>
-                </div>
-                <h4
-                    class="text-xl font-display font-semibold text-gray-900 mb-3"
-                >
-                    Support Portal
-                </h4>
-                <p class="text-gray-600 mb-6">
-                    Access our knowledge base and submit support tickets online.
-                </p>
-                <a href="#" class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-all duration-200">
-                    <i data-lucide="external-link" class="w-5 h-5"></i>
-                    Visit Portal
-                </a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Find answers to common questions about our services and process
-            </p>
-        </div>
-
-        <div class="max-w-4xl mx-auto" x-data="{ activeTab: null }">
-            <!-- FAQ Item 1 -->
-            <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
-                <button
-                    @click="activeTab = activeTab === 1 ? null : 1"
-                    class="w-full text-left p-6 bg-white border border-gray-200 rounded-2xl hover:border-primary-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                >
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-gray-900">
-                            What types of businesses do you work with?
-                        </h3>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-200" :class="{ 'rotate-180': activeTab === 1 }"></i>
-                    </div>
-                </button>
-                <div
-                    x-show="activeTab === 1"
-                    x-collapse
-                    class="px-6 pb-6 text-gray-600"
-                >
-                    <p>
-                        We work with businesses of all sizes across various
-                        industries including healthcare, finance, real estate,
-                        manufacturing, aviation, and retail. Our solutions are
-                        scalable and can be customized to meet the specific
-                        needs of startups, SMEs, and enterprise-level
-                        organizations.
-                    </p>
-                </div>
+<section class="section bg-gray-50">
+    <div class="container">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="badge bg-white text-primary mb-4">
+                <i data-lucide="help-circle" class="w-4 h-4 mr-2"></i>
+                Frequently Asked Questions
             </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                <button
-                    @click="activeTab = activeTab === 2 ? null : 2"
-                    class="w-full text-left p-6 bg-white border border-gray-200 rounded-2xl hover:border-primary-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                >
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-gray-900">
-                            How long does a typical project take?
-                        </h3>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-200" :class="{ 'rotate-180': activeTab === 2 }"></i>
-                    </div>
-                </button>
-                <div
-                    x-show="activeTab === 2"
-                    x-collapse
-                    class="px-6 pb-6 text-gray-600"
-                >
-                    <p>
-                        Project timelines vary depending on scope and
-                        complexity. Simple process optimization projects may
-                        take 4-8 weeks, while comprehensive digital
-                        transformation initiatives can take 3-12 months. We
-                        provide detailed timelines during our initial
-                        consultation phase.
-                    </p>
-                </div>
-            </div>
-
-            <!-- FAQ Item 3 -->
-            <div class="mb-4" data-aos="fade-up" data-aos-delay="300">
-                <button
-                    @click="activeTab = activeTab === 3 ? null : 3"
-                    class="w-full text-left p-6 bg-white border border-gray-200 rounded-2xl hover:border-primary-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                >
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-gray-900">
-                            Do you provide ongoing support after project
-                            completion?
-                        </h3>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-200" :class="{ 'rotate-180': activeTab === 3 }"></i>
-                    </div>
-                </button>
-                <div
-                    x-show="activeTab === 3"
-                    x-collapse
-                    class="px-6 pb-6 text-gray-600"
-                >
-                    <p>
-                        Yes, we offer comprehensive post-implementation support
-                        including maintenance, monitoring, training, and
-                        continuous optimization. Our support packages range from
-                        basic maintenance to full managed services, ensuring
-                        your systems continue to perform optimally.
-                    </p>
-                </div>
-            </div>
-
-            <!-- FAQ Item 4 -->
-            <div class="mb-4" data-aos="fade-up" data-aos-delay="400">
-                <button
-                    @click="activeTab = activeTab === 4 ? null : 4"
-                    class="w-full text-left p-6 bg-white border border-gray-200 rounded-2xl hover:border-primary-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                >
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-gray-900">
-                            What is your pricing structure?
-                        </h3>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-200" :class="{ 'rotate-180': activeTab === 4 }"></i>
-                    </div>
-                </button>
-                <div
-                    x-show="activeTab === 4"
-                    x-collapse
-                    class="px-6 pb-6 text-gray-600"
-                >
-                    <p>
-                        Our pricing is project-based and depends on scope,
-                        complexity, and timeline. We offer competitive rates and
-                        flexible payment terms. After understanding your
-                        requirements, we provide detailed proposals with
-                        transparent pricing. We also offer retainer-based
-                        relationships for ongoing services.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action Section -->
-<section class="py-20 lg:py-32 bg-secondary-900 text-white relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div
-        class="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.4))]"
-    ></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div data-aos="fade-up">
-            <h2 class="text-4xl lg:text-5xl font-display font-bold mb-6">
-                Ready to Get Started?
+            <h2 class="section-title">
+                Common Questions
             </h2>
-            <p
-                class="text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto mb-10 leading-relaxed"
-            >
-                Join hundreds of companies that have transformed their
-                operations with our expert solutions. Let's discuss how we can
-                help you achieve your business goals.
+            <p class="section-subtitle">
+                Quick answers to questions you might have about our services and process.
             </p>
-            <div
-                class="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            >
-                <a href="{{ url_for('services') }}" class="inline-flex items-center gap-2 px-10 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-lg">
-                    <i data-lucide="rocket" class="w-5 h-5"></i>
-                    Start Your Project
-                </a>
-                <a href="{{ url_for('about') }}" class="inline-flex items-center gap-2 px-10 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:border-white hover:bg-white/10 transition-all duration-200">
-                    <i data-lucide="info" class="w-5 h-5"></i>
-                    Learn More About Us
-                </a>
-            </div>
         </div>
 
-        <!-- Trust Indicators -->
-        <div
-            class="mt-16 pt-16 border-t border-white/20"
-            data-aos="fade-up"
-            data-aos-delay="200"
-        >
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary-400 mb-2">
-                        24h
+        <div class="max-w-3xl mx-auto space-y-4">
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="100">
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer">
+                        <h4 class="font-semibold text-gray-900">How quickly can you start a project?</h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm">
+                        We can typically begin projects within 1-2 weeks of contract signing, depending on the scope and complexity of your requirements.
                     </div>
-                    <div class="text-gray-300 text-sm">Response Time</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-secondary-400 mb-2">
-                        500+
+                </details>
+            </div>
+
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="200">
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer">
+                        <h4 class="font-semibold text-gray-900">What industries do you specialize in?</h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm">
+                        We have extensive experience in healthcare, mortgage & real estate, aviation, financial services, e-commerce, and manufacturing industries.
                     </div>
-                    <div class="text-gray-300 text-sm">Projects Delivered</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-accent-400 mb-2">
-                        10+
+                </details>
+            </div>
+
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="300">
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer">
+                        <h4 class="font-semibold text-gray-900">Do you offer ongoing support after project completion?</h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm">
+                        Yes, we provide comprehensive ongoing support and maintenance services to ensure your solutions continue to perform optimally.
                     </div>
-                    <div class="text-gray-300 text-sm">Years Experience</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-warning-400 mb-2">
-                        99.9%
+                </details>
+            </div>
+
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="400">
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer">
+                        <h4 class="font-semibold text-gray-900">What is your pricing model?</h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm">
+                        We offer flexible pricing models including fixed-price projects, hourly rates, and retainer agreements based on your specific needs and preferences.
                     </div>
-                    <div class="text-gray-300 text-sm">Client Satisfaction</div>
-                </div>
+                </details>
             </div>
         </div>
     </div>
 </section>
-{% endblock %} {% block extra_scripts %}
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Form validation and submission
-        const form = document.getElementById("contact-form");
-        if (form) {
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                // Basic client-side validation
-                const requiredFields = form.querySelectorAll("[required]");
-                let isValid = true;
-
-                requiredFields.forEach((field) => {
-                    if (!field.value.trim()) {
-                        field.classList.add(
-                            "border-red-300",
-                            "focus:ring-red-500",
-                            "focus:border-red-500",
-                        );
-                        isValid = false;
-                    } else {
-                        field.classList.remove(
-                            "border-red-300",
-                            "focus:ring-red-500",
-                            "focus:border-red-500",
-                        );
-                    }
-                });
-
-                if (isValid) {
-                    // Show loading state
-                    const submitBtn = form.querySelector(
-                        'button[type="submit"]',
-                    );
-                    const originalText = submitBtn.innerHTML;
-                    submitBtn.innerHTML =
-                        '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-                    submitBtn.disabled = true;
-
-                    // Simulate form submission (replace with actual form submission)
-                    setTimeout(() => {
-                        // Reset form
-                        form.reset();
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-
-                        // Show success message
-                        showNotification(
-                            "Message sent successfully! We'll get back to you within 24 hours.",
-                            "success",
-                        );
-                    }, 2000);
-                } else {
-                    showNotification(
-                        "Please fill in all required fields.",
-                        "error",
-                    );
-                }
-            });
-        }
-
-        // Phone number formatting
-        const phoneInput = document.getElementById("phone");
-        if (phoneInput) {
-            phoneInput.addEventListener("input", function (e) {
-                let value = e.target.value.replace(/\D/g, "");
-                if (value.length >= 6) {
-                    value = value.replace(
-                        /(\d{3})(\d{3})(\d{4})/,
-                        "($1) $2-$3",
-                    );
-                } else if (value.length >= 3) {
-                    value = value.replace(/(\d{3})(\d{0,3})/, "($1) $2");
-                }
-                e.target.value = value;
-            });
-        }
-
-        // Live chat function
-        window.openChat = function () {
-            // Integrate with your preferred live chat service
-            alert(
-                "Live chat would open here. Integrate with your preferred chat service.",
-            );
-        };
-
-        // Notification function
-        function showNotification(message, type) {
-            const notification = document.createElement("div");
-            notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 ${
-                type === "success"
-                    ? "bg-green-500 text-white"
-                    : "bg-red-500 text-white"
-            }`;
-            notification.innerHTML = `
-            <div class="flex items-center">
-                <i class="fas ${type === "success" ? "fa-check-circle" : "fa-exclamation-triangle"} mr-2"></i>
-                <span>${message}</span>
-                <button onclick="this.parentElement.parentElement.remove()" class="ml-4 text-white hover:text-gray-200">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        `;
-
-            document.body.appendChild(notification);
-
-            setTimeout(() => {
-                notification.classList.remove("translate-x-full");
-            }, 100);
-
-            setTimeout(() => {
-                notification.classList.add("translate-x-full");
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            }, 5000);
-        }
-
-        // Enhanced form interactions
-        const inputs = form?.querySelectorAll("input, textarea, select");
-        inputs?.forEach((input) => {
-            input.addEventListener("focus", function () {
-                this.parentElement.classList.add("focused");
-            });
-
-            input.addEventListener("blur", function () {
-                this.parentElement.classList.remove("focused");
-            });
-        });
-    });
-</script>
 {% endblock %}

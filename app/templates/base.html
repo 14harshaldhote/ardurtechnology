@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,100 +55,8 @@
         <!-- Lucide Icons -->
         <script src="https://unpkg.com/lucide@latest"></script>
 
-        <!-- Tailwind CSS -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            sans: ["Inter", "system-ui", "sans-serif"],
-                            display: [
-                                "IBM Plex Sans",
-                                "Inter",
-                                "system-ui",
-                                "sans-serif",
-                            ],
-                        },
-                        colors: {
-                            primary: {
-                                50: "#eff6ff",
-                                100: "#dbeafe",
-                                200: "#bfdbfe",
-                                300: "#93c5fd",
-                                400: "#60a5fa",
-                                500: "#3b82f6",
-                                600: "#2563eb",
-                                700: "#1d4ed8",
-                                800: "#1e40af",
-                                900: "#1e3a8a",
-                            },
-                            secondary: {
-                                50: "#f8fafc",
-                                100: "#f1f5f9",
-                                200: "#e2e8f0",
-                                300: "#cbd5e1",
-                                400: "#94a3b8",
-                                500: "#64748b",
-                                600: "#475569",
-                                700: "#334155",
-                                800: "#1e293b",
-                                900: "#0f172a",
-                            },
-                            accent: {
-                                50: "#f0fdf4",
-                                100: "#dcfce7",
-                                200: "#bbf7d0",
-                                300: "#86efac",
-                                400: "#4ade80",
-                                500: "#22c55e",
-                                600: "#16a34a",
-                                700: "#15803d",
-                                800: "#166534",
-                                900: "#14532d",
-                            },
-                        },
-                        animation: {
-                            float: "float 6s ease-in-out infinite",
-                            "pulse-slow": "pulse 3s ease-in-out infinite",
-                            "slide-in-up": "slideInUp 0.6s ease-out",
-                            "slide-in-left": "slideInLeft 0.6s ease-out",
-                            "fade-in": "fadeIn 0.8s ease-out",
-                        },
-                        keyframes: {
-                            float: {
-                                "0%, 100%": { transform: "translateY(0px)" },
-                                "50%": { transform: "translateY(-10px)" },
-                            },
-                            slideInUp: {
-                                "0%": {
-                                    opacity: "0",
-                                    transform: "translateY(30px)",
-                                },
-                                "100%": {
-                                    opacity: "1",
-                                    transform: "translateY(0)",
-                                },
-                            },
-                            slideInLeft: {
-                                "0%": {
-                                    opacity: "0",
-                                    transform: "translateX(-30px)",
-                                },
-                                "100%": {
-                                    opacity: "1",
-                                    transform: "translateX(0)",
-                                },
-                            },
-                            fadeIn: {
-                                "0%": { opacity: "0" },
-                                "100%": { opacity: "1" },
-                            },
-                        },
-                    },
-                },
-            };
-        </script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
 
         <!-- Alpine.js -->
         <script
@@ -163,7 +71,6 @@
     </head>
 
     <body
-        class="bg-gray-50 text-gray-900 font-sans"
         x-data="{ showMobileMenu: false, showBackToTop: false }"
         x-init="
     window.addEventListener('scroll', () => {
@@ -172,58 +79,35 @@
 "
     >
         <!-- Header -->
-        <header
-            class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50"
-            x-data="{ showServicesDropdown: false, showMoreDropdown: false }"
-        >
-            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
+        <header class="navbar" x-data="{ showServicesDropdown: false, showMoreDropdown: false }">
+            <nav class="navbar-container">
+                <div class="flex justify-between items-center w-full">
                     <!-- Logo -->
-                    <div class="flex-shrink-0 flex items-center">
-                        <a
-                            href="{{ url_for('home') }}"
-                            class="flex items-center space-x-3 group"
-                        >
-                            <div
-                                class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200"
-                            >
-                                <span class="text-white font-bold text-lg"
-                                    >A</span
-                                >
+                    <div>
+                        <a href="{{ url_for('home') }}" class="navbar-brand">
+                            <div class="navbar-logo">
+                                <span>A</span>
                             </div>
-                            <div class="hidden sm:block">
-                                <span
-                                    class="text-xl font-display font-semibold text-gray-900"
-                                    >Ardur</span
-                                >
-                                <span
-                                    class="text-xl font-display font-semibold text-primary-600"
-                                    >Technology</span
-                                >
+                            <div class="navbar-text">
+                                Ardur<span class="highlight">Technology</span>
                             </div>
                         </a>
                     </div>
 
                     <!-- Desktop Navigation -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a
-                            href="{{ url_for('home') }}"
-                            class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                            >Home</a
-                        >
-
+                    <div class="navbar-nav">
+                        <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                        
                         <!-- Services Mega Menu -->
                         <div
                             class="relative"
                             @mouseenter="showServicesDropdown = true"
                             @mouseleave="showServicesDropdown = false"
                         >
-                            <button
-                                class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center"
-                            >
+                            <a href="#" class="nav-link flex items-center">
                                 Services
-                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </button>
+                                <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                            </a>
                             
                             <!-- Mega Menu Panel -->
                             <div
@@ -234,139 +118,104 @@
                                 x-transition:leave="transition ease-in duration-150"
                                 x-transition:leave-start="opacity-100 transform scale-100"
                                 x-transition:leave-end="opacity-0 transform scale-95"
-                                class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-[900px] bg-white rounded-xl shadow-2xl border border-gray-100 z-50"
+                                class="dropdown-menu"
                                 style="display: none;"
                             >
-                                <div class="grid grid-cols-3 gap-6 p-8">
-                                    <!-- Column 1: Business Process Management & Title Services -->
-                                    <div class="space-y-6">
-                                        <div>
-                                            <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                                                <i class="fas fa-cogs text-primary-500 mr-2"></i>Business Process Management
+                                <div class="dropdown-content">
+                                    <!-- Column 1 -->
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-category">
+                                            <h3>
+                                                <i class="fas fa-cogs text-primary mr-2"></i>
+                                                Business Process Management
                                             </h3>
-                                            <div class="space-y-1">
-                                                <a href="{{ url_for('service_page', service_slug='title-insurance') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Title Insurance</span>
+                                            <div class="dropdown-links">
+                                                <a href="{{ url_for('service_page', service_slug='title-insurance') }}" class="dropdown-link">
+                                                    <span>Title Insurance</span>
                                                 </a>
-                                                <a href="{{ url_for('service_page', service_slug='title-plant-development') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Title Plant Development</span>
+                                                <a href="{{ url_for('service_page', service_slug='title-plant-development') }}" class="dropdown-link">
+                                                    <span>Title Plant Development</span>
                                                 </a>
-                                                <a href="{{ url_for('service_page', service_slug='tax-services') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Tax Services</span>
+                                                <a href="{{ url_for('service_page', service_slug='tax-services') }}" class="dropdown-link">
+                                                    <span>Tax Services</span>
                                                 </a>
                                             </div>
                                         </div>
-                                        
-                                        <div>
-                                            <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                                                <i class="fas fa-building text-accent-500 mr-2"></i>Appraisal Management
+
+                                        <div class="dropdown-category">
+                                            <h3>
+                                                <i class="fas fa-building text-secondary mr-2"></i>
+                                                Appraisal Management
                                             </h3>
-                                            <div class="space-y-1">
-                                                <a href="{{ url_for('service_page', service_slug='appraisal-management-services') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Appraisal Management Services</span>
+                                            <div class="dropdown-links">
+                                                <a href="{{ url_for('service_page', service_slug='appraisal-management-services') }}" class="dropdown-link">
+                                                    <span>Appraisal Management Services</span>
                                                 </a>
-                                                <a href="{{ url_for('service_page', service_slug='broker-price-opinion') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">BPO – Broker Price Opinion</span>
+                                                <a href="{{ url_for('service_page', service_slug='broker-price-opinion') }}" class="dropdown-link">
+                                                    <span>BPO – Broker Price Opinion</span>
                                                 </a>
-                                                <a href="{{ url_for('service_page', service_slug='appraisal-vendor-management') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Vendor Management</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Column 2: Mortgage Services -->
-                                    <div class="space-y-6">
-                                        <div>
-                                            <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                                                <i class="fas fa-home text-secondary-500 mr-2"></i>Mortgage Services
-                                            </h3>
-                                            <div class="space-y-1">
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Pre-Processing Support</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-ancillary') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Ancillary Services</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-appraisal') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Appraisal Services</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-underwriting') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Underwriting Services</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-title') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Title Services</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-closing') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Closing Services</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-post-closing') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Post-Closing Services</span>
+                                                <a href="{{ url_for('service_page', service_slug='appraisal-vendor-management') }}" class="dropdown-link">
+                                                    <span>Vendor Management</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- Column 3: Aircraft & Document Management -->
-                                    <div class="space-y-6">
-                                        <div>
-                                            <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                                                <i class="fas fa-plane text-purple-500 mr-2"></i>Aircraft Asset Management
+
+                                    <!-- Column 2 -->
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-category">
+                                            <h3>
+                                                <i class="fas fa-home text-secondary mr-2"></i>
+                                                Mortgage Services
                                             </h3>
-                                            <div class="space-y-1">
-                                                <a href="{{ url_for('service_page', service_slug='document-management') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Document Management</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='electronic-asset-management') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Electronic Asset Management</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='programs-reliability') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Programs & Reliability</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='assemblies-services') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Assemblies Services</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='service-expertise') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Service Expertise</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='technical-documents') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Technical Documents</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='engine-maintenance-analytics') }}" class="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-all duration-200">
-                                                    <span class="font-medium">Engine Maintenance Analysis</span>
-                                                </a>
+                                            <div class="dropdown-links">
+                                                <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}" class="dropdown-link">Pre-Processing Support</a>
+                                                <a href="{{ url_for('service_page', service_slug='mortgage-ancillary') }}" class="dropdown-link">Ancillary Services</a>
+                                                <a href="{{ url_for('service_page', service_slug='mortgage-appraisal') }}" class="dropdown-link">Appraisal Services</a>
+                                                <a href="{{ url_for('service_page', service_slug='mortgage-underwriting') }}" class="dropdown-link">Underwriting Services</a>
+                                                <a href="{{ url_for('service_page', service_slug='mortgage-title') }}" class="dropdown-link">Title Services</a>
+                                                <a href="{{ url_for('service_page', service_slug='mortgage-closing') }}" class="dropdown-link">Closing Services</a>
+                                                <a href="{{ url_for('service_page', service_slug='mortgage-post-closing') }}" class="dropdown-link">Post-Closing Services</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Column 3 -->
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-category">
+                                            <h3>
+                                                <i class="fas fa-plane text-primary mr-2"></i>
+                                                Aircraft Asset Management
+                                            </h3>
+                                            <div class="dropdown-links">
+                                                <a href="{{ url_for('service_page', service_slug='document-management') }}" class="dropdown-link">Document Management</a>
+                                                <a href="{{ url_for('service_page', service_slug='electronic-asset-management') }}" class="dropdown-link">Electronic Asset Management</a>
+                                                <a href="{{ url_for('service_page', service_slug='programs-reliability') }}" class="dropdown-link">Programs & Reliability</a>
+                                                <a href="{{ url_for('service_page', service_slug='assemblies-services') }}" class="dropdown-link">Assemblies Services</a>
+                                                <a href="{{ url_for('service_page', service_slug='service-expertise') }}" class="dropdown-link">Service Expertise</a>
+                                                <a href="{{ url_for('service_page', service_slug='technical-documents') }}" class="dropdown-link">Technical Documents</a>
+                                                <a href="{{ url_for('service_page', service_slug='engine-maintenance-analytics') }}" class="dropdown-link">Engine Maintenance Analysis</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <!-- Bottom CTA Section -->
-                                <div class="bg-gradient-to-r from-primary-50 to-secondary-50 px-8 py-4 rounded-b-xl border-t border-gray-100">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="text-sm font-medium text-gray-900">Why Choose Ardur?</p>
-                                            <p class="text-xs text-gray-600 mt-0.5">Industry-leading expertise and proven results</p>
-                                        </div>
-                                        <a href="{{ url_for('about') }}" class="inline-flex items-center px-4 py-2 bg-white text-primary-600 text-sm font-medium rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-200 shadow-sm">
-                                            Learn More
-                                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                                        </a>
+
+                                <!-- Bottom CTA -->
+                                <div class="dropdown-footer">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Why Choose Ardur?</p>
+                                        <p class="text-xs text-gray-600 mt-1">Industry-leading expertise and proven results</p>
                                     </div>
+                                    <a href="{{ url_for('about') }}" class="btn btn-primary btn-sm">
+                                        Learn More
+                                        <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                   
-                        <a
-                            href="{{ url_for('about') }}"
-                            class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                            >About Us</a
-                        >
-                        <a
-                            href="{{ url_for('careers') }}"
-                            class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                            >Careers</a
-                        >
+                        <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+                        <a href="{{ url_for('careers') }}" class="nav-link">Careers</a>
                         
                         <!-- More Dropdown -->
                         <div
@@ -374,12 +223,10 @@
                             @mouseenter="showMoreDropdown = true"
                             @mouseleave="showMoreDropdown = false"
                         >
-                            <button
-                                class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center"
-                            >
+                            <a href="#" class="nav-link flex items-center">
                                 More
-                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </button>
+                                <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                            </a>
                             <div
                                 x-show="showMoreDropdown"
                                 x-transition:enter="transition ease-out duration-200"
@@ -391,210 +238,92 @@
                                 class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50"
                                 style="display: none;"
                             >
-                                <a
-                                    href="{{ url_for('blogs') }}"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                                >
-                                    <i class="fas fa-blog w-4 mr-3 text-primary-500"></i>Blogs
+                                <a href="{{ url_for('blogs') }}" class="dropdown-link flex items-center px-4 py-2">
+                                    <i class="fas fa-blog text-primary mr-3 text-sm"></i>
+                                    Blogs
                                 </a>
-                                <a
-                                    href="{{ url_for('case_studies') }}"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                                >
-                                    <i class="fas fa-file-alt w-4 mr-3 text-accent-500"></i>Case Studies
+                                <a href="{{ url_for('case_studies') }}" class="dropdown-link flex items-center px-4 py-2">
+                                    <i class="fas fa-file-alt text-secondary mr-3 text-sm"></i>
+                                    Case Studies
                                 </a>
-                                <a
-                                    href="{{ url_for('leadership') }}"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                                >
-                                    <i class="fas fa-users w-4 mr-3 text-secondary-500"></i>Leadership
+                                <a href="{{ url_for('leadership') }}" class="dropdown-link flex items-center px-4 py-2">
+                                    <i class="fas fa-users text-primary mr-3 text-sm"></i>
+                                    Leadership
                                 </a>
                             </div>
                         </div>
+                        
+                        <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
                     </div>
 
                     <!-- CTA Button & Mobile Menu Button -->
-                    <div class="flex items-center space-x-4">
-                        <a
-                            href="{{ url_for('contact') }}"
-                            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-all duration-200"
-                        >
+                    <div class="flex items-center">
+                        <a href="{{ url_for('contact') }}" class="btn btn-primary">
                             Get Started
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
 
                         <!-- Mobile menu button -->
-                        <button
-                            @click="showMobileMenu = !showMobileMenu"
-                            class="md:hidden p-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-gray-100 transition-colors duration-200"
-                        >
-                            <i
-                                class="fas fa-bars text-lg"
-                                x-show="!showMobileMenu"
-                            ></i>
-                            <i
-                                class="fas fa-times text-lg"
-                                x-show="showMobileMenu"
-                            ></i>
+                        <button @click="showMobileMenu = !showMobileMenu" class="mobile-menu-btn">
+                            <i class="fas fa-bars text-lg" x-show="!showMobileMenu"></i>
+                            <i class="fas fa-times text-lg" x-show="showMobileMenu"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Mobile Navigation -->
-                <div
-                    x-show="showMobileMenu"
-                    x-transition:enter="transition ease-out duration-200"
-                    x-transition:enter-start="opacity-0 transform -translate-y-4"
-                    x-transition:enter-end="opacity-100 transform translate-y-0"
-                    x-transition:leave="transition ease-in duration-150"
-                    x-transition:leave-start="opacity-100 transform translate-y-0"
-                    x-transition:leave-end="opacity-0 transform -translate-y-4"
-                    class="md:hidden bg-white border-t border-gray-100 py-4 max-h-[80vh] overflow-y-auto"
-                >
-                    <div class="space-y-2">
-                        <a
-                            href="{{ url_for('home') }}"
-                            class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
-                            >Home</a
-                        >
-
+                <div x-show="showMobileMenu" x-transition class="mobile-menu" x-data="{ showMobileServices: false, showMobileMore: false }">
+                    <div>
+                        <a href="{{ url_for('home') }}" class="mobile-menu-item">Home</a>
+                        
                         <!-- Mobile Services -->
-                        <div x-data="{ showMobileServices: false, showBPM: false, showAppraisal: false, showMortgage: false, showAircraft: false }">
+                        <div>
                             <button
                                 @click="showMobileServices = !showMobileServices"
-                                class="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
+                                class="mobile-menu-item w-full flex items-center justify-between"
                             >
-                                <span class="font-medium">Services</span>
-                                <i
-                                    class="fas fa-chevron-down text-xs transition-transform duration-200"
-                                    :class="{ 'rotate-180': showMobileServices }"
-                                ></i>
+                                <span>Services</span>
+                                <i class="fas fa-chevron-down text-xs transition-transform" :class="{ 'rotate-180': showMobileServices }"></i>
                             </button>
-                            <div
-                                x-show="showMobileServices"
-                                x-transition
-                                class="bg-gray-50 border-t border-gray-100"
-                            >
-                                <!-- Business Process Management -->
-                                <div class="border-b border-gray-100">
-                                    <button
-                                        @click="showBPM = !showBPM"
-                                        class="w-full flex items-center justify-between px-6 py-2.5 text-sm text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                                    >
-                                        <span><i class="fas fa-cogs text-primary-500 mr-2 text-xs"></i>Business Process Management</span>
-                                        <i class="fas fa-chevron-down text-xs transition-transform duration-200" :class="{ 'rotate-180': showBPM }"></i>
-                                    </button>
-                                    <div x-show="showBPM" x-transition class="bg-white">
-                                        <a href="{{ url_for('service_page', service_slug='title-insurance') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Title Insurance</a>
-                                        <a href="{{ url_for('service_page', service_slug='title-plant-development') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Title Plant Development</a>
-                                        <a href="{{ url_for('service_page', service_slug='tax-services') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Tax Services</a>
-                                    </div>
-                                </div>
-
-                                <!-- Appraisal Management -->
-                                <div class="border-b border-gray-100">
-                                    <button
-                                        @click="showAppraisal = !showAppraisal"
-                                        class="w-full flex items-center justify-between px-6 py-2.5 text-sm text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                                    >
-                                        <span><i class="fas fa-building text-accent-500 mr-2 text-xs"></i>Appraisal Management</span>
-                                        <i class="fas fa-chevron-down text-xs transition-transform duration-200" :class="{ 'rotate-180': showAppraisal }"></i>
-                                    </button>
-                                    <div x-show="showAppraisal" x-transition class="bg-white">
-                                        <a href="{{ url_for('service_page', service_slug='appraisal-management-services') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Appraisal Management Services</a>
-                                        <a href="{{ url_for('service_page', service_slug='broker-price-opinion') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">BPO – Broker Price Opinion</a>
-                                        <a href="{{ url_for('service_page', service_slug='appraisal-vendor-management') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Vendor Management</a>
-                                    </div>
-                                </div>
-
-                                <!-- Mortgage Services -->
-                                <div class="border-b border-gray-100">
-                                    <button
-                                        @click="showMortgage = !showMortgage"
-                                        class="w-full flex items-center justify-between px-6 py-2.5 text-sm text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                                    >
-                                        <span><i class="fas fa-home text-secondary-500 mr-2 text-xs"></i>Mortgage Services</span>
-                                        <i class="fas fa-chevron-down text-xs transition-transform duration-200" :class="{ 'rotate-180': showMortgage }"></i>
-                                    </button>
-                                    <div x-show="showMortgage" x-transition class="bg-white">
-                                        <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Pre-Processing Support</a>
-                                        <a href="{{ url_for('service_page', service_slug='mortgage-ancillary') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Ancillary Services</a>
-                                        <a href="{{ url_for('service_page', service_slug='mortgage-appraisal') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Appraisal Services</a>
-                                        <a href="{{ url_for('service_page', service_slug='mortgage-underwriting') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Underwriting Services</a>
-                                        <a href="{{ url_for('service_page', service_slug='mortgage-title') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Title Services</a>
-                                        <a href="{{ url_for('service_page', service_slug='mortgage-closing') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Closing Services</a>
-                                        <a href="{{ url_for('service_page', service_slug='mortgage-post-closing') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Post-Closing Services</a>
-                                    </div>
-                                </div>
-
-                                <!-- Aircraft Asset Management -->
-                                <div>
-                                    <button
-                                        @click="showAircraft = !showAircraft"
-                                        class="w-full flex items-center justify-between px-6 py-2.5 text-sm text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                                    >
-                                        <span><i class="fas fa-plane text-purple-500 mr-2 text-xs"></i>Aircraft Asset Management</span>
-                                        <i class="fas fa-chevron-down text-xs transition-transform duration-200" :class="{ 'rotate-180': showAircraft }"></i>
-                                    </button>
-                                    <div x-show="showAircraft" x-transition class="bg-white">
-                                        <a href="{{ url_for('service_page', service_slug='document-management') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Document Management</a>
-                                        <a href="{{ url_for('service_page', service_slug='electronic-asset-management') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Electronic Asset Management</a>
-                                        <a href="{{ url_for('service_page', service_slug='programs-reliability') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Programs & Reliability</a>
-                                        <a href="{{ url_for('service_page', service_slug='assemblies-services') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Assemblies Services</a>
-                                        <a href="{{ url_for('service_page', service_slug='service-expertise') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Service Expertise</a>
-                                        <a href="{{ url_for('service_page', service_slug='technical-documents') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Technical Documents</a>
-                                        <a href="{{ url_for('service_page', service_slug='engine-maintenance-analytics') }}" class="block px-10 py-2 text-xs text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200">Engine Maintenance Analysis</a>
-                                    </div>
-                                </div>
+                            <div x-show="showMobileServices" x-transition class="mobile-submenu">
+                                <a href="{{ url_for('service_page', service_slug='title-insurance') }}" class="mobile-submenu-item">Title Insurance</a>
+                                <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}" class="mobile-submenu-item">Mortgage Services</a>
+                                <a href="{{ url_for('service_page', service_slug='document-management') }}" class="mobile-submenu-item">Aircraft Management</a>
+                                <a href="{{ url_for('services') }}" class="mobile-submenu-item">View All Services</a>
                             </div>
                         </div>
-
-                    
-                        <a
-                            href="{{ url_for('about') }}"
-                            class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
-                            >About Us</a
-                        >
-                        <a
-                            href="{{ url_for('careers') }}"
-                            class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
-                            >Careers</a
-                        >
+                        
+                        <a href="{{ url_for('about') }}" class="mobile-menu-item">About Us</a>
+                        <a href="{{ url_for('careers') }}" class="mobile-menu-item">Careers</a>
                         
                         <!-- Mobile More -->
-                        <div x-data="{ showMobileMore: false }">
+                        <div>
                             <button
                                 @click="showMobileMore = !showMobileMore"
-                                class="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
+                                class="mobile-menu-item w-full flex items-center justify-between"
                             >
-                                <span class="font-medium">More</span>
-                                <i
-                                    class="fas fa-chevron-down text-xs transition-transform duration-200"
-                                    :class="{ 'rotate-180': showMobileMore }"
-                                ></i>
+                                <span>More</span>
+                                <i class="fas fa-chevron-down text-xs transition-transform" :class="{ 'rotate-180': showMobileMore }"></i>
                             </button>
-                            <div
-                                x-show="showMobileMore"
-                                x-transition
-                                class="bg-gray-50 border-t border-gray-100"
-                            >
-                                <a href="{{ url_for('blogs') }}" class="block px-8 py-2 text-sm text-gray-600 hover:text-primary-600 transition-colors duration-200">
-                                    <i class="fas fa-blog text-primary-500 mr-2 text-xs"></i>Blogs
+                            <div x-show="showMobileMore" x-transition class="mobile-submenu">
+                                <a href="{{ url_for('blogs') }}" class="mobile-submenu-item">
+                                    <i class="fas fa-blog text-primary mr-2 text-xs"></i>Blogs
                                 </a>
-                                <a href="{{ url_for('case_studies') }}" class="block px-8 py-2 text-sm text-gray-600 hover:text-primary-600 transition-colors duration-200">
-                                    <i class="fas fa-file-alt text-accent-500 mr-2 text-xs"></i>Case Studies
+                                <a href="{{ url_for('case_studies') }}" class="mobile-submenu-item">
+                                    <i class="fas fa-file-alt text-secondary mr-2 text-xs"></i>Case Studies
                                 </a>
-                                <a href="{{ url_for('leadership') }}" class="block px-8 py-2 text-sm text-gray-600 hover:text-primary-600 transition-colors duration-200">
-                                    <i class="fas fa-users text-secondary-500 mr-2 text-xs"></i>Leadership
+                                <a href="{{ url_for('leadership') }}" class="mobile-submenu-item">
+                                    <i class="fas fa-users text-primary mr-2 text-xs"></i>Leadership
                                 </a>
                             </div>
                         </div>
                         
-                        <a
-                            href="{{ url_for('contact') }}"
-                            class="block mx-4 mt-4 px-4 py-2 bg-primary-600 text-white text-center rounded-lg hover:bg-primary-700 transition-all duration-200"
-                            >Get Started</a
-                        >
+                        
+                        <div style="padding: 1rem;">
+                            <a href="{{ url_for('contact') }}" class="btn btn-primary w-full">
+                                Get Started
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -602,49 +331,35 @@
 
         <!-- Main Content -->
         <main class="min-h-screen">
-            {% with messages = get_flashed_messages(with_categories=true) %} {%
-            if messages %}
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+            {% with messages = get_flashed_messages(with_categories=true) %} 
+            {% if messages %}
+            <div class="container" style="padding-top: 1rem;">
                 {% for category, message in messages %}
-                <div
-                    class="mb-4 p-4 rounded-lg {% if category == 'error' %}bg-red-50 text-red-800 border border-red-200{% elif category == 'success' %}bg-green-50 text-green-800 border border-green-200{% elif category == 'warning' %}bg-yellow-50 text-yellow-800 border border-yellow-200{% else %}bg-blue-50 text-blue-800 border border-blue-200{% endif %}"
-                >
+                <div class="alert {% if category == 'error' %}alert-error{% elif category == 'success' %}alert-success{% elif category == 'warning' %}alert-warning{% else %}alert-info{% endif %}">
                     <div class="flex items-center">
-                        <i
-                            class="fas {% if category == 'error' %}fa-exclamation-triangle{% elif category == 'success' %}fa-check-circle{% elif category == 'warning' %}fa-exclamation-circle{% else %}fa-info-circle{% endif %} mr-2"
-                        ></i>
+                        <i class="fas {% if category == 'error' %}fa-exclamation-triangle{% elif category == 'success' %}fa-check-circle{% elif category == 'warning' %}fa-exclamation-circle{% else %}fa-info-circle{% endif %} mr-2"></i>
                         {{ message }}
                     </div>
                 </div>
                 {% endfor %}
             </div>
-            {% endif %} {% endwith %} {% block content %}{% endblock %}
+            {% endif %} 
+            {% endwith %} 
+            {% block content %}{% endblock %}
         </main>
 
         <!-- Footer -->
-        <footer class="bg-gray-900 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-                >
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-grid">
                     <!-- Company Info -->
-                    <div class="lg:col-span-1">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div
-                                class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center"
-                            >
-                                <span class="text-white font-bold text-lg"
-                                    >A</span
-                                >
+                    <div class="footer-section">
+                        <div class="navbar-brand mb-4">
+                            <div class="navbar-logo">
+                                <span>A</span>
                             </div>
-                            <div>
-                                <span class="text-xl font-display font-bold"
-                                    >Ardur</span
-                                >
-                                <span
-                                    class="text-xl font-display font-bold text-primary-400"
-                                    >Technology</span
-                                >
+                            <div class="navbar-text text-white">
+                                Ardur<span class="highlight">Technology</span>
                             </div>
                         </div>
                         <p class="text-gray-300 text-sm mb-6 leading-relaxed">
@@ -652,157 +367,64 @@
                             management and technology solutions since 2013.
                         </p>
                         <div class="flex space-x-4">
-                            <a
-                                href="#"
-                                class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-200"
-                            >
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a
-                                href="#"
-                                class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-200"
-                            >
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a
-                                href="#"
-                                class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-200"
-                            >
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- Services -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4 text-primary-400">
-                            Services
-                        </h4>
-                        <ul class="space-y-3 text-sm">
-                            <li>
-                                <a
-                                    href="{{ url_for('service_detail', service_category='business_process_management') }}"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >Business Process Management</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('service_detail', service_category='digital_it_services') }}"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >IT Consulting</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('service_detail', service_category='mortgage_real_estate') }}"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >Mortgage Services</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('service_detail', service_category='healthcare_services') }}"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >Healthcare Solutions</a
-                                >
-                            </li>
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="{{ url_for('services') }}">Business Process Management</a></li>
+                            <li><a href="{{ url_for('services') }}">IT Consulting</a></li>
+                            <li><a href="{{ url_for('services') }}">Mortgage Services</a></li>
+                            <li><a href="{{ url_for('services') }}">Healthcare Solutions</a></li>
                         </ul>
                     </div>
 
                     <!-- Company -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4 text-primary-400">
-                            Company
-                        </h4>
-                        <ul class="space-y-3 text-sm">
-                            <li>
-                                <a
-                                    href="{{ url_for('about') }}"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >About Us</a
-                                >
-                            </li>
-                        
-                            <li>
-                                <a
-                                    href="{{ url_for('careers') }}"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >Careers</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('contact') }}"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >Contact</a
-                                >
-                            </li>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="{{ url_for('about') }}">About Us</a></li>
+                            <li><a href="{{ url_for('careers') }}">Careers</a></li>
+                            <li><a href="{{ url_for('contact') }}">Contact</a></li>
                         </ul>
                     </div>
 
                     <!-- Contact -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4 text-primary-400">
-                            Contact
-                        </h4>
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-center space-x-3">
-                                <i
-                                    class="fas fa-envelope w-4 text-primary-400"
-                                ></i>
-                                <a
-                                    href="mailto:info@ardurtechnology.com"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >info@ardurtechnology.com</a
-                                >
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-envelope w-4 text-primary mr-3"></i>
+                                <a href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
                             </div>
-                            <div class="flex items-center space-x-3">
-                                <i
-                                    class="fas fa-phone w-4 text-primary-400"
-                                ></i>
-                                <a
-                                    href="tel:+1-555-123-4567"
-                                    class="text-gray-300 hover:text-white transition-colors duration-200"
-                                    >+1 (555) 123-4567</a
-                                >
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-phone w-4 text-primary mr-3"></i>
+                                <a href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <i
-                                    class="fas fa-map-marker-alt w-4 text-primary-400 mt-0.5"
-                                ></i>
-                                <span class="text-gray-300"
-                                    >123 Business Ave<br />Suite 100<br />City,
-                                    State 12345</span
-                                >
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt w-4 text-primary mr-3 mt-1"></i>
+                                <span>123 Business Ave<br />Suite 100<br />City, State 12345</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Footer Bottom -->
-            <div class="border-t border-gray-800">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                    <div
-                        class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
-                    >
-                        <p class="text-gray-400 text-sm">
-                            © {{ current_year or 2024 }} Ardur Technology LLC.
-                            All rights reserved.
-                        </p>
-                        <div class="flex space-x-6 text-sm">
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-white transition-colors duration-200"
-                                >Privacy Policy</a
-                            >
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-white transition-colors duration-200"
-                                >Terms of Service</a
-                            >
-                        </div>
+                <div class="footer-bottom">
+                    <p>© {{ current_year or 2024 }} Ardur Technology LLC. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -813,7 +435,7 @@
             x-show="showBackToTop"
             x-transition
             @click="window.scrollTo({top: 0, behavior: 'smooth'})"
-            class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 text-white rounded-full shadow-lg hover:bg-primary-700 transition-all duration-200 z-40"
+            class="back-to-top"
         >
             <i data-lucide="arrow-up" class="w-5 h-5"></i>
         </button>

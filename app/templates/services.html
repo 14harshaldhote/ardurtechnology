@@ -3,426 +3,452 @@
 {% block content %}
 <!-- Services Hero Section -->
 <section class="hero">
-    <div class="container">
-        <h1 class="hero-title">Our Comprehensive Services</h1>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="badge badge-white mb-6">
+            <i data-lucide="briefcase" class="w-4 h-4 mr-2"></i>
+            Our Solutions
+        </div>
+        
+        <h1 class="hero-title">
+            Comprehensive <span class="text-primary">Business Solutions</span>
+        </h1>
         <p class="hero-subtitle">
-            From business process management to digital transformation, we deliver innovative solutions
-            that streamline operations, reduce costs, and drive sustainable growth across multiple industries.
+            From process optimization to digital transformation, we deliver end-to-end solutions 
+            designed to drive efficiency, reduce costs, and accelerate your business growth.
         </p>
+        
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+                <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                Get Started
+            </a>
+            <a href="#services-overview" class="btn btn-outline btn-lg">
+                <i data-lucide="arrow-down" class="w-5 h-5 mr-2"></i>
+                Explore Services
+            </a>
+        </div>
     </div>
 </section>
 
 <!-- Services Overview -->
-<section class="section">
+<section id="services-overview" class="section bg-white">
     <div class="container">
-        <div class="section-title">
-            <h2>Complete Business Process Solutions</h2>
-        </div>
-        <div class="section-subtitle">
-            Our multi-domain expertise enables us to provide end-to-end solutions tailored to your specific
-            industry requirements and business objectives.
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="badge bg-primary-50 text-primary mb-4">
+                <i data-lucide="grid" class="w-4 h-4 mr-2"></i>
+                Service Categories
+            </div>
+            <h2 class="section-title">Our Core Services</h2>
+            <p class="section-subtitle">
+                Specialized solutions tailored to meet your unique business challenges and objectives.
+            </p>
         </div>
 
-        <div class="service-grid">
-            {% for service_key, service_data in services_data.items() %}
-            <div class="service-card">
-                <div class="card-icon">
-                    <i class="{{ service_data.icon }}"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Business Process Management -->
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="settings" class="w-8 h-8 text-white"></i>
                 </div>
-                <h3 class="card-title">{{ service_data.title }}</h3>
-                <p class="card-text">{{ service_data.description }}</p>
-
-                <ul class="service-list">
-                    {% for service in service_data.services[:4] %}
-                    <li>{{ service }}</li>
-                    {% endfor %}
-                    {% if service_data.services|length > 4 %}
-                    <li style="color: var(--primary-blue); font-weight: 500;">
-                        +{{ service_data.services|length - 4 }} more services
-                    </li>
-                    {% endif %}
-                </ul>
-
-                <a href="{{ url_for('service_detail', service_category=service_key) }}" class="btn">
-                    Learn More <i class="fas fa-arrow-right"></i>
+                <h3 class="text-xl font-display font-semibold text-gray-900 mb-4">
+                    Business Process Management
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Streamline workflows, automate processes, and optimize operations to boost efficiency 
+                    and reduce costs across your organization.
+                </p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Process Analysis & Optimization
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Workflow Automation
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Performance Monitoring
+                    </div>
+                </div>
+                <a href="{{ url_for('service_detail', service_category='business-process-management') }}" class="inline-flex items-center text-primary font-medium hover:text-primary transition-colors group">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
-            {% endfor %}
+
+            <!-- IT Consulting & Support -->
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="laptop" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-xl font-display font-semibold text-gray-900 mb-4">
+                    IT Consulting & Support
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Strategic technology consulting and comprehensive support services to keep your 
+                    systems running optimally and securely.
+                </p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        Technology Strategy
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        24/7 Technical Support
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        System Integration
+                    </div>
+                </div>
+                <a href="{{ url_for('service_detail', service_category='it-consulting') }}" class="inline-flex items-center text-secondary font-medium hover:text-secondary transition-colors group">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Mortgage Services -->
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="home" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-xl font-display font-semibold text-gray-900 mb-4">
+                    Mortgage Services
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    End-to-end mortgage processing and title services with industry-leading accuracy, 
+                    speed, and compliance standards.
+                </p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Loan Processing
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Title Services
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Compliance Management
+                    </div>
+                </div>
+                <a href="{{ url_for('service_detail', service_category='mortgage-services') }}" class="inline-flex items-center text-primary font-medium hover:text-primary transition-colors group">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Healthcare Solutions -->
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="heart-pulse" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-xl font-display font-semibold text-gray-900 mb-4">
+                    Healthcare Solutions
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Specialized healthcare administration and compliance solutions designed for 
+                    medical organizations and healthcare providers.
+                </p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        Medical Billing
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        Claims Processing
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        HIPAA Compliance
+                    </div>
+                </div>
+                <a href="{{ url_for('service_detail', service_category='healthcare-solutions') }}" class="inline-flex items-center text-secondary font-medium hover:text-secondary transition-colors group">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Aviation Solutions -->
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="500">
+                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="plane" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-xl font-display font-semibold text-gray-900 mb-4">
+                    Aviation Solutions
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Advanced aircraft asset management and predictive maintenance solutions 
+                    powered by IoT and analytics technology.
+                </p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Asset Management
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Maintenance Tracking
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-primary mr-2"></i>
+                        Compliance Monitoring
+                    </div>
+                </div>
+                <a href="{{ url_for('service_detail', service_category='aviation-solutions') }}" class="inline-flex items-center text-primary font-medium hover:text-primary transition-colors group">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="card card-content" data-aos="fade-up" data-aos-delay="600">
+                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="headphones" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-xl font-display font-semibold text-gray-900 mb-4">
+                    Customer Support
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Multi-channel customer support solutions designed to enhance client satisfaction, 
+                    retention, and overall customer experience.
+                </p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        24/7 Support
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        Multi-Channel
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i data-lucide="check" class="w-4 h-4 text-secondary mr-2"></i>
+                        Quality Assurance
+                    </div>
+                </div>
+                <a href="{{ url_for('service_detail', service_category='customer-support') }}" class="inline-flex items-center text-secondary font-medium hover:text-secondary transition-colors group">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Overview -->
+<section class="section bg-gray-50">
+    <div class="container">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="badge bg-white text-primary mb-4">
+                <i data-lucide="workflow" class="w-4 h-4 mr-2"></i>
+                Our Process
+            </div>
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-subtitle">
+                Our proven methodology ensures successful project delivery and measurable results.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white font-bold text-xl">1</span>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-3">Discovery & Analysis</h4>
+                <p class="text-gray-600 text-sm">
+                    We analyze your current processes, identify pain points, and understand your business objectives.
+                </p>
+            </div>
+
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white font-bold text-xl">2</span>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-3">Strategy & Planning</h4>
+                <p class="text-gray-600 text-sm">
+                    We develop a customized strategy and implementation plan tailored to your specific needs.
+                </p>
+            </div>
+
+            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white font-bold text-xl">3</span>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-3">Implementation</h4>
+                <p class="text-gray-600 text-sm">
+                    Our expert team executes the solution with minimal disruption to your daily operations.
+                </p>
+            </div>
+
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white font-bold text-xl">4</span>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-3">Optimization & Support</h4>
+                <p class="text-gray-600 text-sm">
+                    We continuously monitor, optimize, and provide ongoing support to ensure sustained success.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Service Benefits -->
-<section class="section" style="background: var(--light-grey);">
+<section class="section bg-white">
     <div class="container">
-        <div class="section-title">
-            <h2>Why Choose Our Services?</h2>
-        </div>
-        <div class="section-subtitle">
-            We combine industry expertise with innovative technology to deliver measurable results for your organization.
-        </div>
-
-        <div class="row">
-            <div class="col col-3">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <div class="badge bg-primary-50 text-primary mb-6">
+                    <i data-lucide="trending-up" class="w-4 h-4 mr-2"></i>
+                    Key Benefits
+                </div>
+                <h2 class="text-3xl font-display font-bold text-gray-900 mb-6">
+                    Why Choose Our Services?
+                </h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Our comprehensive approach to business process management delivers measurable results 
+                    that drive efficiency, reduce costs, and accelerate growth.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Increased Efficiency</h4>
+                            <p class="text-gray-600 text-sm">Streamlined processes that reduce manual work and eliminate bottlenecks.</p>
+                        </div>
                     </div>
-                    <h4 class="card-title">Increased Efficiency</h4>
-                    <p class="card-text">
-                        Streamlined processes and automation reduce manual effort and improve operational efficiency by up to 60%.
-                    </p>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i data-lucide="dollar-sign" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Cost Reduction</h4>
+                            <p class="text-gray-600 text-sm">Significant savings through process optimization and automation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i data-lucide="shield" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Enhanced Quality</h4>
+                            <p class="text-gray-600 text-sm">Improved accuracy and consistency in all business processes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i data-lucide="clock" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Faster Time-to-Market</h4>
+                            <p class="text-gray-600 text-sm">Accelerated delivery and reduced time for key business processes.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col col-3">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-dollar-sign"></i>
+            <div data-aos="fade-left">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center p-6 bg-primary-50 rounded-lg">
+                        <div class="text-3xl font-bold text-primary mb-2">40%</div>
+                        <div class="text-sm text-gray-600">Average Cost Reduction</div>
                     </div>
-                    <h4 class="card-title">Cost Reduction</h4>
-                    <p class="card-text">
-                        Our optimized solutions help reduce operational costs by 30-50% while maintaining or improving quality.
-                    </p>
-                </div>
-            </div>
-            <div class="col col-3">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-clock"></i>
+                    <div class="text-center p-6 bg-secondary-50 rounded-lg">
+                        <div class="text-3xl font-bold text-secondary mb-2">60%</div>
+                        <div class="text-sm text-gray-600">Process Efficiency Gain</div>
                     </div>
-                    <h4 class="card-title">Faster Turnaround</h4>
-                    <p class="card-text">
-                        Accelerated processing times and quick implementation ensure faster time-to-market for your initiatives.
-                    </p>
-                </div>
-            </div>
-            <div class="col col-3">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="text-center p-6 bg-primary-50 rounded-lg">
+                        <div class="text-3xl font-bold text-primary mb-2">95%</div>
+                        <div class="text-sm text-gray-600">Client Satisfaction</div>
                     </div>
-                    <h4 class="card-title">Risk Mitigation</h4>
-                    <p class="card-text">
-                        Robust security measures and compliance frameworks minimize operational and regulatory risks.
-                    </p>
+                    <div class="text-center p-6 bg-secondary-50 rounded-lg">
+                        <div class="text-3xl font-bold text-secondary mb-2">24/7</div>
+                        <div class="text-sm text-gray-600">Support Available</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Service Approach -->
-<section class="section">
+<!-- Industries We Serve -->
+<section class="section bg-gray-50">
     <div class="container">
-        <div class="section-title">
-            <h2>Our Service Approach</h2>
-        </div>
-        <div class="section-subtitle">
-            We follow a structured, proven methodology to ensure successful delivery and sustainable results.
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="badge bg-white text-primary mb-4">
+                <i data-lucide="building" class="w-4 h-4 mr-2"></i>
+                Industries
+            </div>
+            <h2 class="section-title">Industries We Serve</h2>
+            <p class="section-subtitle">
+                Specialized expertise across multiple industries and business sectors.
+            </p>
         </div>
 
-        <div class="row">
-            <div class="col col-6">
-                <div class="row">
-                    <div class="col col-6">
-                        <div class="card text-center">
-                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                <span style="font-weight: 700; font-size: 1.5rem;">1</span>
-                            </div>
-                            <h4 class="card-title">Analysis</h4>
-                            <p class="card-text">
-                                Comprehensive assessment of current processes and identification of improvement opportunities.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-6">
-                        <div class="card text-center">
-                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                <span style="font-weight: 700; font-size: 1.5rem;">2</span>
-                            </div>
-                            <h4 class="card-title">Design</h4>
-                            <p class="card-text">
-                                Custom solution design tailored to your specific requirements and business objectives.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-6">
-                        <div class="card text-center">
-                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                <span style="font-weight: 700; font-size: 1.5rem;">3</span>
-                            </div>
-                            <h4 class="card-title">Implementation</h4>
-                            <p class="card-text">
-                                Systematic deployment with minimal disruption to your existing operations.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-6">
-                        <div class="card text-center">
-                            <div class="card-icon" style="background: #e3f2fd; color: var(--primary-blue); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                <span style="font-weight: 700; font-size: 1.5rem;">4</span>
-                            </div>
-                            <h4 class="card-title">Optimization</h4>
-                            <p class="card-text">
-                                Continuous monitoring and improvement to ensure optimal performance and results.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="text-center p-4 bg-white rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                <i data-lucide="heart-pulse" class="w-8 h-8 text-primary mx-auto mb-2"></i>
+                <div class="text-sm font-medium text-gray-900">Healthcare</div>
             </div>
-            <div class="col col-6">
-                <div class="card">
-                    <h3 class="card-title">Service Features</h3>
-                    <ul class="service-list">
-                        <li>Dedicated project management and support teams</li>
-                        <li>Real-time reporting and performance dashboards</li>
-                        <li>Scalable solutions that grow with your business</li>
-                        <li>24/7 monitoring and support capabilities</li>
-                        <li>Industry-specific expertise and best practices</li>
-                        <li>Compliance with regulatory standards</li>
-                        <li>Seamless integration with existing systems</li>
-                        <li>Regular review and optimization cycles</li>
-                    </ul>
-                </div>
+            <div class="text-center p-4 bg-white rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                <i data-lucide="landmark" class="w-8 h-8 text-secondary mx-auto mb-2"></i>
+                <div class="text-sm font-medium text-gray-900">Financial</div>
             </div>
+            <div class="text-center p-4 bg-white rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                <i data-lucide="home" class="w-8 h-8 text-primary mx-auto mb-2"></i>
+                <div class="text-sm font-medium text-gray-900">Real Estate</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                <i data-lucide="plane" class="w-8 h-8 text-secondary mx-auto mb-2"></i>
+                <div class="text-sm font-medium text-gray-900">Aviation</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                <i data-lucide="shopping-cart" class="w-8 h-8 text-primary mx-auto mb-2"></i>
+                <div class="text-sm font-medium text-gray-900">E-commerce</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                <i data-lucide="factory" class="w-8 h-8 text-secondary mx-auto mb-2"></i>
+                <div class="text-sm font-medium text-gray-900">Manufacturing</div>
+            </div>
+        </div>
+
+        <div class="text-center mt-8">
+            <a href="{{ url_for('industries') }}" class="btn btn-outline">
+                View All Industries
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- Technology Stack -->
-<section class="section" style="background: var(--light-grey);">
-    <div class="container">
-        <div class="section-title">
-            <h2>Technology & Tools</h2>
+<!-- CTA Section -->
+<section class="cta-section section">
+    <div class="container" data-aos="fade-up">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
         </div>
-        <div class="section-subtitle">
-            We leverage cutting-edge technologies and industry-leading tools to deliver superior results.
-        </div>
-
-        <div class="row">
-            <div class="col col-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h4 class="card-title">Cloud Platforms</h4>
-                    <p class="card-text">
-                        AWS, Microsoft Azure, Google Cloud Platform for scalable and secure infrastructure solutions.
-                    </p>
-                </div>
-            </div>
-            <div class="col col-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h4 class="card-title">Automation Tools</h4>
-                    <p class="card-text">
-                        RPA platforms, workflow automation, and AI-powered process optimization solutions.
-                    </p>
-                </div>
-            </div>
-            <div class="col col-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h4 class="card-title">Data Analytics</h4>
-                    <p class="card-text">
-                        Advanced analytics, machine learning, and business intelligence for data-driven insights.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col col-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h4 class="card-title">Security Solutions</h4>
-                    <p class="card-text">
-                        Enterprise-grade security, encryption, and compliance management systems.
-                    </p>
-                </div>
-            </div>
-            <div class="col col-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h4 class="card-title">Mobile & Web</h4>
-                    <p class="card-text">
-                        Responsive web applications and mobile solutions for enhanced accessibility.
-                    </p>
-                </div>
-            </div>
-            <div class="col col-4">
-                <div class="card text-center">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h4 class="card-title">Monitoring Tools</h4>
-                    <p class="card-text">
-                        Real-time monitoring, performance tracking, and comprehensive reporting dashboards.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Service Stats -->
-<section class="stats">
-    <div class="container">
-        <div class="row">
-            <div class="col col-4">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="6">6</span>
-                    <div class="stat-label">Service Categories</div>
-                </div>
-            </div>
-            <div class="col col-4">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="50">50+</span>
-                    <div class="stat-label">Individual Services</div>
-                </div>
-            </div>
-            <div class="col col-4">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="99">99.5%</span>
-                    <div class="stat-label">Service Uptime</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action -->
-<section class="section" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%); color: var(--white);">
-    <div class="container text-center">
-        <h2 style="color: var(--white); margin-bottom: 1rem;">Ready to Get Started?</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-            Let's discuss how our comprehensive service portfolio can address your specific business challenges
-            and help you achieve your strategic objectives.
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-white">
+            Ready to Transform Your Business?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Let's discuss how our comprehensive solutions can help optimize your operations and drive growth.
         </p>
-        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-            <a href="{{ url_for('contact') }}" class="btn" style="background: var(--white); color: var(--primary-navy);">
-                <i class="fas fa-envelope"></i>
-                Request Consultation
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+                <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                Get Free Consultation
             </a>
-            <a href="tel:{{ company_phone }}" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">
-                <i class="fas fa-phone"></i>
-                Call {{ company_phone }}
+            <a href="{{ url_for('case_studies') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
+                <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+                View Case Studies
             </a>
         </div>
     </div>
 </section>
-
-<!-- FAQ Section -->
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
-        </div>
-        <div class="section-subtitle">
-            Common questions about our services and how we can help your organization.
-        </div>
-
-        <div class="row">
-            <div class="col col-6">
-                <div class="card">
-                    <h4 class="card-title">How do you ensure quality and accuracy?</h4>
-                    <p class="card-text">
-                        We implement multi-tier quality control processes, regular audits, and continuous training
-                        programs to maintain the highest standards of accuracy and service delivery.
-                    </p>
-                </div>
-                <div class="card">
-                    <h4 class="card-title">What industries do you specialize in?</h4>
-                    <p class="card-text">
-                        We serve multiple industries including healthcare, financial services, real estate,
-                        mortgage, and aviation, with specialized expertise in each sector.
-                    </p>
-                </div>
-                <div class="card">
-                    <h4 class="card-title">How quickly can you implement services?</h4>
-                    <p class="card-text">
-                        Implementation timelines vary by service complexity, but we typically begin initial
-                        services within 2-4 weeks and full implementation within 6-12 weeks.
-                    </p>
-                </div>
-            </div>
-            <div class="col col-6">
-                <div class="card">
-                    <h4 class="card-title">Do you provide 24/7 support?</h4>
-                    <p class="card-text">
-                        Yes, we offer round-the-clock monitoring and support for critical services, ensuring
-                        your business operations continue smoothly without interruption.
-                    </p>
-                </div>
-                <div class="card">
-                    <h4 class="card-title">How do you handle data security?</h4>
-                    <p class="card-text">
-                        We maintain enterprise-grade security protocols, including encryption, access controls,
-                        regular security audits, and compliance with industry standards like HIPAA and SOX.
-                    </p>
-                </div>
-                <div class="card">
-                    <h4 class="card-title">Can services be customized for our needs?</h4>
-                    <p class="card-text">
-                        Absolutely. We work closely with each client to understand their unique requirements
-                        and customize our services to align with their specific business objectives.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %}
-
-{% block extra_js %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Add stagger animation to service cards
-        const serviceCards = document.querySelectorAll('.service-card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, index * 100);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        serviceCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Animate approach steps
-        const steps = document.querySelectorAll('.card-icon[style*="border-radius: 50%"]');
-        steps.forEach((step, index) => {
-            step.style.animation = `pulse 2s ease-in-out ${index * 0.2}s infinite`;
-        });
-
-        // Add pulse animation keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.05); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-    });
-</script>
 {% endblock %}

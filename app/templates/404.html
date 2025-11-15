@@ -2,190 +2,132 @@
 
 {% block content %}
 <!-- 404 Error Page -->
-<section class="py-20 lg:py-32 bg-gradient-to-b from-blue-50 to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="text-9xl font-bold text-primary-600 mb-4">404</div>
-        <h1 class="text-4xl font-display font-bold text-gray-900 mb-6">Page Not Found</h1>
-        <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+<section class="page-header">
+    <div class="container text-center">
+        <div class="text-6xl font-bold text-primary mb-4">404</div>
+        <h1 class="page-title">Page Not Found</h1>
+        <p class="page-subtitle">
             Sorry, the page you are looking for doesn't exist or has been moved.
             Don't worry, it happens to the best of us. Let's get you back on track.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
-                <div class="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="home" class="w-7 h-7 text-white"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-8">
+            <div class="card card-content text-center">
+                <div class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="home" class="w-6 h-6 text-white"></i>
                 </div>
                 <h4 class="text-lg font-semibold text-gray-900 mb-3">Go Home</h4>
-                <p class="text-gray-600 mb-4">
-                        Return to our homepage and explore our comprehensive business solutions.
-                    </p>
-                    <a href="{{ url_for('home') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200">
-                        <i data-lucide="home" class="w-4 h-4"></i>
-                        Homepage
-                    </a>
-                </div>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Return to our homepage and explore our comprehensive business solutions.
+                </p>
+                <a href="{{ url_for('home') }}" class="btn btn-primary">
+                    <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+                    Homepage
+                </a>
             </div>
-            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
-                <div class="w-14 h-14 bg-accent-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="briefcase" class="w-7 h-7 text-white"></i>
+
+            <div class="card card-content text-center">
+                <div class="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
                 </div>
                 <h4 class="text-lg font-semibold text-gray-900 mb-3">Our Services</h4>
-                <p class="text-gray-600 mb-4">
-                        Discover our full range of business process management and IT solutions.
-                    </p>
-                    <a href="{{ url_for('services') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-accent-600 text-white font-semibold rounded-lg hover:bg-accent-700 transition-all duration-200">
-                        <i data-lucide="briefcase" class="w-4 h-4"></i>
-                        View Services
-                    </a>
-                </div>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Discover our full range of business process management and IT solutions.
+                </p>
+                <a href="{{ url_for('services') }}" class="btn btn-secondary">
+                    <i data-lucide="briefcase" class="w-4 h-4 mr-2"></i>
+                    View Services
+                </a>
             </div>
-            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
-                <div class="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="mail" class="w-7 h-7 text-white"></i>
+
+            <div class="card card-content text-center">
+                <div class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="mail" class="w-6 h-6 text-white"></i>
                 </div>
                 <h4 class="text-lg font-semibold text-gray-900 mb-3">Contact Us</h4>
-                <p class="text-gray-600 mb-4">
-                        Get in touch with our team for assistance or questions about our services.
-                    </p>
-                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200">
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                        Contact
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-12">
-            <h3 class="text-2xl font-display font-bold text-gray-900 mb-6">Popular Pages</h3>
-            <div class="flex justify-center gap-4 flex-wrap">
-                <a href="{{ url_for('about') }}" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-primary-600 hover:text-primary-600 transition-all duration-200">
-                    <i data-lucide="info" class="w-4 h-4"></i>
-                    About Us
-                </a>
-                <a href="{{ url_for('industries') }}" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-primary-600 hover:text-primary-600 transition-all duration-200">
-                    <i data-lucide="factory" class="w-4 h-4"></i>
-                    Industries
-                </a>
-                <a href="{{ url_for('careers') }}" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-primary-600 hover:text-primary-600 transition-all duration-200">
-                    <i data-lucide="users" class="w-4 h-4"></i>
-                    Careers
+                <p class="text-gray-600 mb-4 text-sm">
+                    Get in touch with our team for assistance or questions about our services.
+                </p>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                    Contact
                 </a>
             </div>
         </div>
 
         <div class="mt-8">
-            <p class="text-gray-600">
+            <h3 class="text-xl font-display font-bold text-gray-900 mb-4">Popular Pages</h3>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="{{ url_for('about') }}" class="btn btn-outline">
+                    <i data-lucide="info" class="w-4 h-4 mr-2"></i>
+                    About Us
+                </a>
+                <a href="{{ url_for('careers') }}" class="btn btn-outline">
+                    <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                    Careers
+                </a>
+                <a href="{{ url_for('blogs') }}" class="btn btn-outline">
+                    <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                    Blog
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <p class="text-gray-600 text-sm">
                 <strong class="text-gray-900">Need immediate assistance?</strong><br>
-                Call us at <a href="tel:{{ company_phone }}" class="text-primary-600 hover:text-primary-700">{{ company_phone }}</a>
-                or email <a href="mailto:{{ company_email }}" class="text-primary-600 hover:text-primary-700">{{ company_email }}</a>
+                Call us at <a href="tel:+1-555-123-4567" class="text-primary hover:text-primary">+1 (555) 123-4567</a>
+                or email <a href="mailto:info@ardurtechnology.com" class="text-primary hover:text-primary">info@ardurtechnology.com</a>
             </p>
         </div>
     </div>
 </section>
 
 <!-- Search Suggestions -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">What were you looking for?</h3>
-        <p class="text-gray-600 mb-12">
+<section class="section bg-gray-50">
+    <div class="container text-center">
+        <h3 class="section-title">What were you looking for?</h3>
+        <p class="section-subtitle">
             Here are some common resources and services that might help you find what you need.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+            <div class="card card-content">
                 <h5 class="font-semibold text-gray-900 mb-4">Business Process Management</h5>
-                <ul class="space-y-2 text-left text-sm text-gray-600">
-                        <li><a href="{{ url_for('service_detail', service_category='business_process_management') }}">BPM Services</a></li>
-                        <li><a href="{{ url_for('service_detail', service_category='mortgage_real_estate') }}">Mortgage Processing</a></li>
-                        <li><a href="{{ url_for('service_detail', service_category='finance_accounting') }}">Finance & Accounting</a></li>
-                    </ul>
-                </div>
+                <ul class="text-left text-sm text-gray-600 space-y-2">
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">BPM Services</a></li>
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Mortgage Processing</a></li>
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Finance & Accounting</a></li>
+                </ul>
             </div>
-            <div class="col col-3">
-                <div class="card">
-                    <h5 class="card-title">Healthcare Solutions</h5>
-                    <ul class="service-list" style="text-align: left;">
-                        <li><a href="{{ url_for('service_detail', service_category='healthcare_services') }}">Medical Billing</a></li>
-                        <li><a href="{{ url_for('service_detail', service_category='healthcare_services') }}">Revenue Cycle</a></li>
-                        <li><a href="{{ url_for('service_detail', service_category='healthcare_services') }}">Claims Processing</a></li>
-                    </ul>
-                </div>
+
+            <div class="card card-content">
+                <h5 class="font-semibold text-gray-900 mb-4">Healthcare Solutions</h5>
+                <ul class="text-left text-sm text-gray-600 space-y-2">
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Medical Billing</a></li>
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Revenue Cycle</a></li>
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Claims Processing</a></li>
+                </ul>
             </div>
-            <div class="col col-3">
-                <div class="card">
-                    <h5 class="card-title">Digital Services</h5>
-                    <ul class="service-list" style="text-align: left;">
-                        <li><a href="{{ url_for('service_detail', service_category='digital_it_services') }}">Web Development</a></li>
-                        <li><a href="{{ url_for('service_detail', service_category='digital_it_services') }}">Cloud Solutions</a></li>
-                        <li><a href="{{ url_for('service_detail', service_category='digital_it_services') }}">RPA & Automation</a></li>
-                    </ul>
-                </div>
+
+            <div class="card card-content">
+                <h5 class="font-semibold text-gray-900 mb-4">Digital Services</h5>
+                <ul class="text-left text-sm text-gray-600 space-y-2">
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Web Development</a></li>
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Cloud Solutions</a></li>
+                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">RPA & Automation</a></li>
+                </ul>
             </div>
-            <div class="col col-3">
-                <div class="card">
-                    <h5 class="card-title">Company Information</h5>
-                    <ul class="service-list" style="text-align: left;">
-                        <li><a href="{{ url_for('about') }}">Company History</a></li>
-                        <li><a href="{{ url_for('careers') }}">Job Opportunities</a></li>
-                        <li><a href="{{ url_for('contact') }}">Office Locations</a></li>
-                    </ul>
-                </div>
+
+            <div class="card card-content">
+                <h5 class="font-semibold text-gray-900 mb-4">Company Information</h5>
+                <ul class="text-left text-sm text-gray-600 space-y-2">
+                    <li><a href="{{ url_for('about') }}" class="text-primary hover:text-primary">Company History</a></li>
+                    <li><a href="{{ url_for('careers') }}" class="text-primary hover:text-primary">Job Opportunities</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="text-primary hover:text-primary">Office Locations</a></li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
-{% endblock %}
-
-{% block extra_js %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Track 404 errors (you can integrate with analytics)
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'page_view', {
-                page_title: '404 - Page Not Found',
-                page_location: window.location.href
-            });
-        }
-
-        // Animate error elements
-        const errorCode = document.querySelector('.error-code');
-        const errorMessage = document.querySelector('.error-message');
-
-        if (errorCode) {
-            errorCode.style.opacity = '0';
-            errorCode.style.transform = 'scale(0.5)';
-            errorCode.style.transition = 'all 0.6s ease';
-
-            setTimeout(() => {
-                errorCode.style.opacity = '1';
-                errorCode.style.transform = 'scale(1)';
-            }, 200);
-        }
-
-        if (errorMessage) {
-            errorMessage.style.opacity = '0';
-            errorMessage.style.transform = 'translateY(20px)';
-            errorMessage.style.transition = 'all 0.6s ease';
-
-            setTimeout(() => {
-                errorMessage.style.opacity = '1';
-                errorMessage.style.transform = 'translateY(0)';
-            }, 400);
-        }
-
-        // Animate cards
-        const cards = document.querySelectorAll('.card');
-        cards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.6s ease ${(index + 1) * 0.1}s`;
-
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 600 + (index * 100));
-        });
-    });
-</script>
 {% endblock %}
