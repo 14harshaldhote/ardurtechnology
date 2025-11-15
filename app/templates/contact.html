@@ -4,8 +4,8 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content" data-aos="fade-up">
-        <div class="badge badge-white mb-6">
-            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+        <div class="badge badge-white" style="margin-bottom: 2rem;">
+            <i data-lucide="phone" style="margin-right: 0.5rem;"></i>
             Get In Touch
         </div>
         
@@ -19,11 +19,11 @@
         
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
             <a href="#contact-form" class="btn btn-primary btn-lg">
-                <i data-lucide="send" class="hero-icon"></i>
+                <i data-lucide="send"></i>
                 Send Message
             </a>
             <a href="tel:+1-555-123-4567" class="btn btn-outline btn-lg">
-                <i data-lucide="phone" class="hero-icon"></i>
+                <i data-lucide="phone"></i>
                 Call Now
             </a>
         </div>
@@ -35,7 +35,7 @@
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <div class="modern-badge">
-                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                <i data-lucide="map-pin" style="margin-right: 0.5rem;"></i>
                 Contact Information
             </div>
             <h2 class="modern-title">
@@ -95,7 +95,7 @@
                 </div>
                 <h3 class="contact-title">Address</h3>
                 <div class="contact-info">
-                    <div class="font-medium text-gray-900 mb-1">Main Office</div>
+                    <div style="font-weight: 500; color: var(--gray-900); margin-bottom: 0.5rem;">Main Office</div>
                     <div class="contact-label">123 Business Avenue</div>
                     <div class="contact-label">Suite 100</div>
                     <div class="contact-label">City, State 12345</div>
@@ -108,15 +108,15 @@
                 </div>
                 <h3 class="contact-title">Hours</h3>
                 <div class="contact-info">
-                    <div class="flex justify-between">
+                    <div style="display: flex; justify-content: space-between;">
                         <span class="contact-label">Mon - Fri:</span>
                         <span class="font-medium">9:00 AM - 6:00 PM</span>
                     </div>
-                    <div class="flex justify-between">
+                    <div style="display: flex; justify-content: space-between;">
                         <span class="contact-label">Saturday:</span>
                         <span class="font-medium">10:00 AM - 4:00 PM</span>
                     </div>
-                    <div class="flex justify-between">
+                    <div style="display: flex; justify-content: space-between;">
                         <span class="contact-label">Sunday:</span>
                         <span class="font-medium">Closed</span>
                     </div>
@@ -129,60 +129,60 @@
 <!-- Contact Form -->
 <section id="contact-form" class="section bg-gray-50">
     <div class="container">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div style="max-width: 64rem; margin: 0 auto;">
+            <div class="horizontal-layout" style="grid-template-columns: 2fr 1fr;">
                 <!-- Form -->
-                <div class="lg:col-span-2">
-                    <div class="card card-content" data-aos="fade-up">
-                        <h2 class="text-2xl font-display font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                        <form action="{{ url_for('contact') }}" method="POST" class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="modern-card" data-aos="fade-up">
+                        <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">Send Us a Message</h2>
+                        <form action="{{ url_for('contact') }}" method="POST" style="display: flex; flex-direction: column; gap: 2rem;">
+                            <div class="horizontal-layout">
                                 <div>
-                                    <label for="first_name" class="block text-sm font-medium text-gray-900 mb-2">
+                                    <label for="first_name" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         First Name *
                                     </label>
                                     <input type="text" id="first_name" name="first_name" required 
-                                           class="form-input w-full" placeholder="John">
+                                           class="form-input" style="width: 100%;" placeholder="John">
                                 </div>
                                 <div>
-                                    <label for="last_name" class="block text-sm font-medium text-gray-900 mb-2">
+                                    <label for="last_name" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         Last Name *
                                     </label>
                                     <input type="text" id="last_name" name="last_name" required 
-                                           class="form-input w-full" placeholder="Doe">
+                                           class="form-input" style="width: 100%;" placeholder="Doe">
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="horizontal-layout">
                                 <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-900 mb-2">
+                                    <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         Email Address *
                                     </label>
                                     <input type="email" id="email" name="email" required 
-                                           class="form-input w-full" placeholder="john@company.com">
+                                           class="form-input" style="width: 100%;" placeholder="john@company.com">
                                 </div>
                                 <div>
-                                    <label for="phone" class="block text-sm font-medium text-gray-900 mb-2">
+                                    <label for="phone" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         Phone Number
                                     </label>
                                     <input type="tel" id="phone" name="phone" 
-                                           class="form-input w-full" placeholder="+1 (555) 123-4567">
+                                           class="form-input" style="width: 100%;" placeholder="+1 (555) 123-4567">
                                 </div>
                             </div>
 
                             <div>
-                                <label for="company" class="block text-sm font-medium text-gray-900 mb-2">
+                                <label for="company" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Company Name
                                 </label>
                                 <input type="text" id="company" name="company" 
-                                       class="form-input w-full" placeholder="Your Company">
+                                       class="form-input" style="width: 100%;" placeholder="Your Company">
                             </div>
 
                             <div>
-                                <label for="service" class="block text-sm font-medium text-gray-900 mb-2">
+                                <label for="service" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Service Interest
                                 </label>
-                                <select id="service" name="service" class="form-input w-full">
+                                <select id="service" name="service" class="form-input" style="width: 100%;">
                                     <option value="">Select a service</option>
                                     <option value="business-process-management">Business Process Management</option>
                                     <option value="it-consulting">IT Consulting & Support</option>
@@ -195,10 +195,10 @@
                             </div>
 
                             <div>
-                                <label for="budget" class="block text-sm font-medium text-gray-900 mb-2">
+                                <label for="budget" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Project Budget
                                 </label>
-                                <select id="budget" name="budget" class="form-input w-full">
+                                <select id="budget" name="budget" class="form-input" style="width: 100%;">
                                     <option value="">Select budget range</option>
                                     <option value="under-10k">Under $10,000</option>
                                     <option value="10k-25k">$10,000 - $25,000</option>
@@ -209,26 +209,26 @@
                             </div>
 
                             <div>
-                                <label for="message" class="block text-sm font-medium text-gray-900 mb-2">
+                                <label for="message" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Message *
                                 </label>
                                 <textarea id="message" name="message" rows="6" required 
-                                          class="form-input w-full" 
+                                          class="form-input" style="width: 100%;" 
                                           placeholder="Tell us about your project requirements, challenges, or questions..."></textarea>
                             </div>
 
-                            <div class="flex items-start">
+                            <div style="display: flex; align-items: flex-start;">
                                 <input type="checkbox" id="privacy" name="privacy" required 
-                                       class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary mt-1">
-                                <label for="privacy" class="ml-3 text-sm text-gray-600">
-                                    I agree to the <a href="#" class="text-primary hover:text-primary">Privacy Policy</a> 
-                                    and <a href="#" class="text-primary hover:text-primary">Terms of Service</a> *
+                                       style="width: 1rem; height: 1rem; color: var(--primary-600); border: 1px solid var(--gray-300); border-radius: var(--radius-sm); margin-top: 0.25rem;">
+                                <label for="privacy" style="margin-left: 1rem; font-size: 0.875rem; color: var(--gray-600);">
+                                    I agree to the <a href="#" class="text-primary" style="transition: color var(--transition-normal);">Privacy Policy</a> 
+                                    and <a href="#" class="text-primary" style="transition: color var(--transition-normal);">Terms of Service</a> *
                                 </label>
                             </div>
 
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg w-full">
-                                    <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                                <button type="submit" class="btn btn-primary btn-lg btn-full">
+                                    <i data-lucide="send"></i>
                                     Send Message
                                 </button>
                             </div>
@@ -237,18 +237,18 @@
                 </div>
 
                 <!-- Contact Info Sidebar -->
-                <div class="lg:col-span-1">
-                    <div class="space-y-6">
+                <div>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
                         <!-- Quick Contact -->
-                        <div class="card card-content" data-aos="fade-up">
+                        <div class="modern-card" data-aos="fade-up">
                             <h3 class="contact-title">Quick Contact</h3>
-                            <div class="space-y-4">
+                            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                                 <a href="tel:+1-555-123-4567" class="quick-contact-item primary">
                                     <div class="quick-contact-icon primary">
                                         <i data-lucide="phone"></i>
                                     </div>
                                     <div>
-                                        <div class="font-medium text-gray-900">Call Us</div>
+                                        <div style="font-weight: 500; color: var(--gray-900);">Call Us</div>
                                         <div class="contact-label">+1 (555) 123-4567</div>
                                     </div>
                                 </a>
@@ -258,7 +258,7 @@
                                         <i data-lucide="mail"></i>
                                     </div>
                                     <div>
-                                        <div class="font-medium text-gray-900">Email Us</div>
+                                        <div style="font-weight: 500; color: var(--gray-900);">Email Us</div>
                                         <div class="contact-label">info@ardurtechnology.com</div>
                                     </div>
                                 </a>
@@ -266,35 +266,35 @@
                         </div>
 
                         <!-- Response Time -->
-                        <div class="card card-content bg-primary-50" data-aos="fade-up">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Response Time</h3>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-center">
-                                    <i data-lucide="clock" class="w-4 h-4 text-primary mr-3"></i>
+                        <div class="modern-card" style="background: var(--primary-50);" data-aos="fade-up">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Response Time</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.875rem;">
+                                <div style="display: flex; align-items: center;">
+                                    <i data-lucide="clock" class="text-primary" style="margin-right: 1rem;"></i>
                                     <span>Email: Within 2 hours</span>
                                 </div>
-                                <div class="flex items-center">
-                                    <i data-lucide="phone" class="w-4 h-4 text-primary mr-3"></i>
+                                <div style="display: flex; align-items: center;">
+                                    <i data-lucide="phone" class="text-primary" style="margin-right: 1rem;"></i>
                                     <span>Phone: Immediate</span>
                                 </div>
-                                <div class="flex items-center">
-                                    <i data-lucide="calendar" class="w-4 h-4 text-primary mr-3"></i>
+                                <div style="display: flex; align-items: center;">
+                                    <i data-lucide="calendar" class="text-primary" style="margin-right: 1rem;"></i>
                                     <span>Consultation: Same day</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Social Media -->
-                        <div class="card card-content" data-aos="fade-up">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
-                            <div class="flex space-x-3">
-                                <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                        <div class="modern-card" data-aos="fade-up">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Follow Us</h3>
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="#" style="width: 2.5rem; height: 2.5rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                                <a href="#" style="width: 2.5rem; height: 2.5rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-primary transition-colors">
+                                <a href="#" style="width: 2.5rem; height: 2.5rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             </div>
@@ -316,39 +316,39 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="horizontal-layout" style="grid-template-columns: 2fr 1fr;">
             <!-- Map -->
-            <div class="lg:col-span-2" data-aos="fade-up">
-                <div class="h-96 bg-gray-200 rounded-lg flex items-center justify-center">
+            <div data-aos="fade-up">
+                <div style="height: 24rem; background: var(--gray-200); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
                     <div class="text-center">
-                        <i data-lucide="map-pin" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-                        <p class="text-gray-600">Interactive map would be embedded here</p>
-                        <p class="text-sm text-gray-500 mt-2">123 Business Avenue, Suite 100, City, State 12345</p>
+                        <i data-lucide="map-pin" style="width: 3rem; height: 3rem; color: var(--gray-400); margin: 0 auto 1.5rem;"></i>
+                        <p style="color: var(--gray-600);">Interactive map would be embedded here</p>
+                        <p style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.75rem;">123 Business Avenue, Suite 100, City, State 12345</p>
                     </div>
                 </div>
             </div>
 
             <!-- Directions -->
-            <div class="lg:col-span-1" data-aos="fade-up">
-                <div class="card card-content">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Directions</h3>
-                    <div class="space-y-4 text-sm">
+            <div data-aos="fade-up">
+                <div class="modern-card">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Directions</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 0.875rem;">
                         <div>
-                            <h4 class="font-medium text-gray-900 mb-2">By Car</h4>
-                            <p class="text-gray-600">Free parking available in the building garage. Enter from Main Street.</p>
+                            <h4 style="font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">By Car</h4>
+                            <p style="color: var(--gray-600);">Free parking available in the building garage. Enter from Main Street.</p>
                         </div>
                         <div>
-                            <h4 class="font-medium text-gray-900 mb-2">By Public Transit</h4>
-                            <p class="text-gray-600">Metro Station is 2 blocks away. Bus stops directly in front of building.</p>
+                            <h4 style="font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">By Public Transit</h4>
+                            <p style="color: var(--gray-600);">Metro Station is 2 blocks away. Bus stops directly in front of building.</p>
                         </div>
                         <div>
-                            <h4 class="font-medium text-gray-900 mb-2">Nearby Landmarks</h4>
-                            <p class="text-gray-600">Next to City Bank and across from Central Park.</p>
+                            <h4 style="font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">Nearby Landmarks</h4>
+                            <p style="color: var(--gray-600);">Next to City Bank and across from Central Park.</p>
                         </div>
                     </div>
-                    <div class="mt-6">
-                        <a href="#" class="btn btn-outline w-full">
-                            <i data-lucide="navigation" class="w-4 h-4 mr-2"></i>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="btn btn-outline btn-full">
+                            <i data-lucide="navigation"></i>
                             Get Directions
                         </a>
                     </div>
@@ -362,8 +362,8 @@
 <section class="section bg-gray-50">
     <div class="container">
         <div class="text-center mb-12" data-aos="fade-up">
-            <div class="badge bg-white text-primary mb-4">
-                <i data-lucide="help-circle" class="w-4 h-4 mr-2"></i>
+            <div class="badge" style="background: white; color: var(--primary-600); margin-bottom: 1.5rem;">
+                <i data-lucide="help-circle" style="margin-right: 0.5rem;"></i>
                 Frequently Asked Questions
             </div>
             <h2 class="section-title">
@@ -374,50 +374,50 @@
             </p>
         </div>
 
-        <div class="max-w-3xl mx-auto space-y-4">
-            <div class="card card-content" data-aos="fade-up" data-aos-delay="100">
+        <div style="max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
                 <details class="group">
-                    <summary class="flex items-center justify-between cursor-pointer">
-                        <h4 class="font-semibold text-gray-900">How quickly can you start a project?</h4>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                        <h4 style="font-weight: 600; color: var(--gray-900);">How quickly can you start a project?</h4>
+                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
-                    <div class="mt-4 text-gray-600 text-sm">
+                    <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
                         We can typically begin projects within 1-2 weeks of contract signing, depending on the scope and complexity of your requirements.
                     </div>
                 </details>
             </div>
 
-            <div class="card card-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="200">
                 <details class="group">
-                    <summary class="flex items-center justify-between cursor-pointer">
-                        <h4 class="font-semibold text-gray-900">What industries do you specialize in?</h4>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                        <h4 style="font-weight: 600; color: var(--gray-900);">What industries do you specialize in?</h4>
+                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
-                    <div class="mt-4 text-gray-600 text-sm">
+                    <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
                         We have extensive experience in healthcare, mortgage & real estate, aviation, financial services, e-commerce, and manufacturing industries.
                     </div>
                 </details>
             </div>
 
-            <div class="card card-content" data-aos="fade-up" data-aos-delay="300">
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="300">
                 <details class="group">
-                    <summary class="flex items-center justify-between cursor-pointer">
-                        <h4 class="font-semibold text-gray-900">Do you offer ongoing support after project completion?</h4>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                        <h4 style="font-weight: 600; color: var(--gray-900);">Do you offer ongoing support after project completion?</h4>
+                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
-                    <div class="mt-4 text-gray-600 text-sm">
+                    <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
                         Yes, we provide comprehensive ongoing support and maintenance services to ensure your solutions continue to perform optimally.
                     </div>
                 </details>
             </div>
 
-            <div class="card card-content" data-aos="fade-up" data-aos-delay="400">
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="400">
                 <details class="group">
-                    <summary class="flex items-center justify-between cursor-pointer">
-                        <h4 class="font-semibold text-gray-900">What is your pricing model?</h4>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                        <h4 style="font-weight: 600; color: var(--gray-900);">What is your pricing model?</h4>
+                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
-                    <div class="mt-4 text-gray-600 text-sm">
+                    <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
                         We offer flexible pricing models including fixed-price projects, hourly rates, and retainer agreements based on your specific needs and preferences.
                     </div>
                 </details>

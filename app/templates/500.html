@@ -4,64 +4,64 @@
 <!-- 500 Error Page -->
 <section class="page-header">
     <div class="container text-center">
-        <div class="text-6xl font-bold text-primary mb-4">500</div>
+        <div style="font-size: 4rem; font-weight: 700; color: var(--primary-600); margin-bottom: 1.5rem;">500</div>
         <h1 class="page-title">Internal Server Error</h1>
         <p class="page-subtitle">
             We're experiencing some technical difficulties on our end. Our team has been notified and is working to resolve the issue.
             Please try again in a few minutes or contact us if the problem persists.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-8">
-            <div class="card card-content text-center">
-                <div class="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="refresh-cw" class="w-6 h-6 text-white"></i>
+        <div class="feature-grid" style="margin-top: 3rem; max-width: 64rem; margin-left: auto; margin-right: auto;">
+            <div class="modern-card text-center">
+                <div class="contact-icon secondary">
+                    <i data-lucide="refresh-cw"></i>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-3">Try Again</h4>
-                <p class="text-gray-600 mb-4 text-sm">
+                <h4 class="contact-title">Try Again</h4>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
                     The issue might be temporary. Click below to refresh the page and try again.
                 </p>
                 <button onclick="window.location.reload()" class="btn btn-secondary">
-                    <i data-lucide="refresh-cw" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="refresh-cw"></i>
                     Refresh Page
                 </button>
             </div>
 
-            <div class="card card-content text-center">
-                <div class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="home" class="w-6 h-6 text-white"></i>
+            <div class="modern-card text-center">
+                <div class="contact-icon primary">
+                    <i data-lucide="home"></i>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-3">Go Home</h4>
-                <p class="text-gray-600 mb-4 text-sm">
+                <h4 class="contact-title">Go Home</h4>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
                     Return to our homepage where everything should be working normally.
                 </p>
                 <a href="{{ url_for('home') }}" class="btn btn-primary">
-                    <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="home"></i>
                     Homepage
                 </a>
             </div>
 
-            <div class="card card-content text-center">
-                <div class="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="headphones" class="w-6 h-6 text-white"></i>
+            <div class="modern-card text-center">
+                <div class="contact-icon secondary">
+                    <i data-lucide="headphones"></i>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-3">Get Help</h4>
-                <p class="text-gray-600 mb-4 text-sm">
+                <h4 class="contact-title">Get Help</h4>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
                     Contact our support team to report this issue and get immediate assistance.
                 </p>
                 <a href="{{ url_for('contact') }}" class="btn btn-secondary">
-                    <i data-lucide="headphones" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="headphones"></i>
                     Contact Support
                 </a>
             </div>
         </div>
 
-        <div class="mt-8">
-            <div class="bg-primary-50 rounded-lg p-6 max-w-2xl mx-auto">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Error Details</h3>
-                <p class="text-sm text-gray-600 mb-4">
+        <div style="margin-top: 3rem;">
+            <div class="modern-card" style="background: var(--primary-50); max-width: 48rem; margin: 0 auto;">
+                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">Error Details</h3>
+                <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1.5rem;">
                     If you need to report this error, please include the following information:
                 </p>
-                <div class="text-xs text-gray-500 font-mono bg-white p-3 rounded border">
+                <div style="font-size: 0.75rem; color: var(--gray-500); font-family: monospace; background: white; padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--gray-200);">
                     Error Code: 500<br>
                     Time: <span id="error-time"></span><br>
                     URL: <span id="error-url"></span>
@@ -69,54 +69,54 @@
             </div>
         </div>
 
-        <div class="mt-6">
-            <p class="text-gray-600 text-sm">
-                <strong class="text-gray-900">Need immediate assistance?</strong><br>
-                Call us at <a href="tel:+1-555-123-4567" class="text-primary hover:text-primary">+1 (555) 123-4567</a>
-                or email <a href="mailto:info@ardurtechnology.com" class="text-primary hover:text-primary">info@ardurtechnology.com</a>
+        <div style="margin-top: 2rem;">
+            <p style="color: var(--gray-600); font-size: 0.875rem;">
+                <strong style="color: var(--gray-900);">Need immediate assistance?</strong><br>
+                Call us at <a href="tel:+1-555-123-4567" class="text-primary">+1 (555) 123-4567</a>
+                or email <a href="mailto:info@ardurtechnology.com" class="text-primary">info@ardurtechnology.com</a>
             </p>
         </div>
     </div>
 </section>
 
 <!-- Status Updates -->
-<section class="section bg-gray-50">
+<section class="section ">
     <div class="container text-center">
         <h3 class="section-title">System Status</h3>
         <p class="section-subtitle">
             Check our current system status and recent updates.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div class="card card-content">
-                <div class="flex items-center mb-4">
-                    <div class="w-3 h-3 bg-secondary rounded-full mr-3"></div>
-                    <h4 class="font-semibold text-gray-900">Services Status</h4>
+        <div class="horizontal-layout" style="max-width: 64rem; margin: 0 auto;">
+            <div class="modern-card">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <div style="width: 0.75rem; height: 0.75rem; background: var(--secondary-500); border-radius: 50%; margin-right: 1rem;"></div>
+                    <h4 style="font-weight: 600; color: var(--gray-900);">Services Status</h4>
                 </div>
-                <div class="text-left space-y-2 text-sm">
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Website</span>
+                <div style="text-align: left; font-size: 0.875rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: var(--gray-600);">Website</span>
                         <span class="text-secondary font-medium">Operational</span>
                     </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">API Services</span>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: var(--gray-600);">API Services</span>
                         <span class="text-primary font-medium">Investigating</span>
                     </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Database</span>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: var(--gray-600);">Database</span>
                         <span class="text-secondary font-medium">Operational</span>
                     </div>
                 </div>
             </div>
 
-            <div class="card card-content">
-                <div class="flex items-center mb-4">
-                    <div class="w-3 h-3 bg-primary rounded-full mr-3"></div>
-                    <h4 class="font-semibold text-gray-900">Recent Updates</h4>
+            <div class="modern-card">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <div style="width: 0.75rem; height: 0.75rem; background: var(--primary-500); border-radius: 50%; margin-right: 1rem;"></div>
+                    <h4 style="font-weight: 600; color: var(--gray-900);">Recent Updates</h4>
                 </div>
-                <div class="text-left space-y-2 text-sm text-gray-600">
-                    <p>• Investigating server performance issues</p>
-                    <p>• Monitoring system stability</p>
+                <div style="text-align: left; font-size: 0.875rem; color: var(--gray-600);">
+                    <p style="margin-bottom: 0.75rem;">• Investigating server performance issues</p>
+                    <p style="margin-bottom: 0.75rem;">• Monitoring system stability</p>
                     <p>• Updates will be posted here</p>
                 </div>
             </div>

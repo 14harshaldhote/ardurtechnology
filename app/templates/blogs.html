@@ -4,8 +4,8 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content" data-aos="fade-up">
-        <div class="badge badge-white mb-6">
-            <i data-lucide="book-open" class="w-4 h-4 mr-2"></i>
+        <div class="badge badge-white" style="margin-bottom: 2rem;">
+            <i data-lucide="book-open" style="margin-right: 0.5rem;"></i>
             Industry Insights & Knowledge
         </div>
         
@@ -23,43 +23,43 @@
 {% if featured_blog %}
 <section class="section bg-white">
     <div class="container">
-        <div class="text-center mb-8">
-            <div class="badge bg-primary-50 text-primary mb-4">
-                <i data-lucide="star" class="w-4 h-4 mr-2"></i>
+        <div class="section-header">
+            <div class="badge" style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 1.5rem;">
+                <i data-lucide="star" style="margin-right: 0.5rem;"></i>
                 Featured Article
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto">
-            <div class="card card-content lg:flex lg:items-center lg:gap-8" data-aos="fade-up">
-                <div class="lg:w-1/2">
-                    <div class="w-full h-64 lg:h-80 bg-gray-200 rounded-lg mb-6 lg:mb-0"></div>
+        <div style="max-width: 64rem; margin: 0 auto;">
+            <div class="modern-card horizontal-layout" data-aos="fade-up">
+                <div>
+                    <div style="width: 100%; height: 16rem; background: var(--gray-200); border-radius: var(--radius-lg);"></div>
                 </div>
-                <div class="lg:w-1/2">
-                    <div class="badge bg-primary-100 text-primary mb-4">{{ featured_blog.category }}</div>
-                    <h2 class="text-2xl lg:text-3xl font-display font-bold text-gray-900 mb-4">
-                        <a href="{{ url_for('blog_detail', blog_slug=featured_blog.slug) }}" class="hover:text-primary">
+                <div>
+                    <div class="badge" style="background: var(--primary-100); color: var(--primary-600); margin-bottom: 1.5rem;">{{ featured_blog.category }}</div>
+                    <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem;">
+                        <a href="{{ url_for('blog_detail', blog_slug=featured_blog.slug) }}" style="transition: color var(--transition-normal);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-900)'">
                             {{ featured_blog.title }}
                         </a>
                     </h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">{{ featured_blog.excerpt }}</p>
-                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                        <span class="flex items-center">
-                            <i class="fas fa-user mr-2 text-primary"></i>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">{{ featured_blog.excerpt }}</p>
+                    <div style="display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; color: var(--gray-500); margin-bottom: 2rem;">
+                        <span style="display: flex; align-items: center;">
+                            <i class="fas fa-user text-primary" style="margin-right: 0.5rem;"></i>
                             {{ featured_blog.author }}
                         </span>
-                        <span class="flex items-center">
-                            <i class="fas fa-calendar mr-2 text-primary"></i>
+                        <span style="display: flex; align-items: center;">
+                            <i class="fas fa-calendar text-primary" style="margin-right: 0.5rem;"></i>
                             {{ featured_blog.date.strftime('%B %d, %Y') }}
                         </span>
-                        <span class="flex items-center">
-                            <i class="fas fa-clock mr-2 text-primary"></i>
+                        <span style="display: flex; align-items: center;">
+                            <i class="fas fa-clock text-primary" style="margin-right: 0.5rem;"></i>
                             {{ featured_blog.read_time }} min read
                         </span>
                     </div>
                     <a href="{{ url_for('blog_detail', blog_slug=featured_blog.slug) }}" class="btn btn-primary">
                         Read Article
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        <i data-lucide="arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -78,7 +78,7 @@
             </p>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
             <a href="{{ url_for('blogs') }}" class="btn {% if not selected_category %}btn-primary{% else %}btn-outline{% endif %}">
                 All Articles
             </a>
@@ -94,47 +94,47 @@
 <!-- Blog Grid -->
 <section class="section bg-white">
     <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="feature-grid">
             {% for blog in blogs %}
-            <article class="card card-content" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+            <article class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
                 <!-- Featured Image -->
-                <div class="w-full h-48 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                <div style="width: 100%; height: 12rem; background: var(--gray-200); border-radius: var(--radius-lg); margin-bottom: 1.5rem; overflow: hidden;">
                     {% if blog.featured_image %}
-                    <img src="{{ blog.featured_image }}" alt="{{ blog.title }}" class="w-full h-full object-cover">
+                    <img src="{{ blog.featured_image }}" alt="{{ blog.title }}" style="width: 100%; height: 100%; object-fit: cover;">
                     {% endif %}
                 </div>
 
                 <!-- Category Badge -->
-                <div class="badge bg-primary-100 text-primary mb-3">{{ blog.category }}</div>
+                <div class="badge" style="background: var(--primary-100); color: var(--primary-600); margin-bottom: 1rem;">{{ blog.category }}</div>
 
                 <!-- Title -->
-                <h3 class="text-lg font-semibold text-gray-900 mb-3 line-clamp-2">
-                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" class="hover:text-primary">
+                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" style="transition: color var(--transition-normal);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-900)'">
                         {{ blog.title }}
                     </a>
                 </h3>
 
                 <!-- Excerpt -->
-                <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ blog.excerpt }}</p>
+                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">{{ blog.excerpt }}</p>
 
                 <!-- Meta Info -->
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span class="flex items-center">
-                        <i class="fas fa-user mr-1 text-primary"></i>
+                <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: var(--gray-500); margin-bottom: 1.5rem;">
+                    <span style="display: flex; align-items: center;">
+                        <i class="fas fa-user text-primary" style="margin-right: 0.25rem;"></i>
                         {{ blog.author }}
                     </span>
-                    <span class="flex items-center">
-                        <i class="fas fa-clock mr-1 text-primary"></i>
+                    <span style="display: flex; align-items: center;">
+                        <i class="fas fa-clock text-primary" style="margin-right: 0.25rem;"></i>
                         {{ blog.read_time }} min read
                     </span>
                 </div>
 
                 <!-- Date -->
-                <div class="flex items-center justify-between">
-                    <span class="text-xs text-gray-500">{{ blog.date.strftime('%B %d, %Y') }}</span>
-                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" class="text-primary hover:text-primary text-sm font-medium">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-size: 0.75rem; color: var(--gray-500);">{{ blog.date.strftime('%B %d, %Y') }}</span>
+                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" class="text-primary" style="font-size: 0.875rem; font-weight: 500; transition: color var(--transition-normal);">
                         Read More
-                        <i data-lucide="arrow-right" class="w-3 h-3 ml-1 inline"></i>
+                        <i data-lucide="arrow-right" style="width: 0.75rem; height: 0.75rem; margin-left: 0.25rem; display: inline;"></i>
                     </a>
                 </div>
             </article>
@@ -143,11 +143,11 @@
 
         <!-- Pagination -->
         {% if pagination.pages > 1 %}
-        <div class="flex justify-center mt-12">
-            <nav class="flex items-center gap-2">
+        <div style="display: flex; justify-content: center; margin-top: 4rem;">
+            <nav style="display: flex; align-items: center; gap: 0.75rem;">
                 {% if pagination.has_prev %}
                 <a href="{{ url_for('blogs', page=pagination.prev_num, category=selected_category) }}" class="btn btn-outline">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    <i data-lucide="chevron-left"></i>
                     Previous
                 </a>
                 {% endif %}
@@ -160,14 +160,14 @@
                         <span class="btn btn-primary">{{ page_num }}</span>
                         {% endif %}
                     {% else %}
-                    <span class="px-3 py-2">…</span>
+                    <span style="padding: 0.75rem 1rem;">…</span>
                     {% endif %}
                 {% endfor %}
 
                 {% if pagination.has_next %}
                 <a href="{{ url_for('blogs', page=pagination.next_num, category=selected_category) }}" class="btn btn-outline">
                     Next
-                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <i data-lucide="chevron-right"></i>
                 </a>
                 {% endif %}
             </nav>
@@ -177,27 +177,27 @@
 </section>
 
 <!-- Newsletter Signup -->
-<section class="section bg-primary-50">
+<section class="section" style="background: var(--primary-50);">
     <div class="container">
-        <div class="max-w-2xl mx-auto text-center">
-            <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
-                <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+        <div class="text-center" style="max-width: 48rem; margin: 0 auto;">
+            <div class="benefit-icon primary">
+                <i data-lucide="mail"></i>
             </div>
-            <h2 class="text-2xl font-display font-bold text-gray-900 mb-4">
+            <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem;">
                 Stay Updated with Our Latest Insights
             </h2>
-            <p class="text-gray-600 mb-8">
+            <p style="color: var(--gray-600); margin-bottom: 3rem;">
                 Subscribe to our newsletter and get the latest articles, industry trends, 
                 and expert insights delivered directly to your inbox.
             </p>
-            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input type="email" placeholder="Enter your email address" class="form-input flex-1" required>
+            <form class="hero-buttons" style="max-width: 32rem; margin: 0 auto;">
+                <input type="email" placeholder="Enter your email address" class="form-input" style="flex: 1;" required>
                 <button type="submit" class="btn btn-primary">
                     Subscribe
-                    <i data-lucide="send" class="w-4 h-4 ml-2"></i>
+                    <i data-lucide="send"></i>
                 </button>
             </form>
-            <p class="text-xs text-gray-500 mt-4">
+            <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 1.5rem;">
                 We respect your privacy. Unsubscribe at any time.
             </p>
         </div>

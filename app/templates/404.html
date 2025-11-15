@@ -4,127 +4,127 @@
 <!-- 404 Error Page -->
 <section class="page-header">
     <div class="container text-center">
-        <div class="text-6xl font-bold text-primary mb-4">404</div>
+        <div style="font-size: 4rem; font-weight: 700; color: var(--primary-600); margin-bottom: 1.5rem;">404</div>
         <h1 class="page-title">Page Not Found</h1>
         <p class="page-subtitle">
             Sorry, the page you are looking for doesn't exist or has been moved.
             Don't worry, it happens to the best of us. Let's get you back on track.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-8">
-            <div class="card card-content text-center">
-                <div class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="home" class="w-6 h-6 text-white"></i>
+        <div class="feature-grid" style="margin-top: 3rem; max-width: 64rem; margin-left: auto; margin-right: auto;">
+            <div class="modern-card text-center">
+                <div class="contact-icon primary">
+                    <i data-lucide="home"></i>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-3">Go Home</h4>
-                <p class="text-gray-600 mb-4 text-sm">
+                <h4 class="contact-title">Go Home</h4>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
                     Return to our homepage and explore our comprehensive business solutions.
                 </p>
                 <a href="{{ url_for('home') }}" class="btn btn-primary">
-                    <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="home"></i>
                     Homepage
                 </a>
             </div>
 
-            <div class="card card-content text-center">
-                <div class="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+            <div class="modern-card text-center">
+                <div class="contact-icon secondary">
+                    <i data-lucide="briefcase"></i>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-3">Our Services</h4>
-                <p class="text-gray-600 mb-4 text-sm">
+                <h4 class="contact-title">Our Services</h4>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
                     Discover our full range of business process management and IT solutions.
                 </p>
                 <a href="{{ url_for('services') }}" class="btn btn-secondary">
-                    <i data-lucide="briefcase" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="briefcase"></i>
                     View Services
                 </a>
             </div>
 
-            <div class="card card-content text-center">
-                <div class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+            <div class="modern-card text-center">
+                <div class="contact-icon primary">
+                    <i data-lucide="mail"></i>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-3">Contact Us</h4>
-                <p class="text-gray-600 mb-4 text-sm">
+                <h4 class="contact-title">Contact Us</h4>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
                     Get in touch with our team for assistance or questions about our services.
                 </p>
                 <a href="{{ url_for('contact') }}" class="btn btn-primary">
-                    <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="mail"></i>
                     Contact
                 </a>
             </div>
         </div>
 
-        <div class="mt-8">
-            <h3 class="text-xl font-display font-bold text-gray-900 mb-4">Popular Pages</h3>
-            <div class="flex justify-center gap-4 flex-wrap">
+        <div style="margin-top: 3rem;">
+            <h3 class="font-display font-bold" style="font-size: 1.25rem; color: var(--gray-900); margin-bottom: 1.5rem;">Popular Pages</h3>
+            <div class="hero-buttons">
                 <a href="{{ url_for('about') }}" class="btn btn-outline">
-                    <i data-lucide="info" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="info"></i>
                     About Us
                 </a>
                 <a href="{{ url_for('careers') }}" class="btn btn-outline">
-                    <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="users"></i>
                     Careers
                 </a>
                 <a href="{{ url_for('blogs') }}" class="btn btn-outline">
-                    <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="book"></i>
                     Blog
                 </a>
             </div>
         </div>
 
-        <div class="mt-6">
-            <p class="text-gray-600 text-sm">
-                <strong class="text-gray-900">Need immediate assistance?</strong><br>
-                Call us at <a href="tel:+1-555-123-4567" class="text-primary hover:text-primary">+1 (555) 123-4567</a>
-                or email <a href="mailto:info@ardurtechnology.com" class="text-primary hover:text-primary">info@ardurtechnology.com</a>
+        <div style="margin-top: 2rem;">
+            <p style="color: var(--gray-600); font-size: 0.875rem;">
+                <strong style="color: var(--gray-900);">Need immediate assistance?</strong><br>
+                Call us at <a href="tel:+1-555-123-4567" class="text-primary">+1 (555) 123-4567</a>
+                or email <a href="mailto:info@ardurtechnology.com" class="text-primary">info@ardurtechnology.com</a>
             </p>
         </div>
     </div>
 </section>
 
 <!-- Search Suggestions -->
-<section class="section bg-gray-50">
+<section class="section ">
     <div class="container text-center">
         <h3 class="section-title">What were you looking for?</h3>
         <p class="section-subtitle">
             Here are some common resources and services that might help you find what you need.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="card card-content">
-                <h5 class="font-semibold text-gray-900 mb-4">Business Process Management</h5>
-                <ul class="text-left text-sm text-gray-600 space-y-2">
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">BPM Services</a></li>
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Mortgage Processing</a></li>
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Finance & Accounting</a></li>
+        <div class="visual-grid four-col">
+            <div class="modern-card">
+                <h5 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Business Process Management</h5>
+                <ul style="text-align: left; font-size: 0.875rem; color: var(--gray-600); list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">BPM Services</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">Mortgage Processing</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">Finance & Accounting</a></li>
                 </ul>
             </div>
 
-            <div class="card card-content">
-                <h5 class="font-semibold text-gray-900 mb-4">Healthcare Solutions</h5>
-                <ul class="text-left text-sm text-gray-600 space-y-2">
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Medical Billing</a></li>
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Revenue Cycle</a></li>
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Claims Processing</a></li>
+            <div class="modern-card">
+                <h5 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Healthcare Solutions</h5>
+                <ul style="text-align: left; font-size: 0.875rem; color: var(--gray-600); list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">Medical Billing</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">Revenue Cycle</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">Claims Processing</a></li>
                 </ul>
             </div>
 
-            <div class="card card-content">
-                <h5 class="font-semibold text-gray-900 mb-4">Digital Services</h5>
-                <ul class="text-left text-sm text-gray-600 space-y-2">
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Web Development</a></li>
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">Cloud Solutions</a></li>
-                    <li><a href="{{ url_for('services') }}" class="text-primary hover:text-primary">RPA & Automation</a></li>
+            <div class="modern-card">
+                <h5 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Digital Services</h5>
+                <ul style="text-align: left; font-size: 0.875rem; color: var(--gray-600); list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">Web Development</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">Cloud Solutions</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('services') }}" class="text-primary">RPA & Automation</a></li>
                 </ul>
             </div>
 
-            <div class="card card-content">
-                <h5 class="font-semibold text-gray-900 mb-4">Company Information</h5>
-                <ul class="text-left text-sm text-gray-600 space-y-2">
-                    <li><a href="{{ url_for('about') }}" class="text-primary hover:text-primary">Company History</a></li>
-                    <li><a href="{{ url_for('careers') }}" class="text-primary hover:text-primary">Job Opportunities</a></li>
-                    <li><a href="{{ url_for('contact') }}" class="text-primary hover:text-primary">Office Locations</a></li>
+            <div class="modern-card">
+                <h5 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Company Information</h5>
+                <ul style="text-align: left; font-size: 0.875rem; color: var(--gray-600); list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('about') }}" class="text-primary">Company History</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('careers') }}" class="text-primary">Job Opportunities</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="{{ url_for('contact') }}" class="text-primary">Office Locations</a></li>
                 </ul>
             </div>
         </div>

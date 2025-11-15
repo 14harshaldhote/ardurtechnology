@@ -4,8 +4,8 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content" data-aos="fade-up">
-        <div class="badge badge-white mb-6">
-            <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+        <div class="badge badge-white" style="margin-bottom: 2rem;">
+            <i data-lucide="file-text" style="margin-right: 0.5rem;"></i>
             Success Stories
         </div>
         
@@ -30,7 +30,7 @@
         </div>
 
         <!-- Industry Filters -->
-        <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
             <a href="{{ url_for('case_studies') }}" class="btn {% if not selected_industry %}btn-primary{% else %}btn-outline{% endif %}">
                 All Industries
             </a>
@@ -46,24 +46,24 @@
 <!-- Case Studies Grid -->
 <section class="section bg-gray-50">
     <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="horizontal-layout">
             {% for case_study in case_studies %}
-            <article class="card card-content" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+            <article class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
                 <!-- Featured Image -->
-                <div class="relative h-64 bg-gradient-primary rounded-lg overflow-hidden mb-6">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-lucide="{{ ['settings', 'trending-up', 'shield', 'zap'][loop.index0 % 4] }}" class="w-24 h-24 text-white opacity-20"></i>
+                <div style="position: relative; height: 16rem; background: var(--gradient-primary); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem;">
+                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="{{ ['settings', 'trending-up', 'shield', 'zap'][loop.index0 % 4] }}" style="width: 6rem; height: 6rem; color: white; opacity: 0.2;"></i>
                     </div>
                     <!-- Category Badge -->
-                    <div class="absolute top-6 left-6">
-                        <span class="badge bg-white text-primary">
+                    <div style="position: absolute; top: 1.5rem; left: 1.5rem;">
+                        <span class="badge" style="background: white; color: var(--primary-600);">
                             {{ case_study.category }}
                         </span>
                     </div>
                     <!-- Results Badge -->
-                    <div class="absolute top-6 right-6">
-                        <span class="badge bg-secondary text-white">
-                            <i data-lucide="trending-up" class="w-3 h-3 mr-1"></i>
+                    <div style="position: absolute; top: 1.5rem; right: 1.5rem;">
+                        <span class="badge" style="background: var(--secondary-600); color: white;">
+                            <i data-lucide="trending-up" style="width: 0.75rem; height: 0.75rem; margin-right: 0.25rem;"></i>
                             {{ case_study.improvement }}% Improvement
                         </span>
                     </div>
@@ -72,46 +72,46 @@
                 <!-- Content -->
                 <div>
                     <!-- Title -->
-                    <h2 class="text-2xl font-display font-bold text-gray-900 mb-3">
-                        <a href="{{ url_for('case_study_detail', study_slug=case_study.slug) }}" class="hover:text-primary transition-colors">
+                    <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem;">
+                        <a href="{{ url_for('case_study_detail', study_slug=case_study.slug) }}" style="transition: color var(--transition-normal);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-900)'">
                             {{ case_study.title }}
                         </a>
                     </h2>
 
                     <!-- Subtitle -->
-                    <p class="text-lg text-gray-600 mb-4">
+                    <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 1.5rem;">
                         {{ case_study.subtitle }}
                     </p>
 
                     <!-- Meta Info -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6 pb-6 border-b border-gray-100">
-                        <span class="flex items-center">
-                            <i data-lucide="building" class="w-4 h-4 mr-2 text-primary"></i>
+                    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; font-size: 0.875rem; color: var(--gray-500); margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gray-100);">
+                        <span style="display: flex; align-items: center;">
+                            <i data-lucide="building" class="text-primary" style="margin-right: 0.5rem;"></i>
                             {{ case_study.client }}
                         </span>
-                        <span class="flex items-center">
-                            <i data-lucide="clock" class="w-4 h-4 mr-2 text-primary"></i>
+                        <span style="display: flex; align-items: center;">
+                            <i data-lucide="clock" class="text-primary" style="margin-right: 0.5rem;"></i>
                             {{ case_study.duration }}
                         </span>
-                        <span class="flex items-center">
-                            <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-primary"></i>
+                        <span style="display: flex; align-items: center;">
+                            <i data-lucide="map-pin" class="text-primary" style="margin-right: 0.5rem;"></i>
                             {{ case_study.location }}
                         </span>
                     </div>
 
                     <!-- Challenge Excerpt -->
-                    <div class="mb-6">
-                        <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-2 flex items-center">
-                            <i data-lucide="alert-circle" class="w-5 h-5 text-secondary mr-2"></i>
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 0.875rem; font-weight: 700; color: var(--gray-900); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: flex; align-items: center;">
+                            <i data-lucide="alert-circle" class="text-secondary" style="margin-right: 0.5rem;"></i>
                             Challenge
                         </h3>
-                        <p class="text-gray-700 line-clamp-3">
+                        <p style="color: var(--gray-700); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
                             {{ case_study.challenge }}
                         </p>
                     </div>
 
                     <!-- Results Preview -->
-                    <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="results-grid" style="margin-bottom: 2rem;">
                         {% for result in case_study.results[:2] %}
                         <div class="result-item">
                             <div class="result-metric">
@@ -125,9 +125,9 @@
                     </div>
 
                     <!-- Read More Button -->
-                    <a href="{{ url_for('case_study_detail', study_slug=case_study.slug) }}" class="inline-flex items-center text-primary font-semibold hover:text-primary transition-colors group">
+                    <a href="{{ url_for('case_study_detail', study_slug=case_study.slug) }}" style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 600; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--primary-700)'" onmouseout="this.style.color='var(--primary-600)'">
                         Read Full Case Study
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        <i data-lucide="arrow-right" style="margin-left: 0.5rem; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateX(0.25rem)'" onmouseout="this.style.transform='translateX(0)'"></i>
                     </a>
                 </div>
             </article>
@@ -136,11 +136,11 @@
 
         <!-- Pagination -->
         {% if pagination and pagination.pages > 1 %}
-        <div class="flex justify-center mt-12">
-            <nav class="flex items-center gap-2">
+        <div style="display: flex; justify-content: center; margin-top: 4rem;">
+            <nav style="display: flex; align-items: center; gap: 0.75rem;">
                 {% if pagination.has_prev %}
                 <a href="{{ url_for('case_studies', page=pagination.prev_num, industry=selected_industry) }}" class="btn btn-outline">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    <i data-lucide="chevron-left"></i>
                     Previous
                 </a>
                 {% endif %}
@@ -153,14 +153,14 @@
                         <span class="btn btn-primary">{{ page_num }}</span>
                         {% endif %}
                     {% else %}
-                    <span class="px-3 py-2">…</span>
+                    <span style="padding: 0.75rem 1rem;">…</span>
                     {% endif %}
                 {% endfor %}
 
                 {% if pagination.has_next %}
                 <a href="{{ url_for('case_studies', page=pagination.next_num, industry=selected_industry) }}" class="btn btn-outline">
                     Next
-                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <i data-lucide="chevron-right"></i>
                 </a>
                 {% endif %}
             </nav>
@@ -173,8 +173,8 @@
 <section class="section bg-white">
     <div class="container">
         <div class="text-center mb-12" data-aos="fade-up">
-            <div class="badge bg-primary-50 text-primary mb-4">
-                <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
+            <div class="badge" style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 1.5rem;">
+                <i data-lucide="bar-chart" style="margin-right: 0.5rem;"></i>
                 Our Impact
             </div>
             <h2 class="section-title">
@@ -185,25 +185,25 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="visual-grid four-col">
             <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="text-4xl font-bold text-primary mb-2">40%</div>
-                <div class="text-sm text-gray-600 uppercase tracking-wide">Average Cost Reduction</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.75rem;">40%</div>
+                <div style="font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em;">Average Cost Reduction</div>
             </div>
 
             <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="text-4xl font-bold text-secondary mb-2">60%</div>
-                <div class="text-sm text-gray-600 uppercase tracking-wide">Process Efficiency Gain</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.75rem;">60%</div>
+                <div style="font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em;">Process Efficiency Gain</div>
             </div>
 
             <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="text-4xl font-bold text-primary mb-2">90%</div>
-                <div class="text-sm text-gray-600 uppercase tracking-wide">Client Satisfaction</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.75rem;">90%</div>
+                <div style="font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em;">Client Satisfaction</div>
             </div>
 
             <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="text-4xl font-bold text-secondary mb-2">6M</div>
-                <div class="text-sm text-gray-600 uppercase tracking-wide">Processing Time Saved</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.75rem;">6M</div>
+                <div style="font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em;">Processing Time Saved</div>
             </div>
         </div>
     </div>
@@ -219,63 +219,63 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="heart-pulse" class="w-8 h-8 text-white"></i>
+        <div class="feature-grid">
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="benefit-icon primary">
+                    <i data-lucide="heart-pulse"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Healthcare</h3>
-                <p class="text-gray-600 text-sm">
+                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Healthcare</h3>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Medical billing, revenue cycle management, and healthcare administration solutions.
                 </p>
             </div>
 
-            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="home" class="w-8 h-8 text-white"></i>
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="benefit-icon secondary">
+                    <i data-lucide="home"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Real Estate & Mortgage</h3>
-                <p class="text-gray-600 text-sm">
+                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Real Estate & Mortgage</h3>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Mortgage processing, title services, and real estate transaction management.
                 </p>
             </div>
 
-            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="plane" class="w-8 h-8 text-white"></i>
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="benefit-icon primary">
+                    <i data-lucide="plane"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Aviation</h3>
-                <p class="text-gray-600 text-sm">
+                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Aviation</h3>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Aircraft asset management, maintenance tracking, and aviation compliance.
                 </p>
             </div>
 
-            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="building" class="w-8 h-8 text-white"></i>
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="benefit-icon secondary">
+                    <i data-lucide="building"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Financial Services</h3>
-                <p class="text-gray-600 text-sm">
+                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Financial Services</h3>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Banking operations, financial processing, and compliance management.
                 </p>
             </div>
 
-            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="500">
-                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="shopping-cart" class="w-8 h-8 text-white"></i>
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="500">
+                <div class="benefit-icon primary">
+                    <i data-lucide="shopping-cart"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">E-commerce</h3>
-                <p class="text-gray-600 text-sm">
+                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">E-commerce</h3>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Order processing, customer service, and inventory management solutions.
                 </p>
             </div>
 
-            <div class="card card-content text-center" data-aos="fade-up" data-aos-delay="600">
-                <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="factory" class="w-8 h-8 text-white"></i>
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="600">
+                <div class="benefit-icon secondary">
+                    <i data-lucide="factory"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Manufacturing</h3>
-                <p class="text-gray-600 text-sm">
+                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Manufacturing</h3>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Supply chain management, quality control, and production optimization.
                 </p>
             </div>
@@ -286,22 +286,22 @@
 <!-- CTA Section -->
 <section class="cta-section section">
     <div class="container" data-aos="fade-up">
-        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-            <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
+        <div class="cta-icon">
+            <i data-lucide="rocket"></i>
         </div>
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-white">
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;" class="font-display">
             Ready to Transform Your Operations?
         </h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
             Let's discuss how we can help you achieve similar results and drive your business forward.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="hero-buttons">
             <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
-                <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                <i data-lucide="phone"></i>
                 Start Your Project
             </a>
             <a href="{{ url_for('services') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
-                <i data-lucide="briefcase" class="w-5 h-5 mr-2"></i>
+                <i data-lucide="briefcase"></i>
                 Explore Services
             </a>
         </div>

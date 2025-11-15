@@ -4,8 +4,8 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content" data-aos="fade-up">
-        <div class="badge badge-white mb-6">
-            <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+        <div class="badge badge-white" style="margin-bottom: 2rem;">
+            <i data-lucide="users" style="margin-right: 0.5rem;"></i>
             Join Our Team
         </div>
         
@@ -19,11 +19,11 @@
         
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
             <a href="#open-positions" class="btn btn-primary btn-lg">
-                <i data-lucide="search" class="hero-icon"></i>
+                <i data-lucide="search"></i>
                 View Open Positions
             </a>
             <a href="#company-culture" class="btn btn-outline btn-lg">
-                <i data-lucide="heart" class="hero-icon"></i>
+                <i data-lucide="heart"></i>
                 Our Culture
             </a>
         </div>
@@ -35,7 +35,7 @@
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <div class="modern-badge">
-                <i data-lucide="star" class="w-4 h-4 mr-2"></i>
+                <i data-lucide="star" style="margin-right: 0.5rem;"></i>
                 Why Choose Us
             </div>
             <h2 class="modern-title">
@@ -122,7 +122,7 @@
         <div class="content-with-visual">
             <div data-aos="fade-right">
                 <div class="modern-badge">
-                    <i data-lucide="heart" class="w-4 h-4 mr-2"></i>
+                    <i data-lucide="heart" style="margin-right: 0.5rem;"></i>
                     Our Culture
                 </div>
                 <h2 class="modern-title">
@@ -191,8 +191,8 @@
 <section id="open-positions" class="section bg-white">
     <div class="container">
         <div class="text-center mb-12" data-aos="fade-up">
-            <div class="badge bg-primary-50 text-primary mb-4">
-                <i data-lucide="briefcase" class="w-4 h-4 mr-2"></i>
+            <div class="badge" style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 1.5rem;">
+                <i data-lucide="briefcase" style="margin-right: 0.5rem;"></i>
                 Current Openings
             </div>
             <h2 class="section-title">
@@ -205,58 +205,58 @@
 
         <div class="space-y-6">
             {% for job in jobs %}
-            <div class="card card-content" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-4 mb-4">
+            <div class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="horizontal-layout" style="align-items: center;">
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
                             <div class="job-icon">
                                 <i data-lucide="briefcase"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold text-gray-900">{{ job.title }}</h3>
-                                <div class="flex items-center gap-4 text-sm text-gray-600">
-                                    <span class="flex items-center">
+                                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900);">{{ job.title }}</h3>
+                                <div style="display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; color: var(--gray-600);">
+                                    <span style="display: flex; align-items: center;">
                                         <i data-lucide="map-pin" class="job-meta-icon"></i>
                                         {{ job.location }}
                                     </span>
-                                    <span class="flex items-center">
+                                    <span style="display: flex; align-items: center;">
                                         <i data-lucide="clock" class="job-meta-icon"></i>
                                         {{ job.type }}
                                     </span>
-                                    <span class="flex items-center">
+                                    <span style="display: flex; align-items: center;">
                                         <i data-lucide="users" class="job-meta-icon"></i>
                                         {{ job.department }}
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4">{{ job.description }}</p>
-                        <div class="flex flex-wrap gap-2">
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem;">{{ job.description }}</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
                             {% for skill in job.skills %}
-                            <span class="badge bg-gray-100 text-gray-700">{{ skill }}</span>
+                            <span class="badge" style="background: var(--gray-100); color: var(--gray-700);">{{ skill }}</span>
                             {% endfor %}
                         </div>
                     </div>
-                    <div class="mt-6 lg:mt-0 lg:ml-8">
+                    <div style="margin-top: 2rem; margin-left: 0;">
                         <a href="{{ url_for('job_detail', job_id=job.id) }}" class="btn btn-primary">
                             Apply Now
-                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
             {% else %}
-            <div class="text-center py-12">
-                <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="briefcase" class="w-8 h-8 text-gray-400"></i>
+            <div class="text-center" style="padding: 4rem 0;">
+                <div class="benefit-icon" style="background: var(--gray-100); margin: 0 auto 2rem;">
+                    <i data-lucide="briefcase" style="color: var(--gray-400);"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">No Open Positions</h3>
-                <p class="text-gray-600 mb-6">
+                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">No Open Positions</h3>
+                <p style="color: var(--gray-600); margin-bottom: 2rem;">
                     We don't have any open positions at the moment, but we're always looking for talented individuals.
                 </p>
                 <a href="#contact" class="btn btn-outline">
                     Send Us Your Resume
-                    <i data-lucide="send" class="w-4 h-4 ml-2"></i>
+                    <i data-lucide="send"></i>
                 </a>
             </div>
             {% endfor %}
@@ -274,13 +274,13 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="visual-grid four-col">
             <div class="text-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="process-step primary">
                     <span>1</span>
                 </div>
-                <h4 class="font-semibold text-gray-900 mb-3">Application</h4>
-                <p class="text-gray-600 text-sm">
+                <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">Application</h4>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Submit your application and resume through our online portal.
                 </p>
             </div>
@@ -289,8 +289,8 @@
                 <div class="process-step secondary">
                     <span>2</span>
                 </div>
-                <h4 class="font-semibold text-gray-900 mb-3">Initial Review</h4>
-                <p class="text-gray-600 text-sm">
+                <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">Initial Review</h4>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Our HR team reviews your application and qualifications.
                 </p>
             </div>
@@ -299,8 +299,8 @@
                 <div class="process-step primary">
                     <span>3</span>
                 </div>
-                <h4 class="font-semibold text-gray-900 mb-3">Interview</h4>
-                <p class="text-gray-600 text-sm">
+                <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">Interview</h4>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Phone or video interview with our hiring team and department leads.
                 </p>
             </div>
@@ -309,8 +309,8 @@
                 <div class="process-step secondary">
                     <span>4</span>
                 </div>
-                <h4 class="font-semibold text-gray-900 mb-3">Decision</h4>
-                <p class="text-gray-600 text-sm">
+                <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">Decision</h4>
+                <p style="color: var(--gray-600); font-size: 0.875rem;">
                     Final decision and offer extended to successful candidates.
                 </p>
             </div>
@@ -321,23 +321,23 @@
 <!-- Contact for Careers -->
 <section id="contact" class="cta-section section">
     <div class="container" data-aos="fade-up">
-        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-            <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+        <div class="cta-icon">
+            <i data-lucide="mail"></i>
         </div>
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-white">
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;" class="font-display">
             Don't See the Right Position?
         </h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
             We're always interested in connecting with talented professionals. 
             Send us your resume and we'll keep you in mind for future opportunities.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="hero-buttons">
             <a href="mailto:careers@ardurtechnology.com" class="btn btn-primary btn-lg">
-                <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                <i data-lucide="mail"></i>
                 Send Your Resume
             </a>
             <a href="{{ url_for('contact') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
-                <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                <i data-lucide="phone"></i>
                 Contact HR
             </a>
         </div>
