@@ -4,24 +4,29 @@ from flask_wtf.csrf import CSRFProtect
 from werkzeug.utils import secure_filename
 import os
 import json
+import tempfile
 from datetime import datetime
 import re
 
 app = Flask(__name__, template_folder="app/templates", static_folder="app/static")
 
 # Configuration
-app.config["SECRET_KEY"] = "your-secret-key-change-in-production"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "your-secret-key-change-in-production")
 csrf = CSRFProtect(app)
-app.config["UPLOAD_FOLDER"] = "uploads"
+
+# Use writable temp directory for uploads (Vercel-compatible)
+upload_dir = os.path.join(tempfile.gettempdir(), "uploads")
+os.makedirs(upload_dir, exist_ok=True)
+app.config["UPLOAD_FOLDER"] = upload_dir
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16MB max file size
 
 # Email configuration
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
+app.config["MAIL_SERVER"] = os.environ.get("MAIL_SERVER", "smtp.gmail.com")
+app.config["MAIL_PORT"] = int(os.environ.get("MAIL_PORT", 587))
 app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = "your-email@gmail.com"  # Change this
-app.config["MAIL_PASSWORD"] = "your-app-password"  # Change this
-app.config["MAIL_DEFAULT_SENDER"] = "info@ardurtechnology.com"
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
+app.config["MAIL_DEFAULT_SENDER"] = os.environ.get("MAIL_DEFAULT_SENDER", "info@ardurtechnology.com")
 mail = Mail(app)
 
 # Allowed file extensions for resume uploads
@@ -438,5 +443,4 @@ def inject_globals():
     }
 
 
-# Create upload folder if it doesn't exist
-os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
+# Upload folder is created above using tempfile.gettempdir() for Vercel compatibility
