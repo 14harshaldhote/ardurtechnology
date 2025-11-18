@@ -35,122 +35,52 @@
         </div>
 
         <div class="feature-grid">
-            <!-- CEO -->
-            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="100">
-                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                    <span style="color: white; font-size: 2rem; font-weight: 700;">JD</span>
+            {% for member in team_members %}
+            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 + 100 }}">
+                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; overflow: hidden;">
+                    {% if member.image %}
+                        <img src="{{ member.image }}" alt="{{ member.name }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    {% else %}
+                        <span style="color: white; font-size: 2rem; font-weight: 700;">{{ member.name.split()[0][0] }}{{ member.name.split()[1][0] if member.name.split()|length > 1 else '' }}</span>
+                    {% endif %}
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">John Davis</h3>
-                <div class="text-primary" style="font-weight: 500; margin-bottom: 1.5rem;">Chief Executive Officer</div>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
-                    With over 15 years of experience in business process management and technology consulting, 
-                    John leads Ardur Technology's strategic vision and growth initiatives.
+                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">{{ member.name }}</h3>
+                <div class="text-primary" style="font-weight: 500; margin-bottom: 1.5rem;">{{ member.title }}</div>
+                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                    {{ member.bio }}
                 </p>
+                {% if member.bio_extended %}
+                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6; font-style: italic;">
+                    {{ member.bio_extended }}
+                </p>
+                {% endif %}
+                
+                <!-- Specialties -->
+                {% if member.specialties %}
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">Specialties</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                        {% for specialty in member.specialties %}
+                        <span class="badge" style="background: var(--primary-50); color: var(--primary-700); font-size: 0.75rem;">{{ specialty }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
                 <div style="display: flex; justify-content: center; gap: 1rem;">
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
-                        <i class="fab fa-linkedin-in" style="font-size: 0.75rem;"></i>
+                    {% if member.linkedin and member.linkedin != '#' %}
+                    <a href="{{ member.linkedin }}" target="_blank" style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
+                        <i data-lucide="linkedin" style="width: 1rem; height: 1rem;"></i>
                     </a>
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
-                        <i class="fab fa-twitter" style="font-size: 0.75rem;"></i>
+                    {% endif %}
+                    {% if member.email %}
+                    <a href="mailto:{{ member.email }}" style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--secondary-700)'" onmouseout="this.style.background='var(--secondary-600)'">
+                        <i data-lucide="mail" style="width: 1rem; height: 1rem;"></i>
                     </a>
+                    {% endif %}
                 </div>
             </div>
-
-            <!-- CTO -->
-            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="200">
-                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                    <span style="color: white; font-size: 2rem; font-weight: 700;">SM</span>
-                </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Sarah Miller</h3>
-                <div class="text-secondary" style="font-weight: 500; margin-bottom: 1.5rem;">Chief Technology Officer</div>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
-                    Sarah drives technology innovation and oversees our technical teams. Her expertise in 
-                    enterprise solutions and digital transformation guides our technology roadmap.
-                </p>
-                <div style="display: flex; justify-content: center; gap: 1rem;">
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--secondary-700)'" onmouseout="this.style.background='var(--secondary-600)'">
-                        <i class="fab fa-linkedin-in" style="font-size: 0.75rem;"></i>
-                    </a>
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--secondary-700)'" onmouseout="this.style.background='var(--secondary-600)'">
-                        <i class="fab fa-github" style="font-size: 0.75rem;"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- COO -->
-            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="300">
-                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                    <span style="color: white; font-size: 2rem; font-weight: 700;">RJ</span>
-                </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Robert Johnson</h3>
-                <div class="text-primary" style="font-weight: 500; margin-bottom: 1.5rem;">Chief Operating Officer</div>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
-                    Robert ensures operational excellence across all our service delivery teams. His focus on 
-                    quality and process optimization drives our commitment to client satisfaction.
-                </p>
-                <div style="display: flex; justify-content: center; gap: 1rem;">
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
-                        <i class="fab fa-linkedin-in" style="font-size: 0.75rem;"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- VP of Sales -->
-            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="400">
-                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                    <span style="color: white; font-size: 2rem; font-weight: 700;">LW</span>
-                </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Lisa Wilson</h3>
-                <div class="text-secondary" style="font-weight: 500; margin-bottom: 1.5rem;">VP of Sales & Marketing</div>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
-                    Lisa leads our sales and marketing efforts, building strategic partnerships and ensuring 
-                    our solutions meet evolving market needs and client expectations.
-                </p>
-                <div style="display: flex; justify-content: center; gap: 1rem;">
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--secondary-700)'" onmouseout="this.style.background='var(--secondary-600)'">
-                        <i class="fab fa-linkedin-in" style="font-size: 0.75rem;"></i>
-                    </a>
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--secondary-700)'" onmouseout="this.style.background='var(--secondary-600)'">
-                        <i class="fab fa-twitter" style="font-size: 0.75rem;"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- VP of Operations -->
-            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="500">
-                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                    <span style="color: white; font-size: 2rem; font-weight: 700;">MT</span>
-                </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Michael Thompson</h3>
-                <div class="text-primary" style="font-weight: 500; margin-bottom: 1.5rem;">VP of Operations</div>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
-                    Michael oversees day-to-day operations and service delivery, ensuring our teams consistently 
-                    deliver high-quality solutions that exceed client expectations.
-                </p>
-                <div style="display: flex; justify-content: center; gap: 1rem;">
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
-                        <i class="fab fa-linkedin-in" style="font-size: 0.75rem;"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- HR Director -->
-            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="600">
-                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                    <span style="color: white; font-size: 2rem; font-weight: 700;">AD</span>
-                </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Amanda Davis</h3>
-                <div class="text-secondary" style="font-weight: 500; margin-bottom: 1.5rem;">Director of Human Resources</div>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
-                    Amanda leads our people strategy, fostering a culture of innovation and excellence while 
-                    ensuring our team has the resources and support needed to succeed.
-                </p>
-                <div style="display: flex; justify-content: center; gap: 1rem;">
-                    <a href="#" style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--secondary-700)'" onmouseout="this.style.background='var(--secondary-600)'">
-                        <i class="fab fa-linkedin-in" style="font-size: 0.75rem;"></i>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

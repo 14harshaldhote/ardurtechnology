@@ -868,7 +868,7 @@ select:focus-visible {
 .service-icon {
     width: 3rem;
     height: 3rem;
-    background-color: var(--primary-500);
+    background-color: var(--primary-300);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
@@ -877,7 +877,7 @@ select:focus-visible {
 }
 
 .service-icon.secondary {
-    background-color: var(--secondary-500);
+    background-color: var(--secondary-300);
 }
 
 .service-icon i {
@@ -2049,7 +2049,7 @@ select:focus-visible {
    ========================================================================== */
 
 .footer {
-    background: var(--gray-900);
+    background: var(--gray-700);
     color: var(--gray-300);
     padding: 3rem 0 1rem;
 }
