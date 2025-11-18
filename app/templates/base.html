@@ -83,7 +83,7 @@
                         @mouseleave="showServicesDropdown = false">
                         <a href="{{ url_for('services') }}" class="nav-link" style="display: flex; align-items: center;">
                             Services
-                            <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
+                            <i data-lucide="chevron-down" style="margin-left: 0.5rem; width: 0.75rem; height: 0.75rem;"></i>
                         </a>
 
                         <!-- Mega Menu Panel -->
@@ -215,7 +215,7 @@
                         @mouseleave="showMoreDropdown = false">
                         <a href="#" class="nav-link" style="display: flex; align-items: center;">
                             Company
-                            <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
+                            <i data-lucide="chevron-down" style="margin-left: 0.5rem; width: 0.75rem; height: 0.75rem;"></i>
                         </a>
                         <div x-show="showMoreDropdown" x-transition:enter="transition ease-out duration-200"
                             x-transition:enter-start="opacity-0 transform scale-95"
@@ -269,8 +269,8 @@
     </div>
                     <!-- Mobile menu button -->
                     <button @click="showMobileMenu = !showMobileMenu" class="mobile-menu-btn">
-                        <i class="fas fa-bars" style="font-size: 1.125rem;" x-show="!showMobileMenu"></i>
-                        <i class="fas fa-times" style="font-size: 1.125rem;" x-show="showMobileMenu"></i>
+                        <i data-lucide="menu" style="width: 1.125rem; height: 1.125rem;" x-show="!showMobileMenu"></i>
+                        <i data-lucide="x" style="width: 1.125rem; height: 1.125rem;" x-show="showMobileMenu"></i>
                     </button>
                 </div>
             </div>

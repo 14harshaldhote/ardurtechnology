@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort
 from flask_mail import Mail, Message
 from flask_wtf.csrf import CSRFProtect
 from werkzeug.utils import secure_filename
@@ -447,4 +447,30 @@ def inject_globals():
     }
 
 
+# Handle Chrome DevTools and other common requests to prevent 404 errors
+@app.route('/.well-known/appspecific/com.chrome.devtools.json')
+@app.route('/.well-known/<path:filename>')
+def handle_well_known(filename=None):
+    """Handle .well-known requests to prevent 404 errors"""
+    abort(204)  # No Content - prevents error logs
+
+@app.route('/robots.txt')
+def robots_txt():
+    """Serve robots.txt"""
+    return "User-agent: *\nAllow: /", 200, {'Content-Type': 'text/plain'}
+
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    """Basic sitemap"""
+    return '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://ardurtechnology.com/</loc></url>
+    <url><loc>https://ardurtechnology.com/services</loc></url>
+    <url><loc>https://ardurtechnology.com/about</loc></url>
+    <url><loc>https://ardurtechnology.com/contact</loc></url>
+</urlset>''', 200, {'Content-Type': 'application/xml'}
+
 # Upload folder is created above using tempfile.gettempdir() for Vercel compatibility
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
