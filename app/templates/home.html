@@ -2,45 +2,51 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-        <h1 class="hero-title">
-            Business Process Solutions for
-            <span class="text-primary">Modern Enterprises</span>
-        </h1>
-        <p class="hero-subtitle">
-            We help organizations streamline operations, reduce costs, and
-            accelerate growth through innovative technology solutions and
-            strategic process optimization.
-        </p>
-        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
-                Get Started Today
-                <i data-lucide="arrow-right"></i>
-            </a>
-            <a href="{{ url_for('services') }}" class="btn btn-outline btn-lg">
-                Explore Services
-                <i data-lucide="chevron-right"></i>
-            </a>
-        </div>
-
-        <!-- Trust Indicators -->
-        <div style="margin-top: 3rem;" data-aos="fade-up" data-aos-delay="400">
-            <p style="font-size: 0.875rem; font-weight: 500; color: var(--gray-500); margin-bottom: 2rem; text-align: center;">
-                Trusted by companies worldwide
+<section class="hero hero-with-image">
+    <img src="{{ url_for('static', filename='images/banner1.jpg') }}" 
+         alt="Business Process Solutions" 
+         class="hero-banner-image">
+    
+    <div class="hero-container">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">
+                Business Process Solutions for
+                <span class="text-primary">Modern Enterprises</span>
+            </h1>
+            <p class="hero-subtitle">
+                We help organizations streamline operations, reduce costs, and
+                accelerate growth through innovative technology solutions and
+                strategic process optimization.
             </p>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Years</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Clients</div>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+                    Get Started Today
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="{{ url_for('services') }}" class="btn btn-outline btn-lg">
+                    Explore Services
+                    <i data-lucide="chevron-right"></i>
+                </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="hero-trust-indicators" data-aos="fade-up" data-aos-delay="400">
+                <p class="trust-text">
+                    Trusted by companies worldwide
+                </p>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Clients</div>
+                    </div>
                 </div>
             </div>
         </div>
