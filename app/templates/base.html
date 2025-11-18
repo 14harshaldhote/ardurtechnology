@@ -78,25 +78,22 @@
 
 
                     <!-- Services Cascading Menu -->
-                    <div class="services-menu" 
-                         x-data="{ showServicesDropdown: false, activeCategory: 'business-process' }"
-                         @mouseenter="showServicesDropdown = true"
-                         @mouseleave="showServicesDropdown = false">
+                    <div class="services-menu"
+                        x-data="{ showServicesDropdown: false, activeCategory: 'business-process' }"
+                        @mouseenter="showServicesDropdown = true" @mouseleave="showServicesDropdown = false">
                         <a href="{{ url_for('services') }}" class="nav-link services-menu-trigger">
                             Services
                             <i data-lucide="chevron-down" class="services-menu-trigger-icon"></i>
                         </a>
 
                         <!-- Cascading Dropdown Panel -->
-                        <div x-show="showServicesDropdown"
-                             x-transition:enter="transition ease-out duration-300"
-                             x-transition:enter-start="opacity-0 translate-y-2 scale-95"
-                             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-                             x-transition:leave="transition ease-in duration-200"
-                             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
-                             x-transition:leave-end="opacity-0 translate-y-2 scale-95"
-                             class="services-dropdown"
-                             style="display: none;">
+                        <div x-show="showServicesDropdown" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                            x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                            x-transition:leave-end="opacity-0 translate-y-2 scale-95" class="services-dropdown"
+                            style="display: none;">
 
                             <!-- Arrow pointing up to Services trigger -->
                             <div class="services-dropdown-arrow"></div>
@@ -108,11 +105,11 @@
                                         <h3>Our Services</h3>
                                         <p>Choose a category to explore</p>
                                     </div>
-                                    
+
                                     <div class="services-category-list">
-                                        <button class="services-category-item" 
-                                                :class="{ 'active': activeCategory === 'business-process' }"
-                                                @mouseenter="activeCategory = 'business-process'">
+                                        <button class="services-category-item"
+                                            :class="{ 'active': activeCategory === 'business-process' }"
+                                            @mouseenter="activeCategory = 'business-process'">
                                             <div class="services-category-icon">
                                                 <i data-lucide="settings"></i>
                                             </div>
@@ -124,8 +121,8 @@
                                         </button>
 
                                         <button class="services-category-item"
-                                                :class="{ 'active': activeCategory === 'appraisal' }"
-                                                @mouseenter="activeCategory = 'appraisal'">
+                                            :class="{ 'active': activeCategory === 'appraisal' }"
+                                            @mouseenter="activeCategory = 'appraisal'">
                                             <div class="services-category-icon">
                                                 <i data-lucide="trending-up"></i>
                                             </div>
@@ -137,8 +134,8 @@
                                         </button>
 
                                         <button class="services-category-item"
-                                                :class="{ 'active': activeCategory === 'mortgage' }"
-                                                @mouseenter="activeCategory = 'mortgage'">
+                                            :class="{ 'active': activeCategory === 'mortgage' }"
+                                            @mouseenter="activeCategory = 'mortgage'">
                                             <div class="services-category-icon">
                                                 <i data-lucide="home"></i>
                                             </div>
@@ -150,8 +147,8 @@
                                         </button>
 
                                         <button class="services-category-item"
-                                                :class="{ 'active': activeCategory === 'aircraft' }"
-                                                @mouseenter="activeCategory = 'aircraft'">
+                                            :class="{ 'active': activeCategory === 'aircraft' }"
+                                            @mouseenter="activeCategory = 'aircraft'">
                                             <div class="services-category-icon">
                                                 <i data-lucide="plane"></i>
                                             </div>
@@ -167,21 +164,25 @@
                                 <!-- Right Panel: Sub-Services (Dynamic Content) -->
                                 <div class="services-subservices">
                                     <!-- Business Process Sub-Services -->
-                                    <div x-show="activeCategory === 'business-process'" class="services-subservices-panel">
+                                    <div x-show="activeCategory === 'business-process'"
+                                        class="services-subservices-panel">
                                         <div class="services-subservices-header">
                                             <h4>Business Process Management</h4>
                                             <p>Streamline your operations with our expert solutions</p>
                                         </div>
                                         <div class="services-subservices-list">
-                                            <a href="{{ url_for('service_page', service_slug='title-insurance') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='title-insurance') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="shield-check"></i>
                                                 <span>Title Insurance</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='title-plant-development') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='title-plant-development') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="building-2"></i>
                                                 <span>Title Plant Development</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='tax-services') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='tax-services') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="calculator"></i>
                                                 <span>Tax Services</span>
                                             </a>
@@ -195,15 +196,18 @@
                                             <p>Professional valuation and assessment services</p>
                                         </div>
                                         <div class="services-subservices-list">
-                                            <a href="{{ url_for('service_page', service_slug='appraisal-management-services') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='appraisal-management-services') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="clipboard-check"></i>
                                                 <span>Appraisal Management Services</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='broker-price-opinion') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='broker-price-opinion') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="dollar-sign"></i>
                                                 <span>BPO – Broker Price Opinion</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='appraisal-vendor-management') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='appraisal-vendor-management') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="users"></i>
                                                 <span>Vendor Management</span>
                                             </a>
@@ -217,31 +221,38 @@
                                             <p>End-to-end mortgage processing and support</p>
                                         </div>
                                         <div class="services-subservices-list">
-                                            <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="file-text"></i>
                                                 <span>Pre-Processing Support</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='mortgage-ancillary') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-ancillary') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="layers"></i>
                                                 <span>Ancillary Services</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='mortgage-appraisal') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-appraisal') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="search"></i>
                                                 <span>Appraisal Services</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='mortgage-underwriting') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-underwriting') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="check-circle"></i>
                                                 <span>Underwriting Services</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='mortgage-title') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-title') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="award"></i>
                                                 <span>Title Services</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='mortgage-closing') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-closing') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="handshake"></i>
                                                 <span>Closing Services</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='mortgage-post-closing') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-post-closing') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="clipboard-list"></i>
                                                 <span>Post-Closing Services</span>
                                             </a>
@@ -255,31 +266,38 @@
                                             <p>Comprehensive aviation asset management solutions</p>
                                         </div>
                                         <div class="services-subservices-list">
-                                            <a href="{{ url_for('service_page', service_slug='document-management') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='document-management') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="folder"></i>
                                                 <span>Document Management</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='electronic-asset-management') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='electronic-asset-management') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="database"></i>
                                                 <span>Electronic Asset Management</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='programs-reliability') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='programs-reliability') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="activity"></i>
                                                 <span>Programs & Reliability</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='assemblies-services') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='assemblies-services') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="package"></i>
                                                 <span>Assemblies Services</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='service-expertise') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='service-expertise') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="star"></i>
                                                 <span>Service Expertise</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='technical-documents') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='technical-documents') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="file-code"></i>
                                                 <span>Technical Documents</span>
                                             </a>
-                                            <a href="{{ url_for('service_page', service_slug='engine-maintenance-analytics') }}" class="services-subservice-item">
+                                            <a href="{{ url_for('service_page', service_slug='engine-maintenance-analytics') }}"
+                                                class="services-subservice-item">
                                                 <i data-lucide="wrench"></i>
                                                 <span>Engine Maintenance Analysis</span>
                                             </a>
@@ -307,15 +325,13 @@
                             Company
                             <i data-lucide="chevron-down" class="company-dropdown-trigger-icon"></i>
                         </a>
-                        <div x-show="showMoreDropdown" 
-                             x-transition:enter="transition ease-out duration-200"
-                             x-transition:enter-start="opacity-0 transform scale-95"
-                             x-transition:enter-end="opacity-100 transform scale-100"
-                             x-transition:leave="transition ease-in duration-150"
-                             x-transition:leave-start="opacity-100 transform scale-100"
-                             x-transition:leave-end="opacity-0 transform scale-95"
-                             class="company-dropdown-panel"
-                             style="display: none;">
+                        <div x-show="showMoreDropdown" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform scale-100"
+                            x-transition:leave-end="opacity-0 transform scale-95" class="company-dropdown-panel"
+                            style="display: none;">
                             <a href="{{ url_for('blogs') }}" class="company-dropdown-link">
                                 <i data-lucide="newspaper"></i>
                                 <span>Blogs</span>
@@ -338,18 +354,14 @@
                 <div style="display: flex; align-items: center; gap: 2rem;">
 
                     <!-- USA Flag + Contact Info -->
-                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-
+                    <div class="contact-wrapper">
 
                         <!-- Contact Info -->
-                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
-                            <span style="font-weight: 600; font-size: 0.9rem; color: var(--gray-900);">
-                                +1 (702) 809-2713
-                            </span>
-                            <span style="font-size: 0.85rem; color: var(--gray-600);">
-                                info@ardurtechnology.com
-                            </span>
+                        <div class="contact-info">
+                            <span class="contact-info-text"> <i data-lucide="phone" class="contact-info-icon"></i>
+                                +1 (702) 809-2713</span>
                         </div>
+
                     </div>
                     <!-- Mobile menu button -->
                     <button @click="showMobileMenu = !showMobileMenu" class="mobile-menu-btn">
@@ -412,7 +424,7 @@
                     </div>
 
 
-                   
+
                 </div>
             </div>
         </nav>
@@ -504,17 +516,13 @@
                     <h4>Contact</h4>
                     <div>
                         <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                            <i class="fas fa-envelope text-primary" style="width: 1rem; margin-right: 1rem;"></i>
-                            <a href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
+                            <a style="color: var(--gray-100); text-decoration: none;" href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
                         </div>
                         <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                            <i class="fas fa-phone text-primary" style="width: 1rem; margin-right: 1rem; text"></i>
-                            <a href="tel:+1 (702) 809-2713">+1 (702) 809-2713</a>
+                            <a style="color: var(--gray-100); text-decoration: none;" href="tel:+1 (702) 809-2713">+1 (702) 809-2713</a>
                         </div>
                         <div style="display: flex; align-items: flex-start;">
-                            <i class="fas fa-map-marker-alt text-primary"
-                                style="width: 1rem; margin-right: 1rem; margin-top: 0.25rem; color: var(--gray-100);"></i>
-                            <span>1964 Heritage Oaks Street
+                                      <span style="color: var(--gray-100);">1964 Heritage Oaks Street
                                 <br />Las Vegas, NV 89119
                                 <br />USA
 

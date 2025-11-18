@@ -3066,3 +3066,30 @@ select:focus-visible {
    Total Lines: ~2100+ (Enhanced with Footer)
    Added: Complete footer styling following modern design standards
    ========================================================================== */
+
+   .contact-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Horizontal alignment */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Icon */
+.contact-info-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--primary-600);
+}
+
+/* Phone text */
+.contact-info-text {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--gray-900);
+}
