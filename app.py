@@ -394,6 +394,9 @@ def contact_form():
 
         return redirect(url_for("contact"))
 
+@app.route("/privacy-policy")
+def privacy_policy():
+    return render_template("privacy_policy.html")
 
 # API Routes
 @app.route("/api/services")

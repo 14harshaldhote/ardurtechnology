@@ -1,458 +1,462 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <!-- SEO Meta Tags -->
-        <title>
-            {% if title %}{{ title }} - Ardur Technology{% else %}Ardur
-            Technology - Business Process Solutions{% endif %}
-        </title>
-        <meta
-            name="description"
-            content="{% block meta_description %}Professional business process management, IT consulting, mortgage services, and healthcare solutions. Transform your operations with Ardur Technology's expert team.{% endblock %}"
-        />
-        <meta
-            name="keywords"
-            content="business process management, BPM, IT consulting, mortgage services, healthcare solutions, digital transformation, automation"
-        />
-        <meta name="author" content="Ardur Technology LLC" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <!-- Open Graph Meta Tags -->
-        <meta
-            property="og:title"
-            content="{% if title %}{{ title }} - Ardur Technology{% else %}Ardur Technology - Business Process Solutions{% endif %}"
-        />
-        <meta
-            property="og:description"
-            content="Professional business process management and technology solutions for modern enterprises."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ request.url }}" />
-        <meta property="og:site_name" content="Ardur Technology" />
+    <!-- SEO Meta Tags -->
+    <title>
+        {% if title %}{{ title }} - Ardur Technology{% else %}Ardur
+        Technology - Business Process Solutions{% endif %}
+    </title>
+    <meta name="description"
+        content="{% block meta_description %}Professional business process management, IT consulting, mortgage services, and healthcare solutions. Transform your operations with Ardur Technology's expert team.{% endblock %}" />
+    <meta name="keywords"
+        content="business process management, BPM, IT consulting, mortgage services, healthcare solutions, digital transformation, automation" />
+    <meta name="author" content="Ardur Technology LLC" />
 
-        <!-- Favicon -->
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="{{ url_for('static', filename='images/favicon.ico') }}"
-        />
-        <link
-            rel="apple-touch-icon"
-            href="{{ url_for('static', filename='images/apple-touch-icon.png') }}"
-        />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title"
+        content="{% if title %}{{ title }} - Ardur Technology{% else %}Ardur Technology - Business Process Solutions{% endif %}" />
+    <meta property="og:description"
+        content="Professional business process management and technology solutions for modern enterprises." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ request.url }}" />
+    <meta property="og:site_name" content="Ardur Technology" />
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}" />
 
-        <!-- Lucide Icons -->
-        <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        <!-- Alpine.js -->
-        <script
-            defer
-            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-        ></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
 
-        <!-- AOS (Animate On Scroll) -->
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-        {% block extra_head %}{% endblock %}
-    </head>
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <body
-        x-data="{ showMobileMenu: false, showBackToTop: false }"
-        x-init="
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body x-data="{ showMobileMenu: false, showBackToTop: false }" x-init="
     window.addEventListener('scroll', () => {
         showBackToTop = window.pageYOffset > 300;
     });
-"
-    >
-        <!-- Header -->
-        <header class="navbar" x-data="{ showServicesDropdown: false, showMoreDropdown: false }">
-            <nav class="navbar-container">
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                    <!-- Logo -->
+">
+
+    <!-- Header -->
+    <header class="navbar" x-data="{ showServicesDropdown: false, showMoreDropdown: false }">
+        <nav class="navbar-container">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <!-- Logo -->
+                <div>
+                    <a href="{{ url_for('home') }}" class="navbar-brand">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Ardur Logo"
+                            style="height: 40px; width: auto;" />
+
+
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="navbar-nav">
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+
+                    <!-- Services Mega Menu -->
+                    <div style="position: relative;" @mouseenter="showServicesDropdown = true"
+                        @mouseleave="showServicesDropdown = false">
+                        <a href="#" class="nav-link" style="display: flex; align-items: center;">
+                            Services
+                            <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
+                        </a>
+
+                        <!-- Mega Menu Panel -->
+                        <div x-show="showServicesDropdown" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform scale-100"
+                            x-transition:leave-end="opacity-0 transform scale-95" class="dropdown-menu"
+                            style="display: none;">
+                            <div class="dropdown-content">
+                                <!-- Column 1 -->
+                                <div class="dropdown-section">
+                                    <div class="dropdown-category">
+                                        <h3>
+                                            <i class="fas fa-cogs text-primary" style="margin-right: 0.5rem;"></i>
+                                            Business Process Management
+                                        </h3>
+                                        <div class="dropdown-links">
+                                            <a href="{{ url_for('service_page', service_slug='title-insurance') }}"
+                                                class="dropdown-link">
+                                                <span>Title Insurance</span>
+                                            </a>
+                                            <a href="{{ url_for('service_page', service_slug='title-plant-development') }}"
+                                                class="dropdown-link">
+                                                <span>Title Plant Development</span>
+                                            </a>
+                                            <a href="{{ url_for('service_page', service_slug='tax-services') }}"
+                                                class="dropdown-link">
+                                                <span>Tax Services</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="dropdown-category">
+                                        <h3>
+                                            <i class="fas fa-building text-secondary" style="margin-right: 0.5rem;"></i>
+                                            Appraisal Management
+                                        </h3>
+                                        <div class="dropdown-links">
+                                            <a href="{{ url_for('service_page', service_slug='appraisal-management-services') }}"
+                                                class="dropdown-link">
+                                                <span>Appraisal Management Services</span>
+                                            </a>
+                                            <a href="{{ url_for('service_page', service_slug='broker-price-opinion') }}"
+                                                class="dropdown-link">
+                                                <span>BPO – Broker Price Opinion</span>
+                                            </a>
+                                            <a href="{{ url_for('service_page', service_slug='appraisal-vendor-management') }}"
+                                                class="dropdown-link">
+                                                <span>Vendor Management</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="dropdown-section">
+                                    <div class="dropdown-category">
+                                        <h3>
+                                            <i class="fas fa-home text-secondary" style="margin-right: 0.5rem;"></i>
+                                            Mortgage Services
+                                        </h3>
+                                        <div class="dropdown-links">
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}"
+                                                class="dropdown-link">Pre-Processing Support</a>
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-ancillary') }}"
+                                                class="dropdown-link">Ancillary Services</a>
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-appraisal') }}"
+                                                class="dropdown-link">Appraisal Services</a>
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-underwriting') }}"
+                                                class="dropdown-link">Underwriting Services</a>
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-title') }}"
+                                                class="dropdown-link">Title Services</a>
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-closing') }}"
+                                                class="dropdown-link">Closing Services</a>
+                                            <a href="{{ url_for('service_page', service_slug='mortgage-post-closing') }}"
+                                                class="dropdown-link">Post-Closing Services</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 3 -->
+                                <div class="dropdown-section">
+                                    <div class="dropdown-category">
+                                        <h3>
+                                            <i class="fas fa-plane text-primary" style="margin-right: 0.5rem;"></i>
+                                            Aircraft Asset Management
+                                        </h3>
+                                        <div class="dropdown-links">
+                                            <a href="{{ url_for('service_page', service_slug='document-management') }}"
+                                                class="dropdown-link">Document Management</a>
+                                            <a href="{{ url_for('service_page', service_slug='electronic-asset-management') }}"
+                                                class="dropdown-link">Electronic Asset Management</a>
+                                            <a href="{{ url_for('service_page', service_slug='programs-reliability') }}"
+                                                class="dropdown-link">Programs & Reliability</a>
+                                            <a href="{{ url_for('service_page', service_slug='assemblies-services') }}"
+                                                class="dropdown-link">Assemblies Services</a>
+                                            <a href="{{ url_for('service_page', service_slug='service-expertise') }}"
+                                                class="dropdown-link">Service Expertise</a>
+                                            <a href="{{ url_for('service_page', service_slug='technical-documents') }}"
+                                                class="dropdown-link">Technical Documents</a>
+                                            <a href="{{ url_for('service_page', service_slug='engine-maintenance-analytics') }}"
+                                                class="dropdown-link">Engine Maintenance Analysis</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom CTA -->
+                            <div class="dropdown-footer">
+                                <div>
+                                    <p class="font-medium" style="color: var(--gray-900);">Why Choose Ardur?</p>
+                                    <p style="font-size: 0.75rem; color: var(--gray-600); margin-top: 0.25rem;">
+                                        Industry-leading expertise and proven results</p>
+                                </div>
+                                <a href="{{ url_for('about') }}" class="btn btn-primary btn-sm">
+                                    Learn More
+                                    <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+                    <a href="{{ url_for('careers') }}" class="nav-link">Careers</a>
+
+                    <!-- More Dropdown -->
+                    <div style="position: relative;" @mouseenter="showMoreDropdown = true"
+                        @mouseleave="showMoreDropdown = false">
+                        <a href="#" class="nav-link" style="display: flex; align-items: center;">
+                            More
+                            <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
+                        </a>
+                        <div x-show="showMoreDropdown" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform scale-100"
+                            x-transition:leave-end="opacity-0 transform scale-95"
+                            style="position: absolute; right: 0; margin-top: 0.5rem; width: 12rem; background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--gray-100); padding: 0.5rem 0; z-index: 50; display: none;">
+                            <a href="{{ url_for('blogs') }}" class="dropdown-link"
+                                style="display: flex; align-items: center; padding: 0.5rem 1rem;">
+                                <i class="fas fa-blog text-primary"
+                                    style="margin-right: 0.75rem; font-size: 0.875rem;"></i>
+                                Blogs
+                            </a>
+                            <a href="{{ url_for('case_studies') }}" class="dropdown-link"
+                                style="display: flex; align-items: center; padding: 0.5rem 1rem;">
+                                <i class="fas fa-file-alt text-secondary"
+                                    style="margin-right: 0.75rem; font-size: 0.875rem;"></i>
+                                Case Studies
+                            </a>
+                            <a href="{{ url_for('leadership') }}" class="dropdown-link"
+                                style="display: flex; align-items: center; padding: 0.5rem 1rem;">
+                                <i class="fas fa-users text-primary"
+                                    style="margin-right: 0.75rem; font-size: 0.875rem;"></i>
+                                Leadership
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+                </div>
+
+                <!-- CTA Button & Mobile Menu Button -->
+                <div style="display: flex; align-items: center;">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                        Get Started
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+
+                    <!-- Mobile menu button -->
+                    <button @click="showMobileMenu = !showMobileMenu" class="mobile-menu-btn">
+                        <i class="fas fa-bars" style="font-size: 1.125rem;" x-show="!showMobileMenu"></i>
+                        <i class="fas fa-times" style="font-size: 1.125rem;" x-show="showMobileMenu"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div x-show="showMobileMenu" x-transition class="mobile-menu"
+                x-data="{ showMobileServices: false, showMobileMore: false }">
+                <div>
+                    <a href="{{ url_for('home') }}" class="mobile-menu-item">Home</a>
+
+                    <!-- Mobile Services -->
                     <div>
-                        <a href="{{ url_for('home') }}" class="navbar-brand">
-                            <div class="navbar-logo">
-                                <span>A</span>
-                            </div>
-                            <div class="navbar-text">
-                                Ardur<span class="highlight">Technology</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Desktop Navigation -->
-                    <div class="navbar-nav">
-                        <a href="{{ url_for('home') }}" class="nav-link">Home</a>
-                        
-                        <!-- Services Mega Menu -->
-                        <div
-                            style="position: relative;"
-                            @mouseenter="showServicesDropdown = true"
-                            @mouseleave="showServicesDropdown = false"
-                        >
-                            <a href="#" class="nav-link" style="display: flex; align-items: center;">
-                                Services
-                                <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
-                            </a>
-                            
-                            <!-- Mega Menu Panel -->
-                            <div
-                                x-show="showServicesDropdown"
-                                x-transition:enter="transition ease-out duration-200"
-                                x-transition:enter-start="opacity-0 transform scale-95"
-                                x-transition:enter-end="opacity-100 transform scale-100"
-                                x-transition:leave="transition ease-in duration-150"
-                                x-transition:leave-start="opacity-100 transform scale-100"
-                                x-transition:leave-end="opacity-0 transform scale-95"
-                                class="dropdown-menu"
-                                style="display: none;"
-                            >
-                                <div class="dropdown-content">
-                                    <!-- Column 1 -->
-                                    <div class="dropdown-section">
-                                        <div class="dropdown-category">
-                                            <h3>
-                                                <i class="fas fa-cogs text-primary" style="margin-right: 0.5rem;"></i>
-                                                Business Process Management
-                                            </h3>
-                                            <div class="dropdown-links">
-                                                <a href="{{ url_for('service_page', service_slug='title-insurance') }}" class="dropdown-link">
-                                                    <span>Title Insurance</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='title-plant-development') }}" class="dropdown-link">
-                                                    <span>Title Plant Development</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='tax-services') }}" class="dropdown-link">
-                                                    <span>Tax Services</span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="dropdown-category">
-                                            <h3>
-                                                <i class="fas fa-building text-secondary" style="margin-right: 0.5rem;"></i>
-                                                Appraisal Management
-                                            </h3>
-                                            <div class="dropdown-links">
-                                                <a href="{{ url_for('service_page', service_slug='appraisal-management-services') }}" class="dropdown-link">
-                                                    <span>Appraisal Management Services</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='broker-price-opinion') }}" class="dropdown-link">
-                                                    <span>BPO – Broker Price Opinion</span>
-                                                </a>
-                                                <a href="{{ url_for('service_page', service_slug='appraisal-vendor-management') }}" class="dropdown-link">
-                                                    <span>Vendor Management</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Column 2 -->
-                                    <div class="dropdown-section">
-                                        <div class="dropdown-category">
-                                            <h3>
-                                                <i class="fas fa-home text-secondary" style="margin-right: 0.5rem;"></i>
-                                                Mortgage Services
-                                            </h3>
-                                            <div class="dropdown-links">
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}" class="dropdown-link">Pre-Processing Support</a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-ancillary') }}" class="dropdown-link">Ancillary Services</a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-appraisal') }}" class="dropdown-link">Appraisal Services</a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-underwriting') }}" class="dropdown-link">Underwriting Services</a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-title') }}" class="dropdown-link">Title Services</a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-closing') }}" class="dropdown-link">Closing Services</a>
-                                                <a href="{{ url_for('service_page', service_slug='mortgage-post-closing') }}" class="dropdown-link">Post-Closing Services</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Column 3 -->
-                                    <div class="dropdown-section">
-                                        <div class="dropdown-category">
-                                            <h3>
-                                                <i class="fas fa-plane text-primary" style="margin-right: 0.5rem;"></i>
-                                                Aircraft Asset Management
-                                            </h3>
-                                            <div class="dropdown-links">
-                                                <a href="{{ url_for('service_page', service_slug='document-management') }}" class="dropdown-link">Document Management</a>
-                                                <a href="{{ url_for('service_page', service_slug='electronic-asset-management') }}" class="dropdown-link">Electronic Asset Management</a>
-                                                <a href="{{ url_for('service_page', service_slug='programs-reliability') }}" class="dropdown-link">Programs & Reliability</a>
-                                                <a href="{{ url_for('service_page', service_slug='assemblies-services') }}" class="dropdown-link">Assemblies Services</a>
-                                                <a href="{{ url_for('service_page', service_slug='service-expertise') }}" class="dropdown-link">Service Expertise</a>
-                                                <a href="{{ url_for('service_page', service_slug='technical-documents') }}" class="dropdown-link">Technical Documents</a>
-                                                <a href="{{ url_for('service_page', service_slug='engine-maintenance-analytics') }}" class="dropdown-link">Engine Maintenance Analysis</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Bottom CTA -->
-                                <div class="dropdown-footer">
-                                    <div>
-                                        <p class="font-medium" style="color: var(--gray-900);">Why Choose Ardur?</p>
-                                        <p style="font-size: 0.75rem; color: var(--gray-600); margin-top: 0.25rem;">Industry-leading expertise and proven results</p>
-                                    </div>
-                                    <a href="{{ url_for('about') }}" class="btn btn-primary btn-sm">
-                                        Learn More
-                                        <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
-                        <a href="{{ url_for('careers') }}" class="nav-link">Careers</a>
-                        
-                        <!-- More Dropdown -->
-                        <div
-                            style="position: relative;"
-                            @mouseenter="showMoreDropdown = true"
-                            @mouseleave="showMoreDropdown = false"
-                        >
-                            <a href="#" class="nav-link" style="display: flex; align-items: center;">
-                                More
-                                <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
-                            </a>
-                            <div
-                                x-show="showMoreDropdown"
-                                x-transition:enter="transition ease-out duration-200"
-                                x-transition:enter-start="opacity-0 transform scale-95"
-                                x-transition:enter-end="opacity-100 transform scale-100"
-                                x-transition:leave="transition ease-in duration-150"
-                                x-transition:leave-start="opacity-100 transform scale-100"
-                                x-transition:leave-end="opacity-0 transform scale-95"
-                                style="position: absolute; right: 0; margin-top: 0.5rem; width: 12rem; background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--gray-100); padding: 0.5rem 0; z-index: 50; display: none;"
-                            >
-                                <a href="{{ url_for('blogs') }}" class="dropdown-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-                                    <i class="fas fa-blog text-primary" style="margin-right: 0.75rem; font-size: 0.875rem;"></i>
-                                    Blogs
-                                </a>
-                                <a href="{{ url_for('case_studies') }}" class="dropdown-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-                                    <i class="fas fa-file-alt text-secondary" style="margin-right: 0.75rem; font-size: 0.875rem;"></i>
-                                    Case Studies
-                                </a>
-                                <a href="{{ url_for('leadership') }}" class="dropdown-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-                                    <i class="fas fa-users text-primary" style="margin-right: 0.75rem; font-size: 0.875rem;"></i>
-                                    Leadership
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
-                    </div>
-
-                    <!-- CTA Button & Mobile Menu Button -->
-                    <div style="display: flex; align-items: center;">
-                        <a href="{{ url_for('contact') }}" class="btn btn-primary">
-                            Get Started
-                            <i data-lucide="arrow-right"></i>
-                        </a>
-
-                        <!-- Mobile menu button -->
-                        <button @click="showMobileMenu = !showMobileMenu" class="mobile-menu-btn">
-                            <i class="fas fa-bars" style="font-size: 1.125rem;" x-show="!showMobileMenu"></i>
-                            <i class="fas fa-times" style="font-size: 1.125rem;" x-show="showMobileMenu"></i>
+                        <button @click="showMobileServices = !showMobileServices" class="mobile-menu-item"
+                            style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s;"
+                                :class="{ 'rotate-180': showMobileServices }"></i>
                         </button>
+                        <div x-show="showMobileServices" x-transition class="mobile-submenu">
+                            <a href="{{ url_for('service_page', service_slug='title-insurance') }}"
+                                class="mobile-submenu-item">Title Insurance</a>
+                            <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}"
+                                class="mobile-submenu-item">Mortgage Services</a>
+                            <a href="{{ url_for('service_page', service_slug='document-management') }}"
+                                class="mobile-submenu-item">Aircraft Management</a>
+                            <a href="{{ url_for('services') }}" class="mobile-submenu-item">View All Services</a>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Mobile Navigation -->
-                <div x-show="showMobileMenu" x-transition class="mobile-menu" x-data="{ showMobileServices: false, showMobileMore: false }">
+                    <a href="{{ url_for('about') }}" class="mobile-menu-item">About Us</a>
+                    <a href="{{ url_for('careers') }}" class="mobile-menu-item">Careers</a>
+
+                    <!-- Mobile More -->
                     <div>
-                        <a href="{{ url_for('home') }}" class="mobile-menu-item">Home</a>
-                        
-                        <!-- Mobile Services -->
-                        <div>
-                            <button
-                                @click="showMobileServices = !showMobileServices"
-                                class="mobile-menu-item" style="width: 100%; display: flex; align-items: center; justify-content: space-between;"
-                            >
-                                <span>Services</span>
-                                <i class="fas fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s;" :class="{ 'rotate-180': showMobileServices }"></i>
-                            </button>
-                            <div x-show="showMobileServices" x-transition class="mobile-submenu">
-                                <a href="{{ url_for('service_page', service_slug='title-insurance') }}" class="mobile-submenu-item">Title Insurance</a>
-                                <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}" class="mobile-submenu-item">Mortgage Services</a>
-                                <a href="{{ url_for('service_page', service_slug='document-management') }}" class="mobile-submenu-item">Aircraft Management</a>
-                                <a href="{{ url_for('services') }}" class="mobile-submenu-item">View All Services</a>
-                            </div>
-                        </div>
-                        
-                        <a href="{{ url_for('about') }}" class="mobile-menu-item">About Us</a>
-                        <a href="{{ url_for('careers') }}" class="mobile-menu-item">Careers</a>
-                        
-                        <!-- Mobile More -->
-                        <div>
-                            <button
-                                @click="showMobileMore = !showMobileMore"
-                                class="mobile-menu-item" style="width: 100%; display: flex; align-items: center; justify-content: space-between;"
-                            >
-                                <span>More</span>
-                                <i class="fas fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s;" :class="{ 'rotate-180': showMobileMore }"></i>
-                            </button>
-                            <div x-show="showMobileMore" x-transition class="mobile-submenu">
-                                <a href="{{ url_for('blogs') }}" class="mobile-submenu-item">
-                                    <i class="fas fa-blog text-primary" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Blogs
-                                </a>
-                                <a href="{{ url_for('case_studies') }}" class="mobile-submenu-item">
-                                    <i class="fas fa-file-alt text-secondary" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Case Studies
-                                </a>
-                                <a href="{{ url_for('leadership') }}" class="mobile-submenu-item">
-                                    <i class="fas fa-users text-primary" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Leadership
-                                </a>
-                            </div>
-                        </div>
-                        
-                        
-                        <div style="padding: 1rem;">
-                            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-full">
-                                Get Started
+                        <button @click="showMobileMore = !showMobileMore" class="mobile-menu-item"
+                            style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
+                            <span>More</span>
+                            <i class="fas fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s;"
+                                :class="{ 'rotate-180': showMobileMore }"></i>
+                        </button>
+                        <div x-show="showMobileMore" x-transition class="mobile-submenu">
+                            <a href="{{ url_for('blogs') }}" class="mobile-submenu-item">
+                                <i class="fas fa-blog text-primary"
+                                    style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Blogs
                             </a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <!-- Main Content -->
-        <main style="min-height: 100vh;">
-            {% with messages = get_flashed_messages(with_categories=true) %} 
-            {% if messages %}
-            <div class="container" style="padding-top: 1rem;">
-                {% for category, message in messages %}
-                <div class="alert {% if category == 'error' %}alert-error{% elif category == 'success' %}alert-success{% elif category == 'warning' %}alert-warning{% else %}alert-info{% endif %}">
-                    <div style="display: flex; align-items: center;">
-                        <i class="fas {% if category == 'error' %}fa-exclamation-triangle{% elif category == 'success' %}fa-check-circle{% elif category == 'warning' %}fa-exclamation-circle{% else %}fa-info-circle{% endif %}" style="margin-right: 0.5rem;"></i>
-                        {{ message }}
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            {% endif %} 
-            {% endwith %} 
-            {% block content %}{% endblock %}
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-grid">
-                    <!-- Company Info -->
-                    <div class="footer-section">
-                        <div class="navbar-brand" style="margin-bottom: 1.5rem;">
-                            <div class="navbar-logo">
-                                <span>A</span>
-                            </div>
-                            <div class="navbar-text" style="color: white;">
-                                Ardur<span class="highlight">Technology</span>
-                            </div>
-                        </div>
-                        <p style="color: var(--gray-300); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
-                            Transforming businesses through innovative process
-                            management and technology solutions since 2013.
-                        </p>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="#" style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-600)'" onmouseout="this.style.background='var(--gray-800)'">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="{{ url_for('case_studies') }}" class="mobile-submenu-item">
+                                <i class="fas fa-file-alt text-secondary"
+                                    style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Case Studies
                             </a>
-                            <a href="#" style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-600)'" onmouseout="this.style.background='var(--gray-800)'">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-600)'" onmouseout="this.style.background='var(--gray-800)'">
-                                <i class="fab fa-facebook-f"></i>
+                            <a href="{{ url_for('leadership') }}" class="mobile-submenu-item">
+                                <i class="fas fa-users text-primary"
+                                    style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Leadership
                             </a>
                         </div>
                     </div>
 
-                    <!-- Services -->
-                    <div class="footer-section">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="{{ url_for('services') }}">Business Process Management</a></li>
-                            <li><a href="{{ url_for('services') }}">IT Consulting</a></li>
-                            <li><a href="{{ url_for('services') }}">Mortgage Services</a></li>
-                            <li><a href="{{ url_for('services') }}">Healthcare Solutions</a></li>
-                        </ul>
-                    </div>
 
-                    <!-- Company -->
-                    <div class="footer-section">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="{{ url_for('about') }}">About Us</a></li>
-                            <li><a href="{{ url_for('careers') }}">Careers</a></li>
-                            <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Contact -->
-                    <div class="footer-section">
-                        <h4>Contact</h4>
-                        <div>
-                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                <i class="fas fa-envelope text-primary" style="width: 1rem; margin-right: 1rem;"></i>
-                                <a href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
-                            </div>
-                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                <i class="fas fa-phone text-primary" style="width: 1rem; margin-right: 1rem;"></i>
-                                <a href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
-                            </div>
-                            <div style="display: flex; align-items: flex-start;">
-                                <i class="fas fa-map-marker-alt text-primary" style="width: 1rem; margin-right: 1rem; margin-top: 0.25rem;"></i>
-                                <span>123 Business Ave<br />Suite 100<br />City, State 12345</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <p>© {{ current_year or 2024 }} Ardur Technology LLC. All rights reserved.</p>
-                    <div class="footer-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                    <div style="padding: 1rem;">
+                        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-full">
+                            Get Started
+                        </a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </nav>
+    </header>
 
-        <!-- Back to Top Button -->
-        <button
-            x-show="showBackToTop"
-            x-transition
-            @click="window.scrollTo({top: 0, behavior: 'smooth'})"
-            class="back-to-top"
-        >
-            <i data-lucide="arrow-up"></i>
-        </button>
+    <!-- Main Content -->
+    <main style="min-height: 100vh;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="container" style="padding-top: 1rem;">
+            {% for category, message in messages %}
+            <div
+                class="alert {% if category == 'error' %}alert-error{% elif category == 'success' %}alert-success{% elif category == 'warning' %}alert-warning{% else %}alert-info{% endif %}">
+                <div style="display: flex; align-items: center;">
+                    <i class="fas {% if category == 'error' %}fa-exclamation-triangle{% elif category == 'success' %}fa-check-circle{% elif category == 'warning' %}fa-exclamation-circle{% else %}fa-info-circle{% endif %}"
+                        style="margin-right: 0.5rem;"></i>
+                    {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
 
-        <!-- AOS Initialize -->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                duration: 800,
-                easing: "ease-in-out",
-                once: true,
-                offset: 50,
-            });
-            
-            // Initialize Lucide icons
-            lucide.createIcons();
-        </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="navbar-brand" style="margin-bottom: 1.5rem;">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Ardur Logo"
+                            style="height: 40px; width: auto;" />
+                    </div>
+                    <p style="color: var(--gray-300); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6;">
+                        Transforming businesses through innovative process
+                        management and technology solutions since 2013.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/ardurtechnology/" target="_blank" style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg);
+       display: flex; align-items: center; justify-content: center; 
+       transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-600)'"
+                            onmouseout="this.style.background='var(--gray-800)'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-normal);"
+                            onmouseover="this.style.background='var(--primary-600)'"
+                            onmouseout="this.style.background='var(--gray-800)'">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                       <a href="https://www.facebook.com" target="_blank"
+       style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg);
+       display: flex; align-items: center; justify-content: center; 
+       transition: background-color var(--transition-normal);"
+       onmouseover="this.style.background='var(--primary-600)'"
+       onmouseout="this.style.background='var(--gray-800)'">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+                    </div>
+                </div>
 
-        {% block extra_scripts %}{% endblock %}
-    </body>
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{{ url_for('services') }}">Business Process Management</a></li>
+                        <li><a href="{{ url_for('services') }}">IT Consulting</a></li>
+                        <li><a href="{{ url_for('services') }}">Mortgage Services</a></li>
+                        <li><a href="{{ url_for('services') }}">Healthcare Solutions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('careers') }}">Careers</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div>
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-envelope text-primary" style="width: 1rem; margin-right: 1rem;"></i>
+                            <a href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-phone text-primary" style="width: 1rem; margin-right: 1rem;"></i>
+                            <a href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
+                        </div>
+                        <div style="display: flex; align-items: flex-start;">
+                            <i class="fas fa-map-marker-alt text-primary"
+                                style="width: 1rem; margin-right: 1rem; margin-top: 0.25rem;"></i>
+                            <span>123 Business Ave<br />Suite 100<br />City, State 12345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© {{ current_year or 2024 }} Ardur Technology LLC. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button x-show="showBackToTop" x-transition @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="back-to-top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- AOS Initialize -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: "ease-in-out",
+            once: true,
+            offset: 50,
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+
 </html>
