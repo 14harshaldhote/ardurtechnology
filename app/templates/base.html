@@ -75,11 +75,13 @@
                 <!-- Desktop Navigation -->
                 <div class="navbar-nav">
                     <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+
 
                     <!-- Services Mega Menu -->
                     <div style="position: relative;" @mouseenter="showServicesDropdown = true"
                         @mouseleave="showServicesDropdown = false">
-                        <a href="#" class="nav-link" style="display: flex; align-items: center;">
+                        <a href="{{ url_for('services') }}" class="nav-link" style="display: flex; align-items: center;">
                             Services
                             <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
                         </a>
@@ -206,14 +208,13 @@
                         </div>
                     </div>
 
-                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
                     <a href="{{ url_for('careers') }}" class="nav-link">Careers</a>
 
                     <!-- More Dropdown -->
                     <div style="position: relative;" @mouseenter="showMoreDropdown = true"
                         @mouseleave="showMoreDropdown = false">
                         <a href="#" class="nav-link" style="display: flex; align-items: center;">
-                            More
+                            Company
                             <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.75rem;"></i>
                         </a>
                         <div x-show="showMoreDropdown" x-transition:enter="transition ease-out duration-200"
@@ -247,13 +248,25 @@
                     <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
                 </div>
 
-                <!-- CTA Button & Mobile Menu Button -->
-                <div style="display: flex; align-items: center;">
-                    <a href="{{ url_for('contact') }}" class="btn btn-primary">
-                        Get Started
-                        <i data-lucide="arrow-right"></i>
-                    </a>
+                <!-- CTA Button & Contact Info -->
+<div style="display: flex; align-items: center; gap: 2rem;">
 
+    <!-- USA Flag + Contact Info -->
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+
+        <!-- Flag Emoji -->
+        <span style="font-size: 1.5rem;">🇺🇸</span>
+
+        <!-- Contact Info -->
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+            <span style="font-weight: 600; font-size: 0.9rem; color: var(--gray-900);">
+                +1 (702) 809-2713
+            </span>
+            <span style="font-size: 0.85rem; color: var(--gray-600);">
+                info@ardurtechnology.com
+            </span>
+        </div>
+    </div>
                     <!-- Mobile menu button -->
                     <button @click="showMobileMenu = !showMobileMenu" class="mobile-menu-btn">
                         <i class="fas fa-bars" style="font-size: 1.125rem;" x-show="!showMobileMenu"></i>
@@ -362,26 +375,26 @@
                     </p>
                     <div style="display: flex; gap: 1rem;">
                         <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/ardurtechnology/" target="_blank" style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg);
-       display: flex; align-items: center; justify-content: center; 
-       transition: background-color var(--transition-normal);" onmouseover="this.style.background='var(--primary-600)'"
-                            onmouseout="this.style.background='var(--gray-800)'">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.linkedin.com/company/ardurtechnology/" target="_blank" 
+                           style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);" 
+                           onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'" 
+                           onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
+                            <i data-lucide="linkedin" style="width: 1.25rem; height: 1.25rem;"></i>
                         </a>
-                        <a href="#"
-                            style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-normal);"
-                            onmouseover="this.style.background='var(--primary-600)'"
-                            onmouseout="this.style.background='var(--gray-800)'">
-                            <i class="fab fa-twitter"></i>
+                        <!-- Twitter/X -->
+                        <a href="https://x.com/ardurtechnology" target="_blank"
+                           style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);"
+                           onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'"
+                           onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
+                            <i data-lucide="twitter" style="width: 1.25rem; height: 1.25rem;"></i>
                         </a>
-                       <a href="https://www.facebook.com" target="_blank"
-       style="width: 2.5rem; height: 2.5rem; background: var(--gray-800); border-radius: var(--radius-lg);
-       display: flex; align-items: center; justify-content: center; 
-       transition: background-color var(--transition-normal);"
-       onmouseover="this.style.background='var(--primary-600)'"
-       onmouseout="this.style.background='var(--gray-800)'">
-        <i class="fab fa-facebook-f"></i>
-    </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/p/Ardur-Technology-100080111894631/" target="_blank"
+                           style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);"
+                           onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'"
+                           onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
+                            <i data-lucide="facebook" style="width: 1.25rem; height: 1.25rem;"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -416,12 +429,16 @@
                         </div>
                         <div style="display: flex; align-items: center; margin-bottom: 1rem;">
                             <i class="fas fa-phone text-primary" style="width: 1rem; margin-right: 1rem;"></i>
-                            <a href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
+                            <a href="tel:+1 (702) 809-2713">+1 (702) 809-2713</a>
                         </div>
                         <div style="display: flex; align-items: flex-start;">
                             <i class="fas fa-map-marker-alt text-primary"
                                 style="width: 1rem; margin-right: 1rem; margin-top: 0.25rem;"></i>
-                            <span>123 Business Ave<br />Suite 100<br />City, State 12345</span>
+                            <span>1964 Heritage Oaks Street
+<br />Las Vegas, NV 89119
+<br />USA
+
+</span>
                         </div>
                     </div>
                 </div>
