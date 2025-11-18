@@ -271,6 +271,7 @@ def case_study_detail(study_slug):
     return render_template(
         "case_study_detail.html",
         case_study=case_study,
+        case_studies=case_studies_data,
         title=f"{case_study['title']} - Case Study | Ardur Technology LLC",
         meta_description=case_study.get('subtitle', '')[:160],
     )

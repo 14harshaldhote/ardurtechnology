@@ -19,89 +19,20 @@
     </div>
 </section>
 
-<!-- Featured Article -->
-{% if featured_blog %}
-<section class="section bg-white">
-    <div class="container">
-        <div class="section-header">
-            <div class="badge" style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 1.5rem;">
-                <i data-lucide="star" style="margin-right: 0.5rem;"></i>
-                Featured Article
-            </div>
-        </div>
 
-        <div style="max-width: 64rem; margin: 0 auto;">
-            <div class="modern-card horizontal-layout" data-aos="fade-up">
-                <div>
-                    <div style="width: 100%; height: 16rem; background: var(--gray-200); border-radius: var(--radius-lg);"></div>
-                </div>
-                <div>
-                    <div class="badge" style="background: var(--primary-100); color: var(--primary-600); margin-bottom: 1.5rem;">{{ featured_blog.category }}</div>
-                    <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem;">
-                        <a href="{{ url_for('blog_detail', blog_slug=featured_blog.slug) }}" style="transition: color var(--transition-normal);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-900)'">
-                            {{ featured_blog.title }}
-                        </a>
-                    </h2>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">{{ featured_blog.excerpt }}</p>
-                    <div style="display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; color: var(--gray-500); margin-bottom: 2rem;">
-                        <span style="display: flex; align-items: center;">
-                            <i class="fas fa-user text-primary" style="margin-right: 0.5rem;"></i>
-                            {{ featured_blog.author }}
-                        </span>
-                        <span style="display: flex; align-items: center;">
-                            <i class="fas fa-calendar text-primary" style="margin-right: 0.5rem;"></i>
-                            {{ featured_blog.date.strftime('%B %d, %Y') }}
-                        </span>
-                        <span style="display: flex; align-items: center;">
-                            <i class="fas fa-clock text-primary" style="margin-right: 0.5rem;"></i>
-                            {{ featured_blog.read_time }} min read
-                        </span>
-                    </div>
-                    <a href="{{ url_for('blog_detail', blog_slug=featured_blog.slug) }}" class="btn btn-primary">
-                        Read Article
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endif %}
-
-<!-- Blog Categories -->
-<section class="section bg-gray-50">
-    <div class="container">
-        <div class="text-center mb-8">
-            <h2 class="section-title">Browse by Category</h2>
-            <p class="section-subtitle">
-                Find articles that match your interests and industry focus.
-            </p>
-        </div>
-
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
-            <a href="{{ url_for('blogs') }}" class="btn {% if not selected_category %}btn-primary{% else %}btn-outline{% endif %}">
-                All Articles
-            </a>
-            {% for category in categories %}
-            <a href="{{ url_for('blogs', category=category.slug) }}" class="btn {% if selected_category == category.slug %}btn-primary{% else %}btn-outline{% endif %}">
-                {{ category.name }}
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
 
 <!-- Blog Grid -->
 <section class="section bg-white">
     <div class="container">
         <div class="feature-grid">
-            {% for blog in blogs %}
+            {% for blog in blogs.values() %}
             <article class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-                <!-- Featured Image -->
-                <div style="width: 100%; height: 12rem; background: var(--gray-200); border-radius: var(--radius-lg); margin-bottom: 1.5rem; overflow: hidden;">
-                    {% if blog.featured_image %}
-                    <img src="{{ blog.featured_image }}" alt="{{ blog.title }}" style="width: 100%; height: 100%; object-fit: cover;">
-                    {% endif %}
+                <!-- Featured Icon -->
+                <div style="width: 100%; height: 12rem; background: var(--gradient-primary); border-radius: var(--radius-lg); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i data-lucide="{{ ['file-text', 'settings', 'trending-up', 'shield'][loop.index0 % 4] }}" style="width: 4rem; height: 4rem; color: white; opacity: 0.3;"></i>
+                    <div style="position: absolute; top: 1rem; right: 1rem;">
+                        <span class="badge" style="background: white; color: var(--primary-600); font-size: 0.75rem;">{{ blog.reading_time }} min</span>
+                    </div>
                 </div>
 
                 <!-- Category Badge -->
@@ -120,59 +51,27 @@
                 <!-- Meta Info -->
                 <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: var(--gray-500); margin-bottom: 1.5rem;">
                     <span style="display: flex; align-items: center;">
-                        <i class="fas fa-user text-primary" style="margin-right: 0.25rem;"></i>
+                        <i data-lucide="user" style="width: 0.875rem; height: 0.875rem; margin-right: 0.5rem; color: var(--primary-600);"></i>
                         {{ blog.author }}
                     </span>
                     <span style="display: flex; align-items: center;">
-                        <i class="fas fa-clock text-primary" style="margin-right: 0.25rem;"></i>
-                        {{ blog.read_time }} min read
+                        <i data-lucide="calendar" style="width: 0.875rem; height: 0.875rem; margin-right: 0.5rem; color: var(--primary-600);"></i>
+                        {{ blog.date | format_date }}
                     </span>
                 </div>
 
-                <!-- Date -->
-                <div style="display: flex; align-items: center; justify-content: space-between;">
-                    <span style="font-size: 0.75rem; color: var(--gray-500);">{{ blog.date.strftime('%B %d, %Y') }}</span>
-                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" class="text-primary" style="font-size: 0.875rem; font-weight: 500; transition: color var(--transition-normal);">
-                        Read More
-                        <i data-lucide="arrow-right" style="width: 0.75rem; height: 0.75rem; margin-left: 0.25rem; display: inline;"></i>
+                <!-- Read More Button -->
+                <div style="display: flex; justify-content: flex-end; margin-top: auto;">
+                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center;">
+                        Read Article
+                        <i data-lucide="arrow-right" style="width: 1rem; height: 1rem; margin-left: 0.5rem;"></i>
                     </a>
                 </div>
             </article>
             {% endfor %}
         </div>
 
-        <!-- Pagination -->
-        {% if pagination.pages > 1 %}
-        <div style="display: flex; justify-content: center; margin-top: 4rem;">
-            <nav style="display: flex; align-items: center; gap: 0.75rem;">
-                {% if pagination.has_prev %}
-                <a href="{{ url_for('blogs', page=pagination.prev_num, category=selected_category) }}" class="btn btn-outline">
-                    <i data-lucide="chevron-left"></i>
-                    Previous
-                </a>
-                {% endif %}
-
-                {% for page_num in pagination.iter_pages() %}
-                    {% if page_num %}
-                        {% if page_num != pagination.page %}
-                        <a href="{{ url_for('blogs', page=page_num, category=selected_category) }}" class="btn btn-outline">{{ page_num }}</a>
-                        {% else %}
-                        <span class="btn btn-primary">{{ page_num }}</span>
-                        {% endif %}
-                    {% else %}
-                    <span style="padding: 0.75rem 1rem;">…</span>
-                    {% endif %}
-                {% endfor %}
-
-                {% if pagination.has_next %}
-                <a href="{{ url_for('blogs', page=pagination.next_num, category=selected_category) }}" class="btn btn-outline">
-                    Next
-                    <i data-lucide="chevron-right"></i>
-                </a>
-                {% endif %}
-            </nav>
-        </div>
-        {% endif %}
+        <!-- Pagination removed - not implemented in current version -->
     </div>
 </section>
 

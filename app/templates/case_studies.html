@@ -19,35 +19,12 @@
     </div>
 </section>
 
-<!-- Filter Section -->
-<section class="section bg-white">
-    <div class="container">
-        <div class="text-center mb-8">
-            <h2 class="section-title">Browse Success Stories</h2>
-            <p class="section-subtitle">
-                Filter by industry or service to find relevant case studies.
-            </p>
-        </div>
-
-        <!-- Industry Filters -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
-            <a href="{{ url_for('case_studies') }}" class="btn {% if not selected_industry %}btn-primary{% else %}btn-outline{% endif %}">
-                All Industries
-            </a>
-            {% for industry in industries %}
-            <a href="{{ url_for('case_studies', industry=industry.slug) }}" class="btn {% if selected_industry == industry.slug %}btn-primary{% else %}btn-outline{% endif %}">
-                {{ industry.name }}
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
 
 <!-- Case Studies Grid -->
 <section class="section bg-gray-50">
     <div class="container">
         <div class="horizontal-layout">
-            {% for case_study in case_studies %}
+            {% for case_study in case_studies.values() %}
             <article class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
                 <!-- Featured Image -->
                 <div style="position: relative; height: 16rem; background: var(--gradient-primary); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem;">
@@ -64,7 +41,7 @@
                     <div style="position: absolute; top: 1.5rem; right: 1.5rem;">
                         <span class="badge" style="background: var(--secondary-600); color: white;">
                             <i data-lucide="trending-up" style="width: 0.75rem; height: 0.75rem; margin-right: 0.25rem;"></i>
-                            {{ case_study.improvement }}% Improvement
+                            Success Story
                         </span>
                     </div>
                 </div>
@@ -94,8 +71,8 @@
                             {{ case_study.duration }}
                         </span>
                         <span style="display: flex; align-items: center;">
-                            <i data-lucide="map-pin" class="text-primary" style="margin-right: 0.5rem;"></i>
-                            {{ case_study.location }}
+                            <i data-lucide="tag" class="text-primary" style="margin-right: 0.5rem;"></i>
+                            {{ case_study.category }}
                         </span>
                     </div>
 
@@ -111,13 +88,13 @@
                     </div>
 
                     <!-- Results Preview -->
-                    <div class="results-grid" style="margin-bottom: 2rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
                         {% for result in case_study.results[:2] %}
-                        <div class="result-item">
-                            <div class="result-metric">
+                        <div style="text-align: center; padding: 1.5rem; background: var(--gray-50); border-radius: var(--radius-lg); border: 1px solid var(--gray-100);">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.5rem;">
                                 {{ result.metric }}
                             </div>
-                            <div class="result-description">
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">
                                 {{ result.description }}
                             </div>
                         </div>
@@ -125,47 +102,18 @@
                     </div>
 
                     <!-- Read More Button -->
-                    <a href="{{ url_for('case_study_detail', study_slug=case_study.slug) }}" style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 600; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--primary-700)'" onmouseout="this.style.color='var(--primary-600)'">
-                        Read Full Case Study
-                        <i data-lucide="arrow-right" style="margin-left: 0.5rem; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateX(0.25rem)'" onmouseout="this.style.transform='translateX(0)'"></i>
-                    </a>
+                    <div style="display: flex; justify-content: flex-end; margin-top: auto;">
+                        <a href="{{ url_for('case_study_detail', study_slug=case_study.slug) }}" class="btn btn-primary btn-sm" style="display: inline-flex; align-items: center;">
+                            View Case Study
+                            <i data-lucide="arrow-right" style="width: 1rem; height: 1rem; margin-left: 0.5rem;"></i>
+                        </a>
+                    </div>
                 </div>
             </article>
             {% endfor %}
         </div>
 
-        <!-- Pagination -->
-        {% if pagination and pagination.pages > 1 %}
-        <div style="display: flex; justify-content: center; margin-top: 4rem;">
-            <nav style="display: flex; align-items: center; gap: 0.75rem;">
-                {% if pagination.has_prev %}
-                <a href="{{ url_for('case_studies', page=pagination.prev_num, industry=selected_industry) }}" class="btn btn-outline">
-                    <i data-lucide="chevron-left"></i>
-                    Previous
-                </a>
-                {% endif %}
-
-                {% for page_num in pagination.iter_pages() %}
-                    {% if page_num %}
-                        {% if page_num != pagination.page %}
-                        <a href="{{ url_for('case_studies', page=page_num, industry=selected_industry) }}" class="btn btn-outline">{{ page_num }}</a>
-                        {% else %}
-                        <span class="btn btn-primary">{{ page_num }}</span>
-                        {% endif %}
-                    {% else %}
-                    <span style="padding: 0.75rem 1rem;">…</span>
-                    {% endif %}
-                {% endfor %}
-
-                {% if pagination.has_next %}
-                <a href="{{ url_for('case_studies', page=pagination.next_num, industry=selected_industry) }}" class="btn btn-outline">
-                    Next
-                    <i data-lucide="chevron-right"></i>
-                </a>
-                {% endif %}
-            </nav>
-        </div>
-        {% endif %}
+        <!-- Pagination removed - not implemented in current version -->
     </div>
 </section>
 

@@ -39,11 +39,11 @@
             </div>
             <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <i class="fas fa-calendar text-primary"></i>
-                <span>{{ blog.date.strftime('%B %d, %Y') }}</span>
+                <span>{{ blog.date | format_date }}</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <i class="fas fa-clock text-primary"></i>
-                <span>{{ blog.read_time }} min read</span>
+                <span>{{ blog.reading_time }} min read</span>
             </div>
         </div>
     </div>
@@ -56,16 +56,37 @@
             <!-- Main Content -->
             <div>
                 <article class="prose" style="max-width: none;">
-                    <!-- Featured Image -->
-                    {% if blog.featured_image %}
+                    <!-- Featured Icon -->
                     <div style="margin-bottom: 3rem;" data-aos="fade-up">
-                        <img src="{{ blog.featured_image }}" alt="{{ blog.title }}" style="width: 100%; height: 16rem; object-fit: cover; border-radius: var(--radius-lg);">
+                        <div style="width: 100%; height: 16rem; background: var(--gradient-primary); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; position: relative;">
+                            <i data-lucide="file-text" style="width: 6rem; height: 6rem; color: white; opacity: 0.3;"></i>
+                            <div style="position: absolute; top: 1.5rem; right: 1.5rem;">
+                                <span class="badge" style="background: white; color: var(--primary-600);">{{ blog.category }}</span>
+                            </div>
+                        </div>
                     </div>
-                    {% endif %}
 
                     <!-- Content -->
                     <div style="color: var(--gray-700); line-height: 1.6;" data-aos="fade-up">
-                        {{ blog.content | safe }}
+                        {% for content_block in blog.content %}
+                            {% if content_block.type == 'paragraph' %}
+                                <p style="margin-bottom: 1.5rem;">{{ content_block.text }}</p>
+                            {% elif content_block.type == 'heading' %}
+                                <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin: 2.5rem 0 1.5rem 0;">{{ content_block.text }}</h2>
+                            {% elif content_block.type == 'subheading' %}
+                                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin: 2rem 0 1rem 0;">{{ content_block.text }}</h3>
+                            {% elif content_block.type == 'list' %}
+                                <ul style="margin: 1.5rem 0; padding-left: 2rem; list-style: disc;">
+                                    {% for item in content_block['items'] %}
+                                    <li style="margin-bottom: 0.75rem;">{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% elif content_block.type == 'callout' %}
+                                <div style="background: var(--primary-50); border-left: 4px solid var(--primary-500); padding: 1.5rem; margin: 2rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+                                    <p style="font-style: italic; color: var(--primary-800); margin: 0; font-weight: 500;">{{ content_block.text }}</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
 
                     <!-- Tags -->
@@ -176,9 +197,14 @@
         </div>
 
         <div class="feature-grid">
-            {% for related_blog in related_blogs[:3] %}
+            {% set count = 0 %}
+            {% for related_blog in related_blogs.values() %}
+            {% if count < 3 %}
+            {% set count = count + 1 %}
             <div class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-                <div style="width: 100%; height: 12rem; background: var(--gray-200); border-radius: var(--radius-lg); margin-bottom: 1.5rem;"></div>
+                <div style="width: 100%; height: 12rem; background: var(--gradient-primary); border-radius: var(--radius-lg); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="{{ ['file-text', 'settings', 'trending-up', 'shield'][loop.index0 % 4] }}" style="width: 3rem; height: 3rem; color: white; opacity: 0.4;"></i>
+                </div>
                 <div class="badge" style="background: var(--primary-100); color: var(--primary-600); margin-bottom: 1rem;">{{ related_blog.category }}</div>
                 <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">
                     <a href="{{ url_for('blog_detail', blog_slug=related_blog.slug) }}" style="transition: color var(--transition-normal);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-900)'">
@@ -187,10 +213,11 @@
                 </h3>
                 <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem;">{{ related_blog.excerpt }}</p>
                 <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: var(--gray-500);">
-                    <span>{{ related_blog.date.strftime('%B %d, %Y') }}</span>
-                    <span>{{ related_blog.read_time }} min read</span>
+                    <span>{{ related_blog.date | format_date }}</span>
+                    <span>{{ related_blog.reading_time }} min read</span>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
 
