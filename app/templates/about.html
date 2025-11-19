@@ -1,102 +1,66 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- About Hero Section -->
-<section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-        <h1 class="hero-title">
-            About <span class="text-primary">Ardur Technology</span>
-        </h1>
-        <p class="hero-subtitle">
-            Founded in 2013, we've been transforming businesses through
-            innovative technology solutions and strategic process optimization
-            for over a decade.
-        </p>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container relative z-10">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="badge badge-secondary mb-6">
+                <i data-lucide="users" style="width: 14px; height: 14px; margin-right: 6px;"></i>
+                Who We Are
+            </div>
+            <h1 class="hero-title">
+                Driving Innovation <br>
+                <span class="text-gradient-primary">Through Excellence</span>
+            </h1>
+            <p class="hero-subtitle">
+                We are a team of dedicated professionals committed to transforming businesses through technology and
+                process optimization.
+            </p>
+        </div>
     </div>
 </section>
 
-<!-- Company Story -->
+<!-- Our Story -->
 <section class="section bg-white">
     <div class="container">
-        <div class="horizontal-layout">
-            <div>
-                <h2 class="modern-title">
-                    Our Story
-                </h2>
-                <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">
-                    Ardur Technology was established in 2013 with a clear
-                    vision: to help businesses optimize their operations through
-                    technology-driven solutions. What started as a small
-                    consulting firm has grown into a comprehensive business
-                    process management company serving clients across multiple
-                    industries.
+        <div class="grid grid-2 items-center gap-12">
+            <div data-aos="fade-right">
+                <h2 class="display-3 mb-6">Our Story</h2>
+                <p class="text-lead mb-6">
+                    Founded with a vision to bridge the gap between traditional business processes and modern
+                    technology, Ardur Technology has grown into a global leader in BPM and IT solutions.
                 </p>
-                <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">
-                    Under experienced leadership, we have consistently delivered 
-                    exceptional results by combining industry expertise with 
-                    cutting-edge technology. Our commitment to innovation and 
-                    client success has enabled us to expand our service offerings 
-                    and build lasting partnerships.
+                <p class="text-gray mb-6">
+                    We started as a small team of passionate experts and have expanded our footprint across multiple
+                    continents, serving clients in diverse industries including Mortgage, Healthcare, and Aviation.
                 </p>
-                <p style="color: var(--gray-600); line-height: 1.6;">
-                    Today, we stand as a trusted partner for businesses seeking
-                    to reduce costs, increase efficiency, and achieve
-                    sustainable growth through strategic outsourcing and digital
-                    transformation.
-                </p>
+                <div class="grid grid-2 gap-6 mt-8">
+                    <div class="p-4 bg-light rounded-lg border border-gray-200">
+                        <div class="display-4 font-bold text-primary mb-1">10+</div>
+                        <div class="text-small text-gray-600 uppercase tracking-wider">Years of Excellence</div>
+                    </div>
+                    <div class="p-4 bg-light rounded-lg border border-gray-200">
+                        <div class="display-4 font-bold text-secondary mb-1">500+</div>
+                        <div class="text-small text-gray-600 uppercase tracking-wider">Projects Delivered</div>
+                    </div>
+                </div>
             </div>
-            <div class="modern-card">
-                <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
-                    Company Highlights
-                </h3>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="feature-content">
-                            <span style="color: var(--gray-600);">Founded in 2013</span>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="feature-content">
-                            <span style="color: var(--gray-600);">Over 10+ years of industry experience</span>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="feature-content">
-                            <span style="color: var(--gray-600);">500+ successful projects completed</span>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="feature-content">
-                            <span style="color: var(--gray-600);">Multi-industry expertise and specialization</span>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="feature-content">
-                            <span style="color: var(--gray-600);">24/7 global support capabilities</span>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="feature-content">
-                            <span style="color: var(--gray-600);">ISO certified processes and quality standards</span>
-                        </div>
+            <div data-aos="fade-left">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-primary opacity-10 rounded-2xl transform rotate-3"></div>
+                    <div class="card bg-white relative z-10">
+                      
+                        <blockquote class="relative z-10 pt-12">
+                            <p class="text-xl font-medium text-gray-900 mb-6 italic">
+                                "Our success is measured not just by the solutions we deliver, but by the growth and
+                                transformation we enable for our clients."
+                            </p>
+                            <footer>
+                                <div class="font-bold text-gray-900">Leadership Team</div>
+                                <div class="text-primary text-small">Ardur Technology</div>
+                            </footer>
+                        </blockquote>
                     </div>
                 </div>
             </div>
@@ -105,30 +69,30 @@
 </section>
 
 <!-- Mission & Vision -->
-<section class="section bg-gray-50">
+<section class="section bg-light">
     <div class="container">
-        <div class="horizontal-layout">
-            <div class="modern-card text-center">
-                <div class="benefit-icon primary">
+        <div class="grid grid-2 gap-8">
+            <!-- Mission -->
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-icon primary">
                     <i data-lucide="target"></i>
                 </div>
-                <h3 class="benefit-title">Our Mission</h3>
-                <p class="benefit-description">
-                    To empower businesses with innovative technology solutions and 
-                    strategic process optimization that drive efficiency, reduce costs, 
-                    and accelerate growth in an increasingly competitive marketplace.
+                <h3 class="h3 mb-4">Our Mission</h3>
+                <p class="text-gray">
+                    To empower organizations with innovative, scalable, and efficient business process solutions that
+                    drive sustainable growth and competitive advantage.
                 </p>
             </div>
 
-            <div class="modern-card text-center">
-                <div class="benefit-icon secondary">
+            <!-- Vision -->
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-icon secondary">
                     <i data-lucide="eye"></i>
                 </div>
-                <h3 class="benefit-title">Our Vision</h3>
-                <p class="benefit-description">
-                    To be the global leader in business process management and 
-                    technology consulting, recognized for our innovation, expertise, 
-                    and unwavering commitment to client success.
+                <h3 class="h3 mb-4">Our Vision</h3>
+                <p class="text-gray">
+                    To be the global partner of choice for businesses seeking digital transformation and operational
+                    excellence through technology.
                 </p>
             </div>
         </div>
@@ -138,248 +102,82 @@
 <!-- Core Values -->
 <section class="section bg-white">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Our Core Values</h2>
-            <p class="section-subtitle">
-                The principles that guide everything we do and define who we are as a company.
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+            <h2 class="display-3 mb-4">Core Values</h2>
+            <p class="text-lead">
+                The principles that guide our actions and define our culture.
             </p>
         </div>
 
-        <div class="visual-grid four-col">
-            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="benefit-icon primary">
-                    <i data-lucide="shield-check"></i>
-                </div>
-                <h4 class="benefit-title">Integrity</h4>
-                <p class="benefit-description">
-                    We conduct business with honesty, transparency, and ethical practices in all our interactions.
-                </p>
-            </div>
-
-            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="benefit-icon secondary">
-                    <i data-lucide="lightbulb"></i>
-                </div>
-                <h4 class="benefit-title">Innovation</h4>
-                <p class="benefit-description">
-                    We continuously seek new and better ways to solve problems and deliver value to our clients.
-                </p>
-            </div>
-
-            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="benefit-icon primary">
+        <div class="grid grid-3">
+            <div class="card text-center" data-aos="fade-up" data-aos-delay="100">
+                <div
+                    class="w-16 h-16 mx-auto bg-primary-50 rounded-full flex items-center justify-center text-primary mb-6">
                     <i data-lucide="award"></i>
                 </div>
-                <h4 class="benefit-title">Excellence</h4>
-                <p class="benefit-description">
-                    We strive for the highest quality in everything we do, exceeding expectations at every turn.
-                </p>
+                <h4 class="h4 mb-2">Excellence</h4>
+                <p class="text-gray text-small">We strive for perfection in every project we undertake.</p>
             </div>
 
-            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="benefit-icon secondary">
+            <div class="card text-center" data-aos="fade-up" data-aos-delay="200">
+                <div
+                    class="w-16 h-16 mx-auto bg-secondary-50 rounded-full flex items-center justify-center text-secondary mb-6">
                     <i data-lucide="users"></i>
                 </div>
-                <h4 class="benefit-title">Collaboration</h4>
-                <p class="benefit-description">
-                    We work together as one team, fostering partnerships that create mutual success.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Statistics -->
-<section class="modern-section bg-gray-50 floating-elements">
-    <div class="container">
-        <div class="content-with-visual">
-            <!-- Left Content -->
-            <div data-aos="fade-right">
-                <div class="modern-badge">
-                    <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
-                    Our Impact
-                </div>
-                <h2 class="modern-title">
-                    Numbers That Speak for Themselves
-                </h2>
-                <p class="modern-subtitle">
-                    Our track record reflects our commitment to excellence and client success. 
-                    These numbers represent the trust our clients place in us and the results we deliver.
-                </p>
-                
-                <!-- Key Achievements -->
-                <div class="modern-list">
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="trending-up"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <h4>Industry-leading Success Rate</h4>
-                            <p>Consistently delivering exceptional results across all projects</p>
-                        </div>
-                    </div>
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="handshake"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <h4>Long-term Client Partnerships</h4>
-                            <p>Building lasting relationships based on trust and results</p>
-                        </div>
-                    </div>
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="zap"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <h4>Continuous Innovation</h4>
-                            <p>Staying ahead with cutting-edge solutions and methodologies</p>
-                        </div>
-                    </div>
-                </div>
+                <h4 class="h4 mb-2">Collaboration</h4>
+                <p class="text-gray text-small">We work together with our clients as one team.</p>
             </div>
 
-            <!-- Right Stats -->
-            <div data-aos="fade-left">
-                <div class="visual-grid four-col">
-                    <div class="modern-card compact">
-                        <div class="stat-icon primary">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="stat-number primary">500+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-
-                    <div class="modern-card compact">
-                        <div class="stat-icon secondary">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div class="stat-number secondary">50+</div>
-                        <div class="stat-label">Clients</div>
-                    </div>
-
-                    <div class="modern-card compact">
-                        <div class="stat-icon primary">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="stat-number primary">10+</div>
-                        <div class="stat-label">Years</div>
-                    </div>
-
-                    <div class="modern-card compact">
-                        <div class="stat-icon secondary">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="stat-number secondary">24/7</div>
-                        <div class="stat-label">Support</div>
-                    </div>
+            <div class="card text-center" data-aos="fade-up" data-aos-delay="300">
+                <div
+                    class="w-16 h-16 mx-auto bg-primary-50 rounded-full flex items-center justify-center text-primary mb-6">
+                    <i data-lucide="lightbulb"></i>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Why Choose Us -->
-<section class="section bg-white">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Why Choose Ardur Technology?</h2>
-            <p class="section-subtitle">
-                Discover what sets us apart in the business process management industry.
-            </p>
-        </div>
-
-        <div class="feature-grid">
-            <div class="modern-card">
-                <div class="service-icon">
-                    <i data-lucide="trending-up"></i>
-                </div>
-                <h4 class="service-title">Proven Results</h4>
-                <p class="service-description">
-                    Track record of delivering measurable improvements in efficiency, 
-                    cost reduction, and operational excellence.
-                </p>
+                <h4 class="h4 mb-2">Innovation</h4>
+                <p class="text-gray text-small">We constantly seek new and better ways to solve problems.</p>
             </div>
 
-            <div class="modern-card">
-                <div class="service-icon secondary">
-                    <i data-lucide="globe"></i>
+            <div class="card text-center" data-aos="fade-up" data-aos-delay="400">
+                <div
+                    class="w-16 h-16 mx-auto bg-secondary-50 rounded-full flex items-center justify-center text-secondary mb-6">
+                    <i data-lucide="shield-check"></i>
                 </div>
-                <h4 class="service-title">Global Reach</h4>
-                <p class="service-description">
-                    International presence with local expertise, providing 
-                    round-the-clock support across multiple time zones.
-                </p>
+                <h4 class="h4 mb-2">Integrity</h4>
+                <p class="text-gray text-small">We conduct our business with the highest ethical standards.</p>
             </div>
 
-            <div class="modern-card">
-                <div class="service-icon">
-                    <i data-lucide="cog"></i>
-                </div>
-                <h4 class="service-title">Custom Solutions</h4>
-                <p class="service-description">
-                    Tailored approaches that address your specific business 
-                    challenges and industry requirements.
-                </p>
-            </div>
-
-            <div class="modern-card">
-                <div class="service-icon secondary">
-                    <i data-lucide="shield"></i>
-                </div>
-                <h4 class="service-title">Security First</h4>
-                <p class="service-description">
-                    Enterprise-grade security measures and compliance with 
-                    industry standards to protect your data.
-                </p>
-            </div>
-
-            <div class="modern-card">
-                <div class="service-icon">
-                    <i data-lucide="zap"></i>
-                </div>
-                <h4 class="service-title">Rapid Deployment</h4>
-                <p class="service-description">
-                    Quick implementation and fast time-to-value with our 
-                    streamlined onboarding processes.
-                </p>
-            </div>
-
-            <div class="modern-card">
-                <div class="service-icon secondary">
+            <div class="card text-center" data-aos="fade-up" data-aos-delay="500">
+                <div
+                    class="w-16 h-16 mx-auto bg-primary-50 rounded-full flex items-center justify-center text-primary mb-6">
                     <i data-lucide="heart"></i>
                 </div>
-                <h4 class="service-title">Client-Centric</h4>
-                <p class="service-description">
-                    Dedicated account management and personalized service 
-                    focused on your success and satisfaction.
-                </p>
+                <h4 class="h4 mb-2">Passion</h4>
+                <p class="text-gray text-small">We are passionate about technology and our clients' success.</p>
+            </div>
+
+            <div class="card text-center" data-aos="fade-up" data-aos-delay="600">
+                <div
+                    class="w-16 h-16 mx-auto bg-secondary-50 rounded-full flex items-center justify-center text-secondary mb-6">
+                    <i data-lucide="clock"></i>
+                </div>
+                <h4 class="h4 mb-2">Reliability</h4>
+                <p class="text-gray text-small">We deliver on our promises, on time and within budget.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section section">
-    <div class="container" data-aos="fade-up">
-        <div class="cta-icon">
-            <i data-lucide="handshake"></i>
-        </div>
-        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
-            Ready to Partner with Us?
-        </h2>
-        <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
-            Let's discuss how we can help transform your business operations and drive growth
+<!-- CTA -->
+<section class="section bg-primary-50">
+    <div class="container text-center">
+        <h2 class="display-3 mb-6">Join Our Journey</h2>
+        <p class="text-lead mb-8">
+            Whether you are looking for a partner to transform your business or a place to build your career, we welcome
+            you.
         </p>
-        <div class="hero-buttons">
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
-                <i data-lucide="phone"></i>
-                Get In Touch
-            </a>
-            <a href="{{ url_for('services') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
-                <i data-lucide="briefcase"></i>
-                Our Services
-            </a>
+        <div class="flex justify-center gap-4">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Partner With Us</a>
+            <a href="{{ url_for('careers') }}" class="btn btn-outline btn-lg bg-white">View Careers</a>
         </div>
     </div>
 </section>

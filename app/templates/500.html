@@ -4,64 +4,65 @@
 <!-- 500 Error Page -->
 <section class="page-header">
     <div class="container text-center">
-        <div style="font-size: 4rem; font-weight: 700; color: var(--primary-600); margin-bottom: 1.5rem;">500</div>
-        <h1 class="page-title">Internal Server Error</h1>
-        <p class="page-subtitle">
-            We're experiencing some technical difficulties on our end. Our team has been notified and is working to resolve the issue.
+        <div class="text-6xl font-bold text-white/20 mb-6">500</div>
+        <h1 class="display-2 text-white mb-6">Internal Server Error</h1>
+        <p class="text-lead text-white/90 max-w-2xl mx-auto">
+            We're experiencing some technical difficulties on our end. Our team has been notified and is working to
+            resolve the issue.
             Please try again in a few minutes or contact us if the problem persists.
         </p>
 
-        <div class="feature-grid" style="margin-top: 3rem; max-width: 64rem; margin-left: auto; margin-right: auto;">
-            <div class="modern-card text-center">
-                <div class="contact-icon secondary">
+        <div class="grid grid-3 gap-8 max-w-5xl mx-auto mt-16">
+            <div class="card text-center">
+                <div class="card-icon secondary mx-auto mb-6">
                     <i data-lucide="refresh-cw"></i>
                 </div>
-                <h4 class="contact-title">Try Again</h4>
-                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
+                <h4 class="h5 mb-4">Try Again</h4>
+                <p class="text-gray text-small mb-6">
                     The issue might be temporary. Click below to refresh the page and try again.
                 </p>
-                <button onclick="window.location.reload()" class="btn btn-secondary">
-                    <i data-lucide="refresh-cw"></i>
+                <button onclick="window.location.reload()" class="btn btn-outline w-full justify-center">
+                    <i data-lucide="refresh-cw" class="mr-2"></i>
                     Refresh Page
                 </button>
             </div>
 
-            <div class="modern-card text-center">
-                <div class="contact-icon primary">
+            <div class="card text-center">
+                <div class="card-icon primary mx-auto mb-6">
                     <i data-lucide="home"></i>
                 </div>
-                <h4 class="contact-title">Go Home</h4>
-                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
+                <h4 class="h5 mb-4">Go Home</h4>
+                <p class="text-gray text-small mb-6">
                     Return to our homepage where everything should be working normally.
                 </p>
-                <a href="{{ url_for('home') }}" class="btn btn-primary">
-                    <i data-lucide="home"></i>
+                <a href="{{ url_for('home') }}" class="btn btn-primary w-full justify-center">
+                    <i data-lucide="home" class="mr-2"></i>
                     Homepage
                 </a>
             </div>
 
-            <div class="modern-card text-center">
-                <div class="contact-icon secondary">
+            <div class="card text-center">
+                <div class="card-icon secondary mx-auto mb-6">
                     <i data-lucide="headphones"></i>
                 </div>
-                <h4 class="contact-title">Get Help</h4>
-                <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.875rem;">
+                <h4 class="h5 mb-4">Get Help</h4>
+                <p class="text-gray text-small mb-6">
                     Contact our support team to report this issue and get immediate assistance.
                 </p>
-                <a href="{{ url_for('contact') }}" class="btn btn-secondary">
-                    <i data-lucide="headphones"></i>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline w-full justify-center">
+                    <i data-lucide="headphones" class="mr-2"></i>
                     Contact Support
                 </a>
             </div>
         </div>
 
-        <div style="margin-top: 3rem;">
-            <div class="modern-card" style="background: var(--primary-50); max-width: 48rem; margin: 0 auto;">
-                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">Error Details</h3>
-                <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1.5rem;">
+        <div class="mt-16">
+            <div class="card bg-white/10 border-0 text-left max-w-2xl mx-auto backdrop-blur-sm">
+                <h3 class="h6 text-white mb-4">Error Details</h3>
+                <p class="text-small text-white/80 mb-4">
                     If you need to report this error, please include the following information:
                 </p>
-                <div style="font-size: 0.75rem; color: var(--gray-500); font-family: monospace; background: white; padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--gray-200);">
+                <div class="text-xs font-mono bg-black/30 p-4 rounded text-white/90 border border-white/10">
                     Error Code: 500<br>
                     Time: <span id="error-time"></span><br>
                     URL: <span id="error-url"></span>
@@ -69,21 +70,22 @@
             </div>
         </div>
 
-        <div style="margin-top: 2rem;">
-            <p style="color: var(--gray-600); font-size: 0.875rem;">
-                <strong style="color: var(--gray-900);">Need immediate assistance?</strong><br>
-                Call us at <a href="tel:+1-555-123-4567" class="text-primary">+1 (555) 123-4567</a>
-                or email <a href="mailto:info@ardurtechnology.com" class="text-primary">info@ardurtechnology.com</a>
+        <div class="mt-12">
+            <p class="text-small text-white/80">
+                <strong class="text-white">Need immediate assistance?</strong><br>
+                Call us at <a href="tel:+1-555-123-4567" class="text-white hover:underline">+1 (555) 123-4567</a>
+                or email <a href="mailto:info@ardurtechnology.com"
+                    class="text-white hover:underline">info@ardurtechnology.com</a>
             </p>
         </div>
     </div>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Set error details
-    document.getElementById('error-time').textContent = new Date().toLocaleString();
-    document.getElementById('error-url').textContent = window.location.href;
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        // Set error details
+        document.getElementById('error-time').textContent = new Date().toLocaleString();
+        document.getElementById('error-url').textContent = window.location.href;
+    });
 </script>
 {% endblock %}

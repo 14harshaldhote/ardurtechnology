@@ -1,5 +1,5 @@
 {
-  "business_process_management": {
+  "business-process-management": {
     "title": "Business Process Management (BPM)",
     "description": "Comprehensive business process outsourcing solutions designed to streamline operations and improve efficiency.",
     "icon": "fas fa-cogs",
@@ -12,7 +12,7 @@
       "Order Entry, QC, and Data Entry"
     ]
   },
-  "mortgage_real_estate": {
+  "mortgage-services": {
     "title": "Mortgage & Real Estate Services",
     "description": "End-to-end mortgage processing and real estate support services for financial institutions and lenders.",
     "icon": "fas fa-home",
@@ -25,32 +25,20 @@
       "Appraisal Review"
     ]
   },
-  "finance_accounting": {
-    "title": "Finance & Accounting",
-    "description": "Professional accounting and financial management services to maintain accurate financial records and compliance.",
-    "icon": "fas fa-calculator",
-    "services": [
-      "General Accounting & Bookkeeping",
-      "Accounts Payable / Receivable",
-      "Bank Reconciliation",
-      "Payroll Management",
-      "Financial Statement Preparation"
-    ]
-  },
-  "healthcare_services": {
-    "title": "Healthcare Services",
-    "description": "Specialized healthcare administrative services focused on revenue cycle management and patient care support.",
+  "healthcare-solutions": {
+    "title": "Healthcare Solutions",
+    "description": "Specialized healthcare administration and compliance solutions designed for medical organizations.",
     "icon": "fas fa-heartbeat",
     "services": [
-      "Medical Billing & Coding",
-      "Denial Management",
-      "AR Follow-up",
-      "Patient Eligibility Verification",
-      "Healthcare Data Processing"
+      "Medical Billing",
+      "Claims Processing",
+      "HIPAA Compliance",
+      "Revenue Cycle Management",
+      "Patient Data Processing"
     ]
   },
-  "aircraft_asset_management": {
-    "title": "Aircraft Asset Management",
+  "aviation-solutions": {
+    "title": "Aviation Solutions",
     "description": "Advanced aviation services supporting aircraft maintenance, compliance, and operational efficiency.",
     "icon": "fas fa-plane",
     "services": [
@@ -61,17 +49,106 @@
       "Data Analytics for Fleet Performance"
     ]
   },
-  "digital_it_services": {
-    "title": "Digital & IT Services",
-    "description": "Cutting-edge digital transformation and IT solutions to modernize business operations and drive innovation.",
+  "it-consulting": {
+    "title": "IT Consulting & Support",
+    "subtitle": "Strategic Technology Consulting and 24/7 Managed IT Support Services",
+    "description": "Transform your business with comprehensive IT consulting and support services. We deliver strategic technology consulting, cloud solutions, cybersecurity, and round-the-clock technical support to optimize your IT infrastructure and drive digital transformation.",
     "icon": "fas fa-laptop-code",
+    "overview": "Our IT Consulting & Support services empower organizations to leverage technology as a strategic advantage. With over 10 years of experience, we provide end-to-end IT solutions including technology strategy, system integration, cloud migration, cybersecurity, and 24/7 managed support. We help businesses optimize their technology investments, reduce operational costs, and accelerate digital transformation.",
+    "key_features": [
+      "Strategic IT Planning & Technology Roadmapping",
+      "24/7 Managed IT Support & Help Desk",
+      "Cloud Solutions (AWS, Azure, Google Cloud)",
+      "Enterprise Cybersecurity & Compliance",
+      "System Integration & API Development",
+      "Custom Software Development",
+      "IT Infrastructure Management",
+      "Disaster Recovery & Business Continuity",
+      "Network Architecture & Optimization",
+      "IT Staff Augmentation"
+    ],
+    "benefits": [
+      {
+        "title": "Reduce IT Costs",
+        "description": "Lower operational expenses by up to 40% through optimized infrastructure and strategic technology investments"
+      },
+      {
+        "title": "24/7 Expert Support",
+        "description": "Round-the-clock access to certified IT professionals ensuring minimal downtime and maximum productivity"
+      },
+      {
+        "title": "Enhanced Security",
+        "description": "Enterprise-grade cybersecurity protecting your data, systems, and business continuity"
+      },
+      {
+        "title": "Scalable Solutions",
+        "description": "Flexible IT services that grow with your business needs without capital-intensive infrastructure investments"
+      }
+    ],
+    "process": [
+      {
+        "step": "Discovery & Assessment",
+        "description": "Comprehensive evaluation of your current IT infrastructure, pain points, and business objectives"
+      },
+      {
+        "step": "Strategic Planning",
+        "description": "Development of customized technology roadmap aligned with your business goals and budget"
+      },
+      {
+        "step": "Implementation",
+        "description": "Seamless deployment of solutions with minimal disruption to your operations"
+      },
+      {
+        "step": "Ongoing Support",
+        "description": "Continuous monitoring, maintenance, and optimization with 24/7 help desk support"
+      }
+    ],
+    "technologies": [
+      "AWS",
+      "Microsoft Azure",
+      "Google Cloud Platform",
+      "Docker & Kubernetes",
+      "VMware",
+      "Cisco Networking",
+      "Fortinet Security",
+      "Palo Alto Networks",
+      "ServiceNow",
+      "Microsoft 365",
+      "Salesforce"
+    ],
     "services": [
-      "Web & App Development",
-      "Cloud Solutions",
-      "Data Analytics & AI",
-      "IoT Implementation",
-      "Software Testing",
-      "Robotic Process Automation (RPA)"
+      "Technology Strategy & Consulting",
+      "24/7 Technical Support & Help Desk",
+      "Cloud Migration & Management",
+      "Cybersecurity & Compliance",
+      "System Integration & API Development",
+      "Custom Software Development",
+      "IT Infrastructure Management",
+      "Network Architecture & Optimization",
+      "Disaster Recovery Planning",
+      "IT Staff Augmentation"
+    ],
+    "seo_keywords": [
+      "IT consulting services",
+      "managed IT support",
+      "cloud solutions",
+      "cybersecurity services",
+      "24/7 technical support",
+      "IT infrastructure management",
+      "digital transformation consulting",
+      "enterprise IT services"
+    ]
+  },
+  "customer-support": {
+    "title": "Customer Support",
+    "description": "Multi-channel customer support solutions designed to enhance client satisfaction and retention.",
+    "icon": "fas fa-headset",
+    "services": [
+      "24/7 Support",
+      "Multi-Channel Support",
+      "Quality Assurance",
+      "Technical Helpdesk",
+      "Customer Success Management"
     ]
   }
 }

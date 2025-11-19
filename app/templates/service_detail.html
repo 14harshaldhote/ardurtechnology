@@ -4,39 +4,37 @@
 <!-- Service Detail Hero Section -->
 <section class="page-header">
     <div class="container">
-  
-
         <!-- Service Badge -->
-        <div style="margin-bottom: 1.5rem;" data-aos="fade-up">
-            <span class="badge" style="background: var(--primary-600); color: white;">
-                <i class="fas fa-tag" style="margin-right: 0.5rem;"></i>
+        <div class="mb-6" data-aos="fade-up">
+            <span class="badge bg-primary-600 text-white border-0">
+                <i data-lucide="tag" class="w-3 h-3 mr-2"></i>
                 {{ service.get('category', 'Business Solutions') }}
             </span>
         </div>
 
         <!-- Title -->
-        <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">
+        <h1 class="display-3 mb-6 text-white" data-aos="fade-up" data-aos-delay="100">
             {{ service.get('name', 'Our Service') }}
         </h1>
 
         <!-- Subtitle -->
-        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-lead text-white/90 max-w-3xl" data-aos="fade-up" data-aos-delay="200">
             {{ service.get('description', 'Professional business solutions tailored to your needs.') }}
         </p>
 
         <!-- Key Features -->
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; color: var(--gray-300); margin-top: 2rem;" data-aos="fade-up" data-aos-delay="300">
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <i class="fas fa-check text-primary"></i>
-                <span>Expert consultation</span>
+        <div class="flex flex-wrap gap-8 mt-8 text-gray-300" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center gap-3">
+                <i data-lucide="check" class="text-primary w-5 h-5"></i>
+                <span class="font-medium">Expert consultation</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <i class="fas fa-check text-primary"></i>
-                <span>Custom solutions</span>
+            <div class="flex items-center gap-3">
+                <i data-lucide="check" class="text-primary w-5 h-5"></i>
+                <span class="font-medium">Custom solutions</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <i class="fas fa-check text-primary"></i>
-                <span>24/7 support</span>
+            <div class="flex items-center gap-3">
+                <i data-lucide="check" class="text-primary w-5 h-5"></i>
+                <span class="font-medium">24/7 support</span>
             </div>
         </div>
     </div>
@@ -44,61 +42,68 @@
 
 <!-- Service Overview -->
 <section class="section bg-white">
-    <div class="container" style="max-width: 80rem;">
-        <div class="horizontal-layout" style="grid-template-columns: 3fr 1fr;">
+    <div class="container max-w-7xl">
+        <div class="grid grid-2 gap-12">
             <!-- Main Content -->
-            <div>
+            <div class="col-span-2">
                 <!-- Overview -->
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">Service Overview</h2>
-                    <p style="color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem;">
-                        {{ service.get('description', 'Our comprehensive business solutions are designed to optimize your operations, reduce costs, and drive sustainable growth through innovative technology and strategic process management.') }}
+                <div class="mb-16" data-aos="fade-up">
+                    <h2 class="display-4 mb-6 text-gray-900">Service Overview</h2>
+                    <p class="text-gray leading-relaxed mb-8 text-lg">
+                        {{ service.get('description', 'Our comprehensive business solutions are designed to optimize
+                        your operations, reduce costs, and drive sustainable growth through innovative technology and
+                        strategic process management.') }}
                     </p>
-                    
+
                     <!-- Key Benefits -->
-                    <div class="feature-grid" style="margin-bottom: 3rem;">
-                        <div class="text-center" style="padding: 2rem; background: var(--gray-50); border-radius: var(--radius-lg);">
-                            <div class="service-icon" style="margin: 0 auto 1.5rem;">
-                                <i class="fas fa-dollar-sign"></i>
+                    <div class="grid grid-3 gap-6 mb-12">
+                        <div class="card text-center p-6 bg-gray-50 border-0">
+                            <div class="w-12 h-12 mx-auto mb-4 text-primary">
+                                <i data-lucide="dollar-sign" class="w-full h-full"></i>
                             </div>
-                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">Cost Reduction</h4>
-                            <p style="font-size: 0.875rem; color: var(--gray-600);">Significant savings through process optimization and efficiency improvements.</p>
+                            <h4 class="h6 mb-2">Cost Reduction</h4>
+                            <p class="text-small text-gray">Significant savings through process optimization and
+                                efficiency improvements.</p>
                         </div>
-                        <div class="text-center" style="padding: 2rem; background: var(--gray-50); border-radius: var(--radius-lg);">
-                            <div class="service-icon secondary" style="margin: 0 auto 1.5rem;">
-                                <i class="fas fa-trending-up"></i>
+                        <div class="card text-center p-6 bg-gray-50 border-0">
+                            <div class="w-12 h-12 mx-auto mb-4 text-secondary">
+                                <i data-lucide="trending-up" class="w-full h-full"></i>
                             </div>
-                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">Improved Efficiency</h4>
-                            <p style="font-size: 0.875rem; color: var(--gray-600);">Streamlined workflows and automated processes for better productivity.</p>
+                            <h4 class="h6 mb-2">Improved Efficiency</h4>
+                            <p class="text-small text-gray">Streamlined workflows and automated processes for better
+                                productivity.</p>
                         </div>
-                        <div class="text-center" style="padding: 2rem; background: var(--gray-50); border-radius: var(--radius-lg);">
-                            <div class="service-icon" style="margin: 0 auto 1.5rem;">
-                                <i class="fas fa-shield-alt"></i>
+                        <div class="card text-center p-6 bg-gray-50 border-0">
+                            <div class="w-12 h-12 mx-auto mb-4 text-primary">
+                                <i data-lucide="shield-check" class="w-full h-full"></i>
                             </div>
-                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">Quality Assurance</h4>
-                            <p style="font-size: 0.875rem; color: var(--gray-600);">Enhanced accuracy and consistency with rigorous quality control.</p>
+                            <h4 class="h6 mb-2">Quality Assurance</h4>
+                            <p class="text-small text-gray">Enhanced accuracy and consistency with rigorous quality
+                                control.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- What We Offer -->
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
-                        <div class="service-icon" style="margin-right: 1.5rem;">
-                            <i data-lucide="list"></i>
+                <div class="mb-16" data-aos="fade-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-primary-50 text-primary flex items-center justify-center mr-4">
+                            <i data-lucide="list" class="w-6 h-6"></i>
                         </div>
-                        <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900);">What We Offer</h2>
+                        <h2 class="display-4 m-0 text-gray-900">What We Offer</h2>
                     </div>
-                    
-                    <div class="results-grid">
+
+                    <div class="grid grid-2 gap-6">
                         {% for offering in service.offerings %}
-                        <div style="display: flex; align-items: flex-start;">
-                            <div class="service-icon secondary" style="margin-right: 1.5rem; margin-top: 0.25rem; flex-shrink: 0;">
-                                <i data-lucide="check"></i>
+                        <div class="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                            <div
+                                class="w-8 h-8 rounded-full bg-secondary-50 text-secondary flex items-center justify-center flex-shrink-0 mt-1 mr-4">
+                                <i data-lucide="check" class="w-4 h-4"></i>
                             </div>
                             <div>
-                                <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">{{ offering.title }}</h4>
-                                <p style="color: var(--gray-600); font-size: 0.875rem;">{{ offering.description }}</p>
+                                <h4 class="h6 mb-2">{{ offering.title }}</h4>
+                                <p class="text-gray text-small">{{ offering.description }}</p>
                             </div>
                         </div>
                         {% endfor %}
@@ -107,23 +112,26 @@
 
                 <!-- Process -->
                 {% if service.process %}
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
-                        <div class="service-icon secondary" style="margin-right: 1.5rem;">
-                            <i data-lucide="workflow"></i>
+                <div class="mb-16" data-aos="fade-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-secondary-50 text-secondary flex items-center justify-center mr-4">
+                            <i data-lucide="workflow" class="w-6 h-6"></i>
                         </div>
-                        <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900);">Our Process</h2>
+                        <h2 class="display-4 m-0 text-gray-900">Our Process</h2>
                     </div>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+                    <div
+                        class="space-y-8 relative before:absolute before:left-5 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-100">
                         {% for step in service.process %}
-                        <div style="display: flex; align-items: flex-start;">
-                            <div style="width: 2.5rem; height: 2.5rem; background: var(--primary-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 2rem; margin-top: 0.25rem; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 600;">{{ loop.index }}</span>
+                        <div class="flex items-start relative">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary-600 text-white flex items-center justify-center flex-shrink-0 mr-6 z-10 font-bold shadow-sm">
+                                {{ loop.index }}
                             </div>
-                            <div>
-                                <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">{{ step.title }}</h4>
-                                <p style="color: var(--gray-700);">{{ step.description }}</p>
+                            <div class="pt-1">
+                                <h4 class="h6 mb-2">{{ step.title }}</h4>
+                                <p class="text-gray">{{ step.description }}</p>
                             </div>
                         </div>
                         {% endfor %}
@@ -133,11 +141,11 @@
 
                 <!-- Technologies -->
                 {% if service.technologies %}
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 2rem;">Technologies & Tools</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <div class="mb-16" data-aos="fade-up">
+                    <h3 class="h5 mb-6">Technologies & Tools</h3>
+                    <div class="flex flex-wrap gap-3">
                         {% for tech in service.technologies %}
-                        <span class="badge" style="background: var(--gray-100); color: var(--gray-700);">{{ tech }}</span>
+                        <span class="badge bg-gray-100 text-gray-700 border-0 text-sm px-4 py-2">{{ tech }}</span>
                         {% endfor %}
                     </div>
                 </div>
@@ -145,24 +153,26 @@
 
                 <!-- Case Study -->
                 {% if service.case_study %}
-                <div class="bg-primary-50 p-8 rounded-lg" data-aos="fade-up">
+                <div class="bg-primary-50 p-8 rounded-xl border border-primary-100" data-aos="fade-up">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
-                            <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                        <div
+                            class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                            <i data-lucide="file-text" class="w-5 h-5 text-white"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Success Story</h3>
+                        <h3 class="h5 m-0 text-primary-900">Success Story</h3>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-4">{{ service.case_study.title }}</h4>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">{{ service.case_study.title }}</h4>
                     <p class="text-gray-700 mb-6">{{ service.case_study.description }}</p>
-                    <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div class="grid grid-3 gap-4 mb-8">
                         {% for result in service.case_study.results %}
-                        <div class="text-center">
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
                             <div class="text-2xl font-bold text-primary mb-1">{{ result.metric }}</div>
-                            <div class="text-sm text-gray-600">{{ result.label }}</div>
+                            <div class="text-xs text-gray-600 uppercase tracking-wider">{{ result.label }}</div>
                         </div>
                         {% endfor %}
                     </div>
-                    <a href="{{ url_for('case_study_detail', study_slug=service.case_study.slug) }}" class="btn btn-primary">
+                    <a href="{{ url_for('case_study_detail', study_slug=service.case_study.slug) }}"
+                        class="btn btn-primary">
                         Read Full Case Study
                         <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                     </a>
@@ -171,70 +181,74 @@
             </div>
 
             <!-- Sidebar -->
-            <div>
-                <div style="position: sticky; top: 2rem; display: flex; flex-direction: column; gap: 2rem;">
+            <div class="col-span-1">
+                <div class="sticky top-24 space-y-8">
                     <!-- Service Details -->
-                    <div class="modern-card" data-aos="fade-up">
-                        <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Service Details</h4>
-                        <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.875rem;">
-                            <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--gray-600);">Category:</span>
-                                <span style="font-weight: 500;">{{ service.category }}</span>
+                    <div class="card p-6" data-aos="fade-up">
+                        <h4 class="h6 mb-6 pb-4 border-b border-gray-100">Service Details</h4>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Category:</span>
+                                <span class="font-medium text-gray-900">{{ service.category }}</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--gray-600);">Delivery:</span>
-                                <span style="font-weight: 500;">{{ service.delivery_model }}</span>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Delivery:</span>
+                                <span class="font-medium text-gray-900">{{ service.delivery_model }}</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--gray-600);">Timeline:</span>
-                                <span style="font-weight: 500;">{{ service.typical_timeline }}</span>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Timeline:</span>
+                                <span class="font-medium text-gray-900">{{ service.typical_timeline }}</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--gray-600);">Support:</span>
-                                <span style="font-weight: 500;">24/7 Available</span>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Support:</span>
+                                <span class="font-medium text-gray-900">24/7 Available</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Key Features -->
-                    <div class="modern-card" data-aos="fade-up">
-                        <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Key Features</h4>
-                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div class="card p-6" data-aos="fade-up">
+                        <h4 class="h6 mb-6 pb-4 border-b border-gray-100">Key Features</h4>
+                        <div class="space-y-3">
                             {% for feature in service.key_features %}
-                            <div style="display: flex; align-items: center;">
-                                <i data-lucide="check" class="text-primary" style="margin-right: 1rem;"></i>
-                                <span style="font-size: 0.875rem; color: var(--gray-700);">{{ feature }}</span>
+                            <div class="flex items-start">
+                                <i data-lucide="check" class="text-primary w-4 h-4 mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-sm text-gray-700">{{ feature }}</span>
                             </div>
                             {% endfor %}
                         </div>
                     </div>
 
                     <!-- Contact CTA -->
-                    <div class="modern-card" style="background: var(--primary-50);" data-aos="fade-up">
-                        <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Get Started Today</h4>
-                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1.5rem;">
-                            Ready to transform your operations with our {{ service.name.lower() }}?
+                    <div class="card p-6 bg-primary-50 border-primary-100" data-aos="fade-up">
+                        <h4 class="h6 mb-4 text-primary-900">Get Started Today</h4>
+                        <p class="text-sm text-gray-600 mb-6">
+                            Ready to transform your operations with our {{ service.title.lower() }}?
                         </p>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-full">
-                                <i data-lucide="phone"></i>
+                        <div class="space-y-3">
+                            <a href="{{ url_for('contact') }}" class="btn btn-primary w-full justify-center">
+                                <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
                                 Contact Us
                             </a>
-                            <a href="#" class="btn btn-outline btn-full">
-                                <i data-lucide="download"></i>
+                            <a href="#" class="btn btn-outline w-full justify-center bg-white hover:bg-gray-50">
+                                <i data-lucide="download" class="w-4 h-4 mr-2"></i>
                                 Download Brochure
                             </a>
                         </div>
                     </div>
 
                     <!-- Related Services -->
-                    <div class="modern-card" data-aos="fade-up">
-                        <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Related Services</h4>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="card p-6" data-aos="fade-up">
+                        <h4 class="h6 mb-6 pb-4 border-b border-gray-100">Related Services</h4>
+                        <div class="space-y-3">
                             {% for related in related_services %}
-                            <a href="{{ url_for('service_detail', service_category=related.slug) }}" style="display: block; padding: 1rem; background: var(--gray-50); border-radius: var(--radius-lg); transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--gray-100)'" onmouseout="this.style.background='var(--gray-50)'">
-                                <div style="font-weight: 500; color: var(--gray-900); font-size: 0.875rem;">{{ related.name }}</div>
-                                <div style="font-size: 0.75rem; color: var(--gray-600); margin-top: 0.25rem;">{{ related.short_description }}</div>
+                            <a href="{{ url_for('service_detail', service_category=related.slug) }}"
+                                class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                                <div
+                                    class="font-medium text-gray-900 text-sm group-hover:text-primary transition-colors">
+                                    {{ related.name }}</div>
+                                <div class="text-xs text-gray-500 mt-1 line-clamp-2">{{ related.short_description }}
+                                </div>
                             </a>
                             {% endfor %}
                         </div>
@@ -246,24 +260,26 @@
 </section>
 
 <!-- FAQ Section -->
-<section class="section bg-gray-50">
+<section class="section bg-light">
     <div class="container">
         <div class="text-center mb-12" data-aos="fade-up">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">
-                Common questions about our {{ service.name.lower() }}.
+            <h2 class="display-3 mb-4">Frequently Asked Questions</h2>
+            <p class="text-lead text-gray">
+                Common questions about our {{ service.title.lower() }}.
             </p>
         </div>
 
-        <div style="max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="max-w-3xl mx-auto space-y-4">
             {% for faq in service.faqs %}
-            <div class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+            <div class="card p-0 overflow-hidden" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
                 <details class="group">
-                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
-                        <h4 style="font-weight: 600; color: var(--gray-900);">{{ faq.question }}</h4>
-                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h4 class="font-semibold text-gray-900 m-0">{{ faq.question }}</h4>
+                        <span class="transition-transform group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
                     </summary>
-                    <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
+                    <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
                         {{ faq.answer }}
                     </div>
                 </details>
@@ -274,24 +290,25 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section section">
+<section class="section bg-primary-900 text-white text-center">
     <div class="container" data-aos="fade-up">
-        <div class="cta-icon">
-            <i data-lucide="rocket"></i>
+        <div class="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <i data-lucide="rocket" class="w-8 h-8"></i>
         </div>
-        <h2 class="font-display" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
+        <h2 class="display-3 mb-6 text-white">
             Ready to Get Started?
         </h2>
-        <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
-            Let's discuss how our {{ service.name.lower() }} can help transform your business operations.
+        <p class="text-lead text-white/80 max-w-2xl mx-auto mb-12">
+            Let's discuss how our {{ service.title.lower() }} can help transform your business operations.
         </p>
-        <div class="hero-buttons">
+        <div class="flex justify-center gap-4">
             <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
-                <i data-lucide="phone"></i>
+                <i data-lucide="phone" class="mr-2"></i>
                 Schedule Consultation
             </a>
-            <a href="{{ url_for('services') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
-                <i data-lucide="grid"></i>
+            <a href="{{ url_for('services') }}"
+                class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">
+                <i data-lucide="grid" class="mr-2"></i>
                 View All Services
             </a>
         </div>

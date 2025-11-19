@@ -268,10 +268,14 @@ def case_study_detail(study_slug):
     
     case_study = case_studies_data[study_slug]
     
+    # Get related case studies (excluding current one)
+    related_case_studies = {k: v for k, v in list(case_studies_data.items()) if k != study_slug}
+    
     return render_template(
         "case_study_detail.html",
         case_study=case_study,
         case_studies=case_studies_data,
+        related_case_studies=related_case_studies,
         title=f"{case_study['title']} - Case Study | Ardur Technology LLC",
         meta_description=case_study.get('subtitle', '')[:160],
     )

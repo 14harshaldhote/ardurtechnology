@@ -2,101 +2,107 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-        <div class="badge badge-white" style="margin-bottom: 2rem;">
-            <i data-lucide="book-open" style="margin-right: 0.5rem;"></i>
-            Industry Insights & Knowledge
+<section class="hero-section">
+    <div class="container relative z-10">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="badge badge-white mb-8">
+                <i data-lucide="book-open" class="mr-2"></i>
+                Industry Insights & Knowledge
+            </div>
+
+            <h1 class="hero-title">
+                Our <span class="text-gradient-primary">Blog</span>
+            </h1>
+            <p class="hero-subtitle">
+                Stay informed with the latest trends, insights, and best practices in
+                business process management, technology, and industry innovations.
+            </p>
         </div>
-        
-        <h1 class="hero-title">
-            Our <span class="text-primary">Blog</span>
-        </h1>
-        <p class="hero-subtitle">
-            Stay informed with the latest trends, insights, and best practices in 
-            business process management, technology, and industry innovations.
-        </p>
     </div>
 </section>
-
-
 
 <!-- Blog Grid -->
 <section class="section bg-white">
     <div class="container">
-        <div class="feature-grid">
+        <div class="grid grid-3 gap-8">
             {% for blog in blogs.values() %}
-            <article class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+            <article class="card h-full flex flex-col" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
                 <!-- Featured Icon -->
-                <div style="width: 100%; height: 12rem; background: var(--gradient-primary); border-radius: var(--radius-lg); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; position: relative;">
-                    <i data-lucide="{{ ['file-text', 'settings', 'trending-up', 'shield'][loop.index0 % 4] }}" style="width: 4rem; height: 4rem; color: white; opacity: 0.3;"></i>
-                    <div style="position: absolute; top: 1rem; right: 1rem;">
-                        <span class="badge" style="background: white; color: var(--primary-600); font-size: 0.75rem;">{{ blog.reading_time }} min</span>
+                <div
+                    class="h-48 bg-gradient-primary rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+                    <i data-lucide="{{ ['file-text', 'settings', 'trending-up', 'shield'][loop.index0 % 4] }}"
+                        class="w-16 h-16 text-white opacity-30"></i>
+                    <div class="absolute top-4 right-4">
+                        <span class="px-2 py-1 bg-white text-primary-600 text-xs font-bold rounded shadow-sm">{{
+                            blog.reading_time }} min</span>
                     </div>
                 </div>
 
                 <!-- Category Badge -->
-                <div class="badge" style="background: var(--primary-100); color: var(--primary-600); margin-bottom: 1rem;">{{ blog.category }}</div>
+                <div class="mb-4">
+                    <span class="badge badge-primary">{{ blog.category }}</span>
+                </div>
 
                 <!-- Title -->
-                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" style="transition: color var(--transition-normal);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-900)'">
+                <h3 class="h4 mb-4 line-clamp-2">
+                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}"
+                        class="text-gray-900 hover:text-primary transition-colors">
                         {{ blog.title }}
                     </a>
                 </h3>
 
                 <!-- Excerpt -->
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">{{ blog.excerpt }}</p>
+                <p class="text-gray text-small mb-6 line-clamp-3 flex-grow">{{ blog.excerpt }}</p>
 
                 <!-- Meta Info -->
-                <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: var(--gray-500); margin-bottom: 1.5rem;">
-                    <span style="display: flex; align-items: center;">
-                        <i data-lucide="user" style="width: 0.875rem; height: 0.875rem; margin-right: 0.5rem; color: var(--primary-600);"></i>
+                <div class="flex items-center justify-between text-xs text-gray-500 mb-6 mt-auto">
+                    <span class="flex items-center">
+                        <i data-lucide="user" class="w-4 h-4 mr-2 text-primary"></i>
                         {{ blog.author }}
                     </span>
-                    <span style="display: flex; align-items: center;">
-                        <i data-lucide="calendar" style="width: 0.875rem; height: 0.875rem; margin-right: 0.5rem; color: var(--primary-600);"></i>
+                    <span class="flex items-center">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2 text-primary"></i>
                         {{ blog.date | format_date }}
                     </span>
                 </div>
 
                 <!-- Read More Button -->
-                <div style="display: flex; justify-content: flex-end; margin-top: auto;">
-                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center;">
+                <div class="text-right">
+                    <a href="{{ url_for('blog_detail', blog_slug=blog.slug) }}"
+                        class="btn btn-outline btn-sm inline-flex items-center">
                         Read Article
-                        <i data-lucide="arrow-right" style="width: 1rem; height: 1rem; margin-left: 0.5rem;"></i>
+                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
                     </a>
                 </div>
             </article>
             {% endfor %}
         </div>
-
-        <!-- Pagination removed - not implemented in current version -->
     </div>
 </section>
 
 <!-- Newsletter Signup -->
-<section class="section" style="background: var(--primary-50);">
+<section class="section bg-primary-50">
     <div class="container">
-        <div class="text-center" style="max-width: 48rem; margin: 0 auto;">
-            <div class="benefit-icon primary">
-                <i data-lucide="mail"></i>
+        <div class="text-center max-w-3xl mx-auto">
+            <div
+                class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                <i data-lucide="mail" class="w-8 h-8"></i>
             </div>
-            <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem;">
+            <h2 class="display-3 mb-6">
                 Stay Updated with Our Latest Insights
             </h2>
-            <p style="color: var(--gray-600); margin-bottom: 3rem;">
-                Subscribe to our newsletter and get the latest articles, industry trends, 
+            <p class="text-lead mb-10">
+                Subscribe to our newsletter and get the latest articles, industry trends,
                 and expert insights delivered directly to your inbox.
             </p>
-            <form class="hero-buttons" style="max-width: 32rem; margin: 0 auto;">
-                <input type="email" placeholder="Enter your email address" class="form-input" style="flex: 1;" required>
-                <button type="submit" class="btn btn-primary">
+            <form class="flex max-w-lg mx-auto gap-4">
+                <input type="email" placeholder="Enter your email address" class="form-control flex-1" required>
+                <button type="submit" class="btn btn-primary whitespace-nowrap">
                     Subscribe
                     <i data-lucide="send"></i>
                 </button>
             </form>
-            <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 1.5rem;">
+            <p class="text-xs text-gray-500 mt-6">
                 We respect your privacy. Unsubscribe at any time.
             </p>
         </div>

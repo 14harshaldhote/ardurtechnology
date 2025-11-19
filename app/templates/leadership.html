@@ -2,18 +2,18 @@
 
 {% block content %}
 <!-- Leadership Hero Section -->
-<section class="hero">
+<section class="hero-section">
     <div class="hero-content" data-aos="fade-up">
-        <div class="badge badge-white" style="margin-bottom: 2rem;">
-            <i data-lucide="users" style="margin-right: 0.5rem;"></i>
+        <div class="badge badge-white mb-8">
+            <i data-lucide="users" class="mr-2"></i>
             Meet Our Team
         </div>
-        
+
         <h1 class="hero-title">
-            Our <span class="text-primary">Leadership</span> Team
+            Our <span class="text-gradient-primary">Leadership</span> Team
         </h1>
         <p class="hero-subtitle">
-            Meet the experienced professionals who guide Ardur Technology's vision, 
+            Meet the experienced professionals who guide Ardur Technology's vision,
             strategy, and commitment to delivering exceptional business solutions.
         </p>
     </div>
@@ -22,60 +22,68 @@
 <!-- Leadership Team -->
 <section class="section bg-white">
     <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <div class="badge" style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 1.5rem;">
-                <i data-lucide="star" style="margin-right: 0.5rem;"></i>
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <div class="badge bg-primary-50 text-primary mb-6">
+                <i data-lucide="star" class="mr-2"></i>
                 Executive Team
             </div>
-            <h2 class="section-title">Leadership Excellence</h2>
-            <p class="section-subtitle">
-                Our leadership team brings decades of combined experience in business process management, 
+            <h2 class="display-3 mb-6">Leadership Excellence</h2>
+            <p class="text-lead text-gray">
+                Our leadership team brings decades of combined experience in business process management,
                 technology, and industry expertise to drive innovation and client success.
             </p>
         </div>
 
-        <div class="feature-grid">
+        <div class="grid grid-2 gap-8">
             {% for member in team_members %}
-            <div class="modern-card text-center" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 + 100 }}">
-                <div style="width: 8rem; height: 8rem; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; overflow: hidden;">
+            <div class="card text-center p-8" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 + 100 }}">
+                <div class="mx-auto mb-8 rounded-full overflow-hidden flex items-center justify-center bg-gradient-primary shadow-lg relative"
+                    style="width: 8rem; height: 8rem;">
                     {% if member.image %}
-                        <img src="{{ member.image }}" alt="{{ member.name }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    <img src="{{ member.image }}" alt="{{ member.name }}"
+                        class="w-full h-full object-cover rounded-full">
                     {% else %}
-                        <span style="color: white; font-size: 2rem; font-weight: 700;">{{ member.name.split()[0][0] }}{{ member.name.split()[1][0] if member.name.split()|length > 1 else '' }}</span>
+                    <div
+                        class="w-full h-full bg-gradient-primary flex items-center justify-center text-white text-4xl font-bold">
+                        {{ member.name.split()[0][0] }}{{ member.name.split()[1][0] if member.name.split()|length > 1
+                        else '' }}
+                    </div>
                     {% endif %}
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">{{ member.name }}</h3>
-                <div class="text-primary" style="font-weight: 500; margin-bottom: 1.5rem;">{{ member.title }}</div>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                <h3 class="h4 mb-2">{{ member.name }}</h3>
+                <div class="text-primary font-medium mb-4">{{ member.title }}</div>
+                <p class="text-gray mb-6 leading-relaxed">
                     {{ member.bio }}
                 </p>
                 {% if member.bio_extended %}
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 2rem; line-height: 1.6; font-style: italic;">
+                <p class="text-gray-500 text-sm mb-6 italic">
                     {{ member.bio_extended }}
                 </p>
                 {% endif %}
-                
+
                 <!-- Specialties -->
                 {% if member.specialties %}
-                <div style="margin-bottom: 2rem;">
-                    <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">Specialties</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                <div class="mb-8">
+                    <h4 class="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Specialties</h4>
+                    <div class="flex flex-wrap gap-2 justify-center">
                         {% for specialty in member.specialties %}
-                        <span class="badge" style="background: var(--primary-50); color: var(--primary-700); font-size: 0.75rem;">{{ specialty }}</span>
+                        <span class="badge bg-primary-50 text-primary-700 text-xs">{{ specialty }}</span>
                         {% endfor %}
                     </div>
                 </div>
                 {% endif %}
-                
-                <div style="display: flex; justify-content: center; gap: 1rem;">
+
+                <div class="flex justify-center gap-4">
                     {% if member.linkedin and member.linkedin != '#' %}
-                    <a href="{{ member.linkedin }}" target="_blank" style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--primary-700)'" onmouseout="this.style.background='var(--primary-600)'">
-                        <i data-lucide="linkedin" style="width: 1rem; height: 1rem;"></i>
+                    <a href="{{ member.linkedin }}" target="_blank"
+                        class="w-10 h-10 rounded-lg bg-primary-600 text-white flex items-center justify-center hover:bg-primary-700 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
                     </a>
                     {% endif %}
                     {% if member.email %}
-                    <a href="mailto:{{ member.email }}" style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; transition: background-color var(--transition-normal); text-decoration: none;" onmouseover="this.style.background='var(--secondary-700)'" onmouseout="this.style.background='var(--secondary-600)'">
-                        <i data-lucide="mail" style="width: 1rem; height: 1rem;"></i>
+                    <a href="mailto:{{ member.email }}"
+                        class="w-10 h-10 rounded-lg bg-secondary-600 text-white flex items-center justify-center hover:bg-secondary-700 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
                     </a>
                     {% endif %}
                 </div>
@@ -86,69 +94,73 @@
 </section>
 
 <!-- Leadership Philosophy -->
-<section class="section bg-gray-50">
+<section class="section bg-light">
     <div class="container">
-        <div style="max-width: 64rem; margin: 0 auto;">
-            <div class="section-header" data-aos="fade-up">
-                <div class="badge" style="background: white; color: var(--primary-600); margin-bottom: 1.5rem;">
-                    <i data-lucide="compass" style="margin-right: 0.5rem;"></i>
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="badge bg-white text-primary mb-6">
+                    <i data-lucide="compass" class="mr-2"></i>
                     Our Philosophy
                 </div>
-                <h2 class="section-title">Leadership Philosophy</h2>
-                <p class="section-subtitle">
+                <h2 class="display-3 mb-6">Leadership Philosophy</h2>
+                <p class="text-lead text-gray">
                     Our leadership approach is built on core principles that drive everything we do.
                 </p>
             </div>
 
-            <div class="results-grid">
-                <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
-                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                        <div class="service-icon" style="margin-right: 1.5rem;">
-                            <i data-lucide="target"></i>
+            <div class="grid grid-2 gap-8">
+                <div class="card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-primary-50 text-primary flex items-center justify-center mr-4">
+                            <i data-lucide="target" class="w-6 h-6"></i>
                         </div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900);">Vision-Driven</h3>
+                        <h3 class="h5 m-0">Vision-Driven</h3>
                     </div>
-                    <p style="color: var(--gray-600); line-height: 1.6;">
-                        We lead with a clear vision of the future, making strategic decisions that position 
+                    <p class="text-gray leading-relaxed">
+                        We lead with a clear vision of the future, making strategic decisions that position
                         our company and clients for long-term success in an evolving business landscape.
                     </p>
                 </div>
 
-                <div class="modern-card" data-aos="fade-up" data-aos-delay="200">
-                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                        <div class="service-icon secondary" style="margin-right: 1.5rem;">
-                            <i data-lucide="users"></i>
+                <div class="card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-secondary-50 text-secondary flex items-center justify-center mr-4">
+                            <i data-lucide="users" class="w-6 h-6"></i>
                         </div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900);">People-First</h3>
+                        <h3 class="h5 m-0">People-First</h3>
                     </div>
-                    <p style="color: var(--gray-600); line-height: 1.6;">
-                        Our people are our greatest asset. We invest in their growth, create an inclusive 
+                    <p class="text-gray leading-relaxed">
+                        Our people are our greatest asset. We invest in their growth, create an inclusive
                         environment, and empower them to deliver exceptional results for our clients.
                     </p>
                 </div>
 
-                <div class="modern-card" data-aos="fade-up" data-aos-delay="300">
-                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                        <div class="service-icon" style="margin-right: 1.5rem;">
-                            <i data-lucide="lightbulb"></i>
+                <div class="card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-primary-50 text-primary flex items-center justify-center mr-4">
+                            <i data-lucide="lightbulb" class="w-6 h-6"></i>
                         </div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900);">Innovation-Focused</h3>
+                        <h3 class="h5 m-0">Innovation-Focused</h3>
                     </div>
-                    <p style="color: var(--gray-600); line-height: 1.6;">
-                        We embrace innovation and encourage creative problem-solving, constantly seeking 
+                    <p class="text-gray leading-relaxed">
+                        We embrace innovation and encourage creative problem-solving, constantly seeking
                         new ways to improve our services and deliver greater value to our clients.
                     </p>
                 </div>
 
-                <div class="modern-card" data-aos="fade-up" data-aos-delay="400">
-                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                        <div class="service-icon secondary" style="margin-right: 1.5rem;">
-                            <i data-lucide="shield"></i>
+                <div class="card p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-secondary-50 text-secondary flex items-center justify-center mr-4">
+                            <i data-lucide="shield" class="w-6 h-6"></i>
                         </div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900);">Integrity-Based</h3>
+                        <h3 class="h5 m-0">Integrity-Based</h3>
                     </div>
-                    <p style="color: var(--gray-600); line-height: 1.6;">
-                        We conduct business with the highest ethical standards, building trust through 
+                    <p class="text-gray leading-relaxed">
+                        We conduct business with the highest ethical standards, building trust through
                         transparency, accountability, and consistent delivery on our commitments.
                     </p>
                 </div>
@@ -160,78 +172,83 @@
 <!-- Company Culture -->
 <section class="section bg-white">
     <div class="container">
-        <div class="content-with-visual">
+        <div class="grid grid-2 gap-12 items-center">
             <div data-aos="fade-right">
-                <div class="badge" style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 2rem;">
-                    <i data-lucide="heart" style="margin-right: 0.5rem;"></i>
+                <div class="badge bg-primary-50 text-primary mb-8">
+                    <i data-lucide="heart" class="mr-2"></i>
                     Company Culture
                 </div>
-                <h2 class="font-display" style="font-size: 2.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
+                <h2 class="display-3 mb-6">
                     Building a Culture of Excellence
                 </h2>
-                <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    Our leadership team is committed to fostering a workplace culture that values collaboration, 
+                <p class="text-lead text-gray mb-8">
+                    Our leadership team is committed to fostering a workplace culture that values collaboration,
                     innovation, and continuous learning. We believe that when our team thrives, our clients succeed.
                 </p>
-                <div class="modern-list">
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="check"></i>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary-100 text-primary flex items-center justify-center flex-shrink-0 mt-1 mr-4">
+                            <i data-lucide="check" class="w-5 h-5"></i>
                         </div>
-                        <div class="modern-list-content">
-                            <h4>Open Communication</h4>
-                            <p>Transparent dialogue at all levels of the organization.</p>
-                        </div>
-                    </div>
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon secondary">
-                            <i data-lucide="check"></i>
-                        </div>
-                        <div class="modern-list-content">
-                            <h4>Continuous Learning</h4>
-                            <p>Investment in professional development and skill enhancement.</p>
+                        <div>
+                            <h4 class="h6 mb-1">Open Communication</h4>
+                            <p class="text-gray text-small">Transparent dialogue at all levels of the organization.</p>
                         </div>
                     </div>
-                    <div class="modern-list-item">
-                        <div class="modern-list-icon">
-                            <i data-lucide="check"></i>
+                    <div class="flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full bg-secondary-100 text-secondary flex items-center justify-center flex-shrink-0 mt-1 mr-4">
+                            <i data-lucide="check" class="w-5 h-5"></i>
                         </div>
-                        <div class="modern-list-content">
-                            <h4>Work-Life Balance</h4>
-                            <p>Flexible arrangements that support personal and professional well-being.</p>
+                        <div>
+                            <h4 class="h6 mb-1">Continuous Learning</h4>
+                            <p class="text-gray text-small">Investment in professional development and skill
+                                enhancement.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary-100 text-primary flex items-center justify-center flex-shrink-0 mt-1 mr-4">
+                            <i data-lucide="check" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="h6 mb-1">Work-Life Balance</h4>
+                            <p class="text-gray text-small">Flexible arrangements that support personal and professional
+                                well-being.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div data-aos="fade-left">
-                <div class="results-grid">
-                    <div class="text-center">
-                        <div class="benefit-icon primary" style="margin: 0 auto 1.5rem;">
-                            <i data-lucide="award"></i>
+                <div class="grid grid-2 gap-6">
+                    <div class="card text-center p-6 bg-gray-50 border-0">
+                        <div class="w-12 h-12 mx-auto mb-4 text-primary">
+                            <i data-lucide="award" class="w-full h-full"></i>
                         </div>
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.75rem;">95%</div>
-                        <div style="font-size: 0.875rem; color: var(--gray-600);">Employee Satisfaction</div>
+                        <div class="text-3xl font-bold text-primary mb-2">95%</div>
+                        <div class="text-small text-gray">Employee Satisfaction</div>
                     </div>
-                    <div class="text-center">
-                        <div class="benefit-icon secondary" style="margin: 0 auto 1.5rem;">
-                            <i data-lucide="trending-up"></i>
+                    <div class="card text-center p-6 bg-gray-50 border-0">
+                        <div class="w-12 h-12 mx-auto mb-4 text-secondary">
+                            <i data-lucide="trending-up" class="w-full h-full"></i>
                         </div>
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.75rem;">3.2</div>
-                        <div style="font-size: 0.875rem; color: var(--gray-600);">Avg. Tenure (Years)</div>
+                        <div class="text-3xl font-bold text-secondary mb-2">3.2</div>
+                        <div class="text-small text-gray">Avg. Tenure (Years)</div>
                     </div>
-                    <div class="text-center">
-                        <div class="benefit-icon primary" style="margin: 0 auto 1.5rem;">
-                            <i data-lucide="users"></i>
+                    <div class="card text-center p-6 bg-gray-50 border-0">
+                        <div class="w-12 h-12 mx-auto mb-4 text-primary">
+                            <i data-lucide="users" class="w-full h-full"></i>
                         </div>
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.75rem;">40+</div>
-                        <div style="font-size: 0.875rem; color: var(--gray-600);">Team Members</div>
+                        <div class="text-3xl font-bold text-primary mb-2">40+</div>
+                        <div class="text-small text-gray">Team Members</div>
                     </div>
-                    <div class="text-center">
-                        <div class="benefit-icon secondary" style="margin: 0 auto 1.5rem;">
-                            <i data-lucide="star"></i>
+                    <div class="card text-center p-6 bg-gray-50 border-0">
+                        <div class="w-12 h-12 mx-auto mb-4 text-secondary">
+                            <i data-lucide="star" class="w-full h-full"></i>
                         </div>
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.75rem;">4.8</div>
-                        <div style="font-size: 0.875rem; color: var(--gray-600);">Glassdoor Rating</div>
+                        <div class="text-3xl font-bold text-secondary mb-2">4.8</div>
+                        <div class="text-small text-gray">Glassdoor Rating</div>
                     </div>
                 </div>
             </div>
@@ -240,24 +257,25 @@
 </section>
 
 <!-- Join Our Team CTA -->
-<section class="cta-section section">
+<section class="section bg-primary-900 text-white text-center">
     <div class="container" data-aos="fade-up">
-        <div class="cta-icon">
-            <i data-lucide="users"></i>
+        <div class="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <i data-lucide="users" class="w-8 h-8"></i>
         </div>
-        <h2 class="font-display" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
+        <h2 class="display-3 mb-6 text-white">
             Join Our Growing Team
         </h2>
-        <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
+        <p class="text-lead text-white/80 max-w-2xl mx-auto mb-12">
             Be part of a leadership-driven organization that values innovation, excellence, and professional growth.
         </p>
-        <div class="hero-buttons">
+        <div class="flex justify-center gap-4">
             <a href="{{ url_for('careers') }}" class="btn btn-primary btn-lg">
-                <i data-lucide="briefcase"></i>
+                <i data-lucide="briefcase" class="mr-2"></i>
                 View Open Positions
             </a>
-            <a href="{{ url_for('contact') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
-                <i data-lucide="mail"></i>
+            <a href="{{ url_for('contact') }}"
+                class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">
+                <i data-lucide="mail" class="mr-2"></i>
                 Contact Leadership
             </a>
         </div>

@@ -2,229 +2,163 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="page-header">
+<section class="page-header bg-dark text-white py-12">
     <div class="container">
         <!-- Breadcrumb -->
-        <nav class="breadcrumb" data-aos="fade-down">
-            <a href="{{ url_for('home') }}">Home</a>
-            <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
-            <a href="{{ url_for('case_studies') }}">Case Studies</a>
-            <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
-            <span style="color: white;">{{ case_study.title }}</span>
+        <nav class="breadcrumb flex items-center gap-2 text-small text-gray-400 mb-6" data-aos="fade-down">
+            <a href="{{ url_for('home') }}" class="hover:text-primary transition-colors">Home</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <a href="{{ url_for('case_studies') }}" class="hover:text-primary transition-colors">Case Studies</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <span class="text-white">Case Study</span>
         </nav>
 
         <!-- Category Badge -->
-        <div style="margin-bottom: 1.5rem;" data-aos="fade-up">
-            <span class="badge" style="background: var(--primary-600); color: white;">
-                <i class="fas fa-tag" style="margin-right: 0.5rem;"></i>
+        <div class="mb-6" data-aos="fade-up">
+            <span class="badge bg-primary-600 text-white">
+                <i data-lucide="briefcase" class="w-3 h-3 mr-2"></i>
                 {{ case_study.category }}
             </span>
         </div>
 
         <!-- Title -->
-        <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">
+        <h1 class="display-3 mb-6" data-aos="fade-up" data-aos-delay="100">
             {{ case_study.title }}
         </h1>
-
-        <!-- Subtitle -->
-        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-lead text-gray-300 max-w-3xl" data-aos="fade-up" data-aos-delay="200">
             {{ case_study.subtitle }}
         </p>
-
-        <!-- Meta Info -->
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; color: var(--gray-300); margin-top: 2rem;" data-aos="fade-up" data-aos-delay="300">
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <i class="fas fa-building text-primary"></i>
-                <span>{{ case_study.client }}</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <i class="fas fa-tag text-primary"></i>
-                <span>{{ case_study.category }}</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <i class="fas fa-clock text-primary"></i>
-                <span>{{ case_study.duration }}</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <i class="fas fa-briefcase text-secondary"></i>
-                <span>{{ case_study.client }}</span>
-            </div>
-        </div>
     </div>
 </section>
 
 <!-- Case Study Content -->
 <section class="section bg-white">
-    <div class="container" style="max-width: 80rem;">
-        <div class="horizontal-layout" style="grid-template-columns: 3fr 1fr;">
+    <div class="container max-w-5xl">
+        <div class="grid grid-3 gap-12">
             <!-- Main Content -->
-            <div>
-                <!-- Overview -->
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">Project Overview</h2>
-                    <p style="color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem;">{{ case_study.challenge }}</p>
-                    
-                    <!-- Key Results -->
-                    <div class="feature-grid" style="margin-bottom: 3rem;">
-                        {% for result in case_study.results[:4] %}
-                        <div class="text-center" style="padding: 2rem; background: var(--gray-50); border-radius: var(--radius-lg);">
-                            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.75rem;">{{ result.metric }}</div>
-                            <div style="font-size: 0.875rem; color: var(--gray-600);">{{ result.description }}</div>
-                        </div>
-                        {% endfor %}
+            <div class="col-span-2">
+                <!-- At a Glance -->
+                <div class="grid grid-3 gap-4 mb-12" data-aos="fade-up">
+                    <div class="bg-primary-50 p-4 rounded-lg text-center border border-primary-100">
+                        <div class="text-primary-600 font-bold text-2xl mb-1">{{ case_study.duration }}</div>
+                        <div class="text-tiny text-gray-600 uppercase tracking-wider font-semibold">Duration</div>
+                    </div>
+                    <div class="bg-secondary-50 p-4 rounded-lg text-center border border-secondary-100">
+                        <div class="text-secondary-600 font-bold text-2xl mb-1">{{ case_study.category }}</div>
+                        <div class="text-tiny text-gray-600 uppercase tracking-wider font-semibold">Industry</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg text-center border border-gray-200">
+                        <div class="text-gray-900 font-bold text-2xl mb-1">100%</div>
+                        <div class="text-tiny text-gray-600 uppercase tracking-wider font-semibold">Success Rate</div>
                     </div>
                 </div>
 
-                <!-- Challenge -->
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
-                        <div class="service-icon secondary" style="margin-right: 1.5rem;">
-                            <i data-lucide="alert-circle"></i>
-                        </div>
-                        <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900);">The Challenge</h2>
-                    </div>
-                    <p style="color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem;">{{ case_study.challenge }}</p>
+                <!-- Project Overview -->
+                <div class="mb-12" data-aos="fade-up">
+                    <h2 class="h3 mb-6 font-bold text-gray-900">Project Overview</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        {{ case_study.overview }}
+                    </p>
                 </div>
 
-                <!-- Solution -->
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
-                        <div class="service-icon" style="margin-right: 1.5rem;">
-                            <i data-lucide="lightbulb"></i>
+                <!-- The Challenge -->
+                <div class="mb-12" data-aos="fade-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mr-4">
+                            <i data-lucide="alert-circle" class="w-6 h-6"></i>
                         </div>
-                        <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900);">Our Solution</h2>
+                        <h2 class="h3 m-0 font-bold text-gray-900">The Challenge</h2>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="bg-white border-l-4 border-red-400 p-8 shadow-sm rounded-r-xl">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            {{ case_study.challenge }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- The Solution -->
+                <div class="mb-12" data-aos="fade-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mr-4">
+                            <i data-lucide="check-circle" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="h3 m-0 font-bold text-gray-900">The Solution</h2>
+                    </div>
+
+                    <div class="relative border-l-2 border-primary-100 ml-5 space-y-10 pl-8 py-2">
                         {% for step in case_study.solution %}
-                        <div style="display: flex; align-items: flex-start;">
-                            <div style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5rem; margin-top: 0.25rem; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 600; font-size: 0.875rem;">{{ loop.index }}</span>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.75rem;">{{ step.title }}</h4>
-                                <p style="color: var(--gray-700);">{{ step.description }}</p>
-                            </div>
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[41px] top-1 w-6 h-6 rounded-full bg-primary-600 border-4 border-white shadow-sm"></span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ step.title }}</h3>
+                            <p class="text-lg text-gray-700 leading-relaxed">{{ step.description }}</p>
                         </div>
                         {% endfor %}
                     </div>
                 </div>
-
 
                 <!-- Results -->
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
-                        <div class="service-icon secondary" style="margin-right: 1.5rem;">
-                            <i data-lucide="trending-up"></i>
-                        </div>
-                        <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900);">Results & Impact</h2>
-                    </div>
-                    
-                    <div class="results-grid" style="margin-bottom: 3rem;">
+                <div class="mb-12" data-aos="fade-up">
+                    <h2 class="h3 mb-8 font-bold text-gray-900">Key Results</h2>
+                    <div class="grid grid-2 gap-6">
                         {% for result in case_study.results %}
-                        <div class="result-item">
-                            <div class="result-metric">{{ result.metric }}</div>
-                            <div class="result-description">{{ result.description }}</div>
+                        <div class="card bg-gray-50 border-none hover:bg-white hover:shadow-lg transition-all">
+                            <div class="text-4xl font-bold text-primary-600 mb-2">{{ result.value }}</div>
+                            <div class="text-gray-700 font-medium">{{ result.metric }}</div>
                         </div>
                         {% endfor %}
                     </div>
-
                 </div>
-
-                <!-- Methodology & Key Learnings -->
-                {% if case_study.methodology or case_study.key_learnings %}
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    {% if case_study.methodology %}
-                    <div style="margin-bottom: 3rem;">
-                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem; display: flex; align-items: center;">
-                            <i data-lucide="compass" style="width: 1.25rem; height: 1.25rem; color: var(--primary-600); margin-right: 0.75rem;"></i>
-                            Methodology
-                        </h3>
-                        <p style="color: var(--gray-700); line-height: 1.6;">{{ case_study.methodology }}</p>
-                    </div>
-                    {% endif %}
-                    
-                    {% if case_study.key_learnings %}
-                    <div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem; display: flex; align-items: center;">
-                            <i data-lucide="lightbulb" style="width: 1.25rem; height: 1.25rem; color: var(--secondary-600); margin-right: 0.75rem;"></i>
-                            Key Learnings
-                        </h3>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
-                            {% for learning in case_study.key_learnings %}
-                            <li style="display: flex; align-items: flex-start; padding: 1rem; background: var(--gray-50); border-radius: var(--radius-md); border-left: 3px solid var(--secondary-500);">
-                                <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem; color: var(--secondary-600); margin-right: 1rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
-                                <span style="color: var(--gray-700);">{{ learning }}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                </div>
-                {% endif %}
-
-                <!-- Technologies Used -->
-                {% if case_study.technologies %}
-                <div style="margin-bottom: 4rem;" data-aos="fade-up">
-                    <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 2rem;">Technologies & Tools Used</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-                        {% for tech in case_study.technologies %}
-                        <span class="badge" style="background: var(--gray-100); color: var(--gray-700);">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-
             </div>
 
             <!-- Sidebar -->
-            <div>
-                <div style="position: sticky; top: 2rem; display: flex; flex-direction: column; gap: 2rem;">
-                    <!-- Project Details -->
-                    <div class="modern-card" data-aos="fade-up">
-                        <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Project Details</h4>
-                        <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.875rem;">
-                            <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--gray-600);">Category:</span>
-                                <span style="font-weight: 500;">{{ case_study.category }}</span>
+            <div class="col-span-1">
+                <div class="sticky top-24 flex flex-col gap-8">
+                    <!-- Client Info -->
+                    <div class="card" data-aos="fade-up">
+                        <h4 class="h5 mb-6 font-bold text-gray-900">Project Details</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                                <span class="text-gray-600 text-small">Client</span>
+                                <span class="font-medium text-gray-900">{{ case_study.client }}</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--gray-600);">Client:</span>
-                                <span style="font-weight: 500;">{{ case_study.client }}</span>
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                                <span class="text-gray-600 text-small">Date</span>
+                                <span class="font-medium text-gray-900">2023</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--gray-600);">Duration:</span>
-                                <span style="font-weight: 500;">{{ case_study.duration }}</span>
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                                <span class="text-gray-600 text-small">Service</span>
+                                <span class="font-medium text-gray-900">{{ case_study.category }}</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 text-small">Location</span>
+                                <span class="font-medium text-gray-900">USA</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Technologies Used -->
-                    {% if case_study.technologies %}
-                    <div class="modern-card" data-aos="fade-up">
-                        <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Technologies Used</h4>
-                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <!-- Technologies -->
+                    <div class="card" data-aos="fade-up">
+                        <h4 class="h5 mb-6 font-bold text-gray-900">Technologies</h4>
+                        <div class="flex flex-wrap gap-2">
                             {% for tech in case_study.technologies %}
-                            <div style="display: flex; align-items: center;">
-                                <i data-lucide="check" class="text-primary" style="width: 1rem; height: 1rem; margin-right: 1rem;"></i>
-                                <span style="font-size: 0.875rem; color: var(--gray-700);">{{ tech }}</span>
-                            </div>
+                            <span class="badge bg-gray-100 text-gray-700 border border-gray-200">{{ tech }}</span>
                             {% endfor %}
                         </div>
                     </div>
-                    {% endif %}
 
-                    <!-- Contact CTA -->
-                    <div class="modern-card" style="background: var(--primary-50);" data-aos="fade-up">
-                        <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Interested in Similar Results?</h4>
-                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1.5rem;">
-                            Let's discuss how we can help you achieve similar outcomes for your business.
+                    <!-- CTA -->
+                    <div class="card bg-primary-600 text-white border-none" data-aos="fade-up">
+                        <h4 class="h5 mb-4 font-bold text-white">Have a similar project?</h4>
+                        <p class="text-white/80 text-small mb-6">
+                            Let's discuss how we can help you achieve similar results for your business.
                         </p>
-                        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-full">
-                            <i data-lucide="phone"></i>
-                            Contact Us
+                        <a href="{{ url_for('contact') }}"
+                            class="btn btn-white w-full justify-center text-primary-600 bg-white hover:bg-gray-100 border-none">
+                            Start a Conversation
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -234,46 +168,42 @@
 <!-- Related Case Studies -->
 <section class="section bg-gray-50">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Related Case Studies</h2>
-            <p class="section-subtitle">
-                Explore more success stories from similar industries and challenges.
+        <div class="text-center mb-12">
+            <h2 class="display-3 mb-4">More Success Stories</h2>
+            <p class="text-lead">
+                See how we've helped other clients transform their businesses.
             </p>
         </div>
 
-        <div class="feature-grid">
-            {% for related_case in case_studies.values() %}
-            {% if related_case.slug != case_study.slug and loop.index <= 3 %}
-            <div class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-                <div style="height: 12rem; background: var(--gradient-primary); border-radius: var(--radius-lg); margin-bottom: 1.5rem; position: relative; overflow: hidden;">
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="trending-up" style="width: 4rem; height: 4rem; color: white; opacity: 0.2;"></i>
-                    </div>
-                    <div style="position: absolute; top: 1.5rem; left: 1.5rem;">
-                        <span class="badge" style="background: white; color: var(--primary-600);">{{ related_case.category }}</span>
+        <div class="grid grid-3 gap-8">
+            {% set count = 0 %}
+            {% for related_study in related_case_studies.values() %}
+            {% if count < 3 %} {% set count=count + 1 %} <div
+                class="card p-0 overflow-hidden h-full hover:-translate-y-2 transition-transform duration-300"
+                data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="h-48 bg-gradient-secondary flex items-center justify-center relative">
+                    <i data-lucide="briefcase" class="text-white opacity-30 w-12 h-12"></i>
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-white text-secondary-600 text-xs">{{ related_study.category }}</span>
                     </div>
                 </div>
-                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">
-                    <a href="{{ url_for('case_study_detail', study_slug=related_case.slug) }}" style="transition: color var(--transition-normal);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-900)'">
-                        {{ related_case.title }}
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="h5 mb-4 font-bold text-gray-900">
+                        <a href="{{ url_for('case_study_detail', case_study_slug=related_study.slug) }}"
+                            class="hover:text-secondary-600 transition-colors">
+                            {{ related_study.title }}
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 text-small mb-6 flex-grow line-clamp-3">{{ related_study.overview }}</p>
+                    <a href="{{ url_for('case_study_detail', case_study_slug=related_study.slug) }}"
+                        class="text-secondary-600 font-semibold text-small flex items-center hover:underline mt-auto">
+                        View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </a>
-                </h3>
-                <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">{{ related_case.subtitle }}</p>
-                <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: var(--gray-500);">
-                    <span>{{ related_case.category }}</span>
-                    <span class="text-primary font-medium">{{ related_case.client }}</span>
                 </div>
-            </div>
-            {% endif %}
-            {% endfor %}
         </div>
-
-        <div class="text-center" style="margin-top: 3rem;">
-            <a href="{{ url_for('case_studies') }}" class="btn btn-outline">
-                View All Case Studies
-                <i data-lucide="arrow-right"></i>
-            </a>
-        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
     </div>
 </section>
 {% endblock %}
