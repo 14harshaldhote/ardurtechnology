@@ -145,6 +145,19 @@
                                             </div>
                                             <i data-lucide="chevron-right" class="services-category-arrow"></i>
                                         </button>
+                                        <!-- IT & Services Category -->
+                                        <button class="services-category-item"
+                                            :class="{ 'active': activeCategory === 'it-services' }"
+                                            @mouseenter="activeCategory = 'it-services'">
+                                            <div class="services-category-icon">
+                                                <i data-lucide="cpu"></i>
+                                            </div>
+                                            <div class="services-category-text">
+                                                <span class="services-category-title">IT &amp; Services</span>
+                                                <span class="services-category-subtitle">Software &amp; Analytics</span>
+                                            </div>
+                                            <i data-lucide="chevron-right" class="services-category-arrow"></i>
+                                        </button>
 
                                         <button class="services-category-item"
                                             :class="{ 'active': activeCategory === 'aircraft' }"
@@ -258,6 +271,25 @@
                                             </a>
                                         </div>
                                     </div>
+                                    <!-- IT & Services Sub-Services -->
+                                    <div x-show="activeCategory === 'it-services'" class="services-subservices-panel">
+                                        <div class="services-subservices-header">
+                                            <h4>IT &amp; Services</h4>
+                                            <p>Modern technology solutions to power your business</p>
+                                        </div>
+                                        <div class="services-subservices-list">
+                                            <a href="{{ url_for('service_page', service_slug='software-development') }}"
+                                                class="services-subservice-item">
+                                                <i data-lucide="code-2"></i>
+                                                <span>Software Development</span>
+                                            </a>
+                                            <a href="{{ url_for('service_page', service_slug='data-analytics') }}"
+                                                class="services-subservice-item">
+                                                <i data-lucide="bar-chart-3"></i>
+                                                <span>Data Analytics</span>
+                                            </a>
+                                        </div>
+                                    </div>
 
                                     <!-- Aircraft Sub-Services -->
                                     <div x-show="activeCategory === 'aircraft'" class="services-subservices-panel">
@@ -303,6 +335,7 @@
                                             </a>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 
@@ -516,13 +549,15 @@
                     <h4>Contact</h4>
                     <div>
                         <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                            <a style="color: var(--gray-100); text-decoration: none;" href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
+                            <a style="color: var(--gray-100); text-decoration: none;"
+                                href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
                         </div>
                         <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                            <a style="color: var(--gray-100); text-decoration: none;" href="tel:+1 (702) 809-2713">+1 (702) 809-2713</a>
+                            <a style="color: var(--gray-100); text-decoration: none;" href="tel:+1 (702) 809-2713">+1
+                                (702) 809-2713</a>
                         </div>
                         <div style="display: flex; align-items: flex-start;">
-                                      <span style="color: var(--gray-100);">1964 Heritage Oaks Street
+                            <span style="color: var(--gray-100);">1964 Heritage Oaks Street
                                 <br />Las Vegas, NV 89119
                                 <br />USA
 
