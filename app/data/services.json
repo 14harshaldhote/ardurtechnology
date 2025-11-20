@@ -1,7 +1,7 @@
 {
-  "business_process_management": {
+  "business-process-management": {
     "title": "Business Process Management (BPM)",
-    "description": "Comprehensive business process outsourcing solutions designed to streamline operations and improve efficiency.",
+    "description": "Comprehensive Business Process Outsourcing (BPO) solutions designed to streamline operations, reduce costs, and improve efficiency for title and appraisal companies.",
     "icon": "fas fa-cogs",
     "services": [
       "Title & Appraisal Services",
@@ -12,9 +12,9 @@
       "Order Entry, QC, and Data Entry"
     ]
   },
-  "mortgage_real_estate": {
+  "mortgage-services": {
     "title": "Mortgage & Real Estate Services",
-    "description": "End-to-end mortgage processing and real estate support services for financial institutions and lenders.",
+    "description": "End-to-end mortgage processing outsourcing and real estate support services, including underwriting, title search, and closing support for financial institutions.",
     "icon": "fas fa-home",
     "services": [
       "Pre-processing, Processing & Underwriting",
@@ -25,9 +25,9 @@
       "Appraisal Review"
     ]
   },
-  "finance_accounting": {
+  "finance-accounting": {
     "title": "Finance & Accounting",
-    "description": "Professional accounting and financial management services to maintain accurate financial records and compliance.",
+    "description": "Professional accounting and financial management services to maintain accurate financial records, ensuring compliance and strategic financial planning.",
     "icon": "fas fa-calculator",
     "services": [
       "General Accounting & Bookkeeping",
@@ -37,9 +37,9 @@
       "Financial Statement Preparation"
     ]
   },
-  "healthcare_services": {
+  "healthcare-solutions": {
     "title": "Healthcare Services",
-    "description": "Specialized healthcare administrative services focused on revenue cycle management and patient care support.",
+    "description": "Specialized healthcare administrative services focused on Revenue Cycle Management (RCM), medical billing, and patient care support for healthcare providers.",
     "icon": "fas fa-heartbeat",
     "services": [
       "Medical Billing & Coding",
@@ -49,9 +49,9 @@
       "Healthcare Data Processing"
     ]
   },
-  "aircraft_asset_management": {
+  "aviation-solutions": {
     "title": "Aircraft Asset Management",
-    "description": "Advanced aviation services supporting aircraft maintenance, compliance, and operational efficiency.",
+    "description": "Advanced aviation asset management and MRO consulting services, supporting aircraft maintenance, technical records, and airworthiness compliance.",
     "icon": "fas fa-plane",
     "services": [
       "Predictive Maintenance",
@@ -61,9 +61,9 @@
       "Data Analytics for Fleet Performance"
     ]
   },
-  "digital_it_services": {
+  "it-consulting": {
     "title": "Digital & IT Services",
-    "description": "Cutting-edge digital transformation and IT solutions to modernize business operations and drive innovation.",
+    "description": "Cutting-edge digital transformation and IT solutions, including web development, cloud services, and AI analytics, to modernize business operations and drive innovation.",
     "icon": "fas fa-laptop-code",
     "services": [
       "Web & App Development",
@@ -72,6 +72,18 @@
       "IoT Implementation",
       "Software Testing",
       "Robotic Process Automation (RPA)"
+    ]
+  },
+  "customer-support": {
+    "title": "Customer Support Services",
+    "description": "Multi-channel customer support solutions designed to enhance client satisfaction, retention, and overall customer experience through 24/7 dedicated service.",
+    "icon": "fas fa-headphones",
+    "services": [
+      "24/7 Inbound/Outbound Support",
+      "Email & Chat Support",
+      "Technical Helpdesk",
+      "Customer Satisfaction Surveys",
+      "Complaint Resolution"
     ]
   }
 }

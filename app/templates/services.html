@@ -1,5 +1,68 @@
 {% extends 'base.html' %}
 
+{% block meta_description %}Explore Ardur Technology's comprehensive business process outsourcing (BPO) services
+including title insurance, mortgage processing, appraisal management, aircraft asset management, and IT consulting
+solutions.{% endblock %}
+
+{% block extra_head %}
+<!-- JSON-LD Schema for Organization and Service Catalog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ardur Technology LLC",
+  "url": "{{ request.url_root }}",
+  "logo": "{{ request.url_root }}{{ url_for('static', filename='images/logo.png') }}",
+  "description": "Professional business process outsourcing (BPO), mortgage services, title insurance, appraisal management, and aircraft asset management solutions.",
+  "telephone": "+1-702-809-2713",
+  "email": "info@ardurtechnology.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1964 Heritage Oaks Street",
+    "addressLocality": "Las Vegas",
+    "addressRegion": "NV",
+    "postalCode": "89119",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/ardurtechnology/",
+    "https://x.com/ardurtechnology",
+    "https://www.facebook.com/p/Ardur-Technology-100080111894631/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Business Process Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business Process Management (BPM)",
+          "description": "Comprehensive Business Process Outsourcing (BPO) solutions for title and appraisal companies"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mortgage & Real Estate Services",
+          "description": "End-to-end mortgage processing outsourcing and real estate support services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Aircraft Asset Management",
+          "description": " Advanced aviation asset management and MRO consulting services"
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <!-- Services Hero Section -->
 <section class="hero">
@@ -8,15 +71,15 @@
             <i data-lucide="briefcase" style="margin-right: 0.5rem;"></i>
             Our Solutions
         </div>
-        
+
         <h1 class="hero-title">
             Comprehensive <span class="text-primary">Business Solutions</span>
         </h1>
         <p class="hero-subtitle">
-            From process optimization to digital transformation, we deliver end-to-end solutions 
+            From process optimization to digital transformation, we deliver end-to-end solutions
             designed to drive efficiency, reduce costs, and accelerate your business growth.
         </p>
-        
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
             <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
                 <i data-lucide="phone"></i>
@@ -50,11 +113,12 @@
                 <div class="service-icon" style="margin-bottom: 2rem;">
                     <i data-lucide="settings"></i>
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
+                <h3 class="font-display"
+                    style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
                     Business Process Management
                 </h3>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    Streamline workflows, automate processes, and optimize operations to boost efficiency 
+                    Streamline workflows, automate processes, and optimize operations to boost efficiency
                     and reduce costs across your organization.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
@@ -71,9 +135,13 @@
                         Performance Monitoring
                     </div>
                 </div>
-                <a href="{{ url_for('service_detail', service_category='business-process-management') }}" style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--primary-700)'" onmouseout="this.style.color='var(--primary-600)'">
+                <a href="{{ url_for('service_detail', service_category='business-process-management') }}"
+                    style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;"
+                    onmouseover="this.style.color='var(--primary-700)'"
+                    onmouseout="this.style.color='var(--primary-600)'">
                     Learn More
-                    <i data-lucide="arrow-right" style="margin-left: 0.5rem; transition: transform var(--transition-normal);"></i>
+                    <i data-lucide="arrow-right"
+                        style="margin-left: 0.5rem; transition: transform var(--transition-normal);"></i>
                 </a>
             </div>
 
@@ -82,11 +150,12 @@
                 <div class="service-icon secondary" style="margin-bottom: 2rem;">
                     <i data-lucide="laptop"></i>
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
+                <h3 class="font-display"
+                    style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
                     IT Consulting & Support
                 </h3>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    Strategic technology consulting and comprehensive support services to keep your 
+                    Strategic technology consulting and comprehensive support services to keep your
                     systems running optimally and securely.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
@@ -103,9 +172,13 @@
                         System Integration
                     </div>
                 </div>
-                <a href="{{ url_for('service_detail', service_category='it-consulting') }}" style="display: inline-flex; align-items: center; color: var(--secondary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--secondary-700)'" onmouseout="this.style.color='var(--secondary-600)'">
+                <a href="{{ url_for('service_detail', service_category='it-consulting') }}"
+                    style="display: inline-flex; align-items: center; color: var(--secondary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;"
+                    onmouseover="this.style.color='var(--secondary-700)'"
+                    onmouseout="this.style.color='var(--secondary-600)'">
                     Learn More
-                    <i data-lucide="arrow-right" style="margin-left: 0.5rem; transition: transform var(--transition-normal);"></i>
+                    <i data-lucide="arrow-right"
+                        style="margin-left: 0.5rem; transition: transform var(--transition-normal);"></i>
                 </a>
             </div>
 
@@ -114,11 +187,12 @@
                 <div class="service-icon" style="margin-bottom: 2rem;">
                     <i data-lucide="home"></i>
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
+                <h3 class="font-display"
+                    style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
                     Mortgage Services
                 </h3>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    End-to-end mortgage processing and title services with industry-leading accuracy, 
+                    End-to-end mortgage processing and title services with industry-leading accuracy,
                     speed, and compliance standards.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
@@ -135,7 +209,10 @@
                         Compliance Management
                     </div>
                 </div>
-                <a href="{{ url_for('service_detail', service_category='mortgage-services') }}" style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--primary-700)'" onmouseout="this.style.color='var(--primary-600)'">
+                <a href="{{ url_for('service_detail', service_category='mortgage-services') }}"
+                    style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;"
+                    onmouseover="this.style.color='var(--primary-700)'"
+                    onmouseout="this.style.color='var(--primary-600)'">
                     Learn More
                     <i data-lucide="arrow-right" style="margin-left: 0.5rem;"></i>
                 </a>
@@ -146,11 +223,12 @@
                 <div class="service-icon secondary" style="margin-bottom: 2rem;">
                     <i data-lucide="heart-pulse"></i>
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
+                <h3 class="font-display"
+                    style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
                     Healthcare Solutions
                 </h3>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    Specialized healthcare administration and compliance solutions designed for 
+                    Specialized healthcare administration and compliance solutions designed for
                     medical organizations and healthcare providers.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
@@ -167,7 +245,10 @@
                         HIPAA Compliance
                     </div>
                 </div>
-                <a href="{{ url_for('service_detail', service_category='healthcare-solutions') }}" style="display: inline-flex; align-items: center; color: var(--secondary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--secondary-700)'" onmouseout="this.style.color='var(--secondary-600)'">
+                <a href="{{ url_for('service_detail', service_category='healthcare-solutions') }}"
+                    style="display: inline-flex; align-items: center; color: var(--secondary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;"
+                    onmouseover="this.style.color='var(--secondary-700)'"
+                    onmouseout="this.style.color='var(--secondary-600)'">
                     Learn More
                     <i data-lucide="arrow-right" style="margin-left: 0.5rem;"></i>
                 </a>
@@ -178,11 +259,12 @@
                 <div class="service-icon" style="margin-bottom: 2rem;">
                     <i data-lucide="plane"></i>
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
+                <h3 class="font-display"
+                    style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
                     Aviation Solutions
                 </h3>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    Advanced aircraft asset management and predictive maintenance solutions 
+                    Advanced aircraft asset management and predictive maintenance solutions
                     powered by IoT and analytics technology.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
@@ -199,7 +281,10 @@
                         Compliance Monitoring
                     </div>
                 </div>
-                <a href="{{ url_for('service_detail', service_category='aviation-solutions') }}" style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--primary-700)'" onmouseout="this.style.color='var(--primary-600)'">
+                <a href="{{ url_for('service_detail', service_category='aviation-solutions') }}"
+                    style="display: inline-flex; align-items: center; color: var(--primary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;"
+                    onmouseover="this.style.color='var(--primary-700)'"
+                    onmouseout="this.style.color='var(--primary-600)'">
                     Learn More
                     <i data-lucide="arrow-right" style="margin-left: 0.5rem;"></i>
                 </a>
@@ -210,11 +295,12 @@
                 <div class="service-icon secondary" style="margin-bottom: 2rem;">
                     <i data-lucide="headphones"></i>
                 </div>
-                <h3 class="font-display" style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
+                <h3 class="font-display"
+                    style="font-size: 1.25rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
                     Customer Support
                 </h3>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    Multi-channel customer support solutions designed to enhance client satisfaction, 
+                    Multi-channel customer support solutions designed to enhance client satisfaction,
                     retention, and overall customer experience.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
@@ -231,7 +317,10 @@
                         Quality Assurance
                     </div>
                 </div>
-                <a href="{{ url_for('service_detail', service_category='customer-support') }}" style="display: inline-flex; align-items: center; color: var(--secondary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;" onmouseover="this.style.color='var(--secondary-700)'" onmouseout="this.style.color='var(--secondary-600)'">
+                <a href="{{ url_for('service_detail', service_category='customer-support') }}"
+                    style="display: inline-flex; align-items: center; color: var(--secondary-600); font-weight: 500; transition: color var(--transition-normal); text-decoration: none;"
+                    onmouseover="this.style.color='var(--secondary-700)'"
+                    onmouseout="this.style.color='var(--secondary-600)'">
                     Learn More
                     <i data-lucide="arrow-right" style="margin-left: 0.5rem;"></i>
                 </a>
@@ -303,7 +392,8 @@
     <div class="container">
         <div class="horizontal-layout" style="align-items: center;">
             <div data-aos="fade-right">
-                <div class="badge" style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 1.5rem;">
+                <div class="badge"
+                    style="background: var(--primary-50); color: var(--primary-600); margin-bottom: 1.5rem;">
                     <i data-lucide="trending-up" style="width: 1rem; height: 1rem; margin-right: 0.5rem;"></i>
                     Key Benefits
                 </div>
@@ -311,64 +401,88 @@
                     Why Choose Our Services?
                 </h2>
                 <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
-                    Our comprehensive approach to business process management delivers measurable results 
+                    Our comprehensive approach to business process management delivers measurable results
                     that drive efficiency, reduce costs, and accelerate growth.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: flex-start;">
-                        <div style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+                        <div
+                            style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
                             <i data-lucide="zap" style="width: 1.25rem; height: 1.25rem; color: white;"></i>
                         </div>
                         <div>
-                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Increased Efficiency</h4>
-                            <p style="color: var(--gray-600); font-size: 0.875rem;">Streamlined processes that reduce manual work and eliminate bottlenecks.</p>
+                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Increased
+                                Efficiency</h4>
+                            <p style="color: var(--gray-600); font-size: 0.875rem;">Streamlined processes that reduce
+                                manual work and eliminate bottlenecks.</p>
                         </div>
                     </div>
                     <div style="display: flex; align-items: flex-start;">
-                        <div style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+                        <div
+                            style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
                             <i data-lucide="dollar-sign" style="width: 1.25rem; height: 1.25rem; color: white;"></i>
                         </div>
                         <div>
-                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Cost Reduction</h4>
-                            <p style="color: var(--gray-600); font-size: 0.875rem;">Significant savings through process optimization and automation.</p>
+                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Cost Reduction
+                            </h4>
+                            <p style="color: var(--gray-600); font-size: 0.875rem;">Significant savings through process
+                                optimization and automation.</p>
                         </div>
                     </div>
                     <div style="display: flex; align-items: flex-start;">
-                        <div style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+                        <div
+                            style="width: 2rem; height: 2rem; background: var(--primary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
                             <i data-lucide="shield" style="width: 1.25rem; height: 1.25rem; color: white;"></i>
                         </div>
                         <div>
-                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Enhanced Quality</h4>
-                            <p style="color: var(--gray-600); font-size: 0.875rem;">Improved accuracy and consistency in all business processes.</p>
+                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Enhanced
+                                Quality</h4>
+                            <p style="color: var(--gray-600); font-size: 0.875rem;">Improved accuracy and consistency in
+                                all business processes.</p>
                         </div>
                     </div>
                     <div style="display: flex; align-items: flex-start;">
-                        <div style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+                        <div
+                            style="width: 2rem; height: 2rem; background: var(--secondary-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
                             <i data-lucide="clock" style="width: 1.25rem; height: 1.25rem; color: white;"></i>
                         </div>
                         <div>
-                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Faster Time-to-Market</h4>
-                            <p style="color: var(--gray-600); font-size: 0.875rem;">Accelerated delivery and reduced time for key business processes.</p>
+                            <h4 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;">Faster
+                                Time-to-Market</h4>
+                            <p style="color: var(--gray-600); font-size: 0.875rem;">Accelerated delivery and reduced
+                                time for key business processes.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div data-aos="fade-left">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                    <div style="text-align: center; padding: 1.5rem; background: var(--primary-50); border-radius: var(--radius-lg);">
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.5rem;">40%</div>
+                    <div
+                        style="text-align: center; padding: 1.5rem; background: var(--primary-50); border-radius: var(--radius-lg);">
+                        <div
+                            style="font-size: 1.875rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.5rem;">
+                            40%</div>
                         <div style="font-size: 0.875rem; color: var(--gray-600);">Average Cost Reduction</div>
                     </div>
-                    <div style="text-align: center; padding: 1.5rem; background: var(--secondary-50); border-radius: var(--radius-lg);">
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.5rem;">60%</div>
+                    <div
+                        style="text-align: center; padding: 1.5rem; background: var(--secondary-50); border-radius: var(--radius-lg);">
+                        <div
+                            style="font-size: 1.875rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.5rem;">
+                            60%</div>
                         <div style="font-size: 0.875rem; color: var(--gray-600);">Process Efficiency Gain</div>
                     </div>
-                    <div style="text-align: center; padding: 1.5rem; background: var(--primary-50); border-radius: var(--radius-lg);">
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.5rem;">95%</div>
+                    <div
+                        style="text-align: center; padding: 1.5rem; background: var(--primary-50); border-radius: var(--radius-lg);">
+                        <div
+                            style="font-size: 1.875rem; font-weight: 700; color: var(--primary-600); margin-bottom: 0.5rem;">
+                            95%</div>
                         <div style="font-size: 0.875rem; color: var(--gray-600);">Client Satisfaction</div>
                     </div>
-                    <div style="text-align: center; padding: 1.5rem; background: var(--secondary-50); border-radius: var(--radius-lg);">
-                        <div style="font-size: 1.875rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.5rem;">24/7</div>
+                    <div
+                        style="text-align: center; padding: 1.5rem; background: var(--secondary-50); border-radius: var(--radius-lg);">
+                        <div
+                            style="font-size: 1.875rem; font-weight: 700; color: var(--secondary-600); margin-bottom: 0.5rem;">
+                            24/7</div>
                         <div style="font-size: 0.875rem; color: var(--gray-600);">Support Available</div>
                     </div>
                 </div>
@@ -392,28 +506,40 @@
         </div>
 
         <div class="visual-grid six-col">
-            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);" data-aos="fade-up" data-aos-delay="100">
-                <i data-lucide="heart-pulse" style="width: 2rem; height: 2rem; color: var(--primary-600); margin: 0 auto 0.5rem; display: block;"></i>
+            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);"
+                data-aos="fade-up" data-aos-delay="100">
+                <i data-lucide="heart-pulse"
+                    style="width: 2rem; height: 2rem; color: var(--primary-600); margin: 0 auto 0.5rem; display: block;"></i>
                 <div style="font-size: 0.875rem; font-weight: 500; color: var(--gray-900);">Healthcare</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);" data-aos="fade-up" data-aos-delay="200">
-                <i data-lucide="landmark" style="width: 2rem; height: 2rem; color: var(--secondary-600); margin: 0 auto 0.5rem; display: block;"></i>
+            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);"
+                data-aos="fade-up" data-aos-delay="200">
+                <i data-lucide="landmark"
+                    style="width: 2rem; height: 2rem; color: var(--secondary-600); margin: 0 auto 0.5rem; display: block;"></i>
                 <div style="font-size: 0.875rem; font-weight: 500; color: var(--gray-900);">Financial</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);" data-aos="fade-up" data-aos-delay="300">
-                <i data-lucide="home" style="width: 2rem; height: 2rem; color: var(--primary-600); margin: 0 auto 0.5rem; display: block;"></i>
+            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);"
+                data-aos="fade-up" data-aos-delay="300">
+                <i data-lucide="home"
+                    style="width: 2rem; height: 2rem; color: var(--primary-600); margin: 0 auto 0.5rem; display: block;"></i>
                 <div style="font-size: 0.875rem; font-weight: 500; color: var(--gray-900);">Real Estate</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);" data-aos="fade-up" data-aos-delay="400">
-                <i data-lucide="plane" style="width: 2rem; height: 2rem; color: var(--secondary-600); margin: 0 auto 0.5rem; display: block;"></i>
+            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);"
+                data-aos="fade-up" data-aos-delay="400">
+                <i data-lucide="plane"
+                    style="width: 2rem; height: 2rem; color: var(--secondary-600); margin: 0 auto 0.5rem; display: block;"></i>
                 <div style="font-size: 0.875rem; font-weight: 500; color: var(--gray-900);">Aviation</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);" data-aos="fade-up" data-aos-delay="500">
-                <i data-lucide="shopping-cart" style="width: 2rem; height: 2rem; color: var(--primary-600); margin: 0 auto 0.5rem; display: block;"></i>
+            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);"
+                data-aos="fade-up" data-aos-delay="500">
+                <i data-lucide="shopping-cart"
+                    style="width: 2rem; height: 2rem; color: var(--primary-600); margin: 0 auto 0.5rem; display: block;"></i>
                 <div style="font-size: 0.875rem; font-weight: 500; color: var(--gray-900);">E-commerce</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);" data-aos="fade-up" data-aos-delay="600">
-                <i data-lucide="factory" style="width: 2rem; height: 2rem; color: var(--secondary-600); margin: 0 auto 0.5rem; display: block;"></i>
+            <div style="text-align: center; padding: 1rem; background: white; border-radius: var(--radius-lg);"
+                data-aos="fade-up" data-aos-delay="600">
+                <i data-lucide="factory"
+                    style="width: 2rem; height: 2rem; color: var(--secondary-600); margin: 0 auto 0.5rem; display: block;"></i>
                 <div style="font-size: 0.875rem; font-weight: 500; color: var(--gray-900);">Manufacturing</div>
             </div>
         </div>
@@ -436,7 +562,8 @@
         <h2 class="font-display" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
             Ready to Transform Your Business?
         </h2>
-        <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
+        <p
+            style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
             Let's discuss how our comprehensive solutions can help optimize your operations and drive growth.
         </p>
         <div class="hero-buttons">
@@ -444,7 +571,8 @@
                 <i data-lucide="phone"></i>
                 Get Free Consultation
             </a>
-            <a href="{{ url_for('case_studies') }}" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
+            <a href="{{ url_for('case_studies') }}" class="btn btn-outline btn-lg"
+                style="color: white; border-color: white;">
                 <i data-lucide="file-text"></i>
                 View Case Studies
             </a>
