@@ -8,15 +8,15 @@
             <i data-lucide="phone" style="margin-right: 0.5rem;"></i>
             Get In Touch
         </div>
-        
+
         <h1 class="hero-title">
             Contact <span class="text-primary">Ardur Technology</span>
         </h1>
         <p class="hero-subtitle">
-            Ready to transform your business operations? Let's discuss how we can help 
+            Ready to transform your business operations? Let's discuss how we can help
             you achieve your goals with our expert solutions and services.
         </p>
-        
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
             <a href="#contact-form" class="btn btn-primary btn-lg">
                 <i data-lucide="send"></i>
@@ -52,52 +52,62 @@
                 <!-- Form -->
                 <div>
                     <div class="modern-card" data-aos="fade-up">
-                        <h2 class="font-display" style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">Send Us a Message</h2>
-                        <form action="{{ url_for('contact') }}" method="POST" style="display: flex; flex-direction: column; gap: 2rem;">
+                        <h2 class="font-display"
+                            style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
+                            Send Us a Message</h2>
+                        <form action="{{ url_for('contact') }}" method="POST"
+                            style="display: flex; flex-direction: column; gap: 2rem;">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
                             <div class="horizontal-layout">
                                 <div>
-                                    <label for="first_name" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                    <label for="first_name"
+                                        style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         First Name *
                                     </label>
-                                    <input type="text" id="first_name" name="first_name" required 
-                                           class="form-input" style="width: 100%;" placeholder="John">
+                                    <input type="text" id="first_name" name="first_name" required class="form-input"
+                                        style="width: 100%;" placeholder="John">
                                 </div>
                                 <div>
-                                    <label for="last_name" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                    <label for="last_name"
+                                        style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         Last Name *
                                     </label>
-                                    <input type="text" id="last_name" name="last_name" required 
-                                           class="form-input" style="width: 100%;" placeholder="Doe">
+                                    <input type="text" id="last_name" name="last_name" required class="form-input"
+                                        style="width: 100%;" placeholder="Doe">
                                 </div>
                             </div>
 
                             <div class="horizontal-layout">
                                 <div>
-                                    <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                    <label for="email"
+                                        style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         Email Address *
                                     </label>
-                                    <input type="email" id="email" name="email" required 
-                                           class="form-input" style="width: 100%;" placeholder="john@company.com">
+                                    <input type="email" id="email" name="email" required class="form-input"
+                                        style="width: 100%;" placeholder="john@company.com">
                                 </div>
                                 <div>
-                                    <label for="phone" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                    <label for="phone"
+                                        style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                         Phone Number
                                     </label>
-                                    <input type="tel" id="phone" name="phone" 
-                                           class="form-input" style="width: 100%;" placeholder="+1 (555) 123-4567">
+                                    <input type="tel" id="phone" name="phone" class="form-input" style="width: 100%;"
+                                        placeholder="+1 (555) 123-4567">
                                 </div>
                             </div>
 
                             <div>
-                                <label for="company" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                <label for="company"
+                                    style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Company Name
                                 </label>
-                                <input type="text" id="company" name="company" 
-                                       class="form-input" style="width: 100%;" placeholder="Your Company">
+                                <input type="text" id="company" name="company" class="form-input" style="width: 100%;"
+                                    placeholder="Your Company">
                             </div>
 
                             <div>
-                                <label for="service" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                <label for="service"
+                                    style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Service Interest
                                 </label>
                                 <select id="service" name="service" class="form-input" style="width: 100%;">
@@ -113,7 +123,8 @@
                             </div>
 
                             <div>
-                                <label for="budget" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                <label for="budget"
+                                    style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Project Budget
                                 </label>
                                 <select id="budget" name="budget" class="form-input" style="width: 100%;">
@@ -127,20 +138,24 @@
                             </div>
 
                             <div>
-                                <label for="message" style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
+                                <label for="message"
+                                    style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">
                                     Message *
                                 </label>
-                                <textarea id="message" name="message" rows="6" required 
-                                          class="form-input" style="width: 100%;" 
-                                          placeholder="Tell us about your project requirements, challenges, or questions..."></textarea>
+                                <textarea id="message" name="message" rows="6" required class="form-input"
+                                    style="width: 100%;"
+                                    placeholder="Tell us about your project requirements, challenges, or questions..."></textarea>
                             </div>
 
                             <div style="display: flex; align-items: flex-start;">
-                                <input type="checkbox" id="privacy" name="privacy" required 
-                                       style="width: 1rem; height: 1rem; color: var(--primary-600); border: 1px solid var(--gray-300); border-radius: var(--radius-sm); margin-top: 0.25rem;">
-                                <label for="privacy" style="margin-left: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-                                    I agree to the <a href="#" class="text-primary" style="transition: color var(--transition-normal);">Privacy Policy</a> 
-                                    and <a href="#" class="text-primary" style="transition: color var(--transition-normal);">Terms of Service</a> *
+                                <input type="checkbox" id="privacy" name="privacy" required
+                                    style="width: 1rem; height: 1rem; color: var(--primary-600); border: 1px solid var(--gray-300); border-radius: var(--radius-sm); margin-top: 0.25rem;">
+                                <label for="privacy"
+                                    style="margin-left: 1rem; font-size: 0.875rem; color: var(--gray-600);">
+                                    I agree to the <a href="#" class="text-primary"
+                                        style="transition: color var(--transition-normal);">Privacy Policy</a>
+                                    and <a href="#" class="text-primary"
+                                        style="transition: color var(--transition-normal);">Terms of Service</a> *
                                 </label>
                             </div>
 
@@ -183,50 +198,35 @@
                             </div>
                         </div>
 
-                        <!-- Response Time -->
-                        <div class="modern-card" style="background: var(--primary-50);" data-aos="fade-up">
-                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Response Time</h3>
-                            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.875rem;">
-                                <div style="display: flex; align-items: center;">
-                                    <i data-lucide="clock" class="text-primary" style="margin-right: 1rem;"></i>
-                                    <span>Email: Within 2 hours</span>
-                                </div>
-                                <div style="display: flex; align-items: center;">
-                                    <i data-lucide="phone" class="text-primary" style="margin-right: 1rem;"></i>
-                                    <span>Phone: Immediate</span>
-                                </div>
-                                <div style="display: flex; align-items: center;">
-                                    <i data-lucide="calendar" class="text-primary" style="margin-right: 1rem;"></i>
-                                    <span>Consultation: Same day</span>
-                                </div>
-                            </div>
-                        </div>
+
 
                         <!-- Social Media -->
                         <div class="modern-card" data-aos="fade-up">
-                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Follow Us</h3>
+                            <h3
+                                style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">
+                                Follow Us</h3>
                             <div style="display: flex; gap: 1rem;">
-                                  <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/ardurtechnology/" target="_blank" 
-                           style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);" 
-                           onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'" 
-                           onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
-                            <i data-lucide="linkedin" style="width: 1.25rem; height: 1.25rem;"></i>
-                        </a>
-                        <!-- Twitter/X -->
-                        <a href="https://x.com/ardurtechnology" target="_blank"
-                           style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);"
-                           onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'"
-                           onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
-                            <i data-lucide="twitter" style="width: 1.25rem; height: 1.25rem;"></i>
-                        </a>
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/p/Ardur-Technology-100080111894631/" target="_blank"
-                           style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);"
-                           onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'"
-                           onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
-                            <i data-lucide="facebook" style="width: 1.25rem; height: 1.25rem;"></i>
-                        </a>
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/company/ardurtechnology/" target="_blank"
+                                    style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);"
+                                    onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'"
+                                    onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
+                                    <i data-lucide="linkedin" style="width: 1.25rem; height: 1.25rem;"></i>
+                                </a>
+                                <!-- Twitter/X -->
+                                <a href="https://x.com/ardurtechnology" target="_blank"
+                                    style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);"
+                                    onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'"
+                                    onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
+                                    <i data-lucide="twitter" style="width: 1.25rem; height: 1.25rem;"></i>
+                                </a>
+                                <!-- Facebook -->
+                                <a href="https://www.facebook.com/p/Ardur-Technology-100080111894631/" target="_blank"
+                                    style="width: 2.5rem; height: 2.5rem; background: var(--gray-700); border: 1px solid var(--gray-600); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition-normal); color: var(--gray-300);"
+                                    onmouseover="this.style.background='var(--primary-600)'; this.style.borderColor='var(--primary-600)'; this.style.color='white'"
+                                    onmouseout="this.style.background='var(--gray-700)'; this.style.borderColor='var(--gray-600)'; this.style.color='var(--gray-300)'">
+                                    <i data-lucide="facebook" style="width: 1.25rem; height: 1.25rem;"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -249,44 +249,13 @@
         <div class="horizontal-layout" style="grid-template-columns: 2fr 1fr;">
             <!-- Map -->
             <div data-aos="fade-up">
-                <div style="height: 24rem; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-                    <iframe 
+                <div
+                    style="height: 24rem; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                    <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.8234567890123!2d-115.1278206!3d36.1081687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c4a8ec3bb85d%3A0x4e4f4e4f4e4f4e4f!2s1964%20Heritage%20Oaks%20St%2C%20Las%20Vegas%2C%20NV%2089119%2C%20USA!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Ardur Technology Office Location">
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Ardur Technology Office Location">
                     </iframe>
-                </div>
-            </div>
-
-            <!-- Directions -->
-            <div data-aos="fade-up">
-                <div class="modern-card">
-                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1.5rem;">Directions</h3>
-                    <div style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 0.875rem;">
-                        <div>
-                            <h4 style="font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">By Car</h4>
-                            <p style="color: var(--gray-600);">Convenient parking available. Located in Henderson area of Las Vegas with easy access from I-215 and US-95.</p>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">Address</h4>
-                            <p style="color: var(--gray-600);">1964 Heritage Oaks Street<br>Las Vegas, NV 89119<br>United States</p>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem;">Contact</h4>
-                            <p style="color: var(--gray-600);">Phone: +1 (702) 809-2713<br>Email: info@ardurtechnology.com</p>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://www.google.com/maps/place/Ardur+Technology/@36.1081687,-115.1278206,17z" target="_blank" class="btn btn-outline btn-full">
-                            <i data-lucide="navigation"></i>
-                            Get Directions
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -312,48 +281,61 @@
         <div style="max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
             <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
                 <details class="group">
-                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                    <summary
+                        style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
                         <h4 style="font-weight: 600; color: var(--gray-900);">How quickly can you start a project?</h4>
-                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
+                        <i data-lucide="chevron-down"
+                            style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
                     <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
-                        We can typically begin projects within 1-2 weeks of contract signing, depending on the scope and complexity of your requirements.
+                        We can typically begin projects within 1-2 weeks of contract signing, depending on the scope and
+                        complexity of your requirements.
                     </div>
                 </details>
             </div>
 
             <div class="modern-card" data-aos="fade-up" data-aos-delay="200">
                 <details class="group">
-                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                    <summary
+                        style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
                         <h4 style="font-weight: 600; color: var(--gray-900);">What industries do you specialize in?</h4>
-                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
+                        <i data-lucide="chevron-down"
+                            style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
                     <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
-                        We have extensive experience in healthcare, mortgage & real estate, aviation, financial services, e-commerce, and manufacturing industries.
+                        We have extensive experience in healthcare, mortgage & real estate, aviation, financial
+                        services, e-commerce, and manufacturing industries.
                     </div>
                 </details>
             </div>
 
             <div class="modern-card" data-aos="fade-up" data-aos-delay="300">
                 <details class="group">
-                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
-                        <h4 style="font-weight: 600; color: var(--gray-900);">Do you offer ongoing support after project completion?</h4>
-                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
+                    <summary
+                        style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                        <h4 style="font-weight: 600; color: var(--gray-900);">Do you offer ongoing support after project
+                            completion?</h4>
+                        <i data-lucide="chevron-down"
+                            style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
                     <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
-                        Yes, we provide comprehensive ongoing support and maintenance services to ensure your solutions continue to perform optimally.
+                        Yes, we provide comprehensive ongoing support and maintenance services to ensure your solutions
+                        continue to perform optimally.
                     </div>
                 </details>
             </div>
 
             <div class="modern-card" data-aos="fade-up" data-aos-delay="400">
                 <details class="group">
-                    <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                    <summary
+                        style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
                         <h4 style="font-weight: 600; color: var(--gray-900);">What is your pricing model?</h4>
-                        <i data-lucide="chevron-down" style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
+                        <i data-lucide="chevron-down"
+                            style="width: 1.25rem; height: 1.25rem; color: var(--gray-400); transition: transform var(--transition-normal);"></i>
                     </summary>
                     <div style="margin-top: 1.5rem; color: var(--gray-600); font-size: 0.875rem;">
-                        We offer flexible pricing models including fixed-price projects, hourly rates, and retainer agreements based on your specific needs and preferences.
+                        We offer flexible pricing models including fixed-price projects, hourly rates, and retainer
+                        agreements based on your specific needs and preferences.
                     </div>
                 </details>
             </div>

@@ -1,18 +1,18 @@
 {
   "title-insurance": {
     "slug": "title-insurance",
-    "title": "Title Insurance",
-    "subtitle": "Professional Title Search Outsourcing & Title Insurance Services for Real Estate Transactions",
+    "title": "Title Search and Settlement",
+    "subtitle": "Professional Title Search & Settlement Services for Real Estate Transactions",
     "icon": "fas fa-shield-alt",
     "color": "primary",
     "sections": [
       {
         "title": "Title Search Services",
-        "content": "Our certified title abstractors and title analysts deliver nationwide title search outsourcing services across all 50 U.S. states and 3,000+ counties. With 8+ years of average experience per abstractor, we provide comprehensive property research, title abstracting, and title examination services using industry-leading platforms including Gators, Ramp Quest, Data Trace, and proprietary title search software for superior accuracy and speed."
+        "content": "Our certified title abstractors and title analysts deliver nationwide title search services across all 50 U.S. states and 3,000+ counties. With 8+ years of average experience per abstractor, we provide comprehensive property research, title abstracting, and title examination services using industry-leading platforms including Gators, Ramp Quest, Data Trace, and proprietary title search software for superior accuracy and speed."
       },
       {
         "title": "FROM CURRENT OWNER SEARCH OR TWO OWNER SEARCH TO FULL SEARCH",
-        "content": "We deliver comprehensive title search BPO services including Current Owner Search, Two-Owner Search, Full Title Search, and Update Search services. Our nationwide network of experienced title abstractors and title examiners guarantees 24-48 hour turnaround times with 99.8% accuracy for mortgage lenders, title companies, real estate attorneys, and settlement agents.",
+        "content": "We deliver comprehensive title search services including Current Owner Search, Two-Owner Search, Full Title Search, and Update Search services. Our nationwide network of experienced title abstractors and title examiners guarantees 24-48 hour turnaround times with 99.8% accuracy for mortgage lenders, title companies, real estate attorneys, and settlement agents.",
         "bullets": [
           "Title/ Property Search",
           "Current Owner Search",
@@ -135,14 +135,14 @@
       },
       {
         "title": "DATA ENTRY AND TITLE DOCUMENT INDEXING",
-        "content": "Ardur delivers specialized title data entry and title document indexing BPO services designed to streamline your title production workflow. Our certified data management specialists employ advanced OCR technology, automated indexing systems, and quality control protocols to ensure your title plant data, property records, and document repositories are 100% accurate, fully searchable, and instantly accessible through your title production software or cloud-based title management systems."
+        "content": "Ardur delivers specialized title data entry and title document indexing services designed to streamline your title production workflow. Our certified data management specialists employ advanced OCR technology, automated indexing systems, and quality control protocols to ensure your title plant data, property records, and document repositories are 100% accurate, fully searchable, and instantly accessible through your title production software or cloud-based title management systems."
       }
     ]
   },
   "title-plant-development": {
     "slug": "title-plant-development",
-    "title": "Title Plant Development",
-    "subtitle": "Expert Title Plant Indexing & Title Plant Development Services for Title Companies",
+    "title": "Title Plant Indexing",
+    "subtitle": "Expert Title Plant Indexing Services for Title Companies",
     "icon": "fas fa-database",
     "color": "secondary",
     "sections": [

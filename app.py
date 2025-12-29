@@ -348,48 +348,145 @@ def contact():
 def contact_form():
     """Handle contact form submissions"""
     if request.method == "POST":
-        # Validate form data
-        required_fields = ["name", "email", "subject", "message"]
-        for field in required_fields:
-            if not request.form.get(field):
-                flash(f"{field.capitalize()} is required", "error")
-                return redirect(url_for("contact"))
+        # Log all form data for debugging
+        print("\n" + "="*50)
+        print("📧 CONTACT FORM SUBMISSION RECEIVED")
+        print("="*50)
+        for key, value in request.form.items():
+            if key != 'csrf_token':  # Don't log CSRF token
+                print(f"  {key}: {value}")
+        print("="*50 + "\n")
+        
+        # Get name from first_name and last_name fields
+        first_name = request.form.get("first_name", "").strip()
+        last_name = request.form.get("last_name", "").strip()
+        full_name = f"{first_name} {last_name}".strip()
+        
+        # Validate required fields (matching HTML form)
+        if not first_name:
+            print("❌ Validation Error: First name is required")
+            flash("First name is required", "error")
+            return redirect(url_for("contact"))
+            
+        if not last_name:
+            print("❌ Validation Error: Last name is required")
+            flash("Last name is required", "error")
+            return redirect(url_for("contact"))
 
-        # Validate email
-        email = request.form.get("email")
+        email = request.form.get("email", "").strip()
+        if not email:
+            print("❌ Validation Error: Email is required")
+            flash("Email is required", "error")
+            return redirect(url_for("contact"))
+
+        message = request.form.get("message", "").strip()
+        if not message:
+            print("❌ Validation Error: Message is required")
+            flash("Message is required", "error")
+            return redirect(url_for("contact"))
+
+        # Validate email format
         if not validate_email(email):
+            print(f"❌ Validation Error: Invalid email format - {email}")
             flash("Please enter a valid email address", "error")
             return redirect(url_for("contact"))
 
-        # Send email
+        print("✅ All validations passed!")
+        
+        # Get optional fields
+        company = request.form.get("company", "Not specified")
+        phone = request.form.get("phone", "Not specified")
+        service = request.form.get("service", "Not specified")
+        budget = request.form.get("budget", "Not specified")
+        
+        # Create submission data
+        submission = {
+            "id": datetime.now().strftime("%Y%m%d%H%M%S"),
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "name": full_name,
+            "email": email,
+            "phone": phone,
+            "company": company,
+            "service": service,
+            "budget": budget,
+            "message": message,
+            "email_sent": False
+        }
+
+        # Try to send email
+        email_sent = False
         try:
+            print("📤 Attempting to send email...")
             msg = Message(
-                subject=f"Contact Form: {request.form.get('subject')}",
+                subject=f"New Contact Form Submission from {full_name}",
                 recipients=["info@ardurtechnology.com"],
                 reply_to=email,
                 body=f"""
-                New contact form submission:
+New contact form submission from Ardur Technology website:
 
-                Name: {request.form.get("name")}
-                Email: {request.form.get("email")}
-                Company: {request.form.get("company", "Not specified")}
-                Phone: {request.form.get("phone", "Not specified")}
-                Subject: {request.form.get("subject")}
+CONTACT DETAILS
+===============
+Name: {full_name}
+Email: {email}
+Phone: {phone}
+Company: {company}
 
-                Message:
-                {request.form.get("message")}
+INQUIRY DETAILS
+===============
+Service Interest: {service}
+Budget Range: {budget}
 
-                Submitted on: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+MESSAGE
+=======
+{message}
+
+---
+Submitted on: {submission['timestamp']}
                 """,
             )
             mail.send(msg)
-            flash(
-                "Your message has been sent successfully! We will get back to you soon.",
-                "success",
-            )
+            email_sent = True
+            submission["email_sent"] = True
+            print("✅ Email sent successfully!")
         except Exception as e:
+            print(f"⚠️ Email sending failed: {str(e)}")
+            print("📁 Saving submission to local file as backup...")
+        
+        # Always save to JSON file as backup
+        try:
+            submissions_file = "app/data/contact_submissions.json"
+            
+            # Load existing submissions or create new list
+            try:
+                with open(submissions_file, "r") as f:
+                    submissions = json.load(f)
+            except (FileNotFoundError, json.JSONDecodeError):
+                submissions = []
+            
+            # Add new submission
+            submissions.append(submission)
+            
+            # Save back to file
+            with open(submissions_file, "w") as f:
+                json.dump(submissions, f, indent=2)
+            
+            print(f"✅ Submission saved to {submissions_file}")
+            
+            # Show success message to user
+            if email_sent:
+                flash(
+                    "Your message has been sent successfully! We will get back to you soon.",
+                    "success",
+                )
+            else:
+                flash(
+                    "Your message has been received! We will get back to you soon.",
+                    "success",
+                )
+        except Exception as e:
+            print(f"❌ Failed to save submission: {str(e)}")
             flash(
-                "There was an error sending your message. Please try again or contact us directly.",
+                "There was an error processing your message. Please try again or contact us directly at info@ardurtechnology.com",
                 "error",
             )
 

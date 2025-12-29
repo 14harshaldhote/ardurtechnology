@@ -1,8 +1,12 @@
 {
   "business-process-management": {
     "title": "Business Process Management (BPM)",
+    "name": "Business Process Management",
+    "category": "Business Solutions",
     "description": "Comprehensive Business Process Outsourcing (BPO) solutions designed to streamline operations, reduce costs, and improve efficiency for title and appraisal companies.",
     "icon": "fas fa-cogs",
+    "delivery_model": "Offshore & Hybrid",
+    "typical_timeline": "2-4 weeks",
     "services": [
       "Title & Appraisal Services",
       "Tax Services",
@@ -10,12 +14,97 @@
       "Document Indexing",
       "Title Curative",
       "Order Entry, QC, and Data Entry"
+    ],
+    "key_features": [
+      "End-to-end process automation",
+      "Real-time performance tracking",
+      "Dedicated account management",
+      "99.5% accuracy guarantee",
+      "Scalable solutions",
+      "Industry compliance"
+    ],
+    "offerings": [
+      {
+        "title": "Title & Appraisal Services",
+        "description": "Comprehensive title research, examination, and appraisal review services to ensure accurate and timely closings."
+      },
+      {
+        "title": "Tax Services",
+        "description": "Property tax monitoring, payment processing, and tax line validation to protect your investments."
+      },
+      {
+        "title": "Vendor Management",
+        "description": "Complete vendor onboarding, performance tracking, and relationship management for your third-party network."
+      },
+      {
+        "title": "Document Indexing",
+        "description": "Intelligent document classification, indexing, and digital archiving for efficient document retrieval."
+      },
+      {
+        "title": "Title Curative",
+        "description": "Expert resolution of title defects, lien releases, and document corrections for clear property titles."
+      },
+      {
+        "title": "Order Entry & Data Processing",
+        "description": "Accurate order entry, quality control, and data entry services with multi-level verification."
+      }
+    ],
+    "process": [
+      {
+        "title": "Discovery & Assessment",
+        "description": "We analyze your current processes to identify optimization opportunities and develop a tailored strategy."
+      },
+      {
+        "title": "Solution Design",
+        "description": "Our team designs customized workflows and integrations aligned with your business objectives."
+      },
+      {
+        "title": "Implementation",
+        "description": "Seamless transition with dedicated project management and comprehensive training programs."
+      },
+      {
+        "title": "Continuous Optimization",
+        "description": "Ongoing performance monitoring, reporting, and process improvements for maximum efficiency."
+      }
+    ],
+    "technologies": [
+      "Automation Tools",
+      "OCR Technology",
+      "Cloud Platforms",
+      "API Integrations",
+      "Workflow Management"
+    ],
+    "faqs": [
+      {
+        "question": "What types of businesses benefit from BPM services?",
+        "answer": "Our BPM services are ideal for title companies, appraisal management companies, lenders, law firms, and real estate agencies looking to optimize operations and reduce overhead costs while maintaining high quality standards."
+      },
+      {
+        "question": "How quickly can you scale up operations?",
+        "answer": "We can typically scale operations within 1-2 weeks depending on the complexity. Our flexible staffing model allows us to rapidly adjust resources to meet your volume fluctuations without compromising quality."
+      },
+      {
+        "question": "What quality assurance measures do you have in place?",
+        "answer": "We implement multi-tier quality checks, automated validation rules, real-time error detection, and regular audits. Our processes achieve 99.5%+ accuracy rates with dedicated QC teams for each client."
+      },
+      {
+        "question": "How do you ensure data security and compliance?",
+        "answer": "We maintain SOC 2 Type II compliance, implement end-to-end encryption, conduct regular security audits, and follow industry-specific regulations including ALTA Best Practices and CFPB guidelines."
+      },
+      {
+        "question": "What is your typical turnaround time?",
+        "answer": "Turnaround times vary by service type: standard title searches (24-48 hours), document indexing (same day), and complex title curative work (3-5 business days). We also offer rush services when needed."
+      }
     ]
   },
   "mortgage-services": {
     "title": "Mortgage & Real Estate Services",
+    "name": "Mortgage Processing Solutions",
+    "category": "Financial Services",
     "description": "End-to-end mortgage processing outsourcing and real estate support services, including underwriting, title search, and closing support for financial institutions.",
     "icon": "fas fa-home",
+    "delivery_model": "Dedicated Teams",
+    "typical_timeline": "1-3 weeks",
     "services": [
       "Pre-processing, Processing & Underwriting",
       "Title Search & Closing Support",
@@ -23,48 +112,380 @@
       "Property & Lien Search",
       "Loan Boarding",
       "Appraisal Review"
+    ],
+    "key_features": [
+      "TRID compliant processes",
+      "Same-day processing options",
+      "Multi-state coverage",
+      "Experienced underwriters",
+      "Real-time status updates",
+      "Secure document handling"
+    ],
+    "offerings": [
+      {
+        "title": "Mortgage Pre-processing & Processing",
+        "description": "Complete loan file setup, document collection, verification, and preparation for underwriting with TRID compliance."
+      },
+      {
+        "title": "Underwriting Support",
+        "description": "Expert underwriting assistance including income analysis, credit evaluation, and risk assessment for faster decisions."
+      },
+      {
+        "title": "Title Search & Examination",
+        "description": "Comprehensive property title searches, ownership verification, and lien identification across all 50 states."
+      },
+      {
+        "title": "Closing Support Services",
+        "description": "End-to-end closing coordination including document preparation, scheduling, and post-closing follow-up."
+      },
+      {
+        "title": "Post-Closing Audit",
+        "description": "Thorough audit of closed loan files to ensure compliance, accuracy, and investor delivery readiness."
+      },
+      {
+        "title": "Loan Boarding & Servicing Setup",
+        "description": "Accurate loan data migration, system boarding, and servicing transfer support for seamless transitions."
+      }
+    ],
+    "process": [
+      {
+        "title": "Loan File Receipt",
+        "description": "Secure file transfer and initial document review to identify missing items and establish timeline."
+      },
+      {
+        "title": "Processing & Verification",
+        "description": "Comprehensive verification of employment, income, assets, and property details with third-party validations."
+      },
+      {
+        "title": "Underwriting Review",
+        "description": "Expert analysis of creditworthiness, property value, and compliance with lending guidelines."
+      },
+      {
+        "title": "Closing & Delivery",
+        "description": "Document preparation, closing coordination, and final quality check before investor delivery."
+      }
+    ],
+    "technologies": [
+      "Encompass",
+      "Blend",
+      "ICE Mortgage",
+      "Black Knight",
+      "DocMagic",
+      "Ellie Mae"
+    ],
+    "faqs": [
+      {
+        "question": "What loan types do you process?",
+        "answer": "We handle all major loan types including Conventional, FHA, VA, USDA, Jumbo, and Non-QM loans. Our team is trained on GSE, agency, and portfolio lending guidelines."
+      },
+      {
+        "question": "How do you maintain TRID compliance?",
+        "answer": "Our processes are built around TRID requirements with automated tracking of disclosure timelines, tolerance monitoring, and compliance checkpoints at every stage of the loan lifecycle."
+      },
+      {
+        "question": "What is your average loan processing time?",
+        "answer": "Standard processing takes 3-5 business days from complete file receipt to underwriting submission. We also offer expedited 24-48 hour processing for qualified files."
+      },
+      {
+        "question": "Do you provide dedicated processors for our account?",
+        "answer": "Yes, we assign dedicated processing teams to each client account. This ensures consistency, deep knowledge of your guidelines, and a single point of contact for your operations."
+      },
+      {
+        "question": "How do you handle high-volume periods?",
+        "answer": "Our scalable model allows us to rapidly increase capacity during peak periods. We maintain a trained bench of processors and can scale up within 48 hours while maintaining quality standards."
+      }
     ]
   },
   "finance-accounting": {
     "title": "Finance & Accounting",
+    "name": "Finance & Accounting Services",
+    "category": "Financial Services",
     "description": "Professional accounting and financial management services to maintain accurate financial records, ensuring compliance and strategic financial planning.",
     "icon": "fas fa-calculator",
+    "delivery_model": "Offshore & Onsite",
+    "typical_timeline": "1-2 weeks",
     "services": [
       "General Accounting & Bookkeeping",
       "Accounts Payable / Receivable",
       "Bank Reconciliation",
       "Payroll Management",
       "Financial Statement Preparation"
+    ],
+    "key_features": [
+      "GAAP compliant reporting",
+      "Real-time financial dashboards",
+      "Multi-currency support",
+      "Tax-ready statements",
+      "Audit-ready documentation",
+      "Monthly/quarterly reviews"
+    ],
+    "offerings": [
+      {
+        "title": "General Accounting & Bookkeeping",
+        "description": "Day-to-day transaction recording, journal entries, and ledger maintenance for accurate financial records."
+      },
+      {
+        "title": "Accounts Payable Management",
+        "description": "Invoice processing, vendor payment scheduling, and expense tracking to optimize cash flow management."
+      },
+      {
+        "title": "Accounts Receivable Services",
+        "description": "Invoice generation, payment tracking, collections follow-up, and aging analysis for healthy cash flow."
+      },
+      {
+        "title": "Bank Reconciliation",
+        "description": "Daily, weekly, or monthly bank statement reconciliation to ensure accurate cash position reporting."
+      },
+      {
+        "title": "Financial Reporting",
+        "description": "Preparation of income statements, balance sheets, cash flow statements, and custom management reports."
+      }
+    ],
+    "process": [
+      {
+        "title": "Assessment & Setup",
+        "description": "Review of current processes, chart of accounts setup, and system configuration to match your needs."
+      },
+      {
+        "title": "Data Migration",
+        "description": "Secure transfer of historical data and integration with your existing accounting software."
+      },
+      {
+        "title": "Ongoing Processing",
+        "description": "Regular transaction processing, reconciliations, and reporting on your preferred schedule."
+      },
+      {
+        "title": "Review & Reporting",
+        "description": "Monthly financial review meetings, variance analysis, and strategic recommendations."
+      }
+    ],
+    "technologies": [
+      "QuickBooks",
+      "Xero",
+      "Sage",
+      "NetSuite",
+      "FreshBooks",
+      "Excel"
+    ],
+    "faqs": [
+      {
+        "question": "What accounting software do you support?",
+        "answer": "We work with all major platforms including QuickBooks Online/Desktop, Xero, Sage, NetSuite, FreshBooks, and Wave. We can also work with industry-specific solutions."
+      },
+      {
+        "question": "How do you ensure accuracy in financial reporting?",
+        "answer": "We implement multi-level review processes, automated validation checks, and regular reconciliations. All work is reviewed by senior accountants before delivery."
+      },
+      {
+        "question": "Can you handle multi-entity accounting?",
+        "answer": "Yes, we specialize in consolidated reporting for multi-entity organizations, including intercompany eliminations and segment reporting."
+      },
+      {
+        "question": "Do you provide tax preparation services?",
+        "answer": "We prepare tax-ready financial statements and work closely with your tax advisors. We can also assist with tax planning support and quarterly estimated tax preparations."
+      },
+      {
+        "question": "What is your monthly reporting timeline?",
+        "answer": "We deliver monthly financial statements by the 10th of the following month. Accelerated close options are available for organizations requiring faster reporting."
+      }
     ]
   },
   "healthcare-solutions": {
     "title": "Healthcare Services",
+    "name": "Healthcare Revenue Cycle Management",
+    "category": "Healthcare",
     "description": "Specialized healthcare administrative services focused on Revenue Cycle Management (RCM), medical billing, and patient care support for healthcare providers.",
     "icon": "fas fa-heartbeat",
+    "delivery_model": "HIPAA Compliant Offshore",
+    "typical_timeline": "2-4 weeks",
     "services": [
       "Medical Billing & Coding",
       "Denial Management",
       "AR Follow-up",
       "Patient Eligibility Verification",
       "Healthcare Data Processing"
+    ],
+    "key_features": [
+      "HIPAA compliant operations",
+      "98% first-pass claim rate",
+      "Certified medical coders",
+      "Real-time eligibility checks",
+      "Denial reduction programs",
+      "Payer-specific expertise"
+    ],
+    "offerings": [
+      {
+        "title": "Medical Billing & Coding",
+        "description": "Expert ICD-10, CPT, and HCPCS coding with claim submission across all major payers for maximum reimbursement."
+      },
+      {
+        "title": "Denial Management",
+        "description": "Root cause analysis, appeal preparation, and systematic denial prevention to recover lost revenue."
+      },
+      {
+        "title": "Accounts Receivable Follow-up",
+        "description": "Aggressive AR follow-up with payers to reduce days in AR and improve cash collection rates."
+      },
+      {
+        "title": "Patient Eligibility Verification",
+        "description": "Real-time insurance verification, benefits confirmation, and prior authorization support."
+      },
+      {
+        "title": "Charge Capture",
+        "description": "Comprehensive charge review to ensure all billable services are captured and accurately coded."
+      }
+    ],
+    "process": [
+      {
+        "title": "Patient Registration",
+        "description": "Accurate patient demographics, insurance verification, and authorization management."
+      },
+      {
+        "title": "Coding & Charge Entry",
+        "description": "Expert coding review and charge capture to maximize appropriate reimbursement."
+      },
+      {
+        "title": "Claims Submission",
+        "description": "Clean claim submission with payer-specific edits and electronic remittance processing."
+      },
+      {
+        "title": "Payment Posting & AR Management",
+        "description": "Accurate payment posting, denial management, and aggressive follow-up for outstanding balances."
+      }
+    ],
+    "technologies": [
+      "Epic",
+      "Cerner",
+      "AthenaHealth",
+      "eClinicalWorks",
+      "Kareo",
+      "DrChrono"
+    ],
+    "faqs": [
+      {
+        "question": "Are your operations HIPAA compliant?",
+        "answer": "Absolutely. We maintain comprehensive HIPAA compliance including BAA agreements, encrypted data transmission, regular security audits, and mandatory staff training on PHI handling."
+      },
+      {
+        "question": "What specialties do you serve?",
+        "answer": "We serve all medical specialties including primary care, cardiology, orthopedics, mental health, urgent care, radiology, and multi-specialty groups."
+      },
+      {
+        "question": "How do you handle denied claims?",
+        "answer": "Our denial management team analyzes root causes, prepares comprehensive appeals, and implements prevention strategies. We typically recover 85%+ of initially denied claims."
+      },
+      {
+        "question": "What is your first-pass claim rate?",
+        "answer": "We maintain a 98%+ first-pass clean claim rate through rigorous pre-submission edits, payer-specific rules, and certified coder review."
+      },
+      {
+        "question": "Can you integrate with our EHR system?",
+        "answer": "Yes, we integrate with all major EHR and PM systems including Epic, Cerner, AthenaHealth, eClinicalWorks, and practice-specific solutions through HL7, API, or direct access."
+      }
     ]
   },
   "aviation-solutions": {
     "title": "Aircraft Asset Management",
+    "name": "Aviation Asset Management & MRO Consulting",
+    "category": "Aviation",
     "description": "Advanced aviation asset management and MRO consulting services, supporting aircraft maintenance, technical records, and airworthiness compliance.",
     "icon": "fas fa-plane",
+    "delivery_model": "On-site & Remote",
+    "typical_timeline": "4-8 weeks",
     "services": [
       "Predictive Maintenance",
       "Technical Record Management",
       "Aircraft Reliability",
       "Planning & Engineering Support",
       "Data Analytics for Fleet Performance"
+    ],
+    "key_features": [
+      "FAA/EASA compliance expertise",
+      "Predictive analytics platform",
+      "24/7 AOG support",
+      "Fleet optimization tools",
+      "Digital records migration",
+      "Experienced aviation engineers"
+    ],
+    "offerings": [
+      {
+        "title": "Predictive Maintenance Analytics",
+        "description": "AI-powered predictive models to anticipate component failures and optimize maintenance scheduling for maximum aircraft availability."
+      },
+      {
+        "title": "Technical Records Management",
+        "description": "Complete aircraft records digitization, compliance tracking, and regulatory documentation for seamless audits and transitions."
+      },
+      {
+        "title": "Aircraft Reliability Programs",
+        "description": "Statistical analysis of fleet performance, reliability monitoring, and MRBR compliance for optimized maintenance intervals."
+      },
+      {
+        "title": "Planning & Engineering Support",
+        "description": "Maintenance planning, engineering orders, and technical documentation support for MRO operations."
+      },
+      {
+        "title": "Fleet Performance Analytics",
+        "description": "Comprehensive data analytics dashboards for fleet utilization, cost tracking, and performance optimization."
+      }
+    ],
+    "process": [
+      {
+        "title": "Fleet Assessment",
+        "description": "Comprehensive review of current fleet composition, maintenance programs, and operational requirements."
+      },
+      {
+        "title": "Data Integration",
+        "description": "Integration of maintenance data, flight data, and technical records into our analytics platform."
+      },
+      {
+        "title": "Program Development",
+        "description": "Custom maintenance program development aligned with regulatory requirements and operational goals."
+      },
+      {
+        "title": "Ongoing Optimization",
+        "description": "Continuous monitoring, reporting, and program refinements based on performance data."
+      }
+    ],
+    "technologies": [
+      "AMOS",
+      "TRAX",
+      "Maintenix",
+      "SAP Aviation",
+      "Power BI",
+      "Tableau"
+    ],
+    "faqs": [
+      {
+        "question": "What types of aircraft do you support?",
+        "answer": "We support commercial, regional, business aviation, and cargo aircraft including Boeing, Airbus, Embraer, Bombardier, and regional turboprops. Our team has experience with narrow-body and wide-body fleets."
+      },
+      {
+        "question": "How does predictive maintenance reduce costs?",
+        "answer": "Our predictive analytics typically reduce unscheduled maintenance events by 30-40%, improve aircraft availability by 15-20%, and optimize spare parts inventory levels, resulting in significant operational savings."
+      },
+      {
+        "question": "Do you provide 24/7 AOG support?",
+        "answer": "Yes, we offer round-the-clock Aircraft on Ground (AOG) support to minimize downtime and get your aircraft back in service quickly with emergency technical assistance."
+      },
+      {
+        "question": "Can you help with regulatory compliance?",
+        "answer": "Absolutely. Our team includes experts in FAA, EASA, and ICAO regulations. We assist with airworthiness directives, service bulletins, and regulatory audit preparation."
+      },
+      {
+        "question": "How do you handle technical records transitions?",
+        "answer": "We manage complete records transitions for aircraft acquisitions, leases, and sales including back-to-birth traceability, compliance verification, and digital migration of paper records."
+      }
     ]
   },
   "it-consulting": {
     "title": "Digital & IT Services",
+    "name": "Digital Transformation & IT Solutions",
+    "category": "Technology",
     "description": "Cutting-edge digital transformation and IT solutions, including web development, cloud services, and AI analytics, to modernize business operations and drive innovation.",
     "icon": "fas fa-laptop-code",
+    "delivery_model": "Agile Delivery",
+    "typical_timeline": "4-12 weeks",
     "services": [
       "Web & App Development",
       "Cloud Solutions",
@@ -72,18 +493,180 @@
       "IoT Implementation",
       "Software Testing",
       "Robotic Process Automation (RPA)"
+    ],
+    "key_features": [
+      "Agile development methodology",
+      "Cloud-native architecture",
+      "AI/ML integration ready",
+      "Full-stack expertise",
+      "DevOps automation",
+      "Security-first approach"
+    ],
+    "offerings": [
+      {
+        "title": "Custom Web & Mobile Development",
+        "description": "End-to-end development of responsive web applications and native/cross-platform mobile apps tailored to your business needs."
+      },
+      {
+        "title": "Cloud Migration & Management",
+        "description": "Strategic cloud adoption, migration planning, and ongoing management across AWS, Azure, and Google Cloud platforms."
+      },
+      {
+        "title": "Data Analytics & Business Intelligence",
+        "description": "Transform raw data into actionable insights with custom dashboards, predictive models, and automated reporting."
+      },
+      {
+        "title": "AI & Machine Learning Solutions",
+        "description": "Intelligent automation, natural language processing, and machine learning models to enhance decision-making."
+      },
+      {
+        "title": "Robotic Process Automation",
+        "description": "Automate repetitive tasks with RPA bots to improve efficiency and reduce human error in business processes."
+      }
+    ],
+    "process": [
+      {
+        "title": "Discovery & Planning",
+        "description": "Requirements gathering, technical assessment, and solution architecture design."
+      },
+      {
+        "title": "Agile Development",
+        "description": "Iterative development with regular sprint reviews and continuous stakeholder feedback."
+      },
+      {
+        "title": "Quality Assurance",
+        "description": "Comprehensive testing including unit, integration, performance, and security testing."
+      },
+      {
+        "title": "Deployment & Support",
+        "description": "Seamless deployment with CI/CD pipelines and ongoing maintenance and support."
+      }
+    ],
+    "technologies": [
+      "React",
+      "Node.js",
+      "Python",
+      "AWS",
+      "Azure",
+      "Docker",
+      "Kubernetes",
+      "TensorFlow"
+    ],
+    "faqs": [
+      {
+        "question": "What technologies do you specialize in?",
+        "answer": "We work with modern tech stacks including React, Angular, Vue.js, Node.js, Python, .NET, and mobile frameworks like React Native and Flutter. Our cloud expertise spans AWS, Azure, and GCP."
+      },
+      {
+        "question": "How do you approach project management?",
+        "answer": "We follow Agile/Scrum methodology with 2-week sprints, daily standups, and regular demos. You'll have full visibility through tools like Jira and real-time progress dashboards."
+      },
+      {
+        "question": "Can you work with our existing IT team?",
+        "answer": "Absolutely. We offer flexible engagement models including staff augmentation, dedicated teams, and project-based work. We integrate seamlessly with your internal workflows."
+      },
+      {
+        "question": "What security measures do you implement?",
+        "answer": "Security is built into our development lifecycle with code reviews, vulnerability scanning, penetration testing, and compliance with industry standards like OWASP, SOC 2, and GDPR."
+      },
+      {
+        "question": "Do you provide post-launch support?",
+        "answer": "Yes, we offer comprehensive SLA-based support packages including bug fixes, performance monitoring, security updates, and feature enhancements to keep your applications running smoothly."
+      }
     ]
   },
   "customer-support": {
     "title": "Customer Support Services",
+    "name": "Multi-Channel Customer Support",
+    "category": "Customer Experience",
     "description": "Multi-channel customer support solutions designed to enhance client satisfaction, retention, and overall customer experience through 24/7 dedicated service.",
     "icon": "fas fa-headphones",
+    "delivery_model": "24/7 Global Delivery",
+    "typical_timeline": "1-2 weeks",
     "services": [
       "24/7 Inbound/Outbound Support",
       "Email & Chat Support",
       "Technical Helpdesk",
       "Customer Satisfaction Surveys",
       "Complaint Resolution"
+    ],
+    "key_features": [
+      "24/7/365 availability",
+      "Multi-language support",
+      "Omnichannel integration",
+      "Real-time quality monitoring",
+      "CSAT tracking dashboard",
+      "Trained support specialists"
+    ],
+    "offerings": [
+      {
+        "title": "24/7 Voice Support",
+        "description": "Round-the-clock inbound and outbound call support with trained agents who represent your brand professionally."
+      },
+      {
+        "title": "Email & Chat Support",
+        "description": "Responsive email management and live chat support with quick resolution times and personalized responses."
+      },
+      {
+        "title": "Technical Helpdesk",
+        "description": "Tier 1-3 technical support for software, hardware, and IT issues with escalation protocols and knowledge base management."
+      },
+      {
+        "title": "Social Media Support",
+        "description": "Monitor and respond to customer inquiries across social platforms to protect your brand reputation."
+      },
+      {
+        "title": "Customer Success Management",
+        "description": "Proactive customer engagement, onboarding support, and retention programs to maximize customer lifetime value."
+      }
+    ],
+    "process": [
+      {
+        "title": "Onboarding & Training",
+        "description": "Comprehensive agent training on your products, processes, and brand voice for authentic representation."
+      },
+      {
+        "title": "System Integration",
+        "description": "Integration with your CRM, ticketing, and communication platforms for seamless operations."
+      },
+      {
+        "title": "Go-Live & Ramp-up",
+        "description": "Phased launch with close monitoring and rapid optimization based on performance metrics."
+      },
+      {
+        "title": "Continuous Improvement",
+        "description": "Regular quality audits, agent coaching, and process refinements to improve CSAT and efficiency."
+      }
+    ],
+    "technologies": [
+      "Zendesk",
+      "Salesforce",
+      "Freshdesk",
+      "Intercom",
+      "HubSpot",
+      "Five9"
+    ],
+    "faqs": [
+      {
+        "question": "What channels do you support?",
+        "answer": "We provide omnichannel support including voice (inbound/outbound), email, live chat, SMS, social media, and self-service portal management for a unified customer experience."
+      },
+      {
+        "question": "How quickly can you ramp up new agents?",
+        "answer": "Our standard training program is 2-3 weeks depending on complexity. We can accelerate this for simpler support needs with supervised on-the-job training."
+      },
+      {
+        "question": "What are your average response times?",
+        "answer": "We maintain SLA-driven response times: phone calls answered within 20 seconds, live chat response under 30 seconds, and email response within 2-4 hours based on priority."
+      },
+      {
+        "question": "Do you offer multilingual support?",
+        "answer": "Yes, we offer support in English, Spanish, French, German, and other languages based on your customer base requirements with native or near-native speakers."
+      },
+      {
+        "question": "How do you ensure quality?",
+        "answer": "We implement real-time call monitoring, regular quality audits, customer satisfaction surveys, and performance scorecards. Agents receive ongoing coaching based on quality metrics."
+      }
     ]
   }
 }
