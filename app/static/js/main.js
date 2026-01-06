@@ -97,7 +97,8 @@ function initSmoothScrolling() {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
+                const header = document.querySelector('.header') || document.querySelector('.navbar');
+                const headerHeight = header ? header.offsetHeight : 0;
                 const targetPosition = targetElement.offsetTop - headerHeight - 20;
 
                 window.scrollTo({
@@ -273,6 +274,9 @@ function initDropdowns() {
 
     dropdowns.forEach(dropdown => {
         const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        if (!dropdownMenu) {
+            return;
+        }
         let timeoutId;
 
         dropdown.addEventListener('mouseenter', function() {
@@ -357,11 +361,18 @@ function animateCounters() {
 // Contact Form Handler
 // ==========================================================================
 function initContactForm() {
-    const contactForm = document.querySelector('#contact-form');
+    const contactFormContainer = document.getElementById('contact-form');
+    const contactForm = contactFormContainer
+        ? (contactFormContainer.tagName === 'FORM' ? contactFormContainer : contactFormContainer.querySelector('form'))
+        : null;
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             const submitBtn = this.querySelector('button[type="submit"]');
+
+            if (!submitBtn) {
+                return;
+            }
             const originalText = submitBtn.textContent;
 
             // Show loading state
@@ -439,7 +450,11 @@ function throttle(func, limit) {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
-            func.apply(context, args);
+            try {
+                func.apply(context, args);
+            } catch (e) {
+                console.error('Throttled function error:', e);
+            }
             inThrottle = true;
             setTimeout(() => inThrottle = false, limit);
         }
@@ -449,7 +464,10 @@ function throttle(func, limit) {
 // Add optimized scroll listener
 window.addEventListener('scroll', throttle(function() {
     // Add navbar background on scroll
-    const header = document.querySelector('.header');
+    const header = document.querySelector('.header') || document.querySelector('.navbar');
+    if (!header) {
+        return;
+    }
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
@@ -492,15 +510,4 @@ if (document.querySelectorAll('img[data-src]').length > 0) {
     initLazyLoading();
 }
 
-// Service Worker Registration (for future PWA features)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(err) {
-                console.log('ServiceWorker registration failed');
-            });
-    });
-}
+// Service Worker Registration intentionally disabled (prevents 404 + console noise when sw.js is not served)

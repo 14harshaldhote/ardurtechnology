@@ -204,7 +204,7 @@
         </div>
 
         <div class="space-y-6">
-            {% for job in jobs %}
+            {% for job in jobs|default([]) %}
             <div class="modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
                 <div class="horizontal-layout" style="align-items: center;">
                     <div style="flex: 1;">
@@ -238,7 +238,7 @@
                         </div>
                     </div>
                     <div style="margin-top: 2rem; margin-left: 0;">
-                        <a href="{{ url_for('job_detail', job_id=job.id) }}" class="btn btn-primary">
+                        <a href="#contact" class="btn btn-primary">
                             Apply Now
                             <i data-lucide="arrow-right"></i>
                         </a>

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "20260106172139",
+    "timestamp": "2026-01-06 17:21:39",
+    "name": "Vishal Patil",
+    "email": "dhoteh99@gmail.com",
+    "phone": "+1 9657889839",
+    "company": "Eagle X",
+    "service": "it-consulting",
+    "budget": "over-100k",
+    "message": "Sidha dollar m paisa deta m, kaam karega ky",
+    "email_sent": false
+  },
+  {
+    "id": "20260106172738",
+    "timestamp": "2026-01-06 17:27:38",
+    "name": "Harshal Dhote",
+    "email": "dhoteh99@gmail.com",
+    "phone": "+919657889839",
+    "company": "Eagle X",
+    "service": "it-consulting",
+    "budget": "over-100k",
+    "message": "Kaam karega ky",
+    "email_sent": true,
+    "auto_reply_sent": true
+  },
+  {
+    "id": "20260106181817",
+    "timestamp": "2026-01-06 18:18:17",
+    "name": "Generic Flating",
+    "email": "dhoteh99@gmail.com",
+    "phone": "+1 9657889839",
+    "company": "Eagle X",
+    "service": "it-consulting",
+    "budget": "over-100k",
+    "message": "CIN\tU74900PN2013PTC147198\r\nCompany Name\tARDUR TECHSERV PRIVATE LIMITED\r\nROC Code\tRoC-Pune\r\nRegistration Number\t147198\r\nCompany Category\tCompany limited by Shares",
+    "email_sent": true,
+    "auto_reply_queued": true,
+    "auto_reply_delay_seconds": 300
+  }
+]

@@ -1,12 +1,17 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort, Response
 from flask_mail import Mail, Message
 from flask_wtf.csrf import CSRFProtect
 from werkzeug.utils import secure_filename
+from dotenv import load_dotenv
 import os
 import json
 import tempfile
 from datetime import datetime
 import re
+import threading
+import time
+
+load_dotenv()
 
 app = Flask(__name__, template_folder="app/templates", static_folder="app/static")
 
@@ -23,11 +28,31 @@ app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16MB max file size
 # Email configuration
 app.config["MAIL_SERVER"] = os.environ.get("MAIL_SERVER", "smtp.gmail.com")
 app.config["MAIL_PORT"] = int(os.environ.get("MAIL_PORT", 587))
-app.config["MAIL_USE_TLS"] = True
+
+def env_bool(key, default=False):
+    value = os.environ.get(key)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+app.config["MAIL_USE_TLS"] = env_bool("MAIL_USE_TLS", True)
 app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
 app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
-app.config["MAIL_DEFAULT_SENDER"] = os.environ.get("MAIL_DEFAULT_SENDER", "info@ardurtechnology.com")
+app.config["MAIL_DEFAULT_SENDER"] = os.environ.get("MAIL_DEFAULT_SENDER")
 mail = Mail(app)
+
+if env_bool("DISABLE_STATIC_CACHE", False):
+    app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
+
+    @app.after_request
+    def add_no_cache_headers(response):
+        if request.path.startswith("/static/"):
+            response.headers["Cache-Control"] = "no-store, max-age=0"
+            response.headers["Pragma"] = "no-cache"
+            response.headers["Expires"] = "0"
+            response.headers.pop("ETag", None)
+            response.headers.pop("Last-Modified", None)
+        return response
 
 # Allowed file extensions for resume uploads
 ALLOWED_EXTENSIONS = {"pdf", "doc", "docx"}
@@ -228,6 +253,7 @@ def careers():
     """Careers page with job listings"""
     return render_template(
         "careers.html",
+        jobs=[],
         title="Careers - Join Ardur Technology LLC",
         meta_description="Join our team at Ardur Technology LLC. Explore career opportunities in business process management and technology solutions.",
     )
@@ -413,13 +439,21 @@ def contact_form():
             "email_sent": False
         }
 
+        admin_email = (
+            os.environ.get("CONTACT_TO_EMAIL")
+            or app.config.get("MAIL_DEFAULT_SENDER")
+            or app.config.get("MAIL_USERNAME")
+            or "info@ardurtechnology.com"
+        )
+
         # Try to send email
         email_sent = False
+        auto_reply_sent = False
         try:
             print("📤 Attempting to send email...")
             msg = Message(
                 subject=f"New Contact Form Submission from {full_name}",
-                recipients=["info@ardurtechnology.com"],
+                recipients=[admin_email],
                 reply_to=email,
                 body=f"""
 New contact form submission from Ardur Technology website:
@@ -448,6 +482,78 @@ Submitted on: {submission['timestamp']}
             email_sent = True
             submission["email_sent"] = True
             print("✅ Email sent successfully!")
+
+            try:
+                delay_seconds = int(os.environ.get("AUTO_REPLY_DELAY_SECONDS", "300"))
+
+                def send_delayed_auto_reply(app_obj, recipient_email, recipient_name, admin_email_addr, delay_s):
+                    try:
+                        time.sleep(max(0, delay_s))
+                        with app_obj.app_context():
+                            reply_subject = "We received your inquiry - Ardur Technology LLC"
+                            reply_text = (
+                                f"Hello {recipient_name or 'there'},\n\n"
+                                "Thank you for contacting Ardur Technology LLC. We have received your inquiry and our team will respond soon.\n\n"
+                                "Regards,\n"
+                                "Ardur Technology LLC\n"
+                                "https://ardurtechnology.com"
+                            )
+                            logo_cid = "ardur-technology-logo"
+                            reply_html = f"""
+<div style=\"font-family: Arial, Helvetica, sans-serif; color: #0f172a; line-height: 1.6;\">
+  <p style=\"margin: 0 0 12px;\">Hello {recipient_name or 'there'},</p>
+  <p style=\"margin: 0 0 12px;\">
+    Thank you for contacting <strong>Ardur Technology LLC</strong>. We have received your inquiry and a member of our team will respond shortly.
+  </p>
+  <p style=\"margin: 0 0 16px;\">Regards,<br/>Ardur Technology LLC</p>
+  <div style=\"margin-top: 18px; padding-top: 14px; border-top: 1px solid #e2e8f0; display: flex; align-items: center; gap: 12px;\">
+    <img src=\"cid:{logo_cid}\" alt=\"Ardur Technology\" style=\"height: 36px; width: auto; display: block;\" />
+    <div style=\"font-size: 12px; color: #475569;\">
+      <div><strong>Ardur Technology LLC</strong></div>
+      <div>Las Vegas, Nevada, USA</div>
+      <div><a href=\"mailto:{admin_email_addr}\" style=\"color: #2563eb; text-decoration: none;\">{admin_email_addr}</a></div>
+    </div>
+  </div>
+</div>
+                            """
+
+                            reply_msg = Message(
+                                subject=reply_subject,
+                                recipients=[recipient_email],
+                                body=reply_text,
+                                html=reply_html,
+                            )
+
+                            try:
+                                logo_path = os.path.join(app_obj.static_folder, "images", "logo.png")
+                                with open(logo_path, "rb") as f:
+                                    reply_msg.attach(
+                                        "logo.png",
+                                        "image/png",
+                                        f.read(),
+                                        "inline",
+                                        headers=[["Content-ID", f"<{logo_cid}>"]],
+                                    )
+                            except Exception as e:
+                                print(f"⚠️ Logo attachment failed: {str(e)}")
+
+                            mail.send(reply_msg)
+                            print("✅ Auto-reply sent successfully!")
+                    except Exception as e:
+                        print(f"⚠️ Auto-reply failed: {str(e)}")
+
+                threading.Thread(
+                    target=send_delayed_auto_reply,
+                    args=(app, email, full_name, admin_email, delay_seconds),
+                    daemon=True,
+                ).start()
+
+                auto_reply_sent = True
+                submission["auto_reply_queued"] = True
+                submission["auto_reply_delay_seconds"] = delay_seconds
+                print(f"⏳ Auto-reply queued (delay: {delay_seconds}s)")
+            except Exception as e:
+                print(f"⚠️ Auto-reply scheduling failed: {str(e)}")
         except Exception as e:
             print(f"⚠️ Email sending failed: {str(e)}")
             print("📁 Saving submission to local file as backup...")
@@ -455,6 +561,7 @@ Submitted on: {submission['timestamp']}
         # Always save to JSON file as backup
         try:
             submissions_file = "app/data/contact_submissions.json"
+            fallback_submissions_file = os.path.join(tempfile.gettempdir(), "contact_submissions.json")
             
             # Load existing submissions or create new list
             try:
@@ -466,11 +573,17 @@ Submitted on: {submission['timestamp']}
             # Add new submission
             submissions.append(submission)
             
-            # Save back to file
-            with open(submissions_file, "w") as f:
-                json.dump(submissions, f, indent=2)
+            # Save back to file (fallback to temp if app/data is not writable)
+            try:
+                with open(submissions_file, "w") as f:
+                    json.dump(submissions, f, indent=2)
+                saved_path = submissions_file
+            except OSError:
+                with open(fallback_submissions_file, "w") as f:
+                    json.dump(submissions, f, indent=2)
+                saved_path = fallback_submissions_file
             
-            print(f"✅ Submission saved to {submissions_file}")
+            print(f"✅ Submission saved to {saved_path}")
             
             # Show success message to user
             if email_sent:
@@ -549,12 +662,16 @@ def inject_globals():
 @app.route('/.well-known/<path:filename>')
 def handle_well_known(filename=None):
     """Handle .well-known requests to prevent 404 errors"""
-    abort(204)  # No Content - prevents error logs
+    return Response(status=204)
 
 @app.route('/robots.txt')
 def robots_txt():
     """Serve robots.txt"""
     return "User-agent: *\nAllow: /", 200, {'Content-Type': 'text/plain'}
+
+@app.route('/sw.js')
+def service_worker():
+    return "self.addEventListener('fetch', function(event) {});", 200, {'Content-Type': 'application/javascript'}
 
 @app.route('/sitemap.xml')
 def sitemap_xml():

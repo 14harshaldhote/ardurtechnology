@@ -22,7 +22,7 @@
                 <i data-lucide="send"></i>
                 Send Message
             </a>
-            <a href="tel:+1-555-123-4567" class="btn btn-outline btn-lg">
+            <a href="tel:+17028092713" class="btn btn-outline btn-lg">
                 <i data-lucide="phone"></i>
                 Call Now
             </a>
@@ -55,7 +55,7 @@
                         <h2 class="font-display"
                             style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
                             Send Us a Message</h2>
-                        <form action="{{ url_for('contact') }}" method="POST"
+                        <form action="{{ url_for('contact_form') }}" method="POST"
                             style="display: flex; flex-direction: column; gap: 2rem;">
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
                             <div class="horizontal-layout">
@@ -92,7 +92,7 @@
                                         Phone Number
                                     </label>
                                     <input type="tel" id="phone" name="phone" class="form-input" style="width: 100%;"
-                                        placeholder="+1 (555) 123-4567">
+                                        placeholder="+1 (702) 809-2713">
                                 </div>
                             </div>
 
@@ -152,7 +152,7 @@
                                     style="width: 1rem; height: 1rem; color: var(--primary-600); border: 1px solid var(--gray-300); border-radius: var(--radius-sm); margin-top: 0.25rem;">
                                 <label for="privacy"
                                     style="margin-left: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-                                    I agree to the <a href="#" class="text-primary"
+                                    I agree to the <a href="{{ url_for('privacy_policy') }}" class="text-primary"
                                         style="transition: color var(--transition-normal);">Privacy Policy</a>
                                     and <a href="#" class="text-primary"
                                         style="transition: color var(--transition-normal);">Terms of Service</a> *
@@ -176,7 +176,7 @@
                         <div class="modern-card" data-aos="fade-up">
                             <h3 class="contact-title">Quick Contact</h3>
                             <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                                <a href="tel:+1-555-123-4567" class="quick-contact-item primary">
+                                <a href="tel:+17028092713" class="quick-contact-item primary">
                                     <div class="quick-contact-icon primary">
                                         <i data-lucide="phone"></i>
                                     </div>
@@ -246,8 +246,7 @@
             </p>
         </div>
 
-        <div class="horizontal-layout" style="grid-template-columns: 2fr 1fr;">
-            <!-- Map -->
+        <div style="max-width: 64rem; margin: 0 auto;">
             <div data-aos="fade-up">
                 <div
                     style="height: 24rem; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">

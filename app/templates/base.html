@@ -39,6 +39,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Font Awesome (used by some templates for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
 
@@ -80,8 +83,8 @@
                     <!-- Services Cascading Menu -->
                     <div class="services-menu"
                         x-data="{ showServicesDropdown: false, activeCategory: 'business-process' }"
-                        @mouseenter="showServicesDropdown = true" @mouseleave="showServicesDropdown = false">
-                        <a href="{{ url_for('services') }}" class="nav-link services-menu-trigger">
+                        @mouseenter="showServicesDropdown = true" @mouseleave="showServicesDropdown = false" @click.away="showServicesDropdown = false">
+                        <a href="{{ url_for('services') }}" class="nav-link services-menu-trigger" @click="if (!showServicesDropdown) { $event.preventDefault(); showServicesDropdown = true }">
                             Services
                             <i data-lucide="chevron-down" class="services-menu-trigger-icon"></i>
                         </a>
@@ -353,8 +356,8 @@
 
                     <!-- Company Dropdown -->
                     <div class="company-dropdown" @mouseenter="showMoreDropdown = true"
-                        @mouseleave="showMoreDropdown = false">
-                        <a href="#" class="nav-link company-dropdown-trigger">
+                        @mouseleave="showMoreDropdown = false" @click.away="showMoreDropdown = false">
+                        <a href="#" class="nav-link company-dropdown-trigger" @click.prevent="showMoreDropdown = !showMoreDropdown">
                             Company
                             <i data-lucide="chevron-down" class="company-dropdown-trigger-icon"></i>
                         </a>
@@ -408,7 +411,7 @@
             <div x-show="showMobileMenu" x-transition class="mobile-menu"
                 x-data="{ showMobileServices: false, showMobileMore: false }">
                 <div>
-                    <a href="{{ url_for('home') }}" class="mobile-menu-item">Home</a>
+                    <a href="{{ url_for('home') }}" class="mobile-menu-item" @click="showMobileMenu = false">Home</a>
 
                     <!-- Mobile Services -->
                     <div>
@@ -420,17 +423,18 @@
                         </button>
                         <div x-show="showMobileServices" x-transition class="mobile-submenu">
                             <a href="{{ url_for('service_page', service_slug='title-insurance') }}"
-                                class="mobile-submenu-item">Title Search and Settlement</a>
+                                class="mobile-submenu-item" @click="showMobileMenu = false">Title Search and Settlement</a>
                             <a href="{{ url_for('service_page', service_slug='mortgage-pre-processing') }}"
-                                class="mobile-submenu-item">Mortgage Services</a>
+                                class="mobile-submenu-item" @click="showMobileMenu = false">Mortgage Services</a>
                             <a href="{{ url_for('service_page', service_slug='document-management') }}"
-                                class="mobile-submenu-item">Aircraft Management</a>
-                            <a href="{{ url_for('services') }}" class="mobile-submenu-item">View All Services</a>
+                                class="mobile-submenu-item" @click="showMobileMenu = false">Aircraft Management</a>
+                            <a href="{{ url_for('services') }}" class="mobile-submenu-item" @click="showMobileMenu = false">View All Services</a>
                         </div>
                     </div>
 
-                    <a href="{{ url_for('about') }}" class="mobile-menu-item">About Us</a>
-                    <a href="{{ url_for('careers') }}" class="mobile-menu-item">Careers</a>
+                    <a href="{{ url_for('about') }}" class="mobile-menu-item" @click="showMobileMenu = false">About Us</a>
+                    <a href="{{ url_for('careers') }}" class="mobile-menu-item" @click="showMobileMenu = false">Careers</a>
+                    <a href="{{ url_for('contact') }}" class="mobile-menu-item" @click="showMobileMenu = false">Contact</a>
 
                     <!-- Mobile More -->
                     <div>
@@ -441,15 +445,15 @@
                                 :class="{ 'rotate-180': showMobileMore }"></i>
                         </button>
                         <div x-show="showMobileMore" x-transition class="mobile-submenu">
-                            <a href="{{ url_for('blogs') }}" class="mobile-submenu-item">
+                            <a href="{{ url_for('blogs') }}" class="mobile-submenu-item" @click="showMobileMenu = false">
                                 <i class="fas fa-blog text-primary"
                                     style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Blogs
                             </a>
-                            <a href="{{ url_for('case_studies') }}" class="mobile-submenu-item">
+                            <a href="{{ url_for('case_studies') }}" class="mobile-submenu-item" @click="showMobileMenu = false">
                                 <i class="fas fa-file-alt text-secondary"
                                     style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Case Studies
                             </a>
-                            <a href="{{ url_for('leadership') }}" class="mobile-submenu-item">
+                            <a href="{{ url_for('leadership') }}" class="mobile-submenu-item" @click="showMobileMenu = false">
                                 <i class="fas fa-users text-primary"
                                     style="margin-right: 0.5rem; font-size: 0.75rem;"></i>Leadership
                             </a>
@@ -553,7 +557,7 @@
                                 href="mailto:info@ardurtechnology.com">info@ardurtechnology.com</a>
                         </div>
                         <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                            <a style="color: var(--gray-100); text-decoration: none;" href="tel:+1 (702) 809-2713">+1
+                            <a style="color: var(--gray-100); text-decoration: none;" href="tel:+17028092713">+1
                                 (702) 809-2713</a>
                         </div>
                         <div style="display: flex; align-items: flex-start;">
@@ -577,10 +581,12 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button x-show="showBackToTop" x-transition @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+    <button id="back-to-top" x-show="showBackToTop" x-transition @click="window.scrollTo({top: 0, behavior: 'smooth'})"
         class="back-to-top">
         <i data-lucide="arrow-up"></i>
     </button>
+
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
 
     <!-- AOS Initialize -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
